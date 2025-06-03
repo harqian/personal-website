@@ -43,6 +43,7 @@
             <h2><a href="/photo_gallery">photos</a></h2>
             <h2><a href="/animal_media">animal media</a></h2>
             <h2><a href="/app_reviews">app reviews</a></h2>
+            <h2><a href="/essays">essays</a></h2>
         </div>
         
         <div class="right-column">
