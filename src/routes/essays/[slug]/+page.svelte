@@ -20,10 +20,18 @@
             
             const rawContent = await response.text();
             
-            // Configure marked with GitHub Flavored Markdown
-            marked.use({
+            // Configure marked with proper options for links and emphasis
+            marked.setOptions({
                 gfm: true,
                 breaks: false,
+                pedantic: false,
+                sanitize: false,
+                smartLists: true,
+                smartypants: false
+            });
+            
+            // Add custom footnote extension
+            marked.use({
                 extensions: [{
                     name: 'footnote',
                     level: 'inline',
@@ -73,11 +81,12 @@
                 let processedContent = markdownContent.replace(/^\[\^([^\]]+)\]:\s*(.+)$/gm, (match, id, text) => {
                     return `<div class="footnote-def" id="fn-${id}">
                         <a href="#fnref-${id}" class="footnote-number">${id}</a>
-                        <span class="footnote-text">${text}</span>
+                        <span class="footnote-text">${marked.parseInline(text)}</span>
                     </div>`;
                 });
                 
-                content = marked(processedContent);
+                // Parse the markdown content
+                content = marked.parse(processedContent);
             }
         } catch (error) {
             console.error('Error loading essay:', error);
@@ -165,11 +174,31 @@
         font-style: italic;
     }
     
+    /* Link styles */
+    .content :global(a) {
+        color: var(--link-color, #0066cc);
+        text-decoration: underline;
+        transition: all 0.2s ease;
+    }
+    
+    .content :global(a:hover) {
+        opacity: 0.8;
+    }
+    
+    /* Emphasis styles */
+    .content :global(em) {
+        font-style: italic;
+    }
+    
+    .content :global(strong) {
+        font-weight: bold;
+    }
+    
     /* Footnote reference styles (in main text) */
     .content :global(.footnote-ref) {
         text-decoration: none;
         font-size: 0.8em;
-        color: var(--link-color);
+        color: var(--link-color, #0066cc);
         transition: all 0.2s ease;
     }
     
@@ -197,12 +226,16 @@
         display: inline-block;
         min-width: 1.5rem;
         text-align: center;
-        color: var(--link-color);
+        color: var(--link-color, #0066cc);
         text-decoration: none;
         cursor: pointer;
     }
     
     .content :global(.footnote-number:hover) {
         text-decoration: underline;
+    }
+    
+    .content :global(.footnote-text a) {
+        color: var(--link-color, #0066cc);
     }
 </style>
