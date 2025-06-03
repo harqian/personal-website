@@ -7,19 +7,26 @@
 
 <style>
     :global(.date) {
-        opacity: 0.7;
-        font-size: 0.9rem;
-        margin-left: 1rem;
+        color: white;
+        font-size: 0.9em;
         white-space: nowrap;
+        margin-left: 1rem;
     }
     
     :global(.tags) {
-        opacity: 0.7;
-        font-size: 0.9rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
     }
     
     :global(.tag) {
-        margin-right: 0.5rem;
+        background: white;
+        color: black;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.8em;
+        white-space: nowrap;
     }
 
 </style>
