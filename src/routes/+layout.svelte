@@ -81,4 +81,10 @@
         z-index: 1;
         transition: z-index 0s 0.5s; /* Delay z-index change until after animation */
     }
+
+    :global(.column) {
+        justify-content: space-between;
+        margin: auto;
+        width: 60%;
+    }
 </style>

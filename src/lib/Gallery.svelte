@@ -91,7 +91,7 @@
 
 <div id="gallery" bind:clientWidth={galleryWidth} style={galleryStyle}>
     {#each columns as column, columnIndex}
-        <div class="column">
+        <div class="photo-column">
             {#each column as imagePath}
                 <button
                     on:click={(event) => { if (columnCount !== 1) handleClick(imagePath, event)}}
@@ -123,15 +123,15 @@
         gap: var(--gap);
         margin: 0 var(--gap) 0;
     }
-    #gallery .column {
+    #gallery .photo-column {
         display: flex;
         flex-direction: column;
     }
-    #gallery .column * {
+    #gallery .photo-column * {
         width: 100%;
         margin-top: var(--gap);
     }
-    #gallery .column *:nth-child(1) {
+    #gallery .photo-column *:nth-child(1) {
         margin-top: 0;
     }
     

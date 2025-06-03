@@ -24,11 +24,3 @@
     </div>
 </main>
 </StarBackground>
-
-<style>
-    .column {
-        justify-content: space-between;
-        margin: auto;
-        width: 60%;
-    }
-</style>

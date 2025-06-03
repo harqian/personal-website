@@ -90,12 +90,6 @@
 </StarBackground>
 
 <style>
-    .column {
-        justify-content: space-between;
-        margin: auto;
-        width: 60%;
-    }
-    
     article {
         margin-bottom: 2rem;
     }
@@ -112,19 +106,5 @@
         flex: 1;
     }
     
-    .date {
-        opacity: 0.7;
-        font-size: 0.9rem;
-        margin-left: 1rem;
-        white-space: nowrap;
-    }
-    
-    .tags {
-        opacity: 0.7;
-        font-size: 0.9rem;
-    }
-    
-    .tag {
-        margin-right: 0.5rem;
-    }
+
 </style>
