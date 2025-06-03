@@ -8,8 +8,11 @@
   },
   "math": {
     "media": [
+      "/interests_images/math/Screenshot.png",
       "/interests_images/math/math.jpeg",
-      "/interests_images/math/math1.png"
+      "/interests_images/math/math1.png",
+      "/interests_images/math/output2.gif",
+      "/interests_images/math/smile.png"
     ],
     "index": 0
   },
@@ -23,8 +26,11 @@
   },
   "programming": {
     "media": [
+      "/interests_images/programming/Screenshot 1.png",
+      "/interests_images/programming/Screenshot 2.png",
+      "/interests_images/programming/output.gif",
+      "/interests_images/programming/output2.gif",
       "/interests_images/programming/programming.jpeg",
-      "/interests_images/programming/programming1.png",
       "/interests_images/programming/programming2.png"
     ],
     "index": 0
