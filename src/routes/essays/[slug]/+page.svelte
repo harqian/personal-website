@@ -156,6 +156,7 @@
     
     .content {
         line-height: 1.6;
+        margin-bottom: 3rem;
     }
     
     .content :global(h2) {
