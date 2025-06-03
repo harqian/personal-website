@@ -29,6 +29,8 @@
         --blue-icon-shadow: rgb(33, 150, 243);
         --red-icon-shadow: rgb(244, 67, 54);
         --default-background: linear-gradient(to bottom, #050E1F, #1A0B2E);
+        --dark-gray: #2f2f2f;
+        --light-gray: #d6d6d6;
     }
 
     /* Global styles (dark theme) */
@@ -86,5 +88,13 @@
         justify-content: space-between;
         margin: auto;
         width: 60%;
+    }
+
+    :global(.horizontal-line) {
+        border: none;
+        height: 1px;
+        background-color: var(--border-color, #ddd);
+        margin: 1rem 0 2rem 0;
+        width: 100%;
     }
 </style>

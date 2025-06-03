@@ -12,6 +12,7 @@
         <section class="section">
             <h2>app reviews</h2>
             <p>this is a list of some apps that I use or have used, and my thhoughts on them </p>
+            <hr class="horizontal-line">
         </section>
         {#each appReviews as appReview}
             {#if appReview.url.slice(0, 5) === "https"}

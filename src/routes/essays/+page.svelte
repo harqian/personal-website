@@ -69,6 +69,7 @@
     <div class="column">
         <section class="section">
             <h2>essays</h2>
+            <hr class="horizontal-line">
         </section>
         {#each essays as essay}
             <article>
@@ -106,5 +107,14 @@
         flex: 1;
     }
     
-
+    .title-row h3 a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.5s ease;
+    }
+    
+    .title-row h3 a:hover {
+        color: var(--link-color, #0066cc);
+        text-decoration: underline;
+    }
 </style>
