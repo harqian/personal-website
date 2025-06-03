@@ -2,7 +2,7 @@
     import { onMount, onDestroy } from 'svelte';
     
     // Props with defaults
-    export let backgroundColor = 'linear-gradient(to bottom, #050E1F, #1A0B2E)'; // Blue to purple gradient
+    export let backgroundColor;
     export let starCount = {
       small: 100,
       medium: 50,
@@ -229,7 +229,7 @@
     bind:this={container}
     bind:clientWidth={width}
     bind:clientHeight={height}
-    style="background: {backgroundColor};"
+    style="background: {backgroundColor || 'var(--default-background)'};"
   >
     <!-- Small stars layer -->
     <div class="star-layer" style="transform: translateY({smallStarsY}px);">

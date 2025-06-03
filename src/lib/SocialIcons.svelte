@@ -33,28 +33,28 @@
     @keyframes icon3d {
         0% {
             text-shadow:
-                5px 4px rgba(244, 67, 54, 1),
-                -5px -6px rgba(33, 150, 243, 1);
+                5px 4px var(--red-icon-shadow),
+                -5px -6px var(--blue-icon-shadow);
         }
         25% {
             text-shadow:
-                -5px -6px rgba(244, 67, 54, 1),
-                5px 4px rgba(33, 150, 243, 1);
+                -5px -6px var(--red-icon-shadow),
+                5px 4px var(--blue-icon-shadow);
         }
         50% {
             text-shadow:
-                5px -4px rgba(244, 67, 54, 1),
-                -8px 4px rgba(33, 150, 243, 1);
+                5px -4px var(--red-icon-shadow),
+                -8px 4px var(--blue-icon-shadow);
         }
         75% {
             text-shadow:
-                -8px -4px rgba(244, 67, 54, 1),
-                -5px -4px rgba(33, 150, 243, 1);
+                -8px -4px var(--red-icon-shadow),
+                -5px -4px var(--blue-icon-shadow);
         }
         100% {
             text-shadow:
-                -5px 0 rgba(244, 67, 54, 1),
-                5px -4px rgba(33, 150, 243, 1);
+                -5px 0 var(--red-icon-shadow),
+                5px -4px var(--blue-icon-shadow);
         }
     }
 

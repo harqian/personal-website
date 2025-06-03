@@ -24,6 +24,13 @@
 </svelte:head>
 
 <style>
+    :root {
+        --link-color: #4da6ff;
+        --blue-icon-shadow: rgb(33, 150, 243);
+        --red-icon-shadow: rgb(244, 67, 54);
+        --default-background: linear-gradient(to bottom, #050E1F, #1A0B2E);
+    }
+
     /* Global styles (dark theme) */
     :global(body, html) {
         background-color: #000;
@@ -35,7 +42,7 @@
     }
     
     :global(a) {
-        color: #4da6ff;
+        color: var(--link-color);
     }
 
     :global(h1) {
