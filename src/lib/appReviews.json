@@ -40,5 +40,23 @@
         "outsideLink": "▬▬",
         "url": "https://rectangleapp.com/",
         "review": "great basic window manager (all i know is full screen, split left, and split right and that covers 99% of my use cases)"
+    },
+    {
+        "text": "notes (mac default)",
+        "outsideLink": "📝",
+        "url": "n/a",
+        "review": ""
+    },    
+    {
+        "text": "bitwarden",
+        "outsideLink": "",
+        "url": "https://bitwarden.com/",
+        "review": ""
+    },    
+    {
+        "text": "reminders (mac default)",
+        "outsideLink": "⭐️",
+        "url": "n/a",
+        "review": ""
     }
 ]
