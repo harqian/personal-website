@@ -5,7 +5,7 @@ const staticDir = path.join(process.cwd(), 'static');
 const outputFile = path.join(process.cwd(), 'src/lib/interestsInfo.json');
 
 function generateImageImports() {
-  const interestsPath = path.join(staticDir, 'interests_images');
+  const interestsPath = path.join(staticDir, 'interests_media');
   const categories = fs.readdirSync(interestsPath);
   
   const imports = {};
@@ -20,7 +20,7 @@ function generateImageImports() {
     
     imports[category] = {
       "media": files.map(file => 
-      `/interests_images/${category}/${file}`
+      `/interests_media/${category}/${file}`
     ), 
       "index": 0
     }

@@ -1,51 +1,52 @@
 {
   "chess": {
     "media": [
-      "/interests_images/chess/chess.jpeg",
-      "/interests_images/chess/chess1.png"
+      "/interests_media/chess/chess.jpeg",
+      "/interests_media/chess/chess1.png"
     ],
     "index": 0
   },
   "math": {
     "media": [
-      "/interests_images/math/Screenshot.png",
-      "/interests_images/math/math.jpeg",
-      "/interests_images/math/math1.png",
-      "/interests_images/math/output2.gif",
-      "/interests_images/math/smile.png"
+      "/interests_media/math/Screenshot.png",
+      "/interests_media/math/math.jpeg",
+      "/interests_media/math/math1.png",
+      "/interests_media/math/output2.gif",
+      "/interests_media/math/smile.png"
     ],
     "index": 0
   },
   "music": {
     "media": [
-      "/interests_images/music/music.jpeg",
-      "/interests_images/music/music.png",
-      "/interests_images/music/music2.gif"
+      "/interests_media/music/music.jpeg",
+      "/interests_media/music/music.png",
+      "/interests_media/music/music2.gif"
     ],
     "index": 0
   },
   "programming": {
     "media": [
-      "/interests_images/programming/Screenshot 1.png",
-      "/interests_images/programming/Screenshot 2.png",
-      "/interests_images/programming/output.gif",
-      "/interests_images/programming/output2.gif",
-      "/interests_images/programming/programming.jpeg",
-      "/interests_images/programming/programming2.png"
+      "/interests_media/programming/Screenshot 1.png",
+      "/interests_media/programming/Screenshot 2.png",
+      "/interests_media/programming/output.gif",
+      "/interests_media/programming/output2.gif",
+      "/interests_media/programming/output3.gif",
+      "/interests_media/programming/programming.jpeg",
+      "/interests_media/programming/programming2.png"
     ],
     "index": 0
   },
   "tennis": {
     "media": [
-      "/interests_images/tennis/tennis.gif",
-      "/interests_images/tennis/tennis2.gif"
+      "/interests_media/tennis/tennis.gif",
+      "/interests_media/tennis/tennis2.gif"
     ],
     "index": 0
   },
   "ultimate frisbee": {
     "media": [
-      "/interests_images/ultimate frisbee/ultimate_frisbee.jpg",
-      "/interests_images/ultimate frisbee/ultimate_frisbee.png"
+      "/interests_media/ultimate frisbee/ultimate_frisbee.jpg",
+      "/interests_media/ultimate frisbee/ultimate_frisbee.png"
     ],
     "index": 0
   }
