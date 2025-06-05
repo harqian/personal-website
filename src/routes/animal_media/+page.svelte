@@ -3,7 +3,7 @@
     import Header from "$lib/Header.svelte"
     import StarBackground from "$lib/StarBackground.svelte"
 
-    const numImages = 23
+    const numImages = 24
     const imagePaths = []
 
     for (let i = 1; i <= numImages; i++) {
