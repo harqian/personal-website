@@ -91,8 +91,8 @@
     }
     
     .hover-image {
-        max-width: 95%;
-        max-height: 95%;
+        max-width: 100%;
+        max-height: 100%;
         border-radius: 8px;
         opacity: 0;
         position: absolute;
@@ -106,12 +106,11 @@
     
     .hover-item {
         cursor: pointer;
-        padding: 5px 0;
         transition: color 0.3s;
     }
     
     .hover-item:hover {
-        color: #64b5f6;
+        color: var(--link-color)
     }
     
     ul {
