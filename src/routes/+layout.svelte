@@ -49,6 +49,23 @@
 
     :global(h1) {
         text-align: left;
+        font-size: 2rem;
+        margin: 1.5rem 0;
+    }
+    
+    :global(h2) {
+        font-size: 1.5rem;
+        margin: 1.3rem 0;
+    }
+    
+    :global(h3) {
+        font-size: 1.25rem;
+        margin: 1.1rem 0;
+    }
+    
+    :global(h4) {
+        font-size: 1rem;
+        margin: 1rem 0;
     }
 
     :global(.photo-wrapper-button) {

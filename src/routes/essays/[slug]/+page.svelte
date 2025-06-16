@@ -115,7 +115,7 @@
             <article>
                 <header>
                     <div class="title-row">
-                        <h1>{essay.title}</h1>
+                        <h2>{essay.title}</h2>
                         <time class="date">{new Date(essay.date).toLocaleDateString()}</time>
                     </div>
                     {#if essay.tags && essay.tags.length > 0 && essay.tags[0] !== ""}
@@ -147,11 +147,6 @@
         justify-content: space-between;
         align-items: baseline;
         margin-bottom: 1rem;
-    }
-    
-    .title-row h1 {
-        margin: 0;
-        flex: 1;
     }
     
     .content {
