@@ -61,21 +61,41 @@
                 const markdownContent = frontmatterMatch[2];
                 
                 const metadata = {};
-                frontmatter.split('\n').forEach(line => {
-                    const [key, ...valueParts] = line.split(':');
-                    if (key && valueParts.length) {
-                        let value = valueParts.join(':').trim();
-                        value = value.replace(/^["']|["']$/g, '');
-                        if (value.startsWith('[') && value.endsWith(']')) {
-                            value = value.slice(1, -1).split(',').map(item => item.trim().replace(/^["']|["']$/g, ''));
-                        }
-                        if (value === 'true') value = true;
-                        if (value === 'false') value = false;
-                        metadata[key.trim()] = value;
-                    }
-                });
+                const lines = frontmatter.split('\n');
+                let currentKey = '';
                 
-                essay = metadata;
+                for (const line of lines) {
+                    const trimmedLine = line.trim();
+                    if (!trimmedLine) continue;
+                    
+                    // Check if it's a key-value pair
+                    if (trimmedLine.includes(':')) {
+                        const [key, ...valueParts] = trimmedLine.split(':');
+                        currentKey = key.trim();
+                        let value = valueParts.join(':').trim();
+                        
+                        // Remove surrounding quotes if present
+                        value = value.replace(/^["']|["']$/g, '');
+                        
+                        if (currentKey === 'published') {
+                            metadata.published = value === 'true';
+                        } else if (currentKey === 'tags') {
+                            metadata.tags = [];
+                        } else if (currentKey === 'date' || currentKey === 'edited') {
+                            metadata[currentKey] = value;
+                        }
+                    } 
+                    // Handle array items (tags with hyphens)
+                    else if (trimmedLine.startsWith('-') && currentKey === 'tags') {
+                        const tag = trimmedLine.substring(1).trim();
+                        if (!metadata.tags) metadata.tags = [];
+                        metadata.tags.push(tag);
+                    }
+                }
+                
+                // Derive title from filename
+                const title = slug.replace(/\.md$/, '').replace(/_/g, ' ');
+                essay = { ...metadata, title };
                 
                 // Process footnote definitions and convert to HTML
                 let processedContent = markdownContent.replace(/^\[\^([^\]]+)\]:\s*(.+)$/gm, (match, id, text) => {
@@ -108,6 +128,7 @@
 <main>
     <div class="column">
         <a href="/essays"><h2>back</h2></a>
+        <hr class="horizontal-line">
         
         {#if loading}
             <p>Loading...</p>
@@ -116,7 +137,12 @@
                 <header>
                     <div class="title-row">
                         <h2>{essay.title}</h2>
-                        <time class="date">{new Date(essay.date).toLocaleDateString()}</time>
+                        <time class="date">
+                            {new Date(essay.date).toLocaleDateString()}
+                            {#if essay.edited}
+                                <span class="edited">(edited {new Date(essay.edited).toLocaleDateString()})</span>
+                            {/if}
+                        </time>
                     </div>
                     {#if essay.tags && essay.tags.length > 0 && essay.tags[0] !== ""}
                         <div class="tags">
@@ -147,18 +173,15 @@
         justify-content: space-between;
         align-items: baseline;
         margin-bottom: 1rem;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
     
     .content {
         line-height: 1.6;
         margin-bottom: 3rem;
     }
-    
-    .content :global(h2) {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-    }
-    
+
     .content :global(p) {
         margin-bottom: 1rem;
     }

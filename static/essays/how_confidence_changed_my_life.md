@@ -1,7 +1,10 @@
 ---
-title: "how confidence changed my life"
 date: "2025-6-15"
-tags: ["philosophy", "improvement", "anxiety"]
+edited: "2025-6-16"
+tags:
+    - philosophy
+    - improvement
+    - anxiety   
 published: true
 ---
 

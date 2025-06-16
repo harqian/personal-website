@@ -1,7 +1,8 @@
 ---
-title: "a glimpse into consciousness"
 date: "2025-6-1"
-tags: ["philosophy", "conceptual"]
+tags: 
+    - philosophy
+    - conceptual
 published: true
 ---
 

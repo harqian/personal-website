@@ -12,6 +12,11 @@
         white-space: nowrap;
         margin-left: 1rem;
     }
+
+    :global(.edited) {
+        opacity: 0.8;
+        font-size: 0.9em;
+    }   
     
     :global(.tags) {
         display: flex;

@@ -1,7 +1,7 @@
 ---
-title: "water bottles"
 date: "2025-5-17"
-tags: ["personal"]
+tags: 
+    - personal
 published: true
 ---
 
