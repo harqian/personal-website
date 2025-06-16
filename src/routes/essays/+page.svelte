@@ -6,7 +6,8 @@
     // Add your essay filenames here (without .md extension)
     const essayFilenames = [
         "water_bottles",
-        "a_glimpse_into_consciousness"
+        "a_glimpse_into_consciousness",
+        "how_confidence_changed_my_life"
     ];
     
     let essays = [];
