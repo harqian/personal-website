@@ -15,13 +15,13 @@
         "text": "obsidian",
         "outsideLink": "🗿",
         "url": "https://obsidian.md/",
-        "review": "a great offline note taking system that is customizable, fast, and intuitive (WONDERFUL COMMUNITY PLUGINS LIKE LATEX SUITE)"
+        "review": "a great offline note taking system that is customizable, fast, and intuitive (WONDERFUL COMMUNITY PLUGINS LIKE LATEX SUITE AND OMNISEARCH)"
     },
     {
         "text": "spotify",
         "outsideLink": "😎",
         "url": "https://www.spotify.com/",
-        "review": "super chill music app"
+        "review": "super chill music app, sometimes annoying because cant use files etc but overall solid"
     },
     {
         "text": "iterm",
@@ -40,23 +40,41 @@
         "outsideLink": "▬▬",
         "url": "https://rectangleapp.com/",
         "review": "great basic window manager (all i know is full screen, split left, and split right and that covers 99% of my use cases)"
+    },    
+    {
+        "text": "bitwarden",
+        "outsideLink": "💂",
+        "url": "https://bitwarden.com/",
+        "review": "pretty good pw manager, only thing is on mobile sometimes it doesnt detect when i need to input a password (maybe its just ios messing with me to get me to switch to its manager though). everything on macos is pretty good"
     },
     {
         "text": "notes (mac default)",
         "outsideLink": "📝",
         "url": "n/a",
-        "review": ""
-    },    
-    {
-        "text": "bitwarden",
-        "outsideLink": "",
-        "url": "https://bitwarden.com/",
-        "review": ""
+        "review": "insanely underrated notes app; has good shortcuts for everything; free syncing; folders; images; search; linking to notes; the only thing i need is a strikethrough command"
     },    
     {
         "text": "reminders (mac default)",
         "outsideLink": "⭐️",
         "url": "n/a",
+        "review": "pretty good, nice that it syncs with phone"
+    },
+    {
+        "text": "cursor",
+        "outsideLink": "🖱️",
+        "url": "https://cursor.com/",
+        "review": "sometimes clunky but still works"
+    },
+    {
+        "text": "windsurf",
+        "outsideLink": "💨🌊🏄",
+        "url": "https://windsurf.com/",
+        "review": "imo better than cursor because you dont have to keep providing context, also maybe placebo or recency bias but the ai seems better"
+    },
+    {
+        "text": "mochi",
+        "outsideLink": "",
+        "url": "https://mochi.cards/",
         "review": ""
     }
 ]
