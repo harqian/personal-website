@@ -84,7 +84,8 @@
 <main>
     <div class="column">
         <section class="section">
-            <h2>essays</h2>
+            <h2>writing</h2>
+            <p>mainly essays but some other stuff also</p>
             <hr class="horizontal-line">
         </section>
         {#each essays as essay}
