@@ -3,21 +3,21 @@
     import Header from "$lib/Header.svelte"
     import StarBackground from "$lib/StarBackground.svelte"
     
-    // Add your essay filenames here (without .md extension)
-    const essayFilenames = [
+    // Add your piece filenames here (without .md extension)
+    const pieceFilenames = [
         "water_bottles",
         "a_glimpse_into_consciousness",
         "how_confidence_changed_my_life"
     ];
     
-    let essays = [];
+    let writing = [];
     
     onMount(async () => {
         try {
-            // Fetch and parse each essay's metadata
-            const essayPromises = essayFilenames.map(async (filename) => {
-                const essayResponse = await fetch(`/essays/${filename}.md`);
-                const content = await essayResponse.text();
+            // Fetch and parse each piece's metadata
+            const writingPromises = pieceFilenames.map(async (filename) => {
+                const writingResponse = await fetch(`/writing/${filename}.md`);
+                const content = await writingResponse.text();
                 
                 // Parse frontmatter
                 const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
@@ -67,13 +67,13 @@
                 return null;
             });
             
-            const allEssays = await Promise.all(essayPromises);
-            essays = allEssays
-                .filter(essay => essay && essay.published)
+            const allWriting = await Promise.all(writingPromises);
+            writing = allWriting
+                .filter(writing => writing && writing.published)
                 .sort((a, b) => new Date(b.date) - new Date(a.date));
                 
         } catch (error) {
-            console.error('Error loading essays:', error);
+            console.error('Error loading writing:', error);
         }
     });
 </script>
@@ -88,20 +88,20 @@
             <p>mainly essays but some other stuff also</p>
             <hr class="horizontal-line">
         </section>
-        {#each essays as essay}
+        {#each writing as piece}
             <article>
                 <div class="title-row">
-                    <h3><a href="/essays/{essay.filename}">{essay.title}</a></h3>
+                    <h3><a href="/writing/{piece.filename}">{piece.title}</a></h3>
                     <time class="date">
-                        {new Date(essay.date).toLocaleDateString()}
-                        {#if essay.edited}
-                            <span class="edited">(edited {new Date(essay.edited).toLocaleDateString()})</span>
+                        {new Date(piece.date).toLocaleDateString()}
+                        {#if piece.edited}
+                            <span class="edited">(edited {new Date(piece.edited).toLocaleDateString()})</span>
                         {/if}
                     </time>
                 </div>
-                {#if essay.tags && essay.tags.length > 0 && essay.tags[0] !== ""}
+                {#if piece.tags && piece.tags.length > 0 && piece.tags[0] !== ""}
                     <div class="tags">
-                        {#each essay.tags as tag}
+                        {#each piece.tags as tag}
                             <span class="tag">{tag}</span>
                         {/each}
                     </div>

@@ -5,17 +5,17 @@
     import Header from "$lib/Header.svelte"
     import StarBackground from "$lib/StarBackground.svelte"
     
-    let essay = null;
+    let piece = null;
     let content = '';
     let loading = true;
     
     onMount(async () => {
         try {
             const slug = $page.params.slug;
-            const response = await fetch(`/essays/${slug}.md`);
+            const response = await fetch(`/writing/${slug}.md`);
             
             if (!response.ok) {
-                throw new Error('Essay not found');
+                throw new Error('Piece not found');
             }
             
             const rawContent = await response.text();
@@ -95,7 +95,7 @@
                 
                 // Derive title from filename
                 const title = slug.replace(/\.md$/, '').replace(/_/g, ' ');
-                essay = { ...metadata, title };
+                piece = { ...metadata, title };
                 
                 // Process footnote definitions and convert to HTML
                 let processedContent = markdownContent.replace(/^\[\^([^\]]+)\]:\s*(.+)$/gm, (match, id, text) => {
@@ -109,7 +109,7 @@
                 content = marked.parse(processedContent);
             }
         } catch (error) {
-            console.error('Error loading essay:', error);
+            console.error('Error loading piece:', error);
         } finally {
             loading = false;
         }
@@ -127,26 +127,26 @@
 <Header />
 <main>
     <div class="column">
-        <a href="/essays"><h2>back</h2></a>
+        <a href="/writing"><h2>back</h2></a>
         <hr class="horizontal-line">
         
         {#if loading}
             <p>Loading...</p>
-        {:else if essay}
+        {:else if piece}
             <article>
                 <header>
                     <div class="title-row">
-                        <h2>{essay.title}</h2>
+                        <h2>{piece.title}</h2>
                         <time class="date">
-                            {new Date(essay.date).toLocaleDateString()}
-                            {#if essay.edited}
-                                <span class="edited">(edited {new Date(essay.edited).toLocaleDateString()})</span>
+                            {new Date(piece.date).toLocaleDateString()}
+                            {#if piece.edited}
+                                <span class="edited">(edited {new Date(piece.edited).toLocaleDateString()})</span>
                             {/if}
                         </time>
                     </div>
-                    {#if essay.tags && essay.tags.length > 0 && essay.tags[0] !== ""}
+                    {#if piece.tags && piece.tags.length > 0 && piece.tags[0] !== ""}
                         <div class="tags">
-                            {#each essay.tags as tag}
+                            {#each piece.tags as tag}
                                 <span class="tag">{tag}</span>
                             {/each}
                         </div>
@@ -157,7 +157,7 @@
                 </div>
             </article>
         {:else}
-            <p>Essay not found</p>
+            <p>Piece not found</p>
         {/if}
     </div>
 </main>
