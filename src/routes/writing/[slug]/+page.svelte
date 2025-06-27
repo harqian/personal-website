@@ -77,7 +77,9 @@
                         // Remove surrounding quotes if present
                         value = value.replace(/^["']|["']$/g, '');
                         
-                        if (currentKey === 'published') {
+                        if (currentKey === 'title') {
+                            metadata.title = value;
+                        } else if (currentKey === 'published') {
                             metadata.published = value === 'true';
                         } else if (currentKey === 'tags') {
                             metadata.tags = [];
@@ -93,9 +95,9 @@
                     }
                 }
                 
-                // Derive title from filename
-                const title = slug.replace(/\.md$/, '').replace(/_/g, ' ');
-                piece = { ...metadata, title };
+                // Use title from metadata if available, otherwise derive from filename
+                const titleFromSlug = slug.replace(/\.md$/, '').replace(/_/g, ' ');
+                piece = { ...metadata, title: metadata.title || titleFromSlug };
                 
                 // Process footnote definitions and convert to HTML
                 let processedContent = markdownContent.replace(/^\[\^([^\]]+)\]:\s*(.+)$/gm, (match, id, text) => {
@@ -135,8 +137,15 @@
         {:else if piece}
             <article>
                 <header>
-                    <div class="title-row">
-                        <h2>{piece.title}</h2>
+                    <h2 class="title">{piece.title}</h2>
+                    <div class="meta-row">
+                        {#if piece.tags && piece.tags.length > 0 && piece.tags[0] !== ""}
+                            <div class="tags">
+                                {#each piece.tags as tag}
+                                    <span class="tag">{tag}</span>
+                                {/each}
+                            </div>
+                        {/if}
                         <time class="date">
                             {new Date(piece.date).toLocaleDateString()}
                             {#if piece.edited}
@@ -144,13 +153,6 @@
                             {/if}
                         </time>
                     </div>
-                    {#if piece.tags && piece.tags.length > 0 && piece.tags[0] !== ""}
-                        <div class="tags">
-                            {#each piece.tags as tag}
-                                <span class="tag">{tag}</span>
-                            {/each}
-                        </div>
-                    {/if}
                 </header>
                 <div class="content">
                     {@html content}
@@ -168,13 +170,17 @@
         margin-bottom: 2rem;
     }
     
-    .title-row {
+    .title {
+        margin-bottom: 0.5rem;
+    }
+    
+    .meta-row {
         display: flex;
         justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 1rem;
-        gap: 1rem;
-        flex-wrap: wrap;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        color: #666;
+        font-size: 0.9rem;
     }
     
     .content {

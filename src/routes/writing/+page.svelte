@@ -7,7 +7,8 @@
     const pieceFilenames = [
         "water_bottles",
         "a_glimpse_into_consciousness",
-        "how_confidence_changed_my_life"
+        "how_confidence_changed_my_life",
+        "addiction"
     ];
     
     let writing = [];
@@ -42,7 +43,9 @@
                             // Remove surrounding quotes if present
                             value = value.replace(/^["']|["']$/g, '');
                             
-                            if (currentKey === 'published') {
+                            if (currentKey === 'title') {
+                                metadata.title = value;
+                            } else if (currentKey === 'published') {
                                 metadata.published = value === 'true';
                             } else if (currentKey === 'tags') {
                                 metadata.tags = [];
@@ -58,9 +61,11 @@
                         }
                     }
                     
+                    // Use title from metadata if available, otherwise derive from filename
+                    const titleFromFilename = filename.replace(/\.md$/, '').replace(/_/g, ' ');
                     return {
                         filename,
-                        title: filename.replace(/\.md$/, '').replace(/_/g, ' '),
+                        title: metadata.title || titleFromFilename,
                         ...metadata
                     };
                 }
@@ -92,6 +97,15 @@
             <article>
                 <div class="title-row">
                     <h3><a href="/writing/{piece.filename}">{piece.title}</a></h3>
+                </div>
+                <div class="meta-row">
+                    {#if piece.tags && piece.tags.length > 0 && piece.tags[0] !== ""}
+                        <div class="tags">
+                            {#each piece.tags as tag}
+                                <span class="tag">{tag}</span>
+                            {/each}
+                        </div>
+                    {/if}
                     <time class="date">
                         {new Date(piece.date).toLocaleDateString()}
                         {#if piece.edited}
@@ -99,13 +113,6 @@
                         {/if}
                     </time>
                 </div>
-                {#if piece.tags && piece.tags.length > 0 && piece.tags[0] !== ""}
-                    <div class="tags">
-                        {#each piece.tags as tag}
-                            <span class="tag">{tag}</span>
-                        {/each}
-                    </div>
-                {/if}
             </article>
         {/each}
     </div>
@@ -115,6 +122,12 @@
 <style>
     article {
         margin-bottom: 2rem;
+    }
+    
+    .meta-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     
     .title-row {
