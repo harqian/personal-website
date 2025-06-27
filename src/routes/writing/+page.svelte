@@ -90,7 +90,7 @@
     <div class="column">
         <section class="section">
             <h2>writing</h2>
-            <p>mainly essays but some other stuff also</p>
+            <p>mainly essays but some other stuff also (look out for essay on reflection in the next month!)</p>
             <hr class="horizontal-line">
         </section>
         {#each writing as piece}
