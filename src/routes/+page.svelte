@@ -66,6 +66,7 @@
         display: flex;
         width: 80%;
         margin: auto;
+        transition: width 0.3s ease-out;
     }
     
     .left-column {
