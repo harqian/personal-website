@@ -33,6 +33,10 @@
         --light-gray: #d6d6d6;
     }
 
+    :global(*) {
+        transition: width 0.3s ease-out;
+    }
+
     /* Global styles (dark theme) */
     :global(body, html) {
         background-color: #000;
@@ -105,6 +109,12 @@
         justify-content: space-between;
         margin: auto;
         width: 60%;
+    }
+
+    @media (max-width: 768px) {
+        :global(.column) {
+            width: 90%;
+        }
     }
 
     :global(.horizontal-line) {

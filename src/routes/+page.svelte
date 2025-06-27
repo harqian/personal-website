@@ -64,13 +64,13 @@
 <style>
     .two-column-layout {
         display: flex;
-        width: 85%;
+        width: 80%;
         margin: auto;
     }
     
     .left-column {
         flex: 1;
-        padding-left: 3rem;
+        padding-right: 1rem;
     }
     
     .right-column {
@@ -109,8 +109,12 @@
         transition: color 0.3s;
     }
     
+    .text-wrapper-button {
+        text-decoration: underline;
+    }
+    
     .hover-item:hover {
-        color: var(--link-color)
+        color: var(--link-color);
     }
     
     ul {
@@ -126,18 +130,33 @@
         margin-bottom: 1.5rem;
     }
     
+    @media (max-width: 800px) {
+        .two-column-layout {
+            width: 90%;
+        }
+    }
+    
     /* Media queries for responsiveness */
-    @media (max-width: 768px) {
+    @media (max-width: 680px) {
         .two-column-layout {
             flex-direction: column;
+            gap: 2rem;
         }
         
         .left-column {
-            max-width: 100%;
+            width: 100%;
+            padding-right: 0;
+            order: 1;
         }
         
         .right-column {
+            width: 100%;
             min-height: 300px;
+            order: 2;
+        }
+        
+        .image-container {
+            min-height: 250px;
         }
     }
 </style>
