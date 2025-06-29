@@ -89,7 +89,7 @@
 <main>
     <div class="column">
         <section class="section">
-            <h2>writing (some poetry <a href="https://allpoetry.com/Moonflower5">here</a> and <a href="https://medium.com/@harqian">here</a>)</h2>
+            <h2>writing (some poetry <a href="https://medium.com/@harqian">here</a>)</h2>
             <p>mainly essays but some other stuff also (look out for essay on reflection in the next month!)</p>
             <hr class="horizontal-line">
         </section>

@@ -30,7 +30,7 @@ Strategies
 
 * Game plan  
   * **Central idea**: dont let addiction distract you from goals  
-* Strats for immunity (underlined bc very good)  
+* Strats for immunity (very good)  
   * Learn how to notice addiction and resist it just in your brain  
   * Important because addictive things are ever present  
   * *Track use*  
