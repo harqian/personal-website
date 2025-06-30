@@ -1,0 +1,74 @@
+{
+    "sections": [
+        {
+            "id": "videos",
+            "title": "🎥 Video Production",
+            "description": "Creative video projects and productions.",
+            "projects": [
+                {
+                    "title": "Reinforcement Learning Intuition",
+                    "description": "An educational video explaining the core concepts of reinforcement learning with intuitive visualizations and examples.",
+                    "url": "https://youtu.be/epVaD4IdphU",
+                    "start_date": "2024-04-01",
+                    "end_date": "2024-06-01"
+                },
+                {
+                    "title": "Induction with manim",
+                    "description": "A mathematical explanation of mathematical induction, animated using the manim library to visualize complex concepts.",
+                    "url": "https://youtu.be/yOLwNqhFLRs",
+                    "start_date": "2025-02-01",
+                    "end_date": "2025-04-01"
+                },
+                {
+                    "title": "5 (+1) ways to calculate Pi",
+                    "description": "Exploring different mathematical methods to approximate the value of Pi, from ancient algorithms to modern computational techniques.",
+                    "url": "https://youtu.be/b1OLOIsNNgc",
+                    "start_date": "2024-02-01",
+                    "end_date": "2024-05-01"
+                }
+            ]
+        },
+        {
+            "id": "music",
+            "title": "🎵 Music",
+            "description": "Music performances and creations.",
+            "projects": [
+                {
+                    "title": "Changing All My Colors",
+                    "description": "My first AI Generated song.",
+                    "url": "https://youtu.be/e0zsOTzF1cs",
+                    "start_date": "2025-06-03",
+                    "end_date": "2025-06-04"
+                },
+                {
+                    "title": "Best Part",
+                    "description": "Best Part by Daniel Caesar and H.E.R. performed on ukulele",
+                    "url": "https://youtu.be/rFVmHW8N4G0",
+                    "start_date": "2025-05-15",
+                    "end_date": "2025-06-01"
+                },
+                {
+                    "title": "Piano Culmination",
+                    "description": "A culmination of 1.3 years of piano practice, featuring a mix of original compositions and covers.",
+                    "url": "https://youtu.be/wDX-dO3Enwk",
+                    "start_date": "2024-01-01",
+                    "end_date": "2025-04-20"
+                },
+                {
+                    "title": "The Edge of Chaos",
+                    "description": "ableton generated song 2",
+                    "url": "https://youtu.be/l9WB_DnRYkU",
+                    "start_date": "2024-05-01",
+                    "end_date": "2025-05-21"
+                },
+                {
+                    "title": "contemplation",
+                    "description": "ableton generated song 1",
+                    "url": "https://youtu.be/OxF-wFsmaBY",
+                    "start_date": "2025-05-01",
+                    "end_date": "2025-05-20"
+                }
+            ]
+        }
+    ]
+}

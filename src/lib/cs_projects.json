@@ -1,0 +1,163 @@
+{
+    "sections": [
+        {
+            "id": "ml",
+            "title": "🧠 Machine Learning",
+            "description": "Machine learning projects and experiments.",
+            "projects": [
+                {
+                    "title": "RL Snake",
+                    "description": "Snake game AI trained with Q-Learning, Hamiltonian Paths, Deep Q Network, PPO, and A2C.",
+                    "url": "https://github.com/Moonflower2022/snake-ai",
+                    "links": [
+                        {
+                            "url": "https://github.com/Moonflower2022/snakeAI-py",
+                            "label": "Other GitHub",
+                            "icon": "fab fa-github"
+                        },
+                        {
+                            "url": "https://docs.google.com/document/d/1Nt2EpKpg9MtxD8eWTwKgDtKhm6kF_hJUKyHeRVNKv58/edit?tab=t.0#heading=h.v14wslm6aizk",
+                            "label": "Write-up",
+                            "icon": "fa fa-file"
+                        }
+                    ],
+                    "start_date": "2023-9-01",
+                    "end_date": "2024-4-01"
+                },
+                {
+                    "title": "Sketch Classifier",
+                    "description": "Image classification for Quick, Draw! dataset using CNNs.",
+                    "url": "https://github.com/Moonflower2022/the-doodler-classification",
+                    "start_date": "2024-9-10",
+                    "end_date": "2024-9-20"
+                },
+                {
+                    "title": "Sketch Generator",
+                    "description": "Generating drawings using an RNN VAE with Gaussian Mixture Models.",
+                    "url": "https://github.com/Moonflower2022/the-doodler-generation",
+                    "start_date": "2024-12-01",
+                    "end_date": "2025-04-01"
+                },
+                {
+                    "title": "Text Generation",
+                    "description": "Text generation models and experiments using RNNs and markov chains.",
+                    "url": "https://github.com/Moonflower2022/text-generation",
+                    "start_date": "2024-08-01",
+                    "end_date": "2024-09-01"
+                }
+            ]
+        },
+        {
+            "id": "bots",
+            "title": "🤖 Bots",
+            "description": "A collection of game-playing AI bots I've developed.",
+            "projects": [
+                {
+                    "title": "Chess Bot",
+                    "description": "A bot that plays chess using the minimax algorithm with alpha-beta pruning.",
+                    "url": "https://github.com/Moonflower2022/chessAI-js",
+                    "start_date": "2022-11-1",
+                    "end_date": "2023-5-1",
+                    "links": [
+                        {
+                            "url": "https://moonflower2022.github.io/chessAI-js/",
+                            "label": "Play Demo",
+                            "icon": "fas fa-gamepad"
+                        }
+                    ]
+                },
+                {
+                    "title": "Hex Bot",
+                    "description": "A bot that plays the game of Hex using Monte Carlo Tree Search.",
+                    "url": "https://github.com/Moonflower2022/hex-bot",
+                    "start_date": "2023-03-01",
+                    "end_date": "2023-03-22",
+                    "links": [
+                        {
+                            "url": "https://moonflower2022.github.io/hex-bot/",
+                            "label": "Play Demo",
+                            "icon": "fas fa-gamepad"
+                        }
+                    ]
+                },
+                {
+                    "title": "Connect 4 Bot",
+                    "description": "A bot that plays Connect 4 using the minimax algorithm.",
+                    "url": "https://github.com/Moonflower2022/connect4-general",
+                    "start_date": "2024-12-01",
+                    "end_date": "2025-01-01",
+                    "links": [
+                        {
+                            "url": "https://moonflower2022.github.io/connect4-general/",
+                            "label": "Play Demo",
+                            "icon": "fas fa-gamepad"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "websites",
+            "title": "🌐 Websites",
+            "description": "Web development projects and personal websites.",
+            "projects": [
+                {
+                    "title": "Personal Website",
+                    "description": "My personal website and portfolio.",
+                    "url": "https://github.com/Moonflower2022/personal-website",
+                    "start_date": "2025-04-01",
+                    "end_date": "today",
+                    "links": [
+                        {
+                            "url": "/",
+                            "label": "View Site",
+                            "icon": "fas fa-external-link-alt"
+                        }
+                    ]
+                },
+                {
+                    "title": "Color Canvas",
+                    "description": "Interactive color canvas web application.",
+                    "url": "https://github.com/Moonflower2022/color-canvas",
+                    "start_date": "2024-03-01",
+                    "end_date": "2024-03-01",
+                    "links": [
+                        {
+                            "url": "https://moonflower2022.github.io/color-canvas/",
+                            "label": "Try It Out",
+                            "icon": "fas fa-paint-brush"
+                        }
+                    ]
+                },
+                {
+                    "title": "Punctured Go",
+                    "description": "A variation of the game of Go with punctured boards.",
+                    "url": "https://github.com/Moonflower2022/punctured-go",
+                    "start_date": "2024-02-06",
+                    "end_date": "2024-02-06",
+                    "links": [
+                        {
+                            "url": "https://punctured-go125.web.app/",
+                            "label": "Play Game",
+                            "icon": "fas fa-gamepad"
+                        }
+                    ]
+                },
+                {
+                    "title": "Assert",
+                    "description": "A website to poll opinions and show results in real-time.",
+                    "url": "https://github.com/Moonflower2022/assert",
+                    "start_date": "2024-02-06",
+                    "end_date": "2024-02-06",
+                    "links": [
+                        {
+                            "url": "https://curious-pondering.web.app/",
+                            "label": "Try It Out",
+                            "icon": "fas fa-poll"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

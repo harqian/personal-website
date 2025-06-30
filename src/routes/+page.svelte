@@ -39,11 +39,13 @@
                 </ul>
                 <p>please let me know at my email if anything is broken / looks weird!</p>
             </section>
-            <h2><a href="resume.pdf" target="_blank">resume</a></h2>
+            <h2><a href="/writing">writing</a></h2>
             <h2><a href="/photo_gallery">photos</a></h2>
             <h2><a href="/animal_media">animal media</a></h2>
+            <h2><a href="/cs_projects">cs projects</a></h2>
+            <h2><a href="/other_projects">other projects</a></h2>
             <h2><a href="/app_reviews">app reviews</a></h2>
-            <h2><a href="/writing">writing</a></h2>
+            <h2><a href="resume.pdf" target="_blank">outdated resume</a></h2>
         </div>
         
         <div class="right-column">
