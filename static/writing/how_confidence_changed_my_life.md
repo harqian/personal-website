@@ -2,6 +2,7 @@
 date: "2025-6-15"
 edited: "2025-6-16"
 tags: 
+    - personal
     - philosophy
     - improvement
     - anxiety
@@ -110,7 +111,7 @@ Many times when I am doubting myself, I find that the fears are mostly irrationa
 
 ### YOLO
 
-This is a strategy I have used countless times in my life. I like to be decisive for the sake of efficiency, and many times I just say “whatever” and do something potentially embarrassing. For me, it's motivated by the fact that past mistakes have not really been that bad, and the fact that experiencing different things is a good thing to do. In fact, I think it's exceedingly important —just as important as learning or growing.[^27] This is also what I use to push myself through exercises or running hard during sports.[^28] If you are wondering how this is a strategy at all, the key idea is to let go of your fears for *one moment*, and in that moment make a decisive decision to do something.
+This is a strategy I have used countless times in my life. I like to be decisive for the sake of efficiency, and many times I just say “whatever” and do something potentially embarrassing. For me, it's motivated by the fact that past mistakes have not really been that bad, and the fact that experiencing different things is a good thing to do. In fact, I think it's exceedingly important—just as important as learning or growing.[^27] This is also what I use to push myself through exercises or running hard during sports.[^28] If you are wondering how this is a strategy at all, the key idea is to let go of your fears for *one moment*, and in that moment make a decisive decision to do something.
 
 ### Start small
 
