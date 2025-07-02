@@ -263,4 +263,13 @@
     .content :global(.footnote-text a) {
         color: var(--link-color, #0066cc);
     }
+    
+    /* Responsive images */
+    .content :global(img) {
+        display: block;
+        margin: 1.5rem auto;
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
 </style>
