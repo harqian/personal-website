@@ -92,7 +92,7 @@
     <div class="column">
         <section class="section">
             <h2>poetry</h2>
-            <p>i dont promise any schedule; started because whacky friend encourage me; having lots of fun!</p>
+            <p>i dont promise any schedule; started because whacky friend encouraged me; having lots of fun!</p>
             <hr class="horizontal-line">
         </section>
         {#each poetry as piece}
