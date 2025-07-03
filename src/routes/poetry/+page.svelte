@@ -5,20 +5,22 @@
     
     // Add your piece filenames here (without .md extension)
     const pieceFilenames = [
-        "water_bottles",
-        "a_glimpse_into_consciousness",
-        "how_confidence_changed_my_life",
-        "addiction"
+        "new_camp",
+        "ambition",
+        "streams_and_salmon",
+        "embrace_the_crazy",
+        "multitasking_for_singletaskers",
+        "how_to_reach_flow_state"
     ];
     
-    let writing = [];
+    let poetry = [];
     
     onMount(async () => {
         try {
             // Fetch and parse each piece's metadata
-            const writingPromises = pieceFilenames.map(async (filename) => {
-                const writingResponse = await fetch(`/writing/${filename}.md`);
-                const content = await writingResponse.text();
+            const poetryPromises = pieceFilenames.map(async (filename) => {
+                const poetryResponse = await fetch(`/poetry/${filename}.md`);
+                const content = await poetryResponse.text();
                 
                 // Parse frontmatter
                 const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
@@ -72,13 +74,13 @@
                 return null;
             });
             
-            const allWriting = await Promise.all(writingPromises);
-            writing = allWriting
-                .filter(writing => writing && writing.published)
+            const allPoetry = await Promise.all(poetryPromises);
+            poetry = allPoetry
+                .filter(poetry => poetry && poetry.published)
                 .sort((a, b) => new Date(b.date) - new Date(a.date));
                 
         } catch (error) {
-            console.error('Error loading writing:', error);
+            console.error('Error loading poetry:', error);
         }
     });
 </script>
@@ -89,14 +91,14 @@
 <main>
     <div class="column">
         <section class="section">
-            <h2>writing</h2>
-            <p>mainly essays but some other stuff also (look out for essay on reflection in the next month!)</p>
+            <h2>poetry</h2>
+            <p>i dont promise any schedule; started because whacky friend encourage me; having lots of fun!</p>
             <hr class="horizontal-line">
         </section>
-        {#each writing as piece}
+        {#each poetry as piece}
             <article>
                 <div class="title-row">
-                    <h3><a href="/writing/{piece.filename}">{piece.title}</a></h3>
+                    <h3><a href="/poetry/{piece.filename}">{piece.title}</a></h3>
                 </div>
                 <div class="meta-row">
                     {#if piece.tags && piece.tags.length > 0 && piece.tags[0] !== ""}

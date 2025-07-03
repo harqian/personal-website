@@ -1,0 +1,37 @@
+<slot />
+
+<style>
+    :global(.date) {
+        color: white;
+        font-size: 0.9em;
+        white-space: nowrap;
+        margin-left: 1rem;
+    }
+
+    :global(.edited) {
+        opacity: 0.8;
+        font-size: 0.9em;
+    }
+
+    :global(.tags) {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    :global(.tag) {
+        background: white;
+        color: black;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.8em;
+        white-space: nowrap;
+    }
+
+    :global(.column) {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+</style>
