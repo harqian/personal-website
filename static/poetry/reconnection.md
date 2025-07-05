@@ -15,7 +15,7 @@ A gap like an uncrossable chasm—
 the cliffs slowly and magically moving closer.
 A shaky bridge, formed through childhood innocence and a want for connection
 collapsing after years of neglect
-being rebuilt with trust and sincerity
+being rebuilt with trust and sincerity.
 
 Reminiscing; 
 a beautiful painting seen from afar
