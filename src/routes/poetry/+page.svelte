@@ -10,7 +10,8 @@
         "streams_and_salmon",
         "embrace_the_crazy",
         "multitasking_for_singletaskers",
-        "how_to_reach_flow_state"
+        "how_to_reach_flow_state",
+        "reconnection"
     ];
     
     let poetry = [];
