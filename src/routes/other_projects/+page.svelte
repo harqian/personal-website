@@ -1,7 +1,7 @@
 <script>
     import Header from "$lib/Header.svelte"
     import StarBackground from "$lib/StarBackground.svelte"
-    import projects from "$lib/other_projects.json"
+    import projects from "$lib/otherProjects.json"
     
     // Sort projects within each section by end_date in descending order
     const sortedProjects = {
