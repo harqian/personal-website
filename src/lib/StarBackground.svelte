@@ -3,23 +3,44 @@
     
     // Props with defaults
     export let backgroundColor;
-    export let starCount = {
+    export let starsPerScreen = {
+      small: 80,    // per 1000px of height
+      medium: 40,   // per 1000px of height
+      large: 16     // per 1000px of height
+    };
+
+    let starSize = {
+      small: [2, 3],
+      medium: [3, 4],
+      large: [4, 5]
+    };
+
+    let starBaseSpeed = [0, 2];
+
+    let starOpacity = {
+      small: [0.1, 0.5],
+      medium: [0.5, 0.8],
+      large: [0.8, 1]
+    };
+    
+    // Will be calculated based on page height
+    let starCount = {
       small: 100,
       medium: 50,
       large: 20
     };
     export let parallaxSpeed = {
-      small: 0.05,
-      medium: 0.1,
-      large: 0.2
+      small: 0.2,
+      medium: 0.4,
+      large: 0.8
     };
     export let starMovementSpeed = {
-      small: 0.024,
-      medium: 0.014,
-      large: 0.006
+      small: 0.48,
+      medium: 0.28,
+      large: 0.12
     };
     export let directionChangeFrequency = { // per frame
-      small: 0.01,  
+      small: 0.001,  
       medium: 0.005,
       large: 0.002  
     };
@@ -53,7 +74,7 @@
     }
     
     // Create a new angle with bias toward the center
-    function newAngleTowardCenter(x, y, centerBias = 0.7) {
+    function newAngleTowardCenterAndCurrentDirection(x, y, currentAngle, centerBias = 0.05, currentDirectionBias = 0.7) {
       // Calculate angle to center
       const dx = centerX - x;
       const dy = centerY - y;
@@ -64,7 +85,7 @@
       
       // Mix between random angle and angle toward center
       // Higher centerBias means more tendency toward center
-      return angleToCenter * centerBias + randomAngle * (1 - centerBias);
+      return angleToCenter * centerBias + randomAngle * (1 - centerBias - currentDirectionBias) + currentAngle * currentDirectionBias;
     }
     
     // Generate stars for each layer
@@ -82,10 +103,10 @@
           return {
             x,
             y,
-            size: random(1, 1.5),
-            opacity: random(0.1, 0.5),
-            speed: random(0.7, 2.0),
-            angle: newAngleTowardCenter(x, y, 0.3), // Small bias to center
+            size: random(starSize.small[0], starSize.small[1]),
+            opacity: random(starOpacity.small[0], starOpacity.small[1]),
+            speed: random(starBaseSpeed[0], starBaseSpeed[1]),
+            angle: newAngleTowardCenterAndCurrentDirection(x, y, 0, 0, 0), // Small bias to center
             changeDirectionCounter: 0
           };
         }),
@@ -95,10 +116,10 @@
           return {
             x,
             y,
-            size: random(1.5, 2.5),
-            opacity: random(0.5, 0.8),
-            speed: random(0.5, 1.2),
-            angle: newAngleTowardCenter(x, y, 0.5), // Medium bias to center
+            size: random(starSize.medium[0], starSize.medium[1]),
+            opacity: random(starOpacity.medium[0], starOpacity.medium[1]),
+            speed: random(starBaseSpeed[0], starBaseSpeed[1]),
+            angle: newAngleTowardCenterAndCurrentDirection(x, y, 0, 0, 0), // Medium bias to center
             changeDirectionCounter: 0
           };
         }),
@@ -108,10 +129,10 @@
           return {
             x,
             y,
-            size: random(2.5, 4),
-            opacity: random(0.8, 1),
-            speed: random(0.3, 0.8),
-            angle: newAngleTowardCenter(x, y, 0.7), // Strong bias to center
+            size: random(starSize.large[0], starSize.large[1]),
+            opacity: random(starOpacity.large[0], starOpacity.large[1]),
+            speed: random(starBaseSpeed[0], starBaseSpeed[1]),
+            angle: newAngleTowardCenterAndCurrentDirection(x, y, 0, 0, 0), // Strong bias to center
             twinkleSpeed: random(0.01, 0.05),
             changeDirectionCounter: 0
           };
@@ -131,7 +152,7 @@
       stars.small = stars.small.map(star => {
         // Occasionally change direction
         if (Math.random() < directionChangeFrequency.small) {
-          star.angle = newAngleTowardCenter(star.x, star.y, 0.3);
+          star.angle = newAngleTowardCenterAndCurrentDirection(star.x, star.y, star.angle);
         }
         
         let x = star.x + Math.cos(star.angle) * star.speed * starMovementSpeed.small;
@@ -150,7 +171,7 @@
       stars.medium = stars.medium.map(star => {
         // Occasionally change direction
         if (Math.random() < directionChangeFrequency.medium) {
-          star.angle = newAngleTowardCenter(star.x, star.y, 0.5);
+          star.angle = newAngleTowardCenterAndCurrentDirection(star.x, star.y, star.angle);
         }
         
         let x = star.x + Math.cos(star.angle) * star.speed * starMovementSpeed.medium;
@@ -169,7 +190,7 @@
       stars.large = stars.large.map(star => {
         // Occasionally change direction
         if (Math.random() < directionChangeFrequency.large) {
-          star.angle = newAngleTowardCenter(star.x, star.y, 0.7);
+          star.angle = newAngleTowardCenterAndCurrentDirection(star.x, star.y, star.angle);
         }
         
         let x = star.x + Math.cos(star.angle) * star.speed * starMovementSpeed.large;
@@ -191,14 +212,50 @@
       animationFrameId = requestAnimationFrame(animateStars);
     }
     
+    function updateStarCount() {
+      const pageHeight = Math.max(
+        document.body.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.clientHeight,
+        document.documentElement.scrollHeight,
+        document.documentElement.offsetHeight
+      );
+      
+      // Calculate stars based on page height (per 1000px of height)
+      const heightFactor = pageHeight / 1000;
+      
+      starCount = {
+        small: Math.ceil(starsPerScreen.small * heightFactor),
+        medium: Math.ceil(starsPerScreen.medium * heightFactor),
+        large: Math.ceil(starsPerScreen.large * heightFactor)
+      };
+      
+      if (mounted) {
+        generateStars();
+      }
+    }
+    
+    let resizeObserver;
+    
     onMount(() => {
       mounted = true;
       window.addEventListener('scroll', handleScroll);
-      generateStars();
+      
+      // Initialize star count and set up resize observer
+      updateStarCount();
+      
+      // Observe body for size changes
+      resizeObserver = new ResizeObserver(updateStarCount);
+      resizeObserver.observe(document.body);
+      
+      // Start animation after initial setup
       animationFrameId = requestAnimationFrame(animateStars);
       
       return () => {
         window.removeEventListener('scroll', handleScroll);
+        if (resizeObserver) {
+          resizeObserver.disconnect();
+        }
         if (animationFrameId) {
           cancelAnimationFrame(animationFrameId);
         }
@@ -213,7 +270,7 @@
     
     // Re-generate stars when dimensions change
     $: if (mounted && width && height) {
-      generateStars();
+      updateStarCount();
     }
     
     // Calculate parallax positions for each layer
