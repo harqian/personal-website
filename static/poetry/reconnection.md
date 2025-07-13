@@ -31,4 +31,4 @@ a sharper view of an unclear past that
 uncovers treasure troves of understanding.
 
 Grateful for the chasm
-that taught me how to build bridges
+that taught me how to build bridges.
