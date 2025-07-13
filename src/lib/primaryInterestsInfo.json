@@ -1,11 +1,4 @@
 {
-  "chess": {
-    "media": [
-      "/interests_media/chess/chess.jpeg",
-      "/interests_media/chess/chess1.png"
-    ],
-    "index": 0
-  },
   "math": {
     "media": [
       "/interests_media/math/Screenshot.png",
@@ -13,14 +6,6 @@
       "/interests_media/math/math1.png",
       "/interests_media/math/output2.gif",
       "/interests_media/math/smile.png"
-    ],
-    "index": 0
-  },
-  "music": {
-    "media": [
-      "/interests_media/music/music.jpeg",
-      "/interests_media/music/music.png",
-      "/interests_media/music/music2.gif"
     ],
     "index": 0
   },

@@ -1,0 +1,17 @@
+{
+  "chess": {
+    "media": [
+      "/secondary_interests_media/chess/chess.jpeg",
+      "/secondary_interests_media/chess/chess1.png"
+    ],
+    "index": 0
+  },
+  "music": {
+    "media": [
+      "/secondary_interests_media/music/music.jpeg",
+      "/secondary_interests_media/music/music.png",
+      "/secondary_interests_media/music/music2.gif"
+    ],
+    "index": 0
+  }
+}

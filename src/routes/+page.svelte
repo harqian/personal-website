@@ -1,17 +1,27 @@
 <script>
-    import interestsInfo from "$lib/interestsInfo.json";
+    import primaryInterestsInfo from "$lib/primaryInterestsInfo.json";
+    import secondaryInterestsInfo from "$lib/secondaryInterestsInfo.json";
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
     
     let hoveredInterest = null;
 
-    function handleHover(interest) {
+    function handlePrimaryHover(interest) {
         hoveredInterest = interest;
-        interestsInfo[interest].index = (interestsInfo[interest].index + 1) % interestsInfo[interest].media.length
+        primaryInterestsInfo[interest].index = (primaryInterestsInfo[interest].index + 1) % primaryInterestsInfo[interest].media.length
     }
 
-    function handleClick(interest) {
-        interestsInfo[interest].index = (interestsInfo[interest].index + 1) % interestsInfo[interest].media.length
+    function handleSecondaryHover(interest) {
+        hoveredInterest = interest;
+        secondaryInterestsInfo[interest].index = (secondaryInterestsInfo[interest].index + 1) % secondaryInterestsInfo[interest].media.length
+    }
+
+    function handlePrimaryClick(interest) {
+        primaryInterestsInfo[interest].index = (primaryInterestsInfo[interest].index + 1) % primaryInterestsInfo[interest].media.length
+    }
+
+    function handleSecondaryClick(interest) {
+        secondaryInterestsInfo[interest].index = (secondaryInterestsInfo[interest].index + 1) % secondaryInterestsInfo[interest].media.length
     }
 </script>
 
@@ -21,16 +31,32 @@
         <div class="left-column">
             <section class="section">
                 <h2>about</h2>
-                <p>I am a student that loves</p>
+                <p>I am a student that likes</p>
                 <ul>
-                    {#each Object.entries(interestsInfo) as [interest, info]}
+                    {#each Object.entries(primaryInterestsInfo) as [interest, info]}
                     <li 
                         class="hover-item"
-                        on:mouseenter={() => handleHover(interest)}
+                        on:mouseenter={() => handlePrimaryHover(interest)}
                     >
                         <button
                             class="text-wrapper-button"
-                            on:click={() => handleClick(interest)}
+                            on:click={() => handlePrimaryClick(interest)}
+                        >
+                            {interest}
+                        </button>
+                    </li>
+                    {/each}
+                </ul>
+                <p>and also</p>
+                <ul>
+                    {#each Object.entries(secondaryInterestsInfo) as [interest, info]}
+                    <li 
+                        class="hover-item"
+                        on:mouseenter={() => handleSecondaryHover(interest)}
+                    >
+                        <button
+                            class="text-wrapper-button"
+                            on:click={() => handleSecondaryClick(interest)}
                         >
                             {interest}
                         </button>
@@ -51,7 +77,7 @@
         
         <div class="right-column">
             <div class="image-container">
-                {#each Object.entries(interestsInfo) as [interest, info]}
+                {#each Object.entries(primaryInterestsInfo).concat(Object.entries(secondaryInterestsInfo)) as [interest, info]}
                     <img 
                         src={info.media[info.index] || `/api/placeholder/400/300`} 
                         alt="{interest} media"
