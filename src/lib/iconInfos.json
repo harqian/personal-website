@@ -10,6 +10,11 @@
         "description": "youtube link"
     },
     {
+        "font_awesome_tag": "fa-brands fa-discord",
+        "href": "https://www.google.com/search?q=astronomicalflower",
+        "description": "discord username"
+    },
+    {
         "font_awesome_tag": "fa fa-github",
         "href": "https://github.com/Moonflower2022",
         "description": "github link"
