@@ -27,11 +27,16 @@
 
 <StarBackground>
     <Header />
+    <div class="column">
+        <h2>about</h2>
+        <hr class="horizontal-line" />
+        <p>im a student that loves learning, exploring, and reflecting</p>
+        <p>i think talking to new people is incredibly valuable; please hit me up at my email or discord if you want to chat about anything! i promise it will be a fun time.</p>
+    </div>
     <div class="two-column-layout">
         <div class="left-column">
             <section class="section">
-                <h2>about</h2>
-                <p>I am a student that likes</p>
+                <p>activities</p>
                 <ul>
                     {#each Object.entries(primaryInterestsInfo) as [interest, info]}
                     <li 
@@ -63,16 +68,7 @@
                     </li>
                     {/each}
                 </ul>
-                <p>please let me know at my email if anything is broken / looks weird!</p>
             </section>
-            <h2><a href="/writing">writing</a></h2>
-            <h2><a href="/poetry">poetry</a></h2>
-            <h2><a href="/cs_projects">cs projects</a></h2>
-            <h2><a href="/other_projects">other projects</a></h2>
-            <h2><a href="/photo_gallery">photos</a></h2>
-            <h2><a href="/animal_media">animal media</a></h2>
-            <h2><a href="/app_reviews">app reviews</a></h2>
-            <h2><a href="resume.pdf" target="_blank">outdated resume</a></h2>
         </div>
         
         <div class="right-column">
@@ -93,14 +89,14 @@
 <style>
     .two-column-layout {
         display: flex;
-        width: 80%;
-        margin: auto;
+        width: 60%;
+        margin: 0 auto;
         transition: width 0.3s ease-out;
     }
     
     .left-column {
-        flex: 1;
-        padding-right: 1rem;
+        flex: 0 0 auto;
+        min-width: 100px;
     }
     
     .right-column {
@@ -160,33 +156,9 @@
         margin-bottom: 1.5rem;
     }
     
-    @media (max-width: 800px) {
+    @media (max-width: 768px) {
         .two-column-layout {
             width: 90%;
-        }
-    }
-    
-    /* Media queries for responsiveness */
-    @media (max-width: 680px) {
-        .two-column-layout {
-            flex-direction: column;
-            gap: 2rem;
-        }
-        
-        .left-column {
-            width: 100%;
-            padding-right: 0;
-            order: 1;
-        }
-        
-        .right-column {
-            width: 100%;
-            min-height: 300px;
-            order: 2;
-        }
-        
-        .image-container {
-            min-height: 250px;
         }
     }
 </style>

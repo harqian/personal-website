@@ -28,10 +28,4 @@
         font-size: 0.8em;
         white-space: nowrap;
     }
-
-    :global(.column) {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
 </style>

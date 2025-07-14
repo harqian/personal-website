@@ -103,7 +103,6 @@
     }
 
     :global(.column) {
-        justify-content: space-between;
         margin: auto;
         width: 60%;
         transition: width 0.3s ease-out;

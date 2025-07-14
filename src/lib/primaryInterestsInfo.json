@@ -1,4 +1,23 @@
 {
+  "cs": {
+    "media": [
+      "/interests_media/cs/Screenshot 1.png",
+      "/interests_media/cs/Screenshot 2.png",
+      "/interests_media/cs/output.gif",
+      "/interests_media/cs/output2.gif",
+      "/interests_media/cs/output3.gif",
+      "/interests_media/cs/programming.jpeg",
+      "/interests_media/cs/programming2.png"
+    ],
+    "index": 0
+  },
+  "frisbee": {
+    "media": [
+      "/interests_media/frisbee/ultimate_frisbee.jpg",
+      "/interests_media/frisbee/ultimate_frisbee.png"
+    ],
+    "index": 0
+  },
   "math": {
     "media": [
       "/interests_media/math/Screenshot.png",
@@ -9,29 +28,10 @@
     ],
     "index": 0
   },
-  "programming": {
-    "media": [
-      "/interests_media/programming/Screenshot 1.png",
-      "/interests_media/programming/Screenshot 2.png",
-      "/interests_media/programming/output.gif",
-      "/interests_media/programming/output2.gif",
-      "/interests_media/programming/output3.gif",
-      "/interests_media/programming/programming.jpeg",
-      "/interests_media/programming/programming2.png"
-    ],
-    "index": 0
-  },
   "tennis": {
     "media": [
       "/interests_media/tennis/tennis.gif",
       "/interests_media/tennis/tennis2.gif"
-    ],
-    "index": 0
-  },
-  "ultimate frisbee": {
-    "media": [
-      "/interests_media/ultimate frisbee/ultimate_frisbee.jpg",
-      "/interests_media/ultimate frisbee/ultimate_frisbee.png"
     ],
     "index": 0
   }
