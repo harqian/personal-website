@@ -43,6 +43,7 @@
         gap: 3rem;
         list-style: none;
         margin: 0;
+        padding: 0 3rem 0;
         transition: gap 0.2s;
     }
 
@@ -57,7 +58,7 @@
 
     @media (max-width: 768px) {
         .nav-links {
-            gap: 1rem;
+            gap: 0.5rem;
         }
 
         .nav-links a {
