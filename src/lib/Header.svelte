@@ -18,6 +18,7 @@
             <!-- <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">outdated resume</a></li> -->
         </ul>
     </nav>
+    <hr class="horizontal-line" />
 </header>
 
 <style>
@@ -63,5 +64,4 @@
             font-size: 1rem;
         }
     }
-
 </style>

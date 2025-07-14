@@ -30,7 +30,7 @@
     <div class="column">
         <h2>about</h2>
         <hr class="horizontal-line" />
-        <p>im a student that loves learning, exploring, and reflecting</p>
+        <p>im a student that loves learning, exploring, conversing, optimizing, and <b>reflecting</b></p>
         <p>i think talking to new people is incredibly valuable; please hit me up at my email or discord if you want to chat about anything! i promise it will be a fun time.</p>
     </div>
     <div class="two-column-layout">
@@ -117,8 +117,8 @@
     }
     
     .hover-image {
-        max-width: 100%;
-        max-height: 100%;
+        z-index: -9999;
+        max-width: 80%;
         border-radius: 8px;
         opacity: 0;
         position: absolute;
