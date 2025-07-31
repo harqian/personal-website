@@ -136,6 +136,29 @@ For me, these were never things I did myself (I always just went for YOLO right 
 [hooked: how to build habit-forming products](https://www.google.com/search?safe=active&sca_esv=05c894fd792d1e12&q=hooked:+how+to+build+attention+grabbing+productions&udm=2&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZ59Aj-dkSgmXWKpa2HWaBZFiTO0ouTWmFCwDJPeX-aDMCsMI9RWqivCWMi7WnO9CCUrTnEJkCZ8PxC3SMwhszqXC1BavK1CUzdKtzu3CeQFJomxrIVkeDwIYG2jgB6TmmVkHFBZo5SULzDotJ3IQrrlMFVnS-sGVWPN1x_TFZN_ExTlo6K6NIXLK1mcizLZtEt_K7Lw&sa=X&ved=2ahUKEwi60MT8iPSNAxWoDTQIHctEHn4QtKgLegQIFBAB&biw=1410&bih=1005&dpr=2)  
 [indestractable: how to control your attention and choose your life](https://www.google.com/search?q=indestractable&sourceid=chrome&ie=UTF-8)
 
+# todo for edits
+
+Imagine if there was an itch on your head and you notice it but dont do anything because you understand
+
+* —imagine you start craving for a piece of cake or a donut or playing video games but you understand
+
+Starting to do it, FEELS SUPER GOOD  
+The ultimate boss of addiction is not scratching, its thinking
+
+* The less friction to doing the thing, the easier it is to just do it impulsively (difficulty)  
+* Solve thinking all the time can make thinking much more efficient
+
+Talk about experience of having the kitchen staff have the popsicles \-\> dont really eat popsicles anymore  
+meditating in mosquito storm  
+Talk more about eating
+
+* Eating dad’s food, waiting, then eating more (ultra full) (all the food coma)  
+* Binge on snacks like it wasnt anything  
+* Its a miracle im not fat yet  
+  * Lots of sports during the year
+
+Also a really good point of the humanist perspective in which some desires that you have like dopamine hits from food or video games are based and will actually make you happier if you dont beat yourself up about it like this
+
 [^1]:  I never go to it on my own because of StayFocusd, but people send them around a lot.
 
 [^2]:  I really really don’t like the after taste of sweet things nowadays so it might take two hours of eating a couple then drinking some water and repeating.

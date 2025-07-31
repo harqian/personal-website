@@ -123,6 +123,45 @@ This is going to be light because hopefully you read the entire thing (if you di
 
 P.S. I did not realize this when writing about it, but this topic has been thoroughly discussed in the past. Just search “is confidence important” or “benefits of confidence” on the internet. [1](https://www.trine.edu/academics/centers/center-for-sports-studies/blog/2023/the_relationship_between_self-confidence_and_performance.aspx) [2](https://www.psychologytoday.com/us/blog/thicken-your-skin/201509/the-essence-confidence) [3](https://pmc.ncbi.nlm.nih.gov/articles/PMC9306298/) [4](https://drneilthompson.medium.com/the-importance-of-confidence-879e548116aa) [5](https://www.reddit.com/r/socialskills/comments/tuzbfh/why_is_confidence_important/) [6](https://www.psychologytoday.com/us/blog/shyness-is-nice/201809/why-self-confidence-is-more-important-you-think) [7](https://www.drivanjoseph.com/blog/if-you-don-t-believe-in-yourself-who-will) [8](https://www.sonaldave.com/blog/5-reasons-confidence-is-important/) [9](https://roughnotes.com/rnmagazine/2008/august08/08p036.htm) [10](https://www.momsgotmoney.com/the-importance-of-self-confidence/)
 
+# todo for edits to make:
+
+* Dances were something wasnt i confident about that changed (goes in experiences\!)  
+* Grid figure is hard to read (albert)  
+* Cite:  
+  * [https://waitbutwhy.com/2014/06/taming-mammoth-let-peoples-opinions-run-life.html](https://waitbutwhy.com/2014/06/taming-mammoth-let-peoples-opinions-run-life.html)  
+  * Its very similar  
+* Calming down (decrease negative thoughts \+ fears) is totally good for muscle memory stuff  
+  * Playing sports  
+  * Playing instruments  
+  * Playing video games  
+* List of specific embarrassing stuff?  
+* Talk about how coffee house was very negative experience, make the transformation much easier  
+* Talk about dad as inspiration for my change  
+  * Never realize that he was just really confident in social situations  
+* bad eyesight, everytime i couldnt see myself clearly i assumed i looked bad  
+* Lots of times thought my class/group/people were worse than others, just because i got an honest look at it and all the other ones i hear about were just fakly good  
+* Bold and underline some important stuff  
+* Going to camp was the best test for this theory  
+  * Funny “most cool camp counsellor” stuff because i literally dont care  
+  * Getting laughed at for having a slow mile time  
+  * Getting laughed at for “going in the girls bathroom”  
+  * Eva complimenting me just bc i connected her?  
+* overthinking flight  
+  * thinking someone would intentionally deprive me of the flight info to keep me in cali  
+* Nowadays when someone asks me what im doing i never really lie or try to hide anything  
+* Sometimes being weird has actual costs and should consider those critically as well (if you really have a reason to believe it would harm you, defs avoid it normally)  
+  * dealing with kids  
+    * sometimes dont respect you / listen to you if ur weird  
+      * now thinking, if ur confident it kinda works out \- its more they make a big deal out of it which prevents listening  
+    * (which is dumb but kida are dumb)(me included)  
+    * so maybe sometimes gotta conform to rigid social standards 🤮   
+  * Making first impressions  
+    * “Bye” thing  
+* Really can be summarized as “be agentic”; dont be controlled by fears that are not aligned with your values  
+* confidence \-\> important for working fast \+ well esp in high stress or difficult evironment  
+* “Advice” by lachlan \-\> should try it out; might be hard to really feel the effects if you don't try something like i did (failing at coffeehouse)  
+* confidence: insanely good for vc funding as well
+
 [^1]:  Other than perfectly replicating their entire brain as well as perfectly transferring their current brain state into your clone of their brain, and then deriving a perfect mapping between neuronal activity and concept space, which should only really take three philosophers and a neuro startup guy.
 
 [^2]:  imo, fear is one of the most harmful emotions, worse than anger and sadness by a long shot.
