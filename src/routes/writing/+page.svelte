@@ -8,7 +8,8 @@
         "water_bottles",
         "a_glimpse_into_consciousness",
         "how_confidence_changed_my_life",
-        "addiction"
+        "addiction",
+        "math_in_the_mountains"
     ];
     
     let writing = [];
