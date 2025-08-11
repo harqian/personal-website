@@ -9,7 +9,8 @@
         "a_glimpse_into_consciousness",
         "how_confidence_changed_my_life",
         "addiction",
-        "math_in_the_mountains"
+        "math_in_the_mountains",
+        "reflection"
     ];
     
     let writing = [];
