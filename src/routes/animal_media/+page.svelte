@@ -3,18 +3,18 @@
     import Header from "$lib/Header.svelte"
     import StarBackground from "$lib/StarBackground.svelte"
 
-    const numImages = 24
+    const numImages = 29
     const imagePaths = []
 
     for (let i = 1; i <= numImages; i++) {
-        imagePaths.push(`animal_images/${i}.jpeg`)
+        imagePaths.push(`animal_images/${i}.webp`)
     }
 
-    const numGifs = 20
+    const numGifs = 24
     const gifPaths = []
 
     for (let i = 1; i <= numGifs; i++) {
-        gifPaths.push(`animal_gifs/${i}.gif`)
+        gifPaths.push(`animal_gifs/${i}.webm`)
     }
 
     const mediaPaths = imagePaths.concat(gifPaths).sort(() => Math.random() - 0.5)

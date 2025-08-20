@@ -1,89 +1,50 @@
 <script>
-    import primaryInterestsInfo from "$lib/primaryInterestsInfo.json";
-    import secondaryInterestsInfo from "$lib/secondaryInterestsInfo.json";
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
     
     let hoveredInterest = null;
-
-    function handlePrimaryHover(interest) {
-        hoveredInterest = interest;
-        primaryInterestsInfo[interest].index = (primaryInterestsInfo[interest].index + 1) % primaryInterestsInfo[interest].media.length
-    }
-
-    function handleSecondaryHover(interest) {
-        hoveredInterest = interest;
-        secondaryInterestsInfo[interest].index = (secondaryInterestsInfo[interest].index + 1) % secondaryInterestsInfo[interest].media.length
-    }
-
-    function handlePrimaryClick(interest) {
-        primaryInterestsInfo[interest].index = (primaryInterestsInfo[interest].index + 1) % primaryInterestsInfo[interest].media.length
-    }
-
-    function handleSecondaryClick(interest) {
-        secondaryInterestsInfo[interest].index = (secondaryInterestsInfo[interest].index + 1) % secondaryInterestsInfo[interest].media.length
+    let showContactInfo = false;
+    
+    function toggleContactInfo() {
+        showContactInfo = !showContactInfo;
     }
 </script>
 
 <StarBackground>
+
     <Header />
-    <div class="column">
-        <h2>about</h2>
-        <hr class="horizontal-line" />
-        <p>im a student that loves learning, exploring, conversing, optimizing, and <b>reflecting</b></p>
-        <p>i think talking to new people is incredibly valuable; please hit me up at my email or discord if you want to chat about anything! i promise it will be a fun time.</p>
-    </div>
     <div class="two-column-layout">
         <div class="left-column">
-            <section class="section">
-                <p>activities</p>
-                <ul>
-                    {#each Object.entries(primaryInterestsInfo) as [interest, info]}
-                    <li 
-                        class="hover-item"
-                        on:mouseenter={() => handlePrimaryHover(interest)}
-                    >
-                        <button
-                            class="text-wrapper-button"
-                            on:click={() => handlePrimaryClick(interest)}
-                        >
-                            {interest}
-                        </button>
-                    </li>
-                    {/each}
-                </ul>
-                <p>and also</p>
-                <ul>
-                    {#each Object.entries(secondaryInterestsInfo) as [interest, info]}
-                    <li 
-                        class="hover-item"
-                        on:mouseenter={() => handleSecondaryHover(interest)}
-                    >
-                        <button
-                            class="text-wrapper-button"
-                            on:click={() => handleSecondaryClick(interest)}
-                        >
-                            {interest}
-                        </button>
-                    </li>
-                    {/each}
-                </ul>
-            </section>
+            <p>im a student that lives for learning</p>
+            <p>i believe in intentional living, self-understanding, and growth</p>
+            <p>to learn, i read, build, write, talk, and reflect</p>
         </div>
-        
         <div class="right-column">
             <div class="image-container">
-                {#each Object.entries(primaryInterestsInfo).concat(Object.entries(secondaryInterestsInfo)) as [interest, info]}
-                    <img 
-                        src={info.media[info.index] || `/api/placeholder/400/300`} 
-                        alt="{interest} media"
-                        class="hover-image"
-                        class:visible={hoveredInterest === interest}
-                    />
-                {/each}
+                <img src="/profile.png" alt="profile" />
             </div>
         </div>
+    </div> 
+    <div class="column">
+        <p>check out <a href="/writing">my writing</a> for reflections and generalizations, <a href="/poetry">my poetry</a> for fun and artistic expression, <a href="/gallery">my media gallery</a> for cool scenery, <a href="/animal_media">my animal media</a> for cute (and not so cute) animals, 
+            <!-- <a href="/cs_projects">my cs projects</a> to see what i have built (outdated), <a href="/other_projects">my other projects</a> for other things i built (also outdated T_T), and <a href="/app_reviews">my app reviews</a> for short app reviews! -->
+        </p>
+        <p>or, <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>!</p>
+        
+        {#if showContactInfo}
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa fa-envelope"></i>
+                    <span>dumbderivatives@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-discord"></i>
+                    <span>astronomicalflower</span>
+                </div>
+            </div>
+        {/if}
     </div>
+    
 </StarBackground>
 
 <style>
@@ -92,70 +53,92 @@
         width: 60%;
         margin: 0 auto;
         transition: width 0.3s ease-out;
+        gap: 20px;
     }
     
     .left-column {
-        flex: 0 0 auto;
+        flex: 1;
         min-width: 100px;
     }
     
     .right-column {
         flex: 1;
-        display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
+        display: flex;
     }
     
-    .image-container {
-        position: relative;
+    .image-container {  
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
+        align-items: center;
     }
     
-    .hover-image {
-        z-index: -9999;
-        max-width: 80%;
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         border-radius: 8px;
-        opacity: 0;
-        position: absolute;
-        transition: opacity 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
     
-    .hover-image.visible {
-        opacity: 1;
-    }
-    
-    .hover-item {
-        cursor: pointer;
-        transition: color 0.3s;
-    }
-    
-    .text-wrapper-button {
-        text-decoration: underline;
-    }
-    
-    .hover-item:hover {
+    .say-hi-btn {
+        background: none;
+        border: none;
         color: var(--link-color);
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: inherit;
+        font-family: inherit;
+        padding: 0;
+        margin: 0;
+        transition: opacity 0.3s;
     }
     
-    ul {
-        margin-top: 0px;
-        padding-left: 25px;
+    .say-hi-btn:hover {
+        opacity: 0.7;
     }
     
-    p ~ ul {
-        margin-top: -10px;
+    .contact-info {
+        margin-top: 1rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeIn 0.3s ease-in;
     }
     
-    .section {
-        margin-bottom: 1.5rem;
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
     }
     
+    .contact-item:last-child {
+        margin-bottom: 0;
+    }
+    
+    .contact-item i {
+        color: var(--link-color);
+        width: 20px;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+        
     @media (max-width: 768px) {
         .two-column-layout {
             width: 90%;

@@ -93,6 +93,28 @@
     {#each columns as column, columnIndex}
         <div class="photo-column">
             {#each column as imagePath}
+                {#if imagePath.includes('.webm')}
+                <button
+                    on:click={(event) => { if (columnCount !== 1) handleClick(imagePath, event)}}
+                    on:mouseleave={(event) => handleMouseLeave(imagePath, event)}
+                    class="photo-wrapper-button"
+                    aria-label="enlarge image"
+                    class:active={clickedImages.has(imagePath)}
+                    data-column-position={columnIndex === 0 ? "first" : columnIndex === columnCount - 1 ? "last" : "middle"}
+                >
+                <video
+                    src={imagePath}
+                    class:img-hover={hover}
+                    class:clicked={clickedImages.has(imagePath)}
+                    class:right-shift={clickedImages.has(imagePath) && columnIndex === 0}
+                    class:left-shift={clickedImages.has(imagePath) && columnIndex === columnCount - 1}
+                    {loading}
+                    muted
+                    loop
+                    autoplay
+                ></video>
+                </button>
+                {:else}
                 <button
                     on:click={(event) => { if (columnCount !== 1) handleClick(imagePath, event)}}
                     on:mouseleave={(event) => handleMouseLeave(imagePath, event)}
@@ -111,6 +133,7 @@
                         {loading}
                     />
                 </button>
+                {/if}
             {/each}
         </div>
     {/each}

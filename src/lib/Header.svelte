@@ -10,11 +10,11 @@
         <ul class="nav-links">
             <li><a href="/writing">writing</a></li>
             <li><a href="/poetry">poetry</a></li>
-            <li><a href="/photo_gallery">photos</a></li>
+            <li><a href="/gallery">gallery</a></li>
             <li><a href="/animal_media">animal media</a></li>
-            <li><a href="/cs_projects">cs projects</a></li>
-            <li><a href="/other_projects">other projects</a></li>
-            <li><a href="/app_reviews">app reviews</a></li>
+            <!-- <li><a href="/cs_projects">cs projects</a></li>
+            <li><a href="/other_projects">other projects</a></li> -->
+            <!-- <li><a href="/app_reviews">app reviews</a></li> -->
             <!-- <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">outdated resume</a></li> -->
         </ul>
     </nav>

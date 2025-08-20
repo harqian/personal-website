@@ -5,14 +5,14 @@
         "description": "email link"
     },
     {
+        "font_awesome_tag": "fa-brands fa-discord",
+        "href": "https://www.google.com/search?q=astronomicalflower",
+        "description": "discord username"
+    },
+    {
         "font_awesome_tag": "fa-brands fa-youtube",
         "href": "https://www.youtube.com/@DumbDerivatives",
         "description": "youtube link"
-    },
-    {
-        "font_awesome_tag": "fa-brands fa-discord",
-        "href": "https://www.google.com/search?q=astronomicalflower+%28add+me%21%29",
-        "description": "discord username"
     },
     {
         "font_awesome_tag": "fa fa-github",
@@ -25,8 +25,8 @@
         "description": "spotify link"
     },
     {
-        "font_awesome_tag": "fa fa-chess-pawn",
-        "href": "https://www.chess.com/member/moonflower2022",
-        "description": "chess link"
+        "font_awesome_tag": "fa fa-linkedin",
+        "href": "https://www.linkedin.com/in/harrison-qian-95b0062a3/",
+        "description": "linkedin link"
     }
 ]
