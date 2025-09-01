@@ -6,5 +6,4 @@ svelte project for my personal website
 - make dark and light mode
   - moonflower -> sunflower
   - have icon next to name that will switch along with the name
-- update and bring back some of the projects
-- add page for beliefs / generalizations
+- update projects

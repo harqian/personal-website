@@ -1,0 +1,183 @@
+{
+  "alr_read": [
+    {
+      "title": "community building",
+      "urls": ["https://boxx.substack.com/p/world-building-irl?r=iuflr&triedRedirect=true"],
+      "notes": [
+        "make people around you better",
+        "way to get people to open up is to open up yourself (people wear trench coats, to set the norm of leaving them at the door, you do it)",
+        "how to get people to showup: focus on the experience of the people that came"
+      ]
+    },
+    {
+      "title": "impact bias and prediction limitation",
+      "urls": [
+        "https://www.npr.org/transcripts/271144389?storyId=271144389",
+        "https://waitbutwhy.com/2013/11/life-is-picture-but-you-live-in-pixel.html"
+      ],
+      "notes": [
+        "the second links to the first and i didnt even realize it (connections!!)",
+        "\"impact bias\": overestimate sadness and happiness that will come from individual events (they fade away over time very quickly)",
+        "studies have shown that we are chilling (normalized) even after crazy bad things (or good things)",
+        "due to our limitatons in imagination and understanding, framing a certain event in some way can make us more happy",
+        "actual happiness is achieved with small things that you do everyday like being present, being thankful, and spending time with people you like - http://www.bakadesuyo.com/2012/08/here-are-the-things-that-are-proven-to-make-y/"
+      ]
+    },
+    {
+      "title": "growth institutions very push sometimes",
+      "urls": ["https://sparcjcs.substack.com/p/i-was-half-myself-without-you-now#footnote-anchor-9-148860081"],
+      "notes": []
+    },
+    {
+      "title": "\"cool/interesting\" people",
+      "urls": ["https://anson.substack.com/p/recognizing-sparkly-people-without"],
+      "notes": [
+        "describing cool people",
+        "things that cool people exhibit"
+      ]
+    },
+    {
+      "title": "dont make objective \"cool/interesting\" distinction",
+      "urls": ["https://sparcjcs.substack.com/p/i-want-to-destroy-the-words-interesting"],
+      "notes": [
+        "objectively interesting is unhealthy"
+      ]
+    },
+    {
+      "title": "can build and maintain etc",
+      "urls": ["https://mitadmissions.org/blogs/entry/you-dont-have-to-be-a-founder/"],
+      "notes": [
+        "you dont have to be a founder"
+      ]
+    }
+  ],
+  "authors": [
+    {
+      "title": "anson",
+      "urls": ["https://anson.substack.com/"],
+      "notes": []
+    },
+    {
+      "title": "dimashvets",
+      "urls": ["https://dimashvets.substack.com/"],
+      "notes": []
+    },
+    {
+      "title": "golimitlesss",
+      "urls": ["https://golimitlesss.substack.com/"],
+      "notes": []
+    },
+    {
+      "title": "latent space",
+      "urls": ["https://www.latent.space/"],
+      "notes": []
+    },
+    {
+      "title": "v4913",
+      "urls": ["https://v4913.substack.com/"],
+      "notes": []
+    },
+    {
+      "title": "james clear",
+      "urls": ["https://jamesclear.com/"],
+      "notes": []
+    },
+    {
+      "title": "daviderady",
+      "urls": ["https://daviderady.com/blog/"],
+      "notes": []
+    },
+    {
+      "title": "sparcjcs",
+      "urls": ["https://sparcjcs.substack.com/"],
+      "notes": []
+    },
+    {
+      "title": "cjquines",
+      "urls": ["https://cjquines.com/"],
+      "notes": []
+    },
+    {
+      "title": "mit admissions",
+      "urls": ["https://mitadmissions.org/blogs/"],
+      "notes": []
+    },
+    {
+      "title": "andrewwu",
+      "urls": ["https://andrewwu.substack.com/"],
+      "notes": []
+    },
+    {
+      "title": "paul graham",
+      "urls": ["https://www.paulgraham.com/"],
+      "notes": []
+    },
+    {
+      "title": "lesswrong",
+      "urls": ["https://www.lesswrong.com/"],
+      "notes": []
+    },
+    {
+      "title": "life pro tips",
+      "urls": ["https://www.reddit.com/r/LifeProTips/"],
+      "notes": []
+    },
+    {
+      "title": "clairebookworm",
+      "urls": ["https://www.clairebookworm.com/writing"],
+      "notes": []
+    }
+  ],
+  "articles": [
+    {
+      "title": "bill tai's mindsets",
+      "urls": ["https://dimashvets.substack.com/p/f22e2089-8e4d-4469-b5b8-bc22497dac20"],
+      "notes": []
+    },
+    {
+      "title": "purpose",
+      "urls": ["https://golimitlesss.substack.com/p/purpose"],
+      "notes": []
+    },
+    {
+      "title": "substack writer's own mindsets",
+      "urls": ["https://dimashvets.substack.com/p/be-ready-for-uncertainty-always-holidays"],
+      "notes": []
+    },
+    {
+      "title": "heavy and light",
+      "urls": ["https://v4913.substack.com/p/heavy-and-light"],
+      "notes": []
+    },
+    {
+      "title": "warp 2023 quest day reflections",
+      "urls": ["https://andrewwu.substack.com/p/warp-2023-quest-day-reflections"],
+      "notes": []
+    },
+    {
+      "title": "creativity",
+      "urls": ["https://jamesclear.com/stay-on-the-bus"],
+      "notes": []
+    },
+    {
+      "title": "focus",
+      "urls": ["https://jamesclear.com/saying-no"],
+      "notes": []
+    },
+    {
+      "title": "focus",
+      "urls": ["https://jamesclear.com/stay-focused"],
+      "notes": []
+    },
+    {
+      "title": "\"life is short\"",
+      "urls": ["https://www.paulgraham.com/vb.html"],
+      "notes": []
+    },
+    {
+      "title": "rationality!",
+      "urls": ["https://www.lesswrong.com/rationality"],
+      "notes": []
+    }
+  ]
+}

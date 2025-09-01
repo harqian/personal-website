@@ -12,9 +12,11 @@
             <li><a href="/poetry">poetry</a></li>
             <li><a href="/gallery">gallery</a></li>
             <li><a href="/animal_media">animal media</a></li>
-            <!-- <li><a href="/cs_projects">cs projects</a></li>
-            <li><a href="/other_projects">other projects</a></li> -->
-            <!-- <li><a href="/app_reviews">app reviews</a></li> -->
+            <li><a href="/generalizations">generalizations</a></li>
+            <li><a href="/cs_projects">cs projects</a></li>
+            <li><a href="/other_projects">other projects</a></li>
+            <li><a href="/reading">reading</a></li>
+            <!-- <li><a href="/app_reviews">app reviews</a></li>  -->
             <!-- <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">outdated resume</a></li> -->
         </ul>
     </nav>
@@ -40,7 +42,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 3rem;
+        gap: 2rem;
         list-style: none;
         margin: 0;
         padding: 0 3rem 0;
@@ -49,7 +51,7 @@
 
     .nav-links a {
         transition: opacity 0.2s;
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .nav-links a:hover {

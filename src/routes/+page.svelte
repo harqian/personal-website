@@ -15,9 +15,9 @@
     <Header />
     <div class="two-column-layout">
         <div class="left-column">
-            <p>im a student that lives for learning</p>
-            <p>i believe in intentional living, self-understanding, and growth</p>
-            <p>to learn, i read, build, write, talk, and reflect</p>
+            <p>im Harrison, and i live for learning</p>
+            <p>i believe in learning by doing, self-understanding, and growth</p>
+            <p>see more things i believe in <a href="/generalizations">here</a></p>
         </div>
         <div class="right-column">
             <div class="image-container">
@@ -26,9 +26,15 @@
         </div>
     </div> 
     <div class="column">
-        <p>check out <a href="/writing">my writing</a> for reflections and generalizations, <a href="/poetry">my poetry</a> for fun and artistic expression, <a href="/gallery">my media gallery</a> for cool scenery, <a href="/animal_media">my animal media</a> for cute (and not so cute) animals, 
-            <!-- <a href="/cs_projects">my cs projects</a> to see what i have built (outdated), <a href="/other_projects">my other projects</a> for other things i built (also outdated T_T), and <a href="/app_reviews">my app reviews</a> for short app reviews! -->
+        <p>
+            to learn, 
+            i read (<a href="https://www.goodreads.com/user/show/190275360-sunflower">goodreads</a>, <a href="/reading">reading</a>), 
+            build (<a href="/cs_projects">cs</a>, <a href="/other_projects">other</a>), 
+            write/reflect (<a href="/writing">writing</a>, <a href="/poetry">poetry</a>, <a href="/generalizations">generalizations</a>), 
+            and talk (yeah idk if i can put stuff here)
         </p>
+        <p> things i like: math, cs, physics, biology, writing, frisbee, tennis, music</p>
+        <p>check out <a href="/gallery">my media gallery</a> for cool scenery, <a href="/animal_media">my animal media</a> for cute (and not so cute) animals</p>
         <p>or, <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>!</p>
         
         {#if showContactInfo}

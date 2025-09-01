@@ -35,6 +35,9 @@
     <Header />
     <main>
         <div class="column">
+            <h2>other projects</h2>
+            <p>this is a list of some other projects i have worked on (outdated but its ok)</p>
+            <hr class="horizontal-line">
             {#each sortedProjects.sections as section}
                 <section class="section">
                     <h2>{section.title}</h2>
