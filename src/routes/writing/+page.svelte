@@ -10,7 +10,8 @@
         "how_confidence_changed_my_life",
         "addiction",
         "math_in_the_mountains",
-        "reflection"
+        "reflection",
+        "learning_connections"
     ];
     
     let writing = [];
