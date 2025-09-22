@@ -15,9 +15,9 @@
     <Header />
     <div class="two-column-layout">
         <div class="left-column">
-            <p>im Harrison, and i live for learning</p>
-            <p>i believe in learning by doing, self-understanding, and growth</p>
-            <p>see more things i believe in <a href="/generalizations">here</a></p>
+            <p>hey there, im harrison 👋</p>
+            <p>I like knowledge, but also mindsets, perspectives, skills, self-mastery; all of these domains stack, resulting in exponentially better understanding of the world and myself.</p>
+            <p>(more things I believe in <a href="/generalizations">here</a>)</p>
         </div>
         <div class="right-column">
             <div class="image-container">
@@ -35,7 +35,7 @@
         </p>
         <p> things i like: math, cs, physics, biology, writing, frisbee, tennis, music</p>
         <p>check out <a href="/gallery">my media gallery</a> for cool scenery, <a href="/animal_media">my animal media</a> for cute (and not so cute) animals</p>
-        <p>or, <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>!</p>
+        <p>or, <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>! i love talking to new people</p>
         
         {#if showContactInfo}
             <div class="contact-info">
