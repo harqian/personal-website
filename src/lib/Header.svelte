@@ -8,16 +8,14 @@
     <SocialIcons {iconInfos} size="fa-2x"></SocialIcons>
     <nav>
         <ul class="nav-links">
-            <li><a href="/writing">writing</a></li>
-            <li><a href="/poetry">poetry</a></li>
-            <li><a href="/gallery">gallery</a></li>
-            <li><a href="/animal_media">animal media</a></li>
-            <li><a href="/generalizations">generalizations</a></li>
-            <li><a href="/cs_projects">cs projects</a></li>
-            <li><a href="/other_projects">other projects</a></li>
-            <li><a href="/reading">reading</a></li>
-            <!-- <li><a href="/app_reviews">app reviews</a></li>  -->
-            <!-- <li><a href="resume.pdf" target="_blank" rel="noopener noreferrer">outdated resume</a></li> -->
+            <a href="/writing">writing</a>
+            <a href="/poetry">poetry</a>
+            <a href="/gallery">gallery</a>
+            <a href="/cs_projects">cs projects</a>
+            <a href="/other_projects">other projects</a>
+            <a href="/other">other</a>
+            <!-- <a href="/app_reviews">app reviews</a>  -->
+            <!-- <a href="resume.pdf" target="_blank" rel="noopener noreferrer">outdated resume</a> -->
         </ul>
     </nav>
     <hr class="horizontal-line" />

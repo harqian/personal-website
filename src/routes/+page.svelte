@@ -16,8 +16,11 @@
     <div class="two-column-layout">
         <div class="left-column">
             <p>hey there, im harrison 👋</p>
-            <p>I like knowledge, but also mindsets, perspectives, skills, self-mastery; all of these domains stack, resulting in exponentially better understanding of the world and myself.</p>
-            <p>(more things I believe in <a href="/generalizations">here</a>)</p>
+            <p>high school junior in the bay area</p>
+            <p>enjoy cs, math, bio, physics, engineering, writing (generally learning is fun)</p>
+            <p>other interests: chess, ultimate frisbee, singing, ukulele, tennis</p>
+
+
         </div>
         <div class="right-column">
             <div class="image-container">
@@ -28,13 +31,14 @@
     <div class="column">
         <p>
             to learn, 
-            i read (<a href="https://www.goodreads.com/user/show/190275360-sunflower">goodreads</a>, <a href="/reading">reading</a>), 
-            build (<a href="/cs_projects">cs</a>, <a href="/other_projects">other</a>), 
-            write/reflect (<a href="/writing">writing</a>, <a href="/poetry">poetry</a>, <a href="/generalizations">generalizations</a>), 
+            i read (<a href="/reading">reading</a>), build (<a href="/cs_projects">cs</a>, <a href="/other_projects">other</a>), 
+            write/reflect (<a href="/writing">writing</a>, <a href="/poetry">poetry</a>), 
             and talk (yeah idk if i can put stuff here)
         </p>
-        <p> things i like: math, cs, physics, biology, writing, frisbee, tennis, music</p>
+        <p>I like knowledge, but also mindsets, perspectives, skills, self-mastery; all of these domains stack, resulting in exponentially better understanding of the world and myself.</p>
+        <p>im usually very proactive and really care about personal growth, learning quickly, connection with others, and accountability</p>
         <p>check out <a href="/gallery">my media gallery</a> for cool scenery, <a href="/animal_media">my animal media</a> for cute (and not so cute) animals</p>
+
         <p>or, <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>! i love talking to new people</p>
         
         {#if showContactInfo}

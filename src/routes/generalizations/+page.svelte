@@ -11,7 +11,7 @@
     <div class="column">
         <section class="section">
             <h2>generalizations</h2>
-            <p>here are some generalizations i have made/observed through existing and reflecting</p>
+            <p>here are some generalizations i have made through reflection & experimentation</p>
             <p>disclaimer: these are all from MY perspective (important!) so they may not be true or helpful for you</p>
             <hr class="horizontal-line">
         </section>

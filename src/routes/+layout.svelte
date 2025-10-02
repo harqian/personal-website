@@ -69,6 +69,12 @@
         margin: 1rem 0;
     }
 
+    :global(li) {
+        margin-left: 2rem;
+        margin-bottom: 0.5rem;
+        list-style-type: disc;
+    }
+
     :global(.photo-wrapper-button) {
         background: none;
         border: none;
