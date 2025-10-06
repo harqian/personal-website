@@ -1,8 +1,8 @@
 <script>
-    import Header from "$lib/Header.svelte"
-    import StarBackground from "$lib/StarBackground.svelte"
-    import projects from "$lib/csProjects.json"
-    
+    import Header from "$lib/Header.svelte";
+    import StarBackground from "$lib/StarBackground.svelte";
+    import projects from "$lib/csProjects.json";
+
     // Sort projects within each section by end_date in descending order
     const sortedProjects = {
         sections: projects.sections.map(section => ({

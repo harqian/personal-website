@@ -1,8 +1,8 @@
 <script>
     import { onMount } from 'svelte';
-    import Header from "$lib/Header.svelte"
-    import StarBackground from "$lib/StarBackground.svelte"
-    
+    import Header from "$lib/Header.svelte";
+    import StarBackground from "$lib/StarBackground.svelte";
+
     // Add your piece filenames here (without .md extension)
     const pieceFilenames = [
         "new_camp",
@@ -87,16 +87,15 @@
 </script>
 
 <StarBackground>
-
-<Header />
-<main>
-    <div class="column">
-        <section class="section">
-            <h2>poetry</h2>
-            <p>i dont promise any schedule; started because REALLY REALLY whacky (in a good way) friend encouraged me; having lots of fun!</p>
-            <p>if you want to get notified when i post something, you can go to <a href="https://github.com/Moonflower2022/personal-website">the github for this website</a> and use the watch button (or something, i dont know if it actually works)</p>
-            <hr class="horizontal-line">
-        </section>
+    <Header />
+    <main>
+        <div class="column">
+            <section class="section">
+                <h2>poetry</h2>
+                <p>i dont promise any schedule; started because REALLY REALLY whacky (in a good way) friend encouraged me; having lots of fun!</p>
+                <p>if you want to get notified when i post something, you can go to <a href="https://github.com/Moonflower2022/personal-website">the github for this website</a> and use the watch button (or something, i dont know if it actually works)</p>
+                <hr class="horizontal-line">
+            </section>
         {#each poetry as piece}
             <article>
                 <div class="title-row">
@@ -119,9 +118,10 @@
                 </div>
             </article>
         {/each}
-    </div>
-</main>
+        </div>
+    </main>
 </StarBackground>
+
 
 <style>
     article {

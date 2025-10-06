@@ -11,7 +11,6 @@
 </script>
 
 <StarBackground>
-
     <Header />
     <div class="two-column-layout">
         <div class="left-column">
@@ -79,12 +78,11 @@
         display: flex;
     }
     
-    .image-container {  
+    .image-container {
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
-        align-items: center;
         align-items: center;
     }
     
