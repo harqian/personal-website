@@ -1,6 +1,6 @@
 ---
 title: "learning <- understanding <- perspective, connections <- experiences, people"
-date: "2025-9-7"
+date: "2025-09-07"
 tags: 
     - personal
     - learning

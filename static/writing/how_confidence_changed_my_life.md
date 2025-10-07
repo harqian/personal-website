@@ -1,6 +1,6 @@
 ---
-date: "2025-6-15"
-edited: "2025-6-16"
+date: "2025-06-15"
+edited: "2025-06-16"
 tags: 
     - personal
     - philosophy

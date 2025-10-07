@@ -1,7 +1,7 @@
 ---
 title: "reflecting on reflection (reflection is astoundingly good)"
-date: "2025-8-11"
-edited: "2025-8-14"
+date: "2025-08-11"
+edited: "2025-08-14"
 tags: 
     - personal
     - improvement

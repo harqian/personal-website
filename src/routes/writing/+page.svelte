@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import { parseISO } from 'date-fns';
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
 
@@ -13,39 +14,39 @@
         "reflection",
         "learning_understanding_connections"
     ];
-    
+
     let writing = [];
-    
+
     onMount(async () => {
         try {
             // Fetch and parse each piece's metadata
             const writingPromises = pieceFilenames.map(async (filename) => {
                 const writingResponse = await fetch(`/writing/${filename}.md`);
                 const content = await writingResponse.text();
-                
+
                 // Parse frontmatter
                 const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
                 if (frontmatterMatch) {
                     const frontmatter = frontmatterMatch[1];
                     const metadata = {};
-                    
+
                         // Parse YAML-like frontmatter with hyphen-based tags
                     const lines = frontmatter.split('\n');
                     let currentKey = '';
-                    
+
                     for (const line of lines) {
                         const trimmedLine = line.trim();
                         if (!trimmedLine) continue;
-                        
+
                         // Check if it's a key-value pair
                         if (trimmedLine.includes(':')) {
                             const [key, ...valueParts] = trimmedLine.split(':');
                             currentKey = key.trim();
                             let value = valueParts.join(':').trim();
-                            
+
                             // Remove surrounding quotes if present
                             value = value.replace(/^["']|["']$/g, '');
-                            
+
                             if (currentKey === 'title') {
                                 metadata.title = value;
                             } else if (currentKey === 'published') {
@@ -55,7 +56,7 @@
                             } else if (currentKey === 'date' || currentKey === 'edited') {
                                 metadata[currentKey] = value;
                             }
-                        } 
+                        }
                         // Handle array items (tags with hyphens)
                         else if (trimmedLine.startsWith('-') && currentKey === 'tags') {
                             const tag = trimmedLine.substring(1).trim();
@@ -63,7 +64,7 @@
                             metadata.tags.push(tag);
                         }
                     }
-                    
+
                     // Use title from metadata if available, otherwise derive from filename
                     const titleFromFilename = filename.replace(/\.md$/, '').replace(/_/g, ' ');
                     return {
@@ -74,12 +75,12 @@
                 }
                 return null;
             });
-            
+
             const allWriting = await Promise.all(writingPromises);
             writing = allWriting
                 .filter(writing => writing && writing.published)
-                .sort((a, b) => new Date(b.date) - new Date(a.date));
-                
+                .sort((a, b) => parseISO(b.date) - parseISO(a.date));
+
         } catch (error) {
             console.error('Error loading writing:', error);
         }
@@ -110,9 +111,15 @@
                         </div>
                     {/if}
                     <time class="date">
-                        {new Date(piece.date).toLocaleDateString()}
+                        {(() => {
+                            const [year, month, day] = piece.date.split('-').map(Number);
+                            return new Date(year, month - 1, day).toLocaleDateString();
+                        })()}
                         {#if piece.edited}
-                            <span class="edited">(edited {new Date(piece.edited).toLocaleDateString()})</span>
+                            <span class="edited">(edited {(() => {
+                                const [year, month, day] = piece.edited.split('-').map(Number);
+                                return new Date(year, month - 1, day).toLocaleDateString();
+                            })()})</span>
                         {/if}
                     </time>
                 </div>

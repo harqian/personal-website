@@ -1,6 +1,6 @@
 ---
 title: "Me and Addiction: Experiences, Thoughts, and Strategies"
-date: "2025-6-26"
+date: "2025-06-26"
 tags: 
     - personal
     - improvement

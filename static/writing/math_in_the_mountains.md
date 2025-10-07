@@ -1,6 +1,6 @@
 ---
-date: "2025-8-8"
-edited: "2025-8-14"
+date: "2025-08-08"
+edited: "2025-08-14"
 tags: 
     - math camp
     - counselor
