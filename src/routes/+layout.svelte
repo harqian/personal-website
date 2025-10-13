@@ -22,6 +22,11 @@
         href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet"
     />
+    <!-- Geist Mono from google fonts (the one im using) -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
 </svelte:head>
 
 <style>
@@ -40,7 +45,7 @@
         color: #fff;
         margin: 0;
         padding: 0;
-        font-family: "Space Mono", monospace;
+        font-family: "Geist Mono", monospace;
         width: 100vw;
     }
     
