@@ -10,6 +10,7 @@
         <ul class="nav-links">
             <a href="/writing">writing</a>
             <a href="/poetry">poetry</a>
+            <a href="/notes">notes</a>
             <a href="/gallery">gallery</a>
             <a href="/cs_projects">cs projects</a>
             <a href="/other_projects">other projects</a>

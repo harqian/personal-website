@@ -31,7 +31,7 @@
         <p>
             to learn, 
             i read (<a href="/reading">reading</a>), build (<a href="/cs_projects">cs</a>, <a href="/other_projects">other</a>), 
-            write/reflect (<a href="/writing">writing</a>, <a href="/poetry">poetry</a>), 
+            write/reflect (<a href="/writing">writing</a>, <a href="/poetry">poetry</a>, <a href="/notes">notes</a>), 
             and talk (yeah idk if i can put stuff here)
         </p>
         <p>I like knowledge, but also mindsets, perspectives, skills, self-mastery; all of these domains stack, resulting in exponentially better understanding of the world and myself.</p>
