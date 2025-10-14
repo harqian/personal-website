@@ -50,6 +50,10 @@
                     <i class="fa-brands fa-discord"></i>
                     <span>astronomicalflower</span>
                 </div>
+                <div class="contact-item">
+                    <i class="fa fa-video"></i>
+                    <span><a href="https://calendar.app.google/tkRTMQMjVEEoDWyR6">meeting link</a></span>
+                </div>
             </div>
         {/if}
     </div>
