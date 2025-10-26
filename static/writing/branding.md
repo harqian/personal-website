@@ -1,10 +1,9 @@
 ---
 title: "Putting the Right Thing in Someone Else's Head"
-date: "2025-06-26"
+date: "2025-10-26"
 tags: 
-    - personal
-    - improvement
-    - focus
+    - marketing
+    - communication
 published: true
 ---
 
