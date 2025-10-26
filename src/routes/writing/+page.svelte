@@ -12,7 +12,8 @@
         "addiction",
         "math_in_the_mountains",
         "reflection",
-        "learning_understanding_connections"
+        "learning_understanding_connections",
+        "branding"
     ];
 
     let writing = [];
