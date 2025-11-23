@@ -1,9 +1,29 @@
 <script>
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
+    import Carousel from "$lib/Carousel.svelte";
     
     let hoveredInterest = null;
     let showContactInfo = false;
+
+    // Carousel items from static/carousel_media
+    // Note: Keep this list in sync with the files in static/carousel_media
+    const carouselItems = [
+        "/carousel_media/profile.png",
+        "/carousel_media/IMG_0536.jpeg",
+        "/carousel_media/IMG_1110.jpeg",
+        "/carousel_media/IMG_1191.jpeg",
+        "/carousel_media/IMG_2062.jpeg",
+        "/carousel_media/tensi_action.jpeg",
+        "/carousel_media/ultimate_frisbee.png",
+        "/carousel_media/ukulele.jpg",
+        "/carousel_media/528A4148.jpg",
+        "/carousel_media/fb6c9a1063bb2d5199f27b59af5ba5c9.JPG",
+        "/carousel_media/image.png",
+        "/carousel_media/IMG_1316.webm",
+        "/carousel_media/tennis.webm",
+        "/carousel_media/Screenshot%202025-09-17%20at%2020.34.40.png",
+    ];
     
     function toggleContactInfo() {
         showContactInfo = !showContactInfo;
@@ -18,12 +38,10 @@
             <p>high school junior in the bay area</p>
             <p>enjoy cs, math, bio, physics, engineering, writing (generally learning is fun)</p>
             <p>other interests: chess, ultimate frisbee, singing, ukulele, tennis</p>
-
-
         </div>
         <div class="right-column">
             <div class="image-container">
-                <img src="/profile.png" alt="profile" />
+                <Carousel items={carouselItems} intervalMs={4000} autoplay={true} />
             </div>
         </div>
     </div> 
@@ -84,13 +102,15 @@
     
     .image-container {
         width: 100%;
-        height: 100%;
+        aspect-ratio: 1 / 1; /* keep a nice square on desktop */
+        max-height: 520px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
-    .image-container img {
+
+    .image-container :global(img),
+    .image-container :global(video) {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -154,6 +174,10 @@
     @media (max-width: 768px) {
         .two-column-layout {
             width: 90%;
+        }
+        .image-container {
+            aspect-ratio: 4 / 3;
+            max-height: none;
         }
     }
 </style>

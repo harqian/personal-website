@@ -7,4 +7,5 @@ svelte project for my personal website
 - make dark and light mode
   - moonflower -> sunflower
   - have icon next to name that will switch along with the name
-- 
+- use glob isntead of static array of names for images & writing
+- put more writing on here
