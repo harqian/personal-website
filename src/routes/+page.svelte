@@ -1,9 +1,16 @@
 <script>
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
+    import Carousel from "$lib/Carousel.svelte";
     
     let hoveredInterest = null;
     let showContactInfo = false;
+
+    // Auto-import carousel media using Vite's import.meta.glob
+    // We import the files as URL strings suitable for <img>/<video> src
+    const modules = import.meta.glob("$lib/assets/carousel_media/*", { eager: true, query: '?url', import: 'default' });
+    const carouselItems = Object.values(modules);
+
     
     function toggleContactInfo() {
         showContactInfo = !showContactInfo;
@@ -12,22 +19,16 @@
 
 <StarBackground>
     <Header />
-    <div class="two-column-layout">
-        <div class="left-column">
-            <p>hey there, im harrison 👋</p>
-            <p>high school junior in the bay area</p>
-            <p>enjoy cs, math, bio, physics, engineering, writing (generally learning is fun)</p>
-            <p>other interests: chess, ultimate frisbee, singing, ukulele, tennis</p>
-
-
-        </div>
-        <div class="right-column">
-            <div class="image-container">
-                <img src="/profile.png" alt="profile" />
-            </div>
-        </div>
-    </div> 
-    <div class="column">
+    <div class="carousel-container">
+        <Carousel items={carouselItems} intervalMs={3000} autoplay={true} />
+    </div>
+    <div class="content">
+        <p>hey there, im harrison 👋</p>
+        <p>high school junior in the bay area</p>
+        <p>enjoy cs, math, bio, physics, engineering, writing (generally learning is fun)</p>
+        <p>other interests: chess, ultimate frisbee, singing, ukulele, tennis</p>
+    </div>
+    <div class="content">
         <p>
             to learn, 
             i read (<a href="/reading">reading</a>), build (<a href="/cs_projects">cs</a>, <a href="/other_projects">other</a>), 
@@ -61,40 +62,25 @@
 </StarBackground>
 
 <style>
-    .two-column-layout {
-        display: flex;
+    .carousel-container {
         width: 60%;
-        margin: 0 auto;
-        transition: width 0.3s ease-out;
-        gap: 20px;
+        max-width: 520px;
+        margin: 0 auto 2rem auto;
+        aspect-ratio: 1 / 1;
     }
-    
-    .left-column {
-        flex: 1;
-        min-width: 100px;
-    }
-    
-    .right-column {
-        flex: 1;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        display: flex;
-    }
-    
-    .image-container {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .image-container img {
+
+    .carousel-container :global(img),
+    .carousel-container :global(video) {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 8px;
+    }
+
+    .content {
+        width: 60%;
+        margin: 0 auto;
+        transition: width 0.3s ease-out;
     }
     
     .say-hi-btn {
@@ -152,7 +138,11 @@
     }
         
     @media (max-width: 768px) {
-        .two-column-layout {
+        .carousel-container {
+            width: 90%;
+            aspect-ratio: 4 / 3;
+        }
+        .content {
             width: 90%;
         }
     }
