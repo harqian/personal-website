@@ -6,24 +6,11 @@
     let hoveredInterest = null;
     let showContactInfo = false;
 
-    // Carousel items from static/carousel_media
-    // Note: Keep this list in sync with the files in static/carousel_media
-    const carouselItems = [
-        "/carousel_media/profile.png",
-        "/carousel_media/IMG_0536.jpeg",
-        "/carousel_media/IMG_1110.jpeg",
-        "/carousel_media/IMG_1191.jpeg",
-        "/carousel_media/IMG_2062.jpeg",
-        "/carousel_media/tensi_action.jpeg",
-        "/carousel_media/ultimate_frisbee.png",
-        "/carousel_media/ukulele.jpg",
-        "/carousel_media/528A4148.jpg",
-        "/carousel_media/fb6c9a1063bb2d5199f27b59af5ba5c9.JPG",
-        "/carousel_media/image.png",
-        "/carousel_media/IMG_1316.webm",
-        "/carousel_media/tennis.webm",
-        "/carousel_media/Screenshot 2025-09-17 at 20.34.40.png",
-    ];
+    // Auto-import carousel media using Vite's import.meta.glob
+    // We import the files as URL strings suitable for <img>/<video> src
+    const modules = import.meta.glob("$lib/assets/carousel_media/*", { eager: true, query: '?url', import: 'default' });
+    const carouselItems = Object.values(modules);
+
     
     function toggleContactInfo() {
         showContactInfo = !showContactInfo;
