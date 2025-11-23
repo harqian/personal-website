@@ -19,20 +19,16 @@
 
 <StarBackground>
     <Header />
-    <div class="two-column-layout">
-        <div class="left-column">
-            <p>hey there, im harrison 👋</p>
-            <p>high school junior in the bay area</p>
-            <p>enjoy cs, math, bio, physics, engineering, writing (generally learning is fun)</p>
-            <p>other interests: chess, ultimate frisbee, singing, ukulele, tennis</p>
-        </div>
-        <div class="right-column">
-            <div class="image-container">
-                <Carousel items={carouselItems} intervalMs={4000} autoplay={true} />
-            </div>
-        </div>
-    </div> 
-    <div class="column">
+    <div class="carousel-container">
+        <Carousel items={carouselItems} intervalMs={3000} autoplay={true} />
+    </div>
+    <div class="content">
+        <p>hey there, im harrison 👋</p>
+        <p>high school junior in the bay area</p>
+        <p>enjoy cs, math, bio, physics, engineering, writing (generally learning is fun)</p>
+        <p>other interests: chess, ultimate frisbee, singing, ukulele, tennis</p>
+    </div>
+    <div class="content">
         <p>
             to learn, 
             i read (<a href="/reading">reading</a>), build (<a href="/cs_projects">cs</a>, <a href="/other_projects">other</a>), 
@@ -66,42 +62,25 @@
 </StarBackground>
 
 <style>
-    .two-column-layout {
-        display: flex;
+    .carousel-container {
         width: 60%;
-        margin: 0 auto;
-        transition: width 0.3s ease-out;
-        gap: 20px;
-    }
-    
-    .left-column {
-        flex: 1;
-        min-width: 100px;
-    }
-    
-    .right-column {
-        flex: 1;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        display: flex;
-    }
-    
-    .image-container {
-        width: 100%;
-        aspect-ratio: 1 / 1; /* keep a nice square on desktop */
-        max-height: 520px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        max-width: 520px;
+        margin: 0 auto 2rem auto;
+        aspect-ratio: 1 / 1;
     }
 
-    .image-container :global(img),
-    .image-container :global(video) {
+    .carousel-container :global(img),
+    .carousel-container :global(video) {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 8px;
+    }
+
+    .content {
+        width: 60%;
+        margin: 0 auto;
+        transition: width 0.3s ease-out;
     }
     
     .say-hi-btn {
@@ -159,12 +138,12 @@
     }
         
     @media (max-width: 768px) {
-        .two-column-layout {
+        .carousel-container {
             width: 90%;
-        }
-        .image-container {
             aspect-ratio: 4 / 3;
-            max-height: none;
+        }
+        .content {
+            width: 90%;
         }
     }
 </style>
