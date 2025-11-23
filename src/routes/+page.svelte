@@ -22,7 +22,7 @@
         "/carousel_media/image.png",
         "/carousel_media/IMG_1316.webm",
         "/carousel_media/tennis.webm",
-        "/carousel_media/Screenshot%202025-09-17%20at%2020.34.40.png",
+        "/carousel_media/Screenshot 2025-09-17 at 20.34.40.png",
     ];
     
     function toggleContactInfo() {
