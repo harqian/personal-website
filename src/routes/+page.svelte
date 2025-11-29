@@ -24,7 +24,7 @@
 <StarBackground>
     <Header />
     <div class="carousel-container">
-        <Carousel items={carouselItems} intervalMs={3000} autoplay={true} />
+        <Carousel items={carouselItems} intervalMs={2000} autoplay={true} />
     </div>
     <div class="content">
         <p>hey there, im harrison 👋</p>
