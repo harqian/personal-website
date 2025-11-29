@@ -1,6 +1,6 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
-  
+
   /** @type {string[]} */
   export let items = [];
   /** @type {number} */
@@ -11,15 +11,16 @@
   export let showDots = true;
   /** @type {boolean} */
   export let showArrows = true;
-  
+
   let current = 0;
   let timer = null;
+  let videoElements = [];
 
   function next() {
     if (items.length === 0) return;
     current = (current + 1) % items.length;
   }
-  
+
   function prev() {
     if (items.length === 0) return;
     current = (current - 1 + items.length) % items.length;
@@ -48,6 +49,20 @@
     stop();
   }
 
+  $: {
+    // Control video playback based on active slide
+    videoElements.forEach((video, i) => {
+      if (video) {
+        if (i === current) {
+          video.currentTime = 0;
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      }
+    });
+  }
+
   function isVideo(path) {
     return /\.(webm|mp4|mov)$/i.test(path);
   }
@@ -63,7 +78,7 @@
       {#each items as item, i}
         <div class="slide {i === current ? 'active' : ''}" aria-hidden={i === current ? 'false' : 'true'}>
           {#if isVideo(item)}
-            <video src={encoded(item)} muted loop autoplay playsinline></video>
+            <video bind:this={videoElements[i]} src={encoded(item)} muted loop playsinline></video>
           {:else}
             <img src={encoded(item)} alt="" />
           {/if}
