@@ -1,9 +1,8 @@
 <script>
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
-    import projects from "$lib/otherProjects.json";
+    import projects from "$lib/projects.json";
 
-    // Sort projects within each section by end_date in descending order
     const sortedProjects = {
         sections: projects.sections.map(section => ({
             ...section,
@@ -11,17 +10,15 @@
                 .sort((a, b) => new Date(b.end_date) - new Date(a.end_date))
                 .map(project => ({
                     ...project,
-                    sub_projects: project.sub_projects 
+                    sub_projects: project.sub_projects
                         ? [...project.sub_projects].sort((a, b) => new Date(b.end_date) - new Date(a.end_date))
                         : undefined
                 }))
         }))
     };
 
-    // Format date range as 'MMM yyyy → MMM yyyy' (e.g., 'Jan 2023 → Feb 2023')
     function formatDateRange(startDate, endDate) {
         const format = (dateString) => {
-            // Handle 'today' as a special value
             const date = dateString.toLowerCase() === 'today' ? new Date() : new Date(dateString);
             const month = date.toLocaleString('default', { month: 'short' });
             const year = date.getFullYear();
@@ -29,14 +26,44 @@
         };
         return `${format(startDate)} → ${format(endDate)}`;
     }
+
+    function getDemoLabel(project) {
+        if (project.demo_url) {
+            if (project.demo_url.includes('youtube.com') || project.demo_url.includes('youtu.be')) {
+                return 'Watch Video';
+            } else if (project.demo_url === '/') {
+                return 'View Site';
+            } else if (project.title.toLowerCase().includes('bot') || project.title.toLowerCase().includes('game')) {
+                return 'Play Demo';
+            } else {
+                return 'Try It Out';
+            }
+        }
+        return null;
+    }
+
+    function getDemoIcon(project) {
+        if (project.demo_url) {
+            if (project.demo_url.includes('youtube.com') || project.demo_url.includes('youtu.be')) {
+                return 'fab fa-youtube';
+            } else if (project.demo_url === '/') {
+                return 'fas fa-external-link-alt';
+            } else if (project.title.toLowerCase().includes('bot')) {
+                return 'fas fa-gamepad';
+            } else {
+                return 'fas fa-external-link-alt';
+            }
+        }
+        return null;
+    }
 </script>
 
 <StarBackground>
     <Header />
     <main>
         <div class="column">
-            <h2>other projects</h2>
-            <p>this is a list of some other projects i have worked on (outdated but its ok)</p>
+            <h2>all projects</h2>
+            <p>a complete collection of my work across machine learning, bots, websites, video production, and music</p>
             <hr class="horizontal-line">
             {#each sortedProjects.sections as section}
                 <section class="section">
@@ -45,26 +72,25 @@
                         <p>{section.description}</p>
                     {/if}
                     <hr class="horizontal-line">
-                    
+
                     <div class="projects-grid">
                         {#each section.projects as project}
                             <div class="project-card">
                                 <h3>
-                                    {#if project.url}
-                                        <a href="{project.url}" target="_blank" rel="noopener">
-                                            {project.title}
-                                        </a>
-                                    {:else}
-                                        {project.title}
-                                    {/if}
+                                    {project.title}
                                     <span class="date">{formatDateRange(project.start_date, project.end_date)}</span>
                                 </h3>
                                 <p>{project.description}</p>
-                                
+
                                 <div class="project-links">
+                                    {#if project.github_url}
+                                        <a href="{project.github_url}" target="_blank" rel="noopener" class="project-link github-link">
+                                            <i class="fab fa-github"></i> GitHub
+                                        </a>
+                                    {/if}
                                     {#if project.demo_url}
-                                        <a href="{project.demo_url}" target="_blank" rel="noopener" class="project-link">
-                                            View Demo
+                                        <a href="{project.demo_url}" target="_blank" rel="noopener" class="project-link demo-link">
+                                            <i class="{getDemoIcon(project)}"></i> {getDemoLabel(project)}
                                         </a>
                                     {/if}
                                     {#if project.links && project.links.length > 0}
@@ -84,21 +110,20 @@
                                         {#each project.sub_projects as subProject}
                                             <div class="sub-project">
                                                 <h4>
-                                                    {#if subProject.url}
-                                                        <a href="{subProject.url}" target="_blank" rel="noopener">
-                                                            {subProject.title}
-                                                        </a>
-                                                    {:else}
-                                                        {subProject.title}
-                                                    {/if}
+                                                    {subProject.title}
                                                     <span class="date">{formatDateRange(subProject.start_date, subProject.end_date)}</span>
                                                 </h4>
                                                 <p>{subProject.description}</p>
-                                                
+
                                                 <div class="project-links">
-                                                    {#if subProject.url}
-                                                        <a href="{subProject.url}" target="_blank" rel="noopener" class="project-link">
+                                                    {#if subProject.github_url}
+                                                        <a href="{subProject.github_url}" target="_blank" rel="noopener" class="project-link github-link">
                                                             <i class="fab fa-github"></i> GitHub
+                                                        </a>
+                                                    {/if}
+                                                    {#if subProject.demo_url}
+                                                        <a href="{subProject.demo_url}" target="_blank" rel="noopener" class="project-link demo-link">
+                                                            <i class="{getDemoIcon(subProject)}"></i> {getDemoLabel(subProject)}
                                                         </a>
                                                     {/if}
                                                     {#if subProject.links && subProject.links.length > 0}
@@ -121,6 +146,10 @@
                     </div>
                 </section>
             {/each}
+
+            <div class="back-link">
+                <a href="/projects">← back to featured projects</a>
+            </div>
         </div>
     </main>
 
@@ -191,6 +220,22 @@
             transform: translateY(-1px);
         }
 
+        .github-link {
+            background: rgba(100, 100, 100, 0.15);
+        }
+
+        .github-link:hover {
+            background: rgba(120, 120, 120, 0.25);
+        }
+
+        .demo-link {
+            background: rgba(77, 171, 247, 0.15);
+        }
+
+        .demo-link:hover {
+            background: rgba(77, 171, 247, 0.25);
+        }
+
         .project-link i {
             font-size: 0.9em;
         }
@@ -224,6 +269,24 @@
             height: 1px;
             background-color: rgba(255, 255, 255, 0.1);
             margin: 1.5rem 0;
+        }
+
+        .back-link {
+            text-align: center;
+            margin: 3rem 0 2rem 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-link a {
+            font-size: 0.9rem;
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .back-link a:hover {
+            color: #aaa;
         }
     </style>
 </StarBackground>

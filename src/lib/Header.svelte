@@ -12,8 +12,7 @@
             <a href="/poetry">poetry</a>
             <a href="/notes">notes</a>
             <a href="/gallery">gallery</a>
-            <a href="/cs_projects">cs projects</a>
-            <a href="/other_projects">other projects</a>
+            <a href="/projects">projects</a>
             <a href="/other">other</a>
             <!-- <a href="/app_reviews">app reviews</a>  -->
             <!-- <a href="resume.pdf" target="_blank" rel="noopener noreferrer">outdated resume</a> -->

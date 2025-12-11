@@ -72,6 +72,7 @@
 
   function start(resumeFrom = 0) {
     if (!autoplay || items.length <= 1) return;
+    if (resumeFrom === 0 && isHovered) return;
     stop();
 
     const remainingTime = intervalMs * (1 - resumeFrom / 100);
