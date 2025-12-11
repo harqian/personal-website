@@ -6,6 +6,15 @@
             "description": "Machine learning projects and experiments.",
             "projects": [
                 {
+                    "title": "OnCue",
+                    "description": "Your AI-powered interview wingman. OnCue listens to interview questions in real-time and surfaces relevant memories from your experience vault exactly when you need them.",
+                    "github_url": "https://github.com/Moonflower2022/OnCue",
+                    "demo_url": "https://youtu.be/4UaQEB1b84E",
+                    "start_date": "2025-10-01",
+                    "end_date": "2025-10-15",
+                    "featured": true
+                },
+                {
                     "title": "RL Snake",
                     "description": "Snake game AI trained with Q-Learning, Hamiltonian Paths, Deep Q Network, PPO, and A2C.",
                     "github_url": "https://github.com/Moonflower2022/snake-ai",
@@ -22,30 +31,49 @@
                             "url": "https://docs.google.com/document/d/1Nt2EpKpg9MtxD8eWTwKgDtKhm6kF_hJUKyHeRVNKv58/edit?tab=t.0#heading=h.v14wslm6aizk",
                             "label": "Write-up",
                             "icon": "fa fa-file"
+                        },
+                        {
+                            "url": "https://youtu.be/R3K8H0cgHxM",
+                            "label": "Demo 1",
+                            "icon": "fab fa-youtube"
+                        },
+                        {
+                            "url": "https://youtu.be/2sJ0Uhk1fis",
+                            "label": "Demo 2",
+                            "icon": "fab fa-youtube"
                         }
                     ]
                 },
                 {
-                    "title": "Sketch Classifier",
-                    "description": "Image classification for Quick, Draw! dataset using CNNs.",
+                    "title": "Sketch Classifier & Generator",
+                    "description": "Image classification for Quick, Draw! dataset using CNNs, and generating drawings using an RNN VAE with Gaussian Mixture Models.",
+                    "demo_url": "https://drive.google.com/file/d/1rUJ5fLaq5rrtZlW4eC8Wk2SypeCr1am5/view?usp=drive_link", 
                     "github_url": "https://github.com/Moonflower2022/the-doodler-classification",
                     "start_date": "2024-9-10",
-                    "end_date": "2024-9-20"
-                },
-                {
-                    "title": "Sketch Generator",
-                    "description": "Generating drawings using an RNN VAE with Gaussian Mixture Models.",
-                    "github_url": "https://github.com/Moonflower2022/the-doodler-generation",
-                    "start_date": "2024-12-01",
                     "end_date": "2025-04-01",
-                    "featured": true
+                    "featured": true,
+                    "links": [
+                        {
+                            "url": "https://github.com/Moonflower2022/the-doodler-generation",
+                            "label": "Generator GitHub",
+                            "icon": "fab fa-github"
+                        }
+                    ]
                 },
                 {
                     "title": "Text Generation",
                     "description": "Text generation models and experiments using RNNs and markov chains.",
                     "github_url": "https://github.com/Moonflower2022/text-generation",
                     "start_date": "2024-08-01",
-                    "end_date": "2024-09-01"
+                    "end_date": "2024-09-01",
+                    "featured": true
+                },
+                {
+                    "title": "ML from Scratch",
+                    "description": "Built a neural network and backpropagation from scratch using matrix calculus and numpy.",
+                    "github_url": "https://github.com/Moonflower2022/ml-from-scratch",
+                    "start_date": "2025-02-18",
+                    "end_date": "2025-03-18"
                 }
             ]
         },
@@ -55,13 +83,21 @@
             "description": "A collection of game-playing AI bots I've developed.",
             "projects": [
                 {
+                    "title": "Connect 4 Bot",
+                    "description": "A bot that plays Connect 4 using the minimax algorithm.",
+                    "github_url": "https://github.com/Moonflower2022/connect4-general",
+                    "demo_url": "https://moonflower2022.github.io/connect4-general/",
+                    "start_date": "2024-12-01",
+                    "end_date": "2025-01-01",
+                    "featured": true
+                },
+                {
                     "title": "Chess Bot",
                     "description": "A bot that plays chess using the minimax algorithm with alpha-beta pruning.",
                     "github_url": "https://github.com/Moonflower2022/chessAI-js",
                     "demo_url": "https://moonflower2022.github.io/chessAI-js/",
                     "start_date": "2022-11-1",
-                    "end_date": "2023-5-1",
-                    "featured": true
+                    "end_date": "2023-5-1"
                 },
                 {
                     "title": "Hex Bot",
@@ -72,12 +108,18 @@
                     "end_date": "2023-03-22"
                 },
                 {
-                    "title": "Connect 4 Bot",
-                    "description": "A bot that plays Connect 4 using the minimax algorithm.",
-                    "github_url": "https://github.com/Moonflower2022/connect4-general",
-                    "demo_url": "https://moonflower2022.github.io/connect4-general/",
-                    "start_date": "2024-12-01",
-                    "end_date": "2025-01-01"
+                    "title": "Wordle Bot",
+                    "description": "A bot that plays Wordle using a combination of letter frequency analysis and word list filtering.",
+                    "github_url": "https://github.com/Moonflower2022/wordle-bot",
+                    "start_date": "2024-03-13",
+                    "end_date": "2024-06-24"
+                },
+                {
+                    "title": "Set Bot",
+                    "description": "Scripts that run in the JavaScript web browser that automate playing the game of Set.",
+                    "github_url": "https://github.com/Moonflower2022/set-scripts",
+                    "start_date": "2024-03-01",
+                    "end_date": "2024-04-01"
                 }
             ]
         },
@@ -92,8 +134,7 @@
                     "github_url": "https://github.com/Moonflower2022/personal-website",
                     "demo_url": "/",
                     "start_date": "2025-04-01",
-                    "end_date": "today",
-                    "featured": true
+                    "end_date": "today"
                 },
                 {
                     "title": "Color Canvas",
@@ -122,24 +163,103 @@
             ]
         },
         {
+            "id": "games",
+            "title": "🎮 Games",
+            "description": "Interactive games and simulations.",
+            "projects": [
+                {
+                    "title": "IPD Nueva",
+                    "github_url": "https://github.com/Moonflower2022/Updated_IPD_Nueva",
+                    "description": "A forked and higly optimized and improved version of the Iterated Prisoner's Dilemma simulation created to run a tournament for a Microeconomics class.",
+                    "start_date": "2024-11-01",
+                    "end_date": "today"
+                },
+                {
+                    "title": "Break Those Blocks",
+                    "github_url": "https://github.com/Moonflower2022/break-those-blocks",
+                    "demo_url": "https://moonflower2022.github.io/break-those-blocks/",
+                    "description": "A game where players break blocks in a grid-based environment by shooting balls (currently doesnt work that well).",
+                    "start_date": "2023-07-29",
+                    "end_date": "2023-08-15"
+                },
+                {
+                    "title": "Number Connections",
+                    "github_url": "https://github.com/Moonflower2022/number-connections",
+                    "demo_url": "https://number-connections.vercel.app/",
+                    "description": " Instead of connections, connect the numbers! Like the NYT game.",
+                    "start_date": "2024-04-15",
+                    "end_date": "2024-07-25"
+                }
+            ]
+        },
+        {
+            "id": "algorithms",
+            "title": "🔢 Algorithms",
+            "description": "Algorithm visualizations and computational experiments.",
+            "projects": [
+                {
+                    "title": "Boids",
+                    "github_url": "https://github.com/Moonflower2022/boids",
+                    "description": "A simulation of flocking behavior in birds.",
+                    "start_date": "2024-01-01",
+                    "end_date": "2024-01-01"
+                },
+                {
+                    "title": "Fibonacci",
+                    "github_url": "https://github.com/Moonflower2022/fibonacci",
+                    "description": " Various algorithms to compute Fibonacci numbers, including recursive, iterative, and matrix exponentiation methods.",
+                    "start_date": "2024-11-15",
+                    "end_date": "2025-02-12"
+                },
+                {
+                    "title": "Rectangle Packing",
+                    "github_url": "https://github.com/Moonflower2022/perfect-rectangle-packing",
+                    "description": "An algorithm to pack rectangles into a larger rectangle with zero wasted space.",
+                    "start_date": "2024-12-01",
+                    "end_date": "2024-12-15"
+                },
+                {
+                    "title": "Misc Computational Problems",
+                    "description": "Various smaller computational problems.",
+                    "start_date": "?",
+                    "end_date": "?"
+                },
+                {
+                    "title": "Misc Algorithms",
+                    "description": "Various algorithms I have made that are not part of a larger project.",
+                    "start_date": "?",
+                    "end_date": "?"
+                }
+            ]
+        },
+        {
             "id": "videos",
             "title": "🎥 Video Production",
             "description": "Creative video projects and productions.",
             "projects": [
                 {
+                    "title": "Induction with Manim",
+                    "description": "A mathematical explanation of mathematical induction, animated using the manim library to visualize complex concepts.",
+                    "github_url": "https://github.com/Moonflower2022/manim-projects/tree/main/induction_is_easy_actually",
+                    "demo_url": "https://youtu.be/yOLwNqhFLRs",
+                    "start_date": "2025-02-01",
+                    "end_date": "2025-04-01",
+                    "featured": true
+                },
+                {
                     "title": "Reinforcement Learning Intuition",
-                    "description": "An educational video explaining the core concepts of reinforcement learning with intuitive visualizations and examples.",
+                    "description": "Video explaining the concepts in reinforcement learning with intuitive visualizations. (top 40% in Breakthrough Junior Challenege 2024)",
                     "demo_url": "https://youtu.be/epVaD4IdphU",
                     "start_date": "2024-04-01",
                     "end_date": "2024-06-01",
                     "featured": true
                 },
                 {
-                    "title": "Induction with manim",
-                    "description": "A mathematical explanation of mathematical induction, animated using the manim library to visualize complex concepts.",
-                    "demo_url": "https://youtu.be/yOLwNqhFLRs",
-                    "start_date": "2025-02-01",
-                    "end_date": "2025-04-01"
+                    "title": "Making Bots Play Games for Me",
+                    "description": "NEEDS DESCRIPTION",
+                    "demo_url": "https://youtu.be/CFWLo1L4-O0",
+                    "start_date": "?",
+                    "end_date": "?"
                 },
                 {
                     "title": "5 (+1) ways to calculate Pi",
@@ -156,6 +276,14 @@
             "description": "Music performances and creations.",
             "projects": [
                 {
+                    "title": "Piano Culmination",
+                    "description": "A culmination of 1.3 years of piano practice, featuring a mix of original compositions and covers.",
+                    "demo_url": "https://youtu.be/wDX-dO3Enwk",
+                    "start_date": "2024-01-01",
+                    "end_date": "2025-04-20",
+                    "featured": true
+                },
+                {
                     "title": "Changing All My Colors",
                     "description": "My first AI Generated song.",
                     "demo_url": "https://youtu.be/e0zsOTzF1cs",
@@ -170,14 +298,6 @@
                     "end_date": "2025-06-01"
                 },
                 {
-                    "title": "Piano Culmination",
-                    "description": "A culmination of 1.3 years of piano practice, featuring a mix of original compositions and covers.",
-                    "demo_url": "https://youtu.be/wDX-dO3Enwk",
-                    "start_date": "2024-01-01",
-                    "end_date": "2025-04-20",
-                    "featured": true
-                },
-                {
                     "title": "The Edge of Chaos",
                     "description": "ableton generated song 2",
                     "demo_url": "https://youtu.be/l9WB_DnRYkU",
@@ -190,6 +310,30 @@
                     "demo_url": "https://youtu.be/OxF-wFsmaBY",
                     "start_date": "2025-05-01",
                     "end_date": "2025-05-20"
+                }
+            ]
+        },
+        {
+            "id": "apps",
+            "title": "📱 Apps",
+            "description": "Mobile and desktop applications.",
+            "projects": [
+                {
+                    "title": "Pause",
+                    "description": "A macOS break enforcer that actually locks you out. Smart activations, customizable, and private. (10 users!)",
+                    "github_url": "https://github.com/Moonflower2022/Pause",
+                    "demo_url": "https://youtu.be/riwXFB-mAbU",
+                    "start_date": "2025-10-01",
+                    "end_date": "2025-11-01",
+                    "featured": true
+                },
+                {
+                    "title": "WorkableCafes",
+                    "description": "Find cafes with good WiFi and power outlets to work from. (200 users!)",
+                    "demo_url": "https://workablecafes.com/",
+                    "start_date": "2025-10-01",
+                    "end_date": "2025-11-01",
+                    "featured": true
                 }
             ]
         }

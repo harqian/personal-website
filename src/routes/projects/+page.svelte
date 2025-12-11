@@ -13,6 +13,9 @@
         .sort((a, b) => new Date(b.end_date) - new Date(a.end_date));
 
     function formatDateRange(startDate, endDate) {
+        if (startDate === '?' || endDate === '?') {
+            return '?';
+        }
         const format = (dateString) => {
             const date = dateString.toLowerCase() === 'today' ? new Date() : new Date(dateString);
             const month = date.toLocaleString('default', { month: 'short' });
@@ -22,9 +25,13 @@
         return `${format(startDate)} → ${format(endDate)}`;
     }
 
+    function getDefaultUrl(project) {
+        return project.demo_url || project.github_url;
+    }
+
     function getDemoLabel(project) {
         if (project.demo_url) {
-            if (project.demo_url.includes('youtube.com') || project.demo_url.includes('youtu.be')) {
+            if (project.demo_url.includes('youtube.com') || project.demo_url.includes('youtu.be') || project.demo_url.includes('/view')) {
                 return 'Watch Video';
             } else if (project.demo_url === '/') {
                 return 'View Site';
@@ -66,7 +73,13 @@
                     <div class="project-card">
                         <div class="category-badge">{project.category}</div>
                         <h3>
-                            {project.title}
+                            {#if getDefaultUrl(project)}
+                                <a href="{getDefaultUrl(project)}" target="_blank" rel="noopener">
+                                    {project.title}
+                                </a>
+                            {:else}
+                                {project.title}
+                            {/if}
                             <span class="date">{formatDateRange(project.start_date, project.end_date)}</span>
                         </h3>
                         <p>{project.description}</p>

@@ -18,6 +18,9 @@
     };
 
     function formatDateRange(startDate, endDate) {
+        if (startDate === '?' || endDate === '?') {
+            return '?';
+        }
         const format = (dateString) => {
             const date = dateString.toLowerCase() === 'today' ? new Date() : new Date(dateString);
             const month = date.toLocaleString('default', { month: 'short' });
@@ -25,6 +28,10 @@
             return `${month} ${year}`;
         };
         return `${format(startDate)} → ${format(endDate)}`;
+    }
+
+    function getDefaultUrl(project) {
+        return project.demo_url || project.github_url;
     }
 
     function getDemoLabel(project) {
@@ -77,7 +84,13 @@
                         {#each section.projects as project}
                             <div class="project-card">
                                 <h3>
-                                    {project.title}
+                                    {#if getDefaultUrl(project)}
+                                        <a href="{getDefaultUrl(project)}" target="_blank" rel="noopener">
+                                            {project.title}
+                                        </a>
+                                    {:else}
+                                        {project.title}
+                                    {/if}
                                     <span class="date">{formatDateRange(project.start_date, project.end_date)}</span>
                                 </h3>
                                 <p>{project.description}</p>
@@ -110,7 +123,13 @@
                                         {#each project.sub_projects as subProject}
                                             <div class="sub-project">
                                                 <h4>
-                                                    {subProject.title}
+                                                    {#if getDefaultUrl(subProject)}
+                                                        <a href="{getDefaultUrl(subProject)}" target="_blank" rel="noopener">
+                                                            {subProject.title}
+                                                        </a>
+                                                    {:else}
+                                                        {subProject.title}
+                                                    {/if}
                                                     <span class="date">{formatDateRange(subProject.start_date, subProject.end_date)}</span>
                                                 </h4>
                                                 <p>{subProject.description}</p>
