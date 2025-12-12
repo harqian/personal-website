@@ -64,6 +64,7 @@
                     "title": "Text Generation",
                     "description": "Text generation models and experiments using RNNs and markov chains.",
                     "github_url": "https://github.com/Moonflower2022/text-generation",
+                    "demo_url": "https://drive.google.com/file/d/1Oa5uDw0E7kkFCJUqt4SwoG4xK6bu8j7I/view?usp=sharing",
                     "start_date": "2024-08-01",
                     "end_date": "2024-09-01",
                     "featured": true
