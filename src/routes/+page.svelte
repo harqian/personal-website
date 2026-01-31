@@ -2,7 +2,8 @@
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
     import Carousel from "$lib/Carousel.svelte";
-    
+    import durations from "$lib/assets/carouselDurations.json";
+
     let hoveredInterest = null;
     let showContactInfo = false;
 
@@ -24,7 +25,7 @@
 <StarBackground>
     <Header />
     <div class="carousel-container">
-        <Carousel items={carouselItems} intervalMs={2000} autoplay={true} />
+        <Carousel items={carouselItems} intervalMs={3000} autoplay={true} durations={durations} />
     </div>
     <div class="content">
         <p>hey there, im harrison</p>

@@ -11,6 +11,8 @@
   export let showDots = true;
   /** @type {boolean} */
   export let showArrows = true;
+  /** @type {Object.<string, number|null>} - maps filename to duration in ms, null means use video duration */
+  export let durations = {};
 
   let current = 0;
   let timer = null;
@@ -20,42 +22,26 @@
   let progressTimer = null;
   let startTime = 0;
   let pausedProgress = 0;
+  let currentDuration = intervalMs;
 
   function next() {
     if (items.length === 0) return;
     current = (current + 1) % items.length;
-    resetProgress();
+    pausedProgress = 0;
+    start(0);
   }
 
   function prev() {
     if (items.length === 0) return;
     current = (current - 1 + items.length) % items.length;
-    resetProgress();
-  }
-
-  function nextManual() {
-    next();
-    pausedProgress = 0;
-    start(0);
-  }
-
-  function prevManual() {
-    prev();
     pausedProgress = 0;
     start(0);
   }
 
   function goToSlide(index) {
     current = index;
-    resetProgress();
     pausedProgress = 0;
     start(0);
-  }
-
-  function resetProgress() {
-    startTime = Date.now();
-    progress = 0;
-    updateProgress();
   }
 
   function updateProgress() {
@@ -63,7 +49,7 @@
     if (typeof requestAnimationFrame === 'undefined') return;
 
     const elapsed = Date.now() - startTime;
-    progress = Math.min((elapsed / intervalMs) * 100, 100);
+    progress = Math.min((elapsed / currentDuration) * 100, 100);
 
     if (progress < 100) {
       progressTimer = requestAnimationFrame(updateProgress);
@@ -75,19 +61,21 @@
     if (resumeFrom === 0 && isHovered) return;
     stop();
 
-    const remainingTime = intervalMs * (1 - resumeFrom / 100);
-    startTime = Date.now() - (intervalMs * resumeFrom / 100);
+    // figure out duration for current item
+    const itemDuration = getDurationForItem(current);
+    // if null, it's a video and we wait for loadedmetadata
+    if (itemDuration === null) {
+      // video will call handleVideoLoaded which starts the timer
+      return;
+    }
+    currentDuration = itemDuration;
+
+    const remainingTime = currentDuration * (1 - resumeFrom / 100);
+    startTime = Date.now() - (currentDuration * resumeFrom / 100);
     progress = resumeFrom;
 
-    if (resumeFrom === 0 || resumeFrom >= 100) {
-      timer = setInterval(next, intervalMs);
-    } else {
-      timer = setTimeout(() => {
-        next();
-        timer = setInterval(next, intervalMs);
-      }, remainingTime);
-    }
-
+    // use setTimeout instead of setInterval since each slide has different duration
+    timer = setTimeout(next, remainingTime);
     updateProgress();
   }
 
@@ -107,11 +95,17 @@
     isHovered = true;
     pausedProgress = progress;
     stop();
+    // pause current video if playing
+    const video = videoElements[current];
+    if (video) video.pause();
   }
 
   function handleMouseLeave() {
     isHovered = false;
     start(pausedProgress);
+    // resume current video
+    const video = videoElements[current];
+    if (video) video.play().catch(() => {});
   }
 
   onMount(start);
@@ -145,6 +139,54 @@
   function encoded(path) {
     return encodeURI(path);
   }
+
+  // extract filename from path like "/src/lib/assets/carousel_media/1_juggling.webm"
+  function getFilename(path) {
+    return path.split('/').pop();
+  }
+
+  // get duration for current item - returns ms
+  function getDurationForItem(index) {
+    if (index < 0 || index >= items.length) return intervalMs;
+    const item = items[index];
+    const filename = getFilename(item);
+    const specifiedDuration = durations[filename];
+
+    // if duration is null, we use video duration (handled separately)
+    // if duration is a number, use it
+    // if not specified, fall back to intervalMs
+    if (specifiedDuration === null && isVideo(item)) {
+      return null; // signal to use video duration
+    }
+    return specifiedDuration || intervalMs;
+  }
+
+  // called when video metadata loads to get actual duration
+  function handleVideoLoaded(event, index) {
+    if (index !== current) return;
+    const video = event.target;
+    const filename = getFilename(items[index]);
+
+    // only use video duration if durations[filename] is null (not specified or explicitly null)
+    if (durations[filename] === null || durations[filename] === undefined) {
+      currentDuration = video.duration * 1000;
+      // restart timer with correct duration
+      if (!isHovered && autoplay) {
+        stop();
+        startWithDuration(currentDuration);
+      }
+    }
+  }
+
+  function startWithDuration(duration) {
+    if (!autoplay || items.length <= 1) return;
+    stop();
+    currentDuration = duration;
+    startTime = Date.now();
+    progress = 0;
+    timer = setTimeout(next, duration);
+    updateProgress();
+  }
 </script>
 
 <div class="carousel" role="region" aria-label="Image carousel" on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
@@ -153,7 +195,7 @@
       {#each items as item, i}
         <div class="slide {i === current ? 'active' : ''}" aria-hidden={i === current ? 'false' : 'true'}>
           {#if isVideo(item)}
-            <video bind:this={videoElements[i]} src={encoded(item)} muted loop playsinline></video>
+            <video bind:this={videoElements[i]} src={encoded(item)} muted playsinline on:loadedmetadata={(e) => handleVideoLoaded(e, i)} on:ended={next}></video>
           {:else}
             <img src={encoded(item)} alt="" />
           {/if}
@@ -188,10 +230,10 @@
     {/if}
 
     {#if showArrows && items.length > 1}
-      <button class="nav prev" on:click={prevManual} aria-label="Previous">
+      <button class="nav prev" on:click={prev} aria-label="Previous">
         <i class="fa fa-chevron-left"></i>
       </button>
-      <button class="nav next" on:click={nextManual} aria-label="Next">
+      <button class="nav next" on:click={next} aria-label="Next">
         <i class="fa fa-chevron-right"></i>
       </button>
     {/if}
