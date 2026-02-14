@@ -30,7 +30,7 @@
     <div class="content">
         <p>hey there, im harrison</p>
         <p>-> bay area</p>
-        <p>enjoy cs, math, bio, physics, engineering, writing (generally learning is fun)</p>
+        <p>i enjoy cs, math, bio, physics, engineering, writing (generally learning is fun)</p>
         <p>other interests: ultimate frisbee, singing, ukulele, tennis, (chess)</p>
     </div>
     <div class="content">
@@ -44,7 +44,7 @@
         <p>im proactive and really care about learning quickly, connection with others, and accountability</p>
         <p>check out <a href="/gallery">my media gallery</a> for cool scenery, <a href="/animal_media">my animal media</a> for cute (and not so cute) animals</p>
 
-        <p>or, <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>! i love talking to new people</p>
+        <p>or, <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>!</p>
         
         {#if showContactInfo}
             <div class="contact-info">
