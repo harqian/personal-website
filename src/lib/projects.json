@@ -160,6 +160,15 @@
                     "demo_url": "https://curious-pondering.web.app/",
                     "start_date": "2024-02-06",
                     "end_date": "2024-02-06"
+                },
+                {
+                    "title": "debuff.dev",
+                    "description": "Pair-programming coding challenges; blind coding, no for loops, relay race, etc.",
+                    "github_url": "https://github.com/harqian/pair-programming-challenges",
+                    "demo_url": "https://debuff.dev",
+                    "start_date": "2026-01-20",
+                    "end_date": "2026-02-20",
+                    "featured": true
                 }
             ]
         },
