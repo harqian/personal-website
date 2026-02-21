@@ -46,7 +46,6 @@
         margin: 0;
         padding: 0;
         font-family: "Geist Mono", monospace;
-        width: 100vw;
     }
     
     :global(a) {
