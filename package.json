@@ -4,6 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"generate:interests:info": "node scripts/generateInterestsInfo.js",
+		"generate:notes": "node scripts/extractWebsiteNotes.js",
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview"

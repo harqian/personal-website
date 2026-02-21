@@ -1,115 +1,33 @@
 <script>
     import { page } from '$app/stores';
-    import { onMount } from 'svelte';
     import { marked } from 'marked';
+    import websiteNotesData from '$lib/websiteNotes.json';
     import Header from "$lib/Header.svelte"
     import StarBackground from "$lib/StarBackground.svelte"
 
     let note = null;
+    let displayNote = null;
     let content = '';
-    let loading = true;
+    let loading = false;
+    const allNotes = websiteNotesData?.notes || [];
 
-    onMount(async () => {
-        try {
-            const slug = $page.params.slug;
-            const response = await fetch(`/notes/${slug}.md`);
-
-            if (!response.ok) {
-                throw new Error('Note not found');
-            }
-
-            const rawContent = await response.text();
-
-            marked.setOptions({
-                gfm: true,
-                breaks: false,
-                pedantic: false,
-                sanitize: false,
-                smartLists: true,
-                smartypants: false
-            });
-
-            marked.use({
-                extensions: [{
-                    name: 'footnote',
-                    level: 'inline',
-                    start(src) { return src.match(/^\[\^/)?.index; },
-                    tokenizer(src, tokens) {
-                        const rule = /^\[\^([^\]]+)\]/;
-                        const match = rule.exec(src);
-                        if (match) {
-                            return {
-                                type: 'footnote',
-                                raw: match[0],
-                                text: match[1]
-                            };
-                        }
-                    },
-                    renderer(token) {
-                        return `<sup><a href="#fn-${token.text}" id="fnref-${token.text}" class="footnote-ref">${token.text}</a></sup>`;
-                    }
-                }]
-            });
-
-            const frontmatterMatch = rawContent.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-
-            if (frontmatterMatch) {
-                const frontmatter = frontmatterMatch[1];
-                const markdownContent = frontmatterMatch[2];
-
-                const metadata = {};
-                const lines = frontmatter.split('\n');
-                let currentKey = '';
-
-                for (const line of lines) {
-                    const trimmedLine = line.trim();
-                    if (!trimmedLine) continue;
-
-                    if (trimmedLine.includes(':')) {
-                        const [key, ...valueParts] = trimmedLine.split(':');
-                        currentKey = key.trim();
-                        let value = valueParts.join(':').trim();
-                        value = value.replace(/^["']|["']$/g, '');
-
-                        if (currentKey === 'title') {
-                            metadata.title = value;
-                        } else if (currentKey === 'published') {
-                            metadata.published = value === 'true';
-                        } else if (currentKey === 'tags') {
-                            metadata.tags = [];
-                        } else if (currentKey === 'date' || currentKey === 'edited') {
-                            metadata[currentKey] = value;
-                        }
-                    }
-                    else if (trimmedLine.startsWith('-') && currentKey === 'tags') {
-                        const tag = trimmedLine.substring(1).trim();
-                        if (!metadata.tags) metadata.tags = [];
-                        metadata.tags.push(tag);
-                    }
-                }
-
-                const titleFromSlug = slug.replace(/\.md$/, '').replace(/_/g, ' ');
-                note = {
-                    ...metadata,
-                    title: metadata.title || titleFromSlug,
-                    filteredTags: metadata.tags ? metadata.tags.filter(t => t && t.trim()) : []
-                };
-
-                let processedContent = markdownContent.replace(/^\[\^([^\]]+)\]:\s*(.+)$/gm, (match, id, text) => {
-                    return `<div class="footnote-def" id="fn-${id}">
-                        <a href="#fnref-${id}" class="footnote-number">${id}</a>
-                        <span class="footnote-text">${marked.parseInline(text)}</span>
-                    </div>`;
-                });
-
-                content = marked.parse(processedContent);
-            }
-        } catch (error) {
-            console.error('Error loading note:', error);
-        } finally {
-            loading = false;
-        }
+    marked.setOptions({
+        gfm: true,
+        breaks: false,
+        pedantic: false,
+        smartLists: true,
+        smartypants: false
     });
+
+    $: slug = $page.params.slug;
+    $: note = allNotes.find((item) => item.slug === slug) || null;
+    $: content = note ? marked.parse(note.content || '') : '';
+    $: displayNote = note
+        ? {
+            ...note,
+            filteredTags: Array.isArray(note.tags) ? note.tags.filter((t) => t && t.trim()) : []
+        }
+        : null;
 </script>
 
 <StarBackground>
@@ -122,22 +40,22 @@
 
         {#if loading}
             <p>Loading...</p>
-        {:else if note}
+        {:else if displayNote}
             <article>
                 <header>
-                    <h2 class="title">{note.title}</h2>
+                    <h2 class="title">{displayNote.title}</h2>
                     <div class="meta-row">
-                        {#if note.filteredTags && note.filteredTags.length > 0}
+                        {#if displayNote.filteredTags && displayNote.filteredTags.length > 0}
                             <div class="tags">
-                                {#each note.filteredTags as tag}
+                                {#each displayNote.filteredTags as tag}
                                     <span class="tag">{tag}</span>
                                 {/each}
                             </div>
                         {/if}
                         <time class="date">
-                            {new Date(note.date).toLocaleDateString()}
-                            {#if note.edited}
-                                <span class="edited">(edited {new Date(note.edited).toLocaleDateString()})</span>
+                            {new Date(displayNote.date).toLocaleDateString()}
+                            {#if displayNote.edited}
+                                <span class="edited">(edited {new Date(displayNote.edited).toLocaleDateString()})</span>
                             {/if}
                         </time>
                     </div>
@@ -164,11 +82,15 @@
 
     .meta-row {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        gap: 0.75rem;
         margin-bottom: 1.5rem;
         color: #666;
         font-size: 0.9rem;
+    }
+
+    .meta-row .date {
+        margin-left: auto;
     }
 
     .content {
