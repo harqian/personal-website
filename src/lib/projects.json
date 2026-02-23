@@ -8,7 +8,7 @@
                 {
                     "title": "OnCue",
                     "description": "Your AI-powered interview wingman. OnCue listens to interview questions in real-time and surfaces relevant memories from your experience vault exactly when you need them.",
-                    "github_url": "https://github.com/Moonflower2022/OnCue",
+                    "github_url": "https://github.com/harqian/OnCue",
                     "demo_url": "https://youtu.be/4UaQEB1b84E",
                     "start_date": "2025-10-01",
                     "end_date": "2025-10-15",
@@ -17,13 +17,13 @@
                 {
                     "title": "RL Snake",
                     "description": "Snake game AI trained with Q-Learning, Hamiltonian Paths, Deep Q Network, PPO, and A2C.",
-                    "github_url": "https://github.com/Moonflower2022/snake-ai",
+                    "github_url": "https://github.com/harqian/snake-ai",
                     "start_date": "2023-9-01",
                     "end_date": "2024-4-01",
                     "featured": true,
                     "links": [
                         {
-                            "url": "https://github.com/Moonflower2022/snakeAI-py",
+                            "url": "https://github.com/harqian/snakeAI-py",
                             "label": "Other GitHub",
                             "icon": "fab fa-github"
                         },
@@ -48,13 +48,13 @@
                     "title": "Sketch Classifier & Generator",
                     "description": "Image classification for Quick, Draw! dataset using CNNs, and generating drawings using an RNN VAE with Gaussian Mixture Models.",
                     "demo_url": "https://drive.google.com/file/d/1rUJ5fLaq5rrtZlW4eC8Wk2SypeCr1am5/view?usp=drive_link", 
-                    "github_url": "https://github.com/Moonflower2022/the-doodler-classification",
+                    "github_url": "https://github.com/harqian/the-doodler-classification",
                     "start_date": "2024-9-10",
                     "end_date": "2025-04-01",
                     "featured": true,
                     "links": [
                         {
-                            "url": "https://github.com/Moonflower2022/the-doodler-generation",
+                            "url": "https://github.com/harqian/the-doodler-generation",
                             "label": "Generator GitHub",
                             "icon": "fab fa-github"
                         }
@@ -63,7 +63,7 @@
                 {
                     "title": "Text Generation",
                     "description": "Text generation models and experiments using RNNs and markov chains.",
-                    "github_url": "https://github.com/Moonflower2022/text-generation",
+                    "github_url": "https://github.com/harqian/text-generation",
                     "demo_url": "https://drive.google.com/file/d/1Oa5uDw0E7kkFCJUqt4SwoG4xK6bu8j7I/view?usp=sharing",
                     "start_date": "2024-08-01",
                     "end_date": "2024-09-01",
@@ -72,7 +72,7 @@
                 {
                     "title": "ML from Scratch",
                     "description": "Built a neural network and backpropagation from scratch using matrix calculus and numpy.",
-                    "github_url": "https://github.com/Moonflower2022/ml-from-scratch",
+                    "github_url": "https://github.com/harqian/ml-from-scratch",
                     "start_date": "2025-02-18",
                     "end_date": "2025-03-18"
                 }
@@ -86,8 +86,8 @@
                 {
                     "title": "Connect 4 Bot",
                     "description": "A bot that plays Connect 4 using the minimax algorithm.",
-                    "github_url": "https://github.com/Moonflower2022/connect4-general",
-                    "demo_url": "https://moonflower2022.github.io/connect4-general/",
+                    "github_url": "https://github.com/harqian/connect4-general",
+                    "demo_url": "https://harqian.github.io/connect4-general/",
                     "start_date": "2024-12-01",
                     "end_date": "2025-01-01",
                     "featured": true
@@ -95,30 +95,30 @@
                 {
                     "title": "Chess Bot",
                     "description": "A bot that plays chess using the minimax algorithm with alpha-beta pruning.",
-                    "github_url": "https://github.com/Moonflower2022/chessAI-js",
-                    "demo_url": "https://moonflower2022.github.io/chessAI-js/",
+                    "github_url": "https://github.com/harqian/chessAI-js",
+                    "demo_url": "https://harqian.github.io/chessAI-js/",
                     "start_date": "2022-11-1",
                     "end_date": "2023-5-1"
                 },
                 {
                     "title": "Hex Bot",
                     "description": "A bot that plays the game of Hex using Monte Carlo Tree Search.",
-                    "github_url": "https://github.com/Moonflower2022/hex-bot",
-                    "demo_url": "https://moonflower2022.github.io/hex-bot/",
+                    "github_url": "https://github.com/harqian/hex-bot",
+                    "demo_url": "https://harqian.github.io/hex-bot/",
                     "start_date": "2023-03-01",
                     "end_date": "2023-03-22"
                 },
                 {
                     "title": "Wordle Bot",
                     "description": "A bot that plays Wordle using a combination of letter frequency analysis and word list filtering.",
-                    "github_url": "https://github.com/Moonflower2022/wordle-bot",
+                    "github_url": "https://github.com/harqian/wordle-bot",
                     "start_date": "2024-03-13",
                     "end_date": "2024-06-24"
                 },
                 {
                     "title": "Set Bot",
                     "description": "Scripts that run in the JavaScript web browser that automate playing the game of Set.",
-                    "github_url": "https://github.com/Moonflower2022/set-scripts",
+                    "github_url": "https://github.com/harqian/set-scripts",
                     "start_date": "2024-03-01",
                     "end_date": "2024-04-01"
                 }
@@ -132,7 +132,7 @@
                 {
                     "title": "Personal Website",
                     "description": "My personal website and portfolio.",
-                    "github_url": "https://github.com/Moonflower2022/personal-website",
+                    "github_url": "https://github.com/harqian/personal-website",
                     "demo_url": "/",
                     "start_date": "2025-04-01",
                     "end_date": "today"
@@ -140,15 +140,15 @@
                 {
                     "title": "Color Canvas",
                     "description": "Interactive color canvas web application.",
-                    "github_url": "https://github.com/Moonflower2022/color-canvas",
-                    "demo_url": "https://moonflower2022.github.io/color-canvas/",
+                    "github_url": "https://github.com/harqian/color-canvas",
+                    "demo_url": "https://harqian.github.io/color-canvas/",
                     "start_date": "2024-03-01",
                     "end_date": "2024-03-01"
                 },
                 {
                     "title": "Punctured Go",
                     "description": "A variation of the game of Go with punctured boards.",
-                    "github_url": "https://github.com/Moonflower2022/punctured-go",
+                    "github_url": "https://github.com/harqian/punctured-go",
                     "demo_url": "https://punctured-go125.web.app/",
                     "start_date": "2024-02-06",
                     "end_date": "2024-02-06"
@@ -156,7 +156,7 @@
                 {
                     "title": "Assert",
                     "description": "A website to poll opinions and show results in real-time.",
-                    "github_url": "https://github.com/Moonflower2022/assert",
+                    "github_url": "https://github.com/harqian/assert",
                     "demo_url": "https://curious-pondering.web.app/",
                     "start_date": "2024-02-06",
                     "end_date": "2024-02-06"
@@ -179,22 +179,22 @@
             "projects": [
                 {
                     "title": "IPD Nueva",
-                    "github_url": "https://github.com/Moonflower2022/Updated_IPD_Nueva",
+                    "github_url": "https://github.com/harqian/Updated_IPD_Nueva",
                     "description": "A forked and higly optimized and improved version of the Iterated Prisoner's Dilemma simulation created to run a tournament for a Microeconomics class.",
                     "start_date": "2024-11-01",
                     "end_date": "today"
                 },
                 {
                     "title": "Break Those Blocks",
-                    "github_url": "https://github.com/Moonflower2022/break-those-blocks",
-                    "demo_url": "https://moonflower2022.github.io/break-those-blocks/",
+                    "github_url": "https://github.com/harqian/break-those-blocks",
+                    "demo_url": "https://harqian.github.io/break-those-blocks/",
                     "description": "A game where players break blocks in a grid-based environment by shooting balls (currently doesnt work that well).",
                     "start_date": "2023-07-29",
                     "end_date": "2023-08-15"
                 },
                 {
                     "title": "Number Connections",
-                    "github_url": "https://github.com/Moonflower2022/number-connections",
+                    "github_url": "https://github.com/harqian/number-connections",
                     "demo_url": "https://number-connections.vercel.app/",
                     "description": " Instead of connections, connect the numbers! Like the NYT game.",
                     "start_date": "2024-04-15",
@@ -209,21 +209,21 @@
             "projects": [
                 {
                     "title": "Boids",
-                    "github_url": "https://github.com/Moonflower2022/boids",
+                    "github_url": "https://github.com/harqian/boids",
                     "description": "A simulation of flocking behavior in birds.",
                     "start_date": "2024-01-01",
                     "end_date": "2024-01-01"
                 },
                 {
                     "title": "Fibonacci",
-                    "github_url": "https://github.com/Moonflower2022/fibonacci",
+                    "github_url": "https://github.com/harqian/fibonacci",
                     "description": " Various algorithms to compute Fibonacci numbers, including recursive, iterative, and matrix exponentiation methods.",
                     "start_date": "2024-11-15",
                     "end_date": "2025-02-12"
                 },
                 {
                     "title": "Rectangle Packing",
-                    "github_url": "https://github.com/Moonflower2022/perfect-rectangle-packing",
+                    "github_url": "https://github.com/harqian/perfect-rectangle-packing",
                     "description": "An algorithm to pack rectangles into a larger rectangle with zero wasted space.",
                     "start_date": "2024-12-01",
                     "end_date": "2024-12-15"
@@ -250,7 +250,7 @@
                 {
                     "title": "Induction with Manim",
                     "description": "A mathematical explanation of mathematical induction, animated using the manim library to visualize complex concepts.",
-                    "github_url": "https://github.com/Moonflower2022/manim-projects/tree/main/induction_is_easy_actually",
+                    "github_url": "https://github.com/harqian/manim-projects/tree/main/induction_is_easy_actually",
                     "demo_url": "https://youtu.be/yOLwNqhFLRs",
                     "start_date": "2025-02-01",
                     "end_date": "2025-04-01",
@@ -331,7 +331,7 @@
                 {
                     "title": "Pause",
                     "description": "A macOS break enforcer that actually locks you out. Smart activations, customizable, and private. (10 users!)",
-                    "github_url": "https://github.com/Moonflower2022/Pause",
+                    "github_url": "https://github.com/harqian/Pause",
                     "demo_url": "https://youtu.be/riwXFB-mAbU",
                     "start_date": "2025-10-01",
                     "end_date": "2025-11-01",
