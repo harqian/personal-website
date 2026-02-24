@@ -3,9 +3,11 @@
     import StarBackground from "$lib/StarBackground.svelte";
     import Carousel from "$lib/Carousel.svelte";
     import durations from "$lib/assets/carouselDurations.json";
+    import { tick } from "svelte";
 
     let hoveredInterest = null;
     let showContactInfo = false;
+    let contactInfoEl;
 
     // Auto-import carousel media using Vite's import.meta.glob
     // We import the files as URL strings suitable for <img>/<video> src
@@ -17,8 +19,14 @@
         .map(entry => entry[1]);
 
     
-    function toggleContactInfo() {
+    async function toggleContactInfo() {
+        const isOpening = !showContactInfo;
         showContactInfo = !showContactInfo;
+
+        if (isOpening) {
+            await tick();
+            contactInfoEl?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
     }
 </script>
 
@@ -47,7 +55,7 @@
         <p>or, <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>!</p>
         
         {#if showContactInfo}
-            <div class="contact-info">
+            <div class="contact-info" bind:this={contactInfoEl}>
                 <div class="contact-item">
                     <i class="fa fa-envelope"></i>
                     <span>harrisonq125@gmail.com</span>
