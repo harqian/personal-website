@@ -50,11 +50,11 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fa fa-envelope"></i>
-                    <span>dumbderivatives@gmail.com</span>
+                    <span>harrisonq125@gmail.com</span>
                 </div>
                 <div class="contact-item">
                     <i class="fa-brands fa-discord"></i>
-                    <span>astronomicalflower</span>
+                    <span>harqian</span>
                 </div>
                 <div class="contact-item">
                     <i class="fa fa-video"></i>
