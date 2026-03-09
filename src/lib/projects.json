@@ -281,6 +281,29 @@
             ]
         },
         {
+            "id": "ee",
+            "title": "⚡ Electrical Engineering",
+            "description": "Embedded systems, circuits, and hardware builds.",
+            "projects": [
+                {
+                    "title": "Databox",
+                    "description": "A box that uses esp32 to send number, audio, and image (esp32 cam) data to a google spreadsheet through apps script with a pcb documented with a final explanation video and a project timelapse.",
+                    "github_url": "https://github.com/harqian/arduino-projects",
+                    "demo_url": "https://youtu.be/MPY_f5vGokE",
+                    "start_date": "2025-12-22",
+                    "end_date": "2026-03-05",
+                    "featured": true,
+                    "links": [
+                        {
+                            "url": 
+"https://www.youtube.com/watch?v=yzcjMu7PD5s",                            "label": "Timelapse of Explorations",
+                            "icon": "fab fa-youtube"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             "id": "music",
             "title": "🎵 Music",
             "description": "Music performances and creations.",
