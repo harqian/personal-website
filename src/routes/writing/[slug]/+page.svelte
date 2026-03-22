@@ -122,6 +122,11 @@
             window.history.back();
         }
     }
+
+    function formatDate(dateString) {
+        const [year, month, day] = dateString.split('-').map(Number);
+        return new Date(year, month - 1, day).toLocaleDateString();
+    }
 </script>
 
 <StarBackground>
@@ -147,9 +152,9 @@
                             </div>
                         {/if}
                         <time class="date">
-                            {new Date(piece.date).toLocaleDateString()}
+                            {formatDate(piece.date)}
                             {#if piece.edited}
-                                <span class="edited">(edited {new Date(piece.edited).toLocaleDateString()})</span>
+                                <span class="edited">(edited {formatDate(piece.edited)})</span>
                             {/if}
                         </time>
                     </div>
