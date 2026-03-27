@@ -49,8 +49,8 @@ the only difference between them is just reading & double checking things
 
 its the difference between
 
-- wow amazing i made a personal website and now i deploy it 🤩👍 (1h)
-- mid sized production ready app that i tested and spent (3d) on
+- wow amazing i made a personal website and now i deploy it 🤩👍 (spent 1h)
+- mid sized production ready app with connectors wired that i tested and iterated on and spent 3d on
 
 <div id="disclaimers"></div>
 
@@ -69,29 +69,32 @@ i think you do learn a lot about how to vibe code / manage people though (agents
 
 # rough current capabilities
 
-![vibe coding capabilities diagram](/writing-assets/vibe_coding_manifesto/vibe-coding-capabilities.svg)
-
 things ive made:
 
-- medium scale simulations
-- small production ready apps (other people have done this hella)
-- scripts for automation
-- things it can do (if you do it right):
-    - one shot entire hosted full stack websites with domain name
-    - one shot desktop applications
-    - automate all of your socials (messages, email, linkedin, instagram, etc)
-    - learning organizer / notes organizer
-    - make videos (using a python library)
-    - mac system diagnostics (storage, RAM)
-    - run marketing analysis & implementation (take in hella csvs, do analysis, suggest improvements)
-    - make schematics in figma
-    - plan trips
+- in minutes, scripts for automation
+- in days, small production ready apps (other people have done this hella)
+- in hours, medium scale simulations
+
+things it can do (if you do it right):
+
+- one shot entire hosted full stack websites with domain name
+- one shot desktop applications
+- automate all of your socials (messages, email, linkedin, instagram, etc)
+- run marketing analysis & implementation (take in hella csv, do analysis, suggest improvements)
+- make videos (using a python lib)
 
 basically:
 
 - if it has the tools and its mechanically only a mediocre complex job, it can pretty much one shot it
     - sometimes its bad but thats just because you didnt fully convey what you wanted
 - things very complex need more structure & hand holding
+
+relationship between vibe coding experience, developer experience, time, and output:
+
+- i feel that general dev experience is similar to vibe coding exepirence for the task of vibe coding
+- specific dev experience pertaining to the task at hand is a big boost
+- jump from beginner to intermediate for vibe coding exeprience ≈ general dev exeprience is very big
+- more time ≈ more output until a certain limit where when a task is too complex it will take exponentially more time to complete a task that is epsilon more complex
 
 <div id="principles"></div>
 
@@ -234,7 +237,7 @@ fill the context with what the problem is, codebase structure, and specs/tools (
 
 ## (only if you want to be non-vibey) principle 5: be disciplined
 
-work on one feature at once
+for beginners this means work on one feature at once; for experienced vibe coders this means being intentional about when to speed up (parallelize) and when to slow down (fine tune)
 use source control (git / github)
 tests
 
@@ -272,6 +275,8 @@ tests
 
 # resources
 
+cool 2026 anthropic report on development trends with agents: https://resources.anthropic.com/hubfs/2026%20Agentic%20Coding%20Trends%20Report.pdf
+
 where the leverage graphic and research plan implement graphic are from, lots of good stuff and framing: https://www.youtube.com/watch?v=IS_y40zY-hc
 
 pretty good framework: https://github.com/obra/superpowers
@@ -284,6 +289,10 @@ good principles: https://www.anthropic.com/engineering/effective-harnesses-for-l
 
 a claude code plugin for a good feature development workflow: https://github.com/anthropics/claude-code/tree/main/plugins/feature-dev
 
-a buncha claude code tips & tricks that are pretty good: https://x.com/affaanmustafa/status/2012378465664745795
+a good guide on claude code specific tips & tricks that are pretty good: https://github.com/affaan-m/everything-claude-code
 
 some other good tips and tricks and app recs: https://github.com/tmad4000/vibe-coding-guide
+
+cool resource for learning claude code for beginners: https://github.com/shareAI-lab/learn-claude-code
+
+agents / skills that are good for different jobs in a business: https://github.com/msitarzewski/agency-agents
