@@ -12,6 +12,7 @@
             <a href="/poetry">poetry</a>
             <a href="/notes">notes</a>
             <a href="/gallery">gallery</a>
+            <a href="/vibes">vibes</a>
             <a href="/projects">projects</a>
             <a href="/other">other</a>
             <!-- <a href="/app_reviews">app reviews</a>  -->

@@ -11,7 +11,7 @@
   export let showDots = true;
   /** @type {boolean} */
   export let showArrows = true;
-  /** @type {Object.<string, number|null>} - maps filename to duration in ms, null means use video duration */
+  /** @type {Object.<string, {duration: number|null, caption?: string}>} - maps filename to config */
   export let durations = {};
 
   let current = 0;
@@ -150,15 +150,20 @@
     if (index < 0 || index >= items.length) return intervalMs;
     const item = items[index];
     const filename = getFilename(item);
-    const specifiedDuration = durations[filename];
+    const config = durations[filename];
+    const specifiedDuration = config?.duration ?? config;
 
-    // if duration is null, we use video duration (handled separately)
-    // if duration is a number, use it
-    // if not specified, fall back to intervalMs
     if (specifiedDuration === null && isVideo(item)) {
-      return null; // signal to use video duration
+      return null;
     }
     return specifiedDuration || intervalMs;
+  }
+
+  function getCaptionForItem(index) {
+    if (index < 0 || index >= items.length) return '';
+    const filename = getFilename(items[index]);
+    const config = durations[filename];
+    return config?.caption || '';
   }
 
   // called when video metadata loads to get actual duration
@@ -167,8 +172,9 @@
     const video = event.target;
     const filename = getFilename(items[index]);
 
-    // only use video duration if durations[filename] is null (not specified or explicitly null)
-    if (durations[filename] === null || durations[filename] === undefined) {
+    const config = durations[filename];
+    const specifiedDuration = config?.duration ?? config;
+    if (specifiedDuration === null || specifiedDuration === undefined) {
       currentDuration = video.duration * 1000;
       // restart timer with correct duration
       if (!isHovered && autoplay) {
@@ -198,6 +204,9 @@
             <video bind:this={videoElements[i]} src={encoded(item)} muted playsinline on:loadedmetadata={(e) => handleVideoLoaded(e, i)} on:ended={next}></video>
           {:else}
             <img src={encoded(item)} alt="" />
+          {/if}
+          {#if getCaptionForItem(i)}
+            <div class="caption">{getCaptionForItem(i)}</div>
           {/if}
         </div>
       {/each}
@@ -329,8 +338,22 @@
     opacity: 0.7;
   }
 
+  .caption {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    text-align: center;
+    z-index: 1;
+  }
+
   @media (max-width: 768px) {
     .nav { width: 30px; height: 30px; }
     .timer-indicator { top: 8px; right: 8px; }
+    .caption { font-size: 0.75rem; padding: 4px 8px; }
   }
 </style>
