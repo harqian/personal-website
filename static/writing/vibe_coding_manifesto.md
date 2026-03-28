@@ -42,7 +42,7 @@ vibey = not looking / not caring about infra & design
 
 opposite of vibey is agentic (play on words, using agents but also smart about how you are using them, hitting a goal with discipline)
 
-the only difference between them is just reading & double checking things
+the only difference between them is how much human in the loop you have
 
 - could be reading code (although code is inneficient)
 - most likely reading spec & research, checking things, doing tests
@@ -88,6 +88,7 @@ basically:
 - if it has the tools and its mechanically only a mediocre complex job, it can pretty much one shot it
     - sometimes its bad but thats just because you didnt fully convey what you wanted
 - things very complex need more structure & hand holding
+- interfacing with non software things like hardware can be a bit tough
 
 relationship between vibe coding experience, developer experience, time, and output:
 
