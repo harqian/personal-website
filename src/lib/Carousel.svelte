@@ -1,7 +1,11 @@
 <script>
   import { onMount, onDestroy } from 'svelte';
 
-  /** @type {string[]} */
+  /**
+   * @typedef {{name: string, src: string}} CarouselItem
+   */
+
+  /** @type {CarouselItem[]} */
   export let items = [];
   /** @type {number} */
   export let intervalMs = 4000;
@@ -118,25 +122,19 @@
     }
   }
 
-  function isVideo(path) {
-    return /\.(webm|mp4|mov)$/i.test(path);
+  function isVideo(item) {
+    return /\.(webm|mp4|mov)$/i.test(item?.src || '');
   }
 
-  function encoded(path) {
-    return encodeURI(path);
-  }
-
-  // extract filename from path like "/src/lib/assets/carousel_media/1_juggling.webm"
-  function getFilename(path) {
-    return path.split('/').pop();
+  function encoded(item) {
+    return encodeURI(item.src);
   }
 
   // get duration for current item - returns ms, or null for "use video length"
   function getDurationForItem(index) {
     if (index < 0 || index >= items.length) return intervalMs;
     const item = items[index];
-    const filename = getFilename(item);
-    const config = durations[filename];
+    const config = durations[item.name];
     const specifiedDuration = typeof config === 'number' ? config : config?.duration;
 
     if ((specifiedDuration === null || specifiedDuration === 'length') && isVideo(item)) {
@@ -148,17 +146,14 @@
 
   function getCaptionForItem(index) {
     if (index < 0 || index >= items.length) return '';
-    const filename = getFilename(items[index]);
-    const config = durations[filename];
+    const config = durations[items[index].name];
     return config?.caption || '';
   }
 
   function handleVideoLoaded(event, index) {
     if (index !== current) return;
     const video = event.target;
-    const filename = getFilename(items[index]);
-
-    const config = durations[filename];
+    const config = durations[items[index].name];
     const specifiedDuration = typeof config === 'number' ? config : config?.duration;
     if (specifiedDuration === null || specifiedDuration === undefined || specifiedDuration === 'length') {
       currentDuration = video.duration * 1000;

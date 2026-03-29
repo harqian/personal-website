@@ -9,14 +9,17 @@
     let showContactInfo = false;
     let contactInfoEl;
 
-    // Auto-import carousel media using Vite's import.meta.glob
-    // We import the files as URL strings suitable for <img>/<video> src
+    // auto-import carousel media using Vite's import.meta.glob
+    // keep both the original filename and the built asset url
     const modules = import.meta.glob("$lib/assets/carousel_media/*", { eager: true, query: '?url', import: 'default' });
 
-    // Sort by filename before creating the carousel items array
+    // sort by filename before creating the carousel items array
     const carouselItems = Object.entries(modules)
         .sort((a, b) => a[0].localeCompare(b[0]))
-        .map(entry => entry[1]);
+        .map(([path, src]) => ({
+            name: path.split('/').pop(),
+            src
+        }));
 
     
     async function toggleContactInfo() {
