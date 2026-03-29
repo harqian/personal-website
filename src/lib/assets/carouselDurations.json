@@ -10,6 +10,5 @@
   "11_tennis.webm": { "duration": "length", "caption": "volley form" },
   "12_xc.JPG": { "duration": 3000, "caption": "wow that race was really hard" },
   "13_machine_translation.mp4": { "duration": "length", "caption": "machine translation presentation" },
-  "10_rain.jpeg": { "duration": 3000, "caption": "frisbee in the rain (as one does)" },
-  "20_frisbee.mp4": { "duration": "length", "caption": "frisbee" }
+  "10_rain.jpeg": { "duration": 3000, "caption": "frisbee in the rain (as one does)" }
 }
