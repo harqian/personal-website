@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">project placeholder</title>
+  <desc id="desc">placeholder image for featured projects without a video preview</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#11243d"/>
+      <stop offset="100%" stop-color="#1e4d63"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="980" cy="150" r="110" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="220" cy="640" r="150" fill="rgba(255,255,255,0.06)"/>
+  <rect x="130" y="150" width="940" height="500" rx="24" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)"/>
+  <path d="M350 510l140-180 120 110 150-170 160 240" fill="none" stroke="#dff3ff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="430" cy="280" r="52" fill="#dff3ff"/>
+  <text x="600" y="390" fill="#ffffff" font-family="Arial, sans-serif" font-size="54" text-anchor="middle">featured project preview</text>
+  <text x="600" y="455" fill="rgba(255,255,255,0.78)" font-family="Arial, sans-serif" font-size="28" text-anchor="middle">replace this file or set project.preview_image</text>
+</svg>
