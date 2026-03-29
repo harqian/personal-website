@@ -7,6 +7,7 @@
     // Add your piece filenames here (without .md extension)
     const pieceFilenames = [
         "vibe_coding_manifesto",
+        "i_used_to_be_a_zombie",
         "water_bottles",
         "a_glimpse_into_consciousness",
         "how_confidence_changed_my_life",
@@ -51,6 +52,8 @@
 
                             if (currentKey === 'title') {
                                 metadata.title = value;
+                            } else if (currentKey === 'url') {
+                                metadata.url = value;
                             } else if (currentKey === 'published') {
                                 metadata.published = value === 'true';
                             } else if (currentKey === 'tags') {
@@ -102,7 +105,15 @@
         {#each writing as piece}
             <article>
                 <div class="title-row">
-                    <h3><a href="/writing/{piece.filename}">{piece.title}</a></h3>
+                    <h3>
+                        <a
+                            href={piece.url || `/writing/${piece.filename}`}
+                            target={piece.url ? '_blank' : undefined}
+                            rel={piece.url ? 'noopener noreferrer' : undefined}
+                        >
+                            {piece.title}
+                        </a>
+                    </h3>
                 </div>
                 <div class="meta-row">
                     {#if piece.tags && piece.tags.length > 0 && piece.tags[0] !== ""}
