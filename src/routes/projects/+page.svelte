@@ -117,8 +117,7 @@
     <Header />
     <main>
         <div class="column">
-            <h2>featured projects</h2>
-            <p>a curated selection of my best work across code, video, and music</p>
+            <h2>projects</h2>
             <hr class="horizontal-line">
 
             <div class="projects-grid">

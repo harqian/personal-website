@@ -9,43 +9,31 @@
   export let autoplay = true;
   /** @type {boolean} */
   export let showDots = true;
-  /** @type {boolean} */
-  export let showArrows = true;
   /** @type {Object.<string, {duration: number|null, caption?: string}>} - maps filename to config */
   export let durations = {};
 
   let current = 0;
   let timer = null;
   let videoElements = [];
-  let isHovered = false;
   let progress = 0;
   let progressTimer = null;
   let startTime = 0;
-  let pausedProgress = 0;
   let currentDuration = intervalMs;
+  let prevAutoplay = autoplay;
 
   function next() {
     if (items.length === 0) return;
     current = (current + 1) % items.length;
-    pausedProgress = 0;
-    start(0);
-  }
-
-  function prev() {
-    if (items.length === 0) return;
-    current = (current - 1 + items.length) % items.length;
-    pausedProgress = 0;
     start(0);
   }
 
   function goToSlide(index) {
     current = index;
-    pausedProgress = 0;
     start(0);
   }
 
   function updateProgress() {
-    if (isHovered || !autoplay || items.length <= 1) return;
+    if (!autoplay || items.length <= 1) return;
     if (typeof requestAnimationFrame === 'undefined') return;
 
     const elapsed = Date.now() - startTime;
@@ -58,14 +46,14 @@
 
   function start(resumeFrom = 0) {
     if (!autoplay || items.length <= 1) return;
-    if (resumeFrom === 0 && isHovered) return;
     stop();
 
-    // figure out duration for current item
     const itemDuration = getDurationForItem(current);
-    // if null, it's a video and we wait for loadedmetadata
     if (itemDuration === null) {
-      // video will call handleVideoLoaded which starts the timer
+      const video = videoElements[current];
+      if (video && Number.isFinite(video.duration) && video.duration > 0) {
+        startWithDuration(video.duration * 1000, resumeFrom);
+      }
       return;
     }
     currentDuration = itemDuration;
@@ -81,7 +69,6 @@
 
   function stop() {
     if (timer) {
-      clearInterval(timer);
       clearTimeout(timer);
       timer = null;
     }
@@ -91,45 +78,44 @@
     }
   }
 
-  function handleMouseEnter() {
-    isHovered = true;
-    pausedProgress = progress;
-    stop();
-    // pause current video if playing
-    const video = videoElements[current];
-    if (video) video.pause();
+  function handleCarouselClick() {
+    next();
   }
 
-  function handleMouseLeave() {
-    isHovered = false;
-    start(pausedProgress);
-    // resume current video
-    const video = videoElements[current];
-    if (video) video.play().catch(() => {});
+  function handleCarouselKeydown(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      next();
+    }
   }
 
   onMount(start);
   onDestroy(stop);
 
-  $: if (autoplay) {
-    // restart when items or interval changes
-    start();
-  } else {
-    stop();
+  $: {
+    // only react to autoplay toggling, not to current/items changes
+    const ap = autoplay;
+    if (ap !== prevAutoplay) {
+      prevAutoplay = ap;
+      if (ap) {
+        start();
+      } else {
+        stop();
+      }
+    }
   }
 
   $: {
     // Control video playback based on active slide
-    videoElements.forEach((video, i) => {
-      if (video) {
-        if (i === current) {
-          video.currentTime = 0;
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
+    for (const [i, video] of videoElements.entries()) {
+      if (!video) continue;
+      if (i === current) {
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
       }
-    });
+    }
   }
 
   function isVideo(path) {
@@ -151,7 +137,7 @@
     const item = items[index];
     const filename = getFilename(item);
     const config = durations[filename];
-    const specifiedDuration = config?.duration ?? config;
+    const specifiedDuration = typeof config === 'number' ? config : config?.duration;
 
     if (specifiedDuration === null && isVideo(item)) {
       return null;
@@ -166,42 +152,58 @@
     return config?.caption || '';
   }
 
-  // called when video metadata loads to get actual duration
   function handleVideoLoaded(event, index) {
     if (index !== current) return;
     const video = event.target;
     const filename = getFilename(items[index]);
 
     const config = durations[filename];
-    const specifiedDuration = config?.duration ?? config;
+    const specifiedDuration = typeof config === 'number' ? config : config?.duration;
     if (specifiedDuration === null || specifiedDuration === undefined) {
       currentDuration = video.duration * 1000;
-      // restart timer with correct duration
-      if (!isHovered && autoplay) {
+      if (autoplay) {
         stop();
         startWithDuration(currentDuration);
       }
     }
   }
 
-  function startWithDuration(duration) {
+  function startWithDuration(duration, resumeFrom = 0) {
     if (!autoplay || items.length <= 1) return;
     stop();
     currentDuration = duration;
-    startTime = Date.now();
-    progress = 0;
-    timer = setTimeout(next, duration);
+    const remainingTime = currentDuration * (1 - resumeFrom / 100);
+    startTime = Date.now() - (currentDuration * resumeFrom / 100);
+    progress = resumeFrom;
+    timer = setTimeout(next, remainingTime);
     updateProgress();
   }
 </script>
 
-<div class="carousel" role="region" aria-label="Image carousel" on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
+<div
+  class="carousel"
+  role="region"
+  aria-label="Image carousel"
+>
   {#if items && items.length > 0}
-    <div class="viewport">
+    <div
+      class="viewport"
+      role="button"
+      tabindex="0"
+      aria-label="Advance to next slide"
+      on:click={handleCarouselClick}
+      on:keydown={handleCarouselKeydown}
+    >
       {#each items as item, i}
         <div class="slide {i === current ? 'active' : ''}" aria-hidden={i === current ? 'false' : 'true'}>
           {#if isVideo(item)}
-            <video bind:this={videoElements[i]} src={encoded(item)} muted playsinline on:loadedmetadata={(e) => handleVideoLoaded(e, i)} on:ended={next}></video>
+            <video
+              bind:this={videoElements[i]}
+              src={encoded(item)}
+              muted
+              playsinline
+              on:loadedmetadata={(e) => handleVideoLoaded(e, i)}
+            ></video>
           {:else}
             <img src={encoded(item)} alt="" />
           {/if}
@@ -238,19 +240,14 @@
       </div>
     {/if}
 
-    {#if showArrows && items.length > 1}
-      <button class="nav prev" on:click={prev} aria-label="Previous">
-        <i class="fa fa-chevron-left"></i>
-      </button>
-      <button class="nav next" on:click={next} aria-label="Next">
-        <i class="fa fa-chevron-right"></i>
-      </button>
-    {/if}
-
     {#if showDots && items.length > 1}
       <div class="dots">
         {#each items as _, i}
-          <button class="dot {i === current ? 'active' : ''}" on:click={() => goToSlide(i)} aria-label={`Go to slide ${i+1}`}></button>
+          <button
+            class="dot {i === current ? 'active' : ''}"
+            on:click|stopPropagation={() => goToSlide(i)}
+            aria-label={`Go to slide ${i + 1}`}
+          ></button>
         {/each}
       </div>
     {/if}
@@ -262,6 +259,13 @@
     position: relative;
     width: 100%;
     height: 100%;
+    cursor: pointer;
+    transition: transform 220ms ease;
+    transform-origin: center;
+  }
+
+  .carousel:hover {
+    transform: scale(1.04);
   }
 
   .viewport {
@@ -270,6 +274,11 @@
     height: 100%;
     overflow: hidden;
     border-radius: 8px;
+    outline: none;
+  }
+
+  .viewport:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.7);
   }
 
   .slide {
@@ -292,32 +301,15 @@
     display: block;
   }
 
-  .nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0,0,0,0.35);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 999px;
-    width: 36px;
-    height: 36px;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    z-index: 2;
-  }
-  .nav:hover { background: rgba(0,0,0,0.5); }
-  .nav.prev { left: 8px; }
-  .nav.next { right: 8px; }
-
   .dots {
     position: absolute;
-    left: 0; right: 0; bottom: 8px;
+    top: 12px;
+    left: 12px;
     display: flex;
     gap: 6px;
-    justify-content: center;
-    z-index: 2;
+    flex-wrap: wrap;
+    z-index: 3;
+    max-width: calc(100% - 64px);
   }
   .dot {
     width: 8px;
@@ -352,7 +344,14 @@
   }
 
   @media (max-width: 768px) {
-    .nav { width: 30px; height: 30px; }
+    .carousel:hover {
+      transform: scale(1.02);
+    }
+    .dots {
+      top: 8px;
+      left: 8px;
+      max-width: calc(100% - 48px);
+    }
     .timer-indicator { top: 8px; right: 8px; }
     .caption { font-size: 0.75rem; padding: 4px 8px; }
   }

@@ -38,21 +38,13 @@
     <div class="content">
         <p>hey there, im harrison</p>
         <p>-> bay area</p>
-        <p>i enjoy cs, math, bio, physics, engineering, writing (generally learning is fun)</p>
-        <p>other interests: ultimate frisbee, singing, ukulele, tennis, (chess)</p>
-    </div>
+        <p>i treat everything as learnable and most things as worth learning. taught myself four years of math in one, then kept going — piano, programming, ultimate frsibee, neurotech, whatever caught me next.</p>
+        <p>last summer i helped engineer vestibular stimulation at a neurotech startup — we got someone from fully awake to nearly asleep in three minutes. this year ive been shipping apps, winning hackathons, and training CNNs to read consciousness states from brain waves. i once spent 30 hours debugging a heater.</p>
+        <p>i love precise patterns — reducing a messy system down to the math that actually drives it, whether that's a topology proof, eddy currents explanation, or a circuit on a PCB.</p>
+        <p>some of what ive built is in <a href="/projects">here</a>.</p>
+   </div>
     <div class="content">
-        <p>
-            to learn, 
-            i read (<a href="/reading">reading</a>), build (<a href="/cs_projects">cs</a>, <a href="/other_projects">other</a>), 
-            write/reflect (<a href="/writing">writing</a>, <a href="/poetry">poetry</a>, <a href="/notes">notes</a>), 
-            and talk (yeah idk if i can put stuff here)
-        </p>
-        <p>i like mindsets and understanding myself</p>
-        <p>im proactive and really care about learning quickly, connection with others, and accountability</p>
-        <p>check out <a href="/gallery">my media gallery</a> for cool scenery, <a href="/animal_media">my animal media</a> for cute (and not so cute) animals</p>
-
-        <p>or, <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>!</p>
+        <p>feel free to look around or <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>!</p>
         
         {#if showContactInfo}
             <div class="contact-info" bind:this={contactInfoEl}>

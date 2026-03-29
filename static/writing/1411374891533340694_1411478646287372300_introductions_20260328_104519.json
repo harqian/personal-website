@@ -1,0 +1,983 @@
+{
+  "exported_at": "2026-03-28T10:45:20.007710",
+  "channel": {
+    "id": 1411478646287372300,
+    "name": "introductions",
+    "type": "text",
+    "guild_id": 1411374891533340694
+  },
+  "message_count": 49,
+  "messages": [
+    {
+      "id": 1411484376600150136,
+      "created_at": "2025-08-30T22:54:59.493000+00:00",
+      "edited_at": "2025-09-02T04:55:07.644000+00:00",
+      "content": "im harrison (he/him), and i will graduate in 2027. school-wise, i love frisbee, tennis, math, cs, piano, and ukulele. non-school wise, i love generally solving problems, thinking about problems, exploring interesting topics (like neuroscience, psychology, physics), reflecting, and connecting with others. my favorite color is blue",
+      "author": {
+        "id": 1297739861649920053,
+        "name": "harqian",
+        "display_name": "harrison",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1411484376600150136"
+    },
+    {
+      "id": 1412263639188111441,
+      "created_at": "2025-09-02T02:31:30.172000+00:00",
+      "edited_at": null,
+      "content": "Ethan Leeman (he/him) and i just graduated in class of 25. Similar to Harrison, love math, frisbee, sports in general. I'll be attending UCLA as a freshman in a couple weeks too where I will be majoring in biophysics, but really just following what interests me the most(aka i might take some more math classes).",
+      "author": {
+        "id": 627634581905866762,
+        "name": "leemuwu123",
+        "display_name": "ethan l.",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412263639188111441"
+    },
+    {
+      "id": 1412267120309567560,
+      "created_at": "2025-09-02T02:45:20.136000+00:00",
+      "edited_at": "2025-09-02T04:11:23.078000+00:00",
+      "content": "hi am ravi (they/them), class of 2028\ni enjoy cs and music stuff, especially if the music stuff happens to have weird sounds involved, but please dont put me in front of anything english related i beg for my sanity\ni do shit\u2122\n\n-# airplane",
+      "author": {
+        "id": 700874424177393714,
+        "name": ".contak.",
+        "display_name": "Ravi",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412267120309567560"
+    },
+    {
+      "id": 1412289698336079983,
+      "created_at": "2025-09-02T04:15:03.157000+00:00",
+      "edited_at": null,
+      "content": "hi, I\u2019m Clara! I love reading (sci-fi, fantasy), board games, sports (soccer, rowing), crossword puzzles, and bad jokes. academically I\u2019m interested in math, mechanical engineering, and physics. class of 2027.",
+      "author": {
+        "id": 1158152534528110713,
+        "name": "speedybubbles",
+        "display_name": "clara",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412289698336079983"
+    },
+    {
+      "id": 1412292139886313574,
+      "created_at": "2025-09-02T04:24:45.268000+00:00",
+      "edited_at": null,
+      "content": "Hi everyone, I'm Hannah! (Class of 2028). I enjoy puzzles, books, origami (yes yes I know how daring), as well as looking at birds/stars! School-wise, I've been appreciating the Nueva language classes (including translation and linguistics) the most!",
+      "author": {
+        "id": 753799944833597550,
+        "name": "mars_soup_peels",
+        "display_name": "Hannah",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412292139886313574"
+    },
+    {
+      "id": 1412297395873648693,
+      "created_at": "2025-09-02T04:45:38.393000+00:00",
+      "edited_at": null,
+      "content": "hi I'm ayush ('27)! I like code, design (especially typography), reading (both blogs and books), music, and frisbee. I'm also obsessed with stationery, mech keyboards, and retro tech, so if you like those I'd love to talk! also I like birds \ud83e\udebf",
+      "author": {
+        "id": 696045085514661898,
+        "name": "fortybit1",
+        "display_name": "ayush",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412297395873648693"
+    },
+    {
+      "id": 1412321339443773542,
+      "created_at": "2025-09-02T06:20:46.985000+00:00",
+      "edited_at": null,
+      "content": "I'm Rohan (he/him), graduated class of 2025. Going to UC Berkeley and am intersted in cs (computer vision + nlp specifically) and applied math. I want to learn more about engineering/robotics so we'll see how that goes. I enjoy playing/watching any and all sports and like to deisgn in photoshop.",
+      "author": {
+        "id": 685325540462428173,
+        "name": "ace12.",
+        "display_name": "rohan",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412321339443773542"
+    },
+    {
+      "id": 1412610620234399855,
+      "created_at": "2025-09-03T01:30:16.900000+00:00",
+      "edited_at": null,
+      "content": "Hi! I\u2019m Willow, she/her, and am class of 2027. I love games, game design, and especially RPGs, in addition to chemistry/biology and STEM in general. I also did the musical last year, so I\u2019m kind of every kind of nerd at once lol.",
+      "author": {
+        "id": 749659687388971068,
+        "name": "shinymathrock",
+        "display_name": "willow",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412610620234399855"
+    },
+    {
+      "id": 1412642740780666911,
+      "created_at": "2025-09-03T03:37:55.035000+00:00",
+      "edited_at": "2025-09-03T03:38:06.432000+00:00",
+      "content": "hi! im molly, she/her, class of 2026. music and robotics/crafting in the shop are my main hobbies (amongst like 20 other sub ones lol). quad skating and embroidery are my two most recent additions to my mini-hobby list, and baking, reading, watching shows, and doing puzzles are some ive been into for a while. im always happy to learn interesting tidbits/get song recs :)",
+      "author": {
+        "id": 698653243839873125,
+        "name": "nullberry_",
+        "display_name": "molly",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412642740780666911"
+    },
+    {
+      "id": 1412642828894474320,
+      "created_at": "2025-09-03T03:38:16.043000+00:00",
+      "edited_at": null,
+      "content": "im also the tech rep this year, so if theres anything you need (eg. you want to give a presentation in the wrc, to learn music tech, to get access to the practice rooms) lmk and id love to help out!",
+      "author": {
+        "id": 698653243839873125,
+        "name": "nullberry_",
+        "display_name": "molly",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412642828894474320"
+    },
+    {
+      "id": 1412642863061270568,
+      "created_at": "2025-09-03T03:38:24.189000+00:00",
+      "edited_at": null,
+      "content": "oof that was longer than i expected",
+      "author": {
+        "id": 698653243839873125,
+        "name": "nullberry_",
+        "display_name": "molly",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412642863061270568"
+    },
+    {
+      "id": 1412930235506229329,
+      "created_at": "2025-09-03T22:40:19.119000+00:00",
+      "edited_at": null,
+      "content": "Hi I'm Eddy (he/him, class of 2027)! Academically I'm interested in math, physics, and occasionally CS. some of my more miscellaneous interests include TeX-related stuff, bundesliga, vexillology, puzzling stack exchange, & puzzle hunts. feel free to DM me if you just wanna chat!",
+      "author": {
+        "id": 840724171780784148,
+        "name": "gauss1033",
+        "display_name": "eddy",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412930235506229329"
+    },
+    {
+      "id": 1412973340158595093,
+      "created_at": "2025-09-04T01:31:36.069000+00:00",
+      "edited_at": "2025-09-04T03:34:12.710000+00:00",
+      "content": "Hey I\u2019m Jason, class of 2026 (oh god how am I senior). I\u2019m interested in stemmy stuff (big math lover but looking to chem a little bit), and I enjoy sports like basketball or volleyball (and I used to do a sport called wushu), or working on math problems and chatting about random philosophical topics. Also I occasionally dabble in Pok\u00e9mon stuff (showdown, poke rogue), Minecraft, magic the gathering and league (shh ignore this one). Dm or respond if u wanna chat!",
+      "author": {
+        "id": 748661261813809243,
+        "name": "jasonychen",
+        "display_name": "jason",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1412973340158595093"
+    },
+    {
+      "id": 1413909281446695085,
+      "created_at": "2025-09-06T15:30:41.861000+00:00",
+      "edited_at": null,
+      "content": "Hi, I like chemistry and theology.",
+      "author": {
+        "id": 1210376597350129718,
+        "name": "soldierdonkey2",
+        "display_name": "Preferred IUPAC Name Enjoyer",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1413909281446695085"
+    },
+    {
+      "id": 1413919925336146016,
+      "created_at": "2025-09-06T16:12:59.562000+00:00",
+      "edited_at": null,
+      "content": "Hi, I like chemistry and theology.",
+      "author": {
+        "id": 700874424177393714,
+        "name": ".contak.",
+        "display_name": "Ravi",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": {
+        "message_id": null,
+        "channel_id": 1413909281446695085,
+        "guild_id": 1411374891533340694
+      },
+      "pinned": false,
+      "type": "MessageType.thread_created",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1413919925336146016"
+    },
+    {
+      "id": 1414059025217359974,
+      "created_at": "2025-09-07T01:25:43.558000+00:00",
+      "edited_at": null,
+      "content": "hey yall! im https://www.huxley.sh/, big nueva fan, graduated in '23. i do code, math, brains, and i like building things :)",
+      "author": {
+        "id": 348306909251633164,
+        "name": "enquirer",
+        "display_name": "huxley",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1414059025217359974"
+    },
+    {
+      "id": 1414090802719621155,
+      "created_at": "2025-09-07T03:31:59.905000+00:00",
+      "edited_at": null,
+      "content": "hey yall! im https://www.huxley.sh/, big",
+      "author": {
+        "id": 840724171780784148,
+        "name": "gauss1033",
+        "display_name": "eddy",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": {
+        "message_id": null,
+        "channel_id": 1414059025217359974,
+        "guild_id": 1411374891533340694
+      },
+      "pinned": false,
+      "type": "MessageType.thread_created",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1414090802719621155"
+    },
+    {
+      "id": 1414445666851360799,
+      "created_at": "2025-09-08T03:02:06.107000+00:00",
+      "edited_at": null,
+      "content": "Hi guys, I'm Aryan, co of 2025! I'm into startups/VC, finance, japanese, history, AI (nlp/cv), math, and all things STEM! Currently living in new york. Big fan of nueva ofc \ud83d\udcaa",
+      "author": {
+        "id": 437081675491573790,
+        "name": "jdka",
+        "display_name": "Aryan",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1414445666851360799"
+    },
+    {
+      "id": 1414445736380207209,
+      "created_at": "2025-09-08T03:02:22.684000+00:00",
+      "edited_at": null,
+      "content": "Hey I\u2019m Jason, class of 2026 (oh god how",
+      "author": {
+        "id": 437081675491573790,
+        "name": "jdka",
+        "display_name": "Aryan",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": {
+        "message_id": null,
+        "channel_id": 1412973340158595093,
+        "guild_id": 1411374891533340694
+      },
+      "pinned": false,
+      "type": "MessageType.thread_created",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1414445736380207209"
+    },
+    {
+      "id": 1414456099293237293,
+      "created_at": "2025-09-08T03:43:33.395000+00:00",
+      "edited_at": null,
+      "content": "Hi guys, I'm Aryan, co of 2025! I'm into",
+      "author": {
+        "id": 1297739861649920053,
+        "name": "harqian",
+        "display_name": "harrison",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": {
+        "message_id": null,
+        "channel_id": 1414445666851360799,
+        "guild_id": 1411374891533340694
+      },
+      "pinned": false,
+      "type": "MessageType.thread_created",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1414456099293237293"
+    },
+    {
+      "id": 1416163488795197450,
+      "created_at": "2025-09-12T20:48:06.774000+00:00",
+      "edited_at": null,
+      "content": "Hello I am Jake \u201829",
+      "author": {
+        "id": 768197827234496542,
+        "name": "jblitzar",
+        "display_name": "Jake",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1416163488795197450"
+    },
+    {
+      "id": 1416165063936446524,
+      "created_at": "2025-09-12T20:54:22.317000+00:00",
+      "edited_at": "2025-09-12T20:54:29.640000+00:00",
+      "content": "Hello I am Harry '29",
+      "author": {
+        "id": 1142886712494805136,
+        "name": "avgpichu",
+        "display_name": "harry",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1416165063936446524"
+    },
+    {
+      "id": 1416234111793631343,
+      "created_at": "2025-09-13T01:28:44.609000+00:00",
+      "edited_at": "2025-09-13T01:29:28.562000+00:00",
+      "content": "anyway I\u2019m Arya, I do stem stuff, mostly math/cs, and human behavior or biases/game theory/econ recreationally. (Love game theory!) I like games that are strategic/adversarial (like hoi4, minecraft hypixel, and amogus). and also like fun facts and being curious about things.",
+      "author": {
+        "id": 776510460170076200,
+        "name": "perpetualyt",
+        "display_name": "Arya",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1416234111793631343"
+    },
+    {
+      "id": 1416256089766363238,
+      "created_at": "2025-09-13T02:56:04.566000+00:00",
+      "edited_at": null,
+      "content": "I\u2019m Nate, current freshman \u201829. I came from the NMS and I enjoy cross country, tennis, and math",
+      "author": {
+        "id": 1291551182677872691,
+        "name": "natearkin1_65809",
+        "display_name": "Nate A",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1416256089766363238"
+    },
+    {
+      "id": 1416260276822605918,
+      "created_at": "2025-09-13T03:12:42.838000+00:00",
+      "edited_at": null,
+      "content": "I'm jake, '29, joined in 3rd. I enjoy math, programming (especially AI/ML\u2014feel free to chat or ask any questions), and I do xc I guess",
+      "author": {
+        "id": 768197827234496542,
+        "name": "jblitzar",
+        "display_name": "Jake",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1416260276822605918"
+    },
+    {
+      "id": 1416262947402944585,
+      "created_at": "2025-09-13T03:23:19.554000+00:00",
+      "edited_at": null,
+      "content": "I'm jake, '29, joined in 3rd. I enjoy",
+      "author": {
+        "id": 1297739861649920053,
+        "name": "harqian",
+        "display_name": "harrison",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": {
+        "message_id": null,
+        "channel_id": 1416260276822605918,
+        "guild_id": 1411374891533340694
+      },
+      "pinned": false,
+      "type": "MessageType.thread_created",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1416262947402944585"
+    },
+    {
+      "id": 1416311478818181264,
+      "created_at": "2025-09-13T06:36:10.345000+00:00",
+      "edited_at": null,
+      "content": "max 29 i like drawing, playing bass and drums, and like a lot of random stuff uhhhh like english class is pretty tuff idrk. basically a lot of arts and humanities related stuff i like",
+      "author": {
+        "id": 1014000045244305471,
+        "name": "nnewmexicosunset",
+        "display_name": "max",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1416311478818181264"
+    },
+    {
+      "id": 1417968793807749132,
+      "created_at": "2025-09-17T20:21:45.030000+00:00",
+      "edited_at": "2025-09-17T20:22:16.137000+00:00",
+      "content": "hii i'm albert '23, did a bunch of math/code at nueva, now at caltech studying CS + neuroscience, have worked on [brain-computer interfaces](https://www.nature.com/articles/s41551-024-01297-1) and [mind control (this guy is blindfolded trying to walk in a straight line)](https://x.com/sierracatalina1/status/1855785767726944696) w <@348306909251633164> . also always interested in philosophy/physics- how should we think ab the world? https://exr0n.com",
+      "author": {
+        "id": 356186756770562050,
+        "name": "exr0n",
+        "display_name": "alb (ert)",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": 348306909251633164,
+          "name": "enquirer",
+          "display_name": "huxley"
+        }
+      ],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1417968793807749132"
+    },
+    {
+      "id": 1422028464843653202,
+      "created_at": "2025-09-29T01:13:26.030000+00:00",
+      "edited_at": null,
+      "content": "hi!! i'm elin '28, i like puzzles, psychology, econ, MUN, and baking. i have two cats theyre sisters and really cute!! im on yearbook and permanently working on getting new content so if youre a part of a cool club or smth dm me please :)",
+      "author": {
+        "id": 1175549488648163488,
+        "name": "kittykat_15880",
+        "display_name": "elin!!",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422028464843653202"
+    },
+    {
+      "id": 1422035331309633578,
+      "created_at": "2025-09-29T01:40:43.123000+00:00",
+      "edited_at": "2025-09-29T01:41:33.417000+00:00",
+      "content": "im aiden 28 I like gaming (THE FINALS, Helldivers, MC, co op games), coding (AI, drones, simulation, other random stuff) and STEM in general. i play squash (sport)",
+      "author": {
+        "id": 376141395561545730,
+        "name": "ph3rro",
+        "display_name": "aiden",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422035331309633578"
+    },
+    {
+      "id": 1422038694696845385,
+      "created_at": "2025-09-29T01:54:05.017000+00:00",
+      "edited_at": null,
+      "content": "hi im maddie and i like sleeping",
+      "author": {
+        "id": 884962838882426900,
+        "name": "dino_pee",
+        "display_name": "Maddie Lee",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422038694696845385"
+    },
+    {
+      "id": 1422039126479339623,
+      "created_at": "2025-09-29T01:55:47.962000+00:00",
+      "edited_at": "2025-09-29T02:04:30.798000+00:00",
+      "content": "Hello peeps i am andy mclaughlin \u201826. I do robotics, used to do pf debate (im still tapped in bc all my friends still do it), i dont play video games really but occasionally will play clash royale. Uh i dont have a website (???) but i like running biking swimming and the outdoors",
+      "author": {
+        "id": 806319790913880085,
+        "name": "ducky222",
+        "display_name": "andy",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422039126479339623"
+    },
+    {
+      "id": 1422039284063408220,
+      "created_at": "2025-09-29T01:56:25.533000+00:00",
+      "edited_at": null,
+      "content": "Fire take",
+      "author": {
+        "id": 806319790913880085,
+        "name": "ducky222",
+        "display_name": "andy",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [
+        {
+          "id": 884962838882426900,
+          "name": "dino_pee",
+          "display_name": "Maddie Lee"
+        }
+      ],
+      "reference": {
+        "message_id": 1422038694696845385,
+        "channel_id": 1411478646287372300,
+        "guild_id": 1411374891533340694
+      },
+      "pinned": false,
+      "type": "MessageType.reply",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422039284063408220"
+    },
+    {
+      "id": 1422048612145434664,
+      "created_at": "2025-09-29T02:33:29.521000+00:00",
+      "edited_at": null,
+      "content": "Hi everyone! I'm Deniz '26. At Nueva, I'm in BRT, alot of the CS classes, and am one of Andy's friends that does PF debate (he will never escape). For some of my favorite media, I love Annihilation my Jeff VanderMeer, Contact 1997, and Ori and the Blind Forest",
+      "author": {
+        "id": 757067774978818138,
+        "name": "hibib",
+        "display_name": "deniz",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422048612145434664"
+    },
+    {
+      "id": 1422055163384041554,
+      "created_at": "2025-09-29T02:59:31.458000+00:00",
+      "edited_at": null,
+      "content": "Im arnold 29 i do drawing piano ping pong and cross country",
+      "author": {
+        "id": 982077364022411296,
+        "name": "cuphead1753",
+        "display_name": "Arnold",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422055163384041554"
+    },
+    {
+      "id": 1422056152161714217,
+      "created_at": "2025-09-29T03:03:27.201000+00:00",
+      "edited_at": null,
+      "content": "I'm Lang '29. I like programming, cross country, PF debate, and piano. I love ducks \ud83e\udd86",
+      "author": {
+        "id": 1163260280126586963,
+        "name": "churrotheduck_13087",
+        "display_name": "Lang",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422056152161714217"
+    },
+    {
+      "id": 1422062282187210803,
+      "created_at": "2025-09-29T03:27:48.713000+00:00",
+      "edited_at": null,
+      "content": "i also love ducks",
+      "author": {
+        "id": 1142886712494805136,
+        "name": "avgpichu",
+        "display_name": "harry",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422062282187210803"
+    },
+    {
+      "id": 1422062422273036380,
+      "created_at": "2025-09-29T03:28:22.112000+00:00",
+      "edited_at": null,
+      "content": "my favorite is peking duck",
+      "author": {
+        "id": 1142886712494805136,
+        "name": "avgpichu",
+        "display_name": "harry",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422062422273036380"
+    },
+    {
+      "id": 1422063138169294900,
+      "created_at": "2025-09-29T03:31:12.795000+00:00",
+      "edited_at": null,
+      "content": "Rohan whens u get here",
+      "author": {
+        "id": 982077364022411296,
+        "name": "cuphead1753",
+        "display_name": "Arnold",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422063138169294900"
+    },
+    {
+      "id": 1422072592365522975,
+      "created_at": "2025-09-29T04:08:46.851000+00:00",
+      "edited_at": null,
+      "content": "I'm Joey '29, I like math",
+      "author": {
+        "id": 864254747556970496,
+        "name": "leviathan_its_monday",
+        "display_name": "joey",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422072592365522975"
+    },
+    {
+      "id": 1422075219870482432,
+      "created_at": "2025-09-29T04:19:13.297000+00:00",
+      "edited_at": null,
+      "content": "I\u2019m Emily \u201827 and I like science (mostly bio and environmental). I do taekwondo and like to read",
+      "author": {
+        "id": 1151897634844459109,
+        "name": "_.emei._",
+        "display_name": "emily",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422075219870482432"
+    },
+    {
+      "id": 1422746462411816960,
+      "created_at": "2025-10-01T00:46:29.990000+00:00",
+      "edited_at": null,
+      "content": "I'm Tigris 29 and I like coding and reading and water polo",
+      "author": {
+        "id": 1417334976051150898,
+        "name": "tigguo_07855",
+        "display_name": "tigris",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422746462411816960"
+    },
+    {
+      "id": 1422746712774279208,
+      "created_at": "2025-10-01T00:47:29.681000+00:00",
+      "edited_at": null,
+      "content": "heya im Emmett, '28, I like english, robotics, art, and games of all kinds. I also fence.",
+      "author": {
+        "id": 760514984836202498,
+        "name": "banana564587",
+        "display_name": "Emmett",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1422746712774279208"
+    },
+    {
+      "id": 1423551560893337620,
+      "created_at": "2025-10-03T06:05:40.426000+00:00",
+      "edited_at": null,
+      "content": "wait hi this is so fun i'm cami yen she/her '25 and this is my yearly discord appearance bc i needed math help. @ stanford rn studying tbd but prob something math/econ/cs. i like golf and occasionally piano at times",
+      "author": {
+        "id": 621881138746753044,
+        "name": "defnotkammy",
+        "display_name": "Cami Yen",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1423551560893337620"
+    },
+    {
+      "id": 1424135120171958435,
+      "created_at": "2025-10-04T20:44:31.800000+00:00",
+      "edited_at": "2025-10-04T21:43:35.552000+00:00",
+      "content": "I am alon I like computers and I play piano and I rock climb. '29",
+      "author": {
+        "id": 720379326532550716,
+        "name": "blahblahbanana",
+        "display_name": "alon",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1424135120171958435"
+    },
+    {
+      "id": 1425309964481855633,
+      "created_at": "2025-10-08T02:32:56.511000+00:00",
+      "edited_at": "2025-10-08T02:33:14.725000+00:00",
+      "content": "Hi I\u2019m Rye\ngood evening everyone",
+      "author": {
+        "id": 1106728464251375707,
+        "name": ".ryebreb",
+        "display_name": "rye",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1425309964481855633"
+    },
+    {
+      "id": 1425354251487547453,
+      "created_at": "2025-10-08T05:28:55.356000+00:00",
+      "edited_at": null,
+      "content": "Hi I\u2019m Fede\nI like board games and olives among other things",
+      "author": {
+        "id": 1417293171586498620,
+        "name": "fedecofino",
+        "display_name": "Fede Cofino",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1425354251487547453"
+    },
+    {
+      "id": 1425375821782061118,
+      "created_at": "2025-10-08T06:54:38.115000+00:00",
+      "edited_at": null,
+      "content": "Hi I\u2019m Fede",
+      "author": {
+        "id": 776510460170076200,
+        "name": "perpetualyt",
+        "display_name": "Arya",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": {
+        "message_id": null,
+        "channel_id": 1425354251487547453,
+        "guild_id": 1411374891533340694
+      },
+      "pinned": false,
+      "type": "MessageType.thread_created",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1425375821782061118"
+    },
+    {
+      "id": 1434297073489940611,
+      "created_at": "2025-11-01T21:44:30.271000+00:00",
+      "edited_at": null,
+      "content": "Hi, Nick Mahdavi, co '23. Currently doing mech interp homomorphic encryption and various philosophy things. Also reformed PFer",
+      "author": {
+        "id": 529480508367699968,
+        "name": "nkightly",
+        "display_name": "nick m",
+        "bot": false
+      },
+      "attachments": [],
+      "embeds": [],
+      "mentions": [],
+      "reference": null,
+      "pinned": false,
+      "type": "MessageType.default",
+      "jump_url": "https://discord.com/channels/1411374891533340694/1411478646287372300/1434297073489940611"
+    }
+  ]
+}
