@@ -11,7 +11,6 @@
             <a href="/writing">writing</a>
             <a href="/poetry">poetry</a>
             <a href="/notes">notes</a>
-            <a href="/gallery">gallery</a>
             <a href="/vibes">vibes</a>
             <a href="/projects">projects</a>
             <a href="/other">other</a>
