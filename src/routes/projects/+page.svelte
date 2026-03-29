@@ -111,6 +111,10 @@
     function getProjectMediaImage(project) {
         return project.preview_image || '/project_media/featured-placeholder.svg';
     }
+
+    function slugify(title) {
+        return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
 </script>
 
 <StarBackground>
@@ -125,7 +129,7 @@
                     <div class="project-card">
                         <div class="project-content">
                             <div class="category-badge">{project.category}</div>
-                            <h3>
+                            <h3 id={slugify(project.title)}>
                                 {#if getDefaultUrl(project)}
                                     <a href="{getDefaultUrl(project)}" target="_blank" rel="noopener">
                                         {project.title}

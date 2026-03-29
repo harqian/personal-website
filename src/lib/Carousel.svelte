@@ -131,7 +131,7 @@
     return path.split('/').pop();
   }
 
-  // get duration for current item - returns ms
+  // get duration for current item - returns ms, or null for "use video length"
   function getDurationForItem(index) {
     if (index < 0 || index >= items.length) return intervalMs;
     const item = items[index];
@@ -139,10 +139,11 @@
     const config = durations[filename];
     const specifiedDuration = typeof config === 'number' ? config : config?.duration;
 
-    if (specifiedDuration === null && isVideo(item)) {
+    if ((specifiedDuration === null || specifiedDuration === 'length') && isVideo(item)) {
       return null;
     }
-    return specifiedDuration || intervalMs;
+    if (typeof specifiedDuration === 'number') return specifiedDuration;
+    return intervalMs;
   }
 
   function getCaptionForItem(index) {
@@ -159,7 +160,7 @@
 
     const config = durations[filename];
     const specifiedDuration = typeof config === 'number' ? config : config?.duration;
-    if (specifiedDuration === null || specifiedDuration === undefined) {
+    if (specifiedDuration === null || specifiedDuration === undefined || specifiedDuration === 'length') {
       currentDuration = video.duration * 1000;
       if (autoplay) {
         stop();
@@ -208,7 +209,8 @@
             <img src={encoded(item)} alt="" />
           {/if}
           {#if getCaptionForItem(i)}
-            <div class="caption">{getCaptionForItem(i)}</div>
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <div class="caption" on:click|stopPropagation>{@html getCaptionForItem(i)}</div>
           {/if}
         </div>
       {/each}
@@ -341,6 +343,10 @@
     font-size: 0.85rem;
     text-align: center;
     z-index: 1;
+  }
+  .caption :global(a) {
+    color: inherit;
+    text-decoration: underline;
   }
 
   @media (max-width: 768px) {
