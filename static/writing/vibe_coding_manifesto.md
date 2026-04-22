@@ -297,3 +297,5 @@ some other good tips and tricks and app recs: https://github.com/tmad4000/vibe-c
 cool resource for learning claude code for beginners: https://github.com/shareAI-lab/learn-claude-code
 
 agents / skills that are good for different jobs in a business: https://github.com/msitarzewski/agency-agents
+
+beginner intro to claude code (may 2025, pretty basic but covers the fundamentals): https://www.youtube.com/watch?v=6eBSHbLKuN0
