@@ -46,6 +46,16 @@
         margin: 0;
         padding: 0;
         font-family: "Geist Mono", monospace;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    :global(h1, h2, h3, h4) {
+        text-wrap: balance;
+    }
+
+    :global(p) {
+        text-wrap: pretty;
     }
     
     :global(a) {

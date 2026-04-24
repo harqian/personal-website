@@ -28,7 +28,16 @@
 
         if (isOpening) {
             await tick();
-            contactInfoEl?.scrollIntoView({ behavior: "smooth", block: "start" });
+            // wait for the expansion transition before scrolling, so
+            // block:'end' targets the fully-expanded bottom instead of the
+            // collapsed zero-height box (which sits right under "say hi")
+            const el = contactInfoEl;
+            const onEnd = (e) => {
+                if (e.propertyName !== "max-height") return;
+                el.removeEventListener("transitionend", onEnd);
+                el.scrollIntoView({ behavior: "smooth", block: "end" });
+            };
+            el?.addEventListener("transitionend", onEnd);
         }
     }
 </script>
@@ -50,22 +59,25 @@
     <div class="content">
         <p>feel free to look around or <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>!</p>
         
-        {#if showContactInfo}
-            <div class="contact-info" bind:this={contactInfoEl}>
-                <div class="contact-item">
-                    <i class="fa fa-envelope"></i>
-                    <span>harrisonq125@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-brands fa-discord"></i>
-                    <span>harqian</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa fa-video"></i>
-                    <span><a href="https://calendar.app.google/tkRTMQMjVEEoDWyR6">meeting link</a></span>
-                </div>
+        <div
+            class="contact-info"
+            class:open={showContactInfo}
+            aria-hidden={!showContactInfo}
+            bind:this={contactInfoEl}
+        >
+            <div class="contact-item" style="--i: 0">
+                <i class="fa fa-envelope"></i>
+                <span>harrisonq125@gmail.com</span>
             </div>
-        {/if}
+            <div class="contact-item" style="--i: 1">
+                <i class="fa-brands fa-discord"></i>
+                <span>harqian</span>
+            </div>
+            <div class="contact-item" style="--i: 2">
+                <i class="fa fa-video"></i>
+                <span><a href="https://calendar.app.google/tkRTMQMjVEEoDWyR6">meeting link</a></span>
+            </div>
+        </div>
     </div>
     
 </StarBackground>
@@ -84,6 +96,8 @@
         height: 100%;
         object-fit: cover;
         border-radius: 8px;
+        outline: 1px solid rgba(255, 255, 255, 0.08);
+        outline-offset: -1px;
     }
 
     .content {
@@ -110,40 +124,68 @@
     }
     
     .contact-info {
-        margin-top: 1rem;
         padding: 1rem;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.06);
         border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        animation: fadeIn 0.3s ease-in;
+        box-shadow:
+            0 0 0 1px rgba(255, 255, 255, 0.08),
+            0 1px 2px rgba(0, 0, 0, 0.4);
+        overflow: hidden;
+
+        max-height: 0;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        opacity: 0;
+        transition:
+            max-height 0.35s ease,
+            margin-top 0.35s ease,
+            padding-top 0.35s ease,
+            padding-bottom 0.35s ease,
+            opacity 0.25s ease;
     }
-    
+
+    .contact-info.open {
+        max-height: 400px;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        opacity: 1;
+    }
+
     .contact-item {
         display: flex;
         align-items: center;
         gap: 0.5rem;
         margin-bottom: 0.5rem;
         font-size: 1.1rem;
+
+        opacity: 0;
+        transform: translateY(8px);
+        filter: blur(4px);
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            filter 0.3s ease;
+        transition-delay: 0s;
     }
-    
+
+    .contact-info.open .contact-item {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+        transition-delay: calc(120ms + var(--i) * 80ms);
+    }
+
     .contact-item:last-child {
         margin-bottom: 0;
     }
-    
+
     .contact-item i {
         color: var(--link-color);
         width: 20px;
-    }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* optical nudge: icon glyphs often sit slightly above the text baseline */
+        transform: translateY(1px);
     }
         
     @media (max-width: 768px) {
