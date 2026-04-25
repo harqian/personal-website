@@ -24,6 +24,9 @@
   let startTime = 0;
   let currentDuration = intervalMs;
   let prevAutoplay = autoplay;
+  // client-only render: avoids hydration mismatches when browser extensions
+  // mutate the carousel's video nodes (e.g. youtube playback-rate controllers)
+  let mounted = false;
 
   function next() {
     if (items.length === 0) return;
@@ -93,7 +96,10 @@
     }
   }
 
-  onMount(start);
+  onMount(() => {
+    mounted = true;
+    start();
+  });
   onDestroy(stop);
 
   $: {
@@ -181,7 +187,7 @@
   role="region"
   aria-label="Image carousel"
 >
-  {#if items && items.length > 0}
+  {#if mounted && items && items.length > 0}
     <div
       class="viewport"
       role="button"

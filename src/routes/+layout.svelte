@@ -6,6 +6,11 @@
 <slot />
 
 <svelte:head>
+    <meta property="og:title" content="Harrison Qian's website" />
+    <meta property="og:description" content={`“now i will have less distraction” —leonhart euler after losing an eye`} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Harrison Qian's website" />
+    <meta name="twitter:description" content={`“now i will have less distraction” —leonhart euler after losing an eye`} />
     <!-- import two different versions of font awesome so all the icons work -->
     <link
         rel="stylesheet"
