@@ -6,7 +6,7 @@
     },
     {
         "font_awesome_tag": "fa-brands fa-discord",
-        "href": "https://www.google.com/search?q=harqian",
+        "href": "https://discord.com/users/1297739861649920053",
         "description": "discord username"
     },
     {
@@ -28,5 +28,10 @@
         "font_awesome_tag": "fa fa-linkedin",
         "href": "https://www.linkedin.com/in/harrison-qian-95b0062a3/",
         "description": "linkedin link"
+    },
+    {
+        "custom_icon": "curius",
+        "href": "https://curius.app/",
+        "description": "curius link"
     }
 ]
