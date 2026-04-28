@@ -24,6 +24,9 @@
   let prevAutoplay = autoplay;
   let paused = false;
   let pausedElapsed = 0;
+  // tracks the slide whose video has been activated, so the slide-change
+  // reactive block doesn't reset video.currentTime on pause toggles
+  let lastActivated = -1;
   // client-only render: avoids hydration mismatches when browser extensions
   // mutate the carousel's video nodes (e.g. youtube playback-rate controllers)
   let mounted = false;
@@ -48,25 +51,24 @@
     startSlide(0);
   }
 
-  function startSlide(elapsedMs = 0) {
+  function startSlide(elapsedMs = 0, minRemainingMs = 0) {
     if (!autoplay || items.length <= 1 || paused) return;
     stop();
 
     const itemDuration = getDurationForItem(current);
     if (itemDuration === null) {
-      // video duration not known until loadedmetadata; that handler will retry
-      const video = videoElements[current];
-      if (video && Number.isFinite(video.duration) && video.duration > 0) {
-        currentDuration = video.duration * 1000;
-      } else {
-        return;
-      }
-    } else {
-      currentDuration = itemDuration;
+      // length-driven video: advance is triggered by the 'ended' event,
+      // not a timer. nothing to schedule here.
+      startTime = Date.now() - elapsedMs;
+      currentDuration = 0;
+      return;
     }
+    currentDuration = itemDuration;
 
     startTime = Date.now() - elapsedMs;
-    const remainingTime = Math.max(0, currentDuration - elapsedMs);
+    // minRemainingMs cushions the timer for the resume case so pausing near
+    // the end of a slide doesn't cause an immediate jump on resume
+    const remainingTime = Math.max(minRemainingMs, currentDuration - elapsedMs, 0);
     timer = setTimeout(next, remainingTime);
   }
 
@@ -83,7 +85,7 @@
       paused = false;
       const video = videoElements[current];
       if (video) video.play().catch(() => {});
-      startSlide(pausedElapsed);
+      startSlide(pausedElapsed, 500);
     } else {
       paused = true;
       pausedElapsed = Date.now() - startTime;
@@ -129,14 +131,14 @@
     }
   }
 
-  $: {
-    // control video playback when the active slide changes; pause/resume
-    // handles the active video directly without resetting currentTime
+  $: if (current !== lastActivated && videoElements.length > 0) {
+    // only activate when current changes — avoids resetting currentTime on pause
+    lastActivated = current;
     for (const [i, video] of videoElements.entries()) {
       if (!video) continue;
       if (i === current) {
         video.currentTime = 0;
-        if (!paused) video.play().catch(() => {});
+        video.play().catch(() => {});
       } else {
         video.pause();
       }
@@ -177,15 +179,10 @@
     return config?.objectPosition || '';
   }
 
-  function handleVideoLoaded(event, index) {
-    if (index !== current) return;
-    const config = durations[items[index].name];
-    const specifiedDuration = typeof config === 'number' ? config : config?.duration;
-    if (specifiedDuration === null || specifiedDuration === undefined || specifiedDuration === 'length') {
-      if (autoplay && !paused) {
-        startSlide(0);
-      }
-    }
+  function handleVideoEnded(index) {
+    if (index !== current || paused) return;
+    if (getDurationForItem(index) !== null) return;
+    next();
   }
 </script>
 
@@ -212,7 +209,7 @@
               muted
               playsinline
               style:object-position={getObjectPositionForItem(i) || null}
-              on:loadedmetadata={(e) => handleVideoLoaded(e, i)}
+              on:ended={() => handleVideoEnded(i)}
             ></video>
           {:else}
             <img src={encoded(item)} alt="" style:object-position={getObjectPositionForItem(i) || null} />
@@ -230,6 +227,27 @@
             <path d="M8 5v14l11-7z" fill="white" />
           </svg>
         </div>
+      {/if}
+
+      {#if items.length > 1}
+        <button
+          class="nav-arrow nav-prev"
+          on:click|stopPropagation={prev}
+          aria-label="Previous slide"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M15 6l-6 6 6 6" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <button
+          class="nav-arrow nav-next"
+          on:click|stopPropagation={next}
+          aria-label="Next slide"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+            <path d="M9 6l6 6-6 6" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
       {/if}
     </div>
 
@@ -313,6 +331,35 @@
     cursor: pointer;
   }
   .dot.active { background: rgba(255,255,255,0.9); }
+
+  .nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0.35);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.55;
+    transition: opacity 160ms ease, background 160ms ease;
+    z-index: 4;
+    padding: 0;
+  }
+  .nav-arrow:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .nav-arrow:focus-visible {
+    opacity: 1;
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 2px;
+  }
+  .nav-prev { left: 8px; }
+  .nav-next { right: 8px; }
 
   .pause-overlay {
     position: absolute;
