@@ -19,11 +19,11 @@
   let current = 0;
   let timer = null;
   let videoElements = [];
-  let progress = 0;
-  let progressTimer = null;
   let startTime = 0;
   let currentDuration = intervalMs;
   let prevAutoplay = autoplay;
+  let paused = false;
+  let pausedElapsed = 0;
   // client-only render: avoids hydration mismatches when browser extensions
   // mutate the carousel's video nodes (e.g. youtube playback-rate controllers)
   let mounted = false;
@@ -31,47 +31,43 @@
   function next() {
     if (items.length === 0) return;
     current = (current + 1) % items.length;
-    start(0);
+    paused = false;
+    startSlide(0);
+  }
+
+  function prev() {
+    if (items.length === 0) return;
+    current = (current - 1 + items.length) % items.length;
+    paused = false;
+    startSlide(0);
   }
 
   function goToSlide(index) {
     current = index;
-    start(0);
+    paused = false;
+    startSlide(0);
   }
 
-  function updateProgress() {
-    if (!autoplay || items.length <= 1) return;
-    if (typeof requestAnimationFrame === 'undefined') return;
-
-    const elapsed = Date.now() - startTime;
-    progress = Math.min((elapsed / currentDuration) * 100, 100);
-
-    if (progress < 100) {
-      progressTimer = requestAnimationFrame(updateProgress);
-    }
-  }
-
-  function start(resumeFrom = 0) {
-    if (!autoplay || items.length <= 1) return;
+  function startSlide(elapsedMs = 0) {
+    if (!autoplay || items.length <= 1 || paused) return;
     stop();
 
     const itemDuration = getDurationForItem(current);
     if (itemDuration === null) {
+      // video duration not known until loadedmetadata; that handler will retry
       const video = videoElements[current];
       if (video && Number.isFinite(video.duration) && video.duration > 0) {
-        startWithDuration(video.duration * 1000, resumeFrom);
+        currentDuration = video.duration * 1000;
+      } else {
+        return;
       }
-      return;
+    } else {
+      currentDuration = itemDuration;
     }
-    currentDuration = itemDuration;
 
-    const remainingTime = currentDuration * (1 - resumeFrom / 100);
-    startTime = Date.now() - (currentDuration * resumeFrom / 100);
-    progress = resumeFrom;
-
-    // use setTimeout instead of setInterval since each slide has different duration
+    startTime = Date.now() - elapsedMs;
+    const remainingTime = Math.max(0, currentDuration - elapsedMs);
     timer = setTimeout(next, remainingTime);
-    updateProgress();
   }
 
   function stop() {
@@ -79,26 +75,44 @@
       clearTimeout(timer);
       timer = null;
     }
-    if (progressTimer && typeof cancelAnimationFrame !== 'undefined') {
-      cancelAnimationFrame(progressTimer);
-      progressTimer = null;
+  }
+
+  function togglePause() {
+    if (items.length <= 1) return;
+    if (paused) {
+      paused = false;
+      const video = videoElements[current];
+      if (video) video.play().catch(() => {});
+      startSlide(pausedElapsed);
+    } else {
+      paused = true;
+      pausedElapsed = Date.now() - startTime;
+      stop();
+      const video = videoElements[current];
+      if (video) video.pause();
     }
   }
 
   function handleCarouselClick() {
-    next();
+    togglePause();
   }
 
   function handleCarouselKeydown(event) {
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
+      togglePause();
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
       next();
+    } else if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      prev();
     }
   }
 
   onMount(() => {
     mounted = true;
-    start();
+    startSlide();
   });
   onDestroy(stop);
 
@@ -108,7 +122,7 @@
     if (ap !== prevAutoplay) {
       prevAutoplay = ap;
       if (ap) {
-        start();
+        startSlide();
       } else {
         stop();
       }
@@ -116,12 +130,13 @@
   }
 
   $: {
-    // Control video playback based on active slide
+    // control video playback when the active slide changes; pause/resume
+    // handles the active video directly without resetting currentTime
     for (const [i, video] of videoElements.entries()) {
       if (!video) continue;
       if (i === current) {
         video.currentTime = 0;
-        video.play().catch(() => {});
+        if (!paused) video.play().catch(() => {});
       } else {
         video.pause();
       }
@@ -156,29 +171,21 @@
     return config?.caption || '';
   }
 
+  function getObjectPositionForItem(index) {
+    if (index < 0 || index >= items.length) return '';
+    const config = durations[items[index].name];
+    return config?.objectPosition || '';
+  }
+
   function handleVideoLoaded(event, index) {
     if (index !== current) return;
-    const video = event.target;
     const config = durations[items[index].name];
     const specifiedDuration = typeof config === 'number' ? config : config?.duration;
     if (specifiedDuration === null || specifiedDuration === undefined || specifiedDuration === 'length') {
-      currentDuration = video.duration * 1000;
-      if (autoplay) {
-        stop();
-        startWithDuration(currentDuration);
+      if (autoplay && !paused) {
+        startSlide(0);
       }
     }
-  }
-
-  function startWithDuration(duration, resumeFrom = 0) {
-    if (!autoplay || items.length <= 1) return;
-    stop();
-    currentDuration = duration;
-    const remainingTime = currentDuration * (1 - resumeFrom / 100);
-    startTime = Date.now() - (currentDuration * resumeFrom / 100);
-    progress = resumeFrom;
-    timer = setTimeout(next, remainingTime);
-    updateProgress();
   }
 </script>
 
@@ -192,7 +199,7 @@
       class="viewport"
       role="button"
       tabindex="0"
-      aria-label="Advance to next slide"
+      aria-label="Click to pause or resume; arrow keys to navigate"
       on:click={handleCarouselClick}
       on:keydown={handleCarouselKeydown}
     >
@@ -204,10 +211,11 @@
               src={encoded(item)}
               muted
               playsinline
+              style:object-position={getObjectPositionForItem(i) || null}
               on:loadedmetadata={(e) => handleVideoLoaded(e, i)}
             ></video>
           {:else}
-            <img src={encoded(item)} alt="" />
+            <img src={encoded(item)} alt="" style:object-position={getObjectPositionForItem(i) || null} />
           {/if}
           {#if getCaptionForItem(i)}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -215,33 +223,15 @@
           {/if}
         </div>
       {/each}
-    </div>
 
-    {#if items.length > 1}
-      <div class="timer-indicator">
-        <svg width="32" height="32" viewBox="0 0 32 32">
-          <circle
-            cx="16"
-            cy="16"
-            r="14"
-            fill="none"
-            stroke="rgba(255, 255, 255, 0.2)"
-            stroke-width="2"
-          />
-          <circle
-            cx="16"
-            cy="16"
-            r="14"
-            fill="none"
-            stroke="rgba(255, 255, 255, 0.8)"
-            stroke-width="2"
-            stroke-dasharray="87.96"
-            stroke-dashoffset={87.96 - (87.96 * progress / 100)}
-            transform="rotate(-90 16 16)"
-          />
-        </svg>
-      </div>
-    {/if}
+      {#if paused}
+        <div class="pause-overlay" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22">
+            <path d="M8 5v14l11-7z" fill="white" />
+          </svg>
+        </div>
+      {/if}
+    </div>
 
     {#if showDots && items.length > 1}
       <div class="dots">
@@ -324,13 +314,29 @@
   }
   .dot.active { background: rgba(255,255,255,0.9); }
 
-  .timer-indicator {
+  .pause-overlay {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.55);
+    display: grid;
+    place-items: center;
     pointer-events: none;
-    opacity: 0.7;
+    z-index: 3;
+    animation: pause-fade-in 160ms ease;
+  }
+  .pause-overlay svg {
+    /* nudge play triangle to feel optically centered in the circle */
+    transform: translateX(2px);
+  }
+
+  @keyframes pause-fade-in {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
+    to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
   }
 
   .caption {
@@ -359,7 +365,6 @@
       left: 8px;
       max-width: calc(100% - 48px);
     }
-    .timer-indicator { top: 8px; right: 8px; }
     .caption { font-size: 0.75rem; padding: 4px 8px; }
   }
 </style>
