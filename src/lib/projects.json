@@ -282,7 +282,7 @@
             "projects": [
                 {
                     "title": "Databox",
-                    "description": "a gadget that uses esp32 to send number, audio, and image (esp32 cam) data to a spreadsheet through google apps script",
+                    "description": "with no ee experience made a pcb that uses esp32 to send numbers (knob potentiometers), audio (INMP441), and image (esp32 cam) data over wifi to a spreadsheet through google apps script",
                     "github_url": "https://github.com/harqian/arduino-projects",
                     "demo_url": "https://youtu.be/MPY_f5vGokE",
                     "featured_media_url": "https://www.youtube.com/watch?v=yzcjMu7PD5s",
