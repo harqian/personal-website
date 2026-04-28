@@ -7,7 +7,7 @@
             "projects": [
                 {
                     "title": "OnCue",
-                    "description": "Your AI-powered interview wingman. OnCue listens to interview questions in real-time and surfaces relevant memories from your experience vault exactly when you need them.",
+                    "description": "upload documents (resume, project docs, essays) -> in a call transcripts; questions are detected and used to query the database with rag and top 3 hits are shown",
                     "github_url": "https://github.com/harqian/OnCue",
                     "demo_url": "https://youtu.be/4UaQEB1b84E",
                     "start_date": "2025-10-01",
@@ -16,7 +16,7 @@
                 },
                 {
                     "title": "RL Snake",
-                    "description": "Snake game AI trained with Q-Learning, Hamiltonian Paths, Deep Q Network, PPO, and A2C.",
+                    "description": "snake game AI trained with Q-Learning, Hamiltonian Paths, Deep Q Network, PPO, and A2C; attained near optimal performance on 4x4 and 6x6",
                     "github_url": "https://github.com/harqian/snake-ai",
                     "featured_media_url": "https://youtu.be/2sJ0Uhk1fis",
                     "start_date": "2023-9-01",
@@ -42,7 +42,7 @@
                 },
                 {
                     "title": "Sketch Classifier & Generator",
-                    "description": "Image classification for Quick, Draw! dataset using CNNs, and generating drawings using an RNN VAE with Gaussian Mixture Models.",
+                    "description": "image classification for Quick, Draw! dataset using big CNNs (92% accuracy on 95-class dataset), and generating drawings using an RNN VAE with gaussian mixture models.",
                     "demo_url": "https://drive.google.com/file/d/1rUJ5fLaq5rrtZlW4eC8Wk2SypeCr1am5/view?usp=drive_link",
                     "github_url": "https://github.com/harqian/the-doodler-classification",
                     "start_date": "2024-9-10",
@@ -58,7 +58,7 @@
                 },
                 {
                     "title": "Text Generation",
-                    "description": "Text generation models and experiments using RNNs and markov chains.",
+                    "description": "text generation models and experiments using RNNs (GRU and LSTM) and markov chains on shakespeare and code",
                     "github_url": "https://github.com/harqian/text-generation",
                     "demo_url": "https://drive.google.com/file/d/1Oa5uDw0E7kkFCJUqt4SwoG4xK6bu8j7I/view?usp=sharing",
                     "featured_media_url": "https://youtu.be/q0g0F2MFTKY",
@@ -244,7 +244,7 @@
             "projects": [
                 {
                     "title": "Induction with Manim",
-                    "description": "A mathematical explanation of mathematical induction, animated using the manim library to visualize complex concepts (1.2k views).",
+                    "description": "a mathematical explanation of mathematical induction, animated using the manim library to visualize complex concepts.",
                     "github_url": "https://github.com/harqian/manim-projects/tree/main/induction_is_easy_actually",
                     "demo_url": "https://youtu.be/yOLwNqhFLRs",
                     "start_date": "2025-02-01",
@@ -253,7 +253,7 @@
                 },
                 {
                     "title": "Reinforcement Learning Intuition",
-                    "description": "Video explaining the concepts in reinforcement learning with intuitive visualizations. (top 40% in Breakthrough Junior Challenege 2024)",
+                    "description": "Video explaining the concepts in reinforcement learning with intuitive visualizations",
                     "demo_url": "https://youtu.be/epVaD4IdphU",
                     "start_date": "2024-04-01",
                     "end_date": "2024-06-01",
@@ -282,7 +282,7 @@
             "projects": [
                 {
                     "title": "Databox",
-                    "description": "A box that uses esp32 to send number, audio, and image (esp32 cam) data to a google spreadsheet through apps script with a pcb documented with a final explanation video and a project timelapse.",
+                    "description": "a gadget that uses esp32 to send number, audio, and image (esp32 cam) data to a spreadsheet through google apps script",
                     "github_url": "https://github.com/harqian/arduino-projects",
                     "demo_url": "https://youtu.be/MPY_f5vGokE",
                     "featured_media_url": "https://www.youtube.com/watch?v=yzcjMu7PD5s",
@@ -306,7 +306,7 @@
             "projects": [
                 {
                     "title": "Piano Culmination",
-                    "description": "A culmination of 1.3 years of piano practice, featuring a mix of original compositions and covers.",
+                    "description": "a culmination of 1.3 years of piano practice, featuring fallen down (toby fox), howl's moving castle + one summer day (joe hisaishi) and more!.",
                     "demo_url": "https://youtu.be/wDX-dO3Enwk",
                     "start_date": "2024-01-01",
                     "end_date": "2025-04-20",
@@ -349,7 +349,7 @@
             "projects": [
                 {
                     "title": "Pause",
-                    "description": "A macOS break enforcer that actually locks you out. Smart activations, customizable, and private. (10 users)",
+                    "description": "a macOS break enforcer that actually locks you out; activate on app open, timers in menu bar, customize time and text, etc",
                     "github_url": "https://github.com/harqian/Pause",
                     "demo_url": "https://youtu.be/riwXFB-mAbU",
                     "start_date": "2025-10-01",
@@ -358,7 +358,7 @@
                 },
                 {
                     "title": "WorkableCafes",
-                    "description": "find cafes with good WiFi, comfort, and power outlets to work from! worked on polishing the app and scraping data from reviews to generate actually accurate synthetic data (350 users)",
+                    "description": "find cafes with good WiFi, comfort, and power outlets to work from! worked on polishing the app and scraping data from reviews to generate actually accurate synthetic data",
                     "demo_url": "https://workablecafes.com/",
                     "preview_image": "/project_media/workablecafes.png",
                     "start_date": "2025-10-01",
