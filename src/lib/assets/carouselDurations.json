@@ -2,7 +2,7 @@
   "01_juggling.webm": { "duration": 3000, "caption": "picked up juggling during an internship because there were hacky sacks around" },
   "03_oncue.png": { "duration": 3000, "caption": "demoing <a href=\"/projects#oncue\">oncue</a>" },
   "04_ukulele.jpg": { "duration": 3000, "caption": "glimpse of us on ukulele!" },
-  "06_beach_frisbee.mp4": { "duration": "length", "caption": null, "objectPosition": "25% 50%" },
+  "06_beach_frisbee.mp4": { "duration": "length", "caption": null, "objectPosition": "0% 50%" },
   "07_orbit_eeg.jpeg": { "duration": 3000, "caption": "mark iv openbci headset" },
   "08_setup.jpeg": { "duration": 3000, "caption": "the perfect work setup" },
   "09_dumb_derivatives.mp4": { "duration": "1000", "caption": "filmed a funny video with a friend a while back on doing a stupidly long derivative computation" },
