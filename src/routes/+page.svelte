@@ -52,12 +52,11 @@
         <p>-> bay area</p>
         <p>i love learning so i taught myself four years of math in one, then kept going — piano, programming, ultimate frsibee, neurotech.</p>
         <p>last summer i helped engineer vestibular stimulation at a neurotech startup — we got someone from fully awake to nearly asleep in three minutes. this year ive been shipping apps, winning hackathons, and training CNNs to read consciousness states from brain waves. i once spent 30 hours debugging a heater.</p>
-        <p>i love precise patterns — reducing a messy system down to the math that actually drives it, whether that's a topology proof, eddy currents explanation, or a circuit on a PCB.</p>
+        <p>i love precise patterns: reducing a messy system down to the math that actually drives it, whether that's a topology proof, eddy currents explanation, speech embedding, or a circuit on a PCB.</p>
         <p>some of what ive built is in <a href="/projects">here</a>.</p>
-        <p>some of what i'm looking to build in the future is in <a href="https://etherpad.mit.edu/p/harrison-ideas" target="_blank">here</a>.</p>
    </div>
     <div class="content">
-        <p>feel free to look around or <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>!</p>
+        <p>feel free to look around or <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>! i respond to everyone :)</p>
         
         <div
             class="contact-info"
