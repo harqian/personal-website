@@ -7,13 +7,14 @@
     <Header />
     <main>
         <div class="column">
-            <h2>Discord Lattice embed test</h2>
+            <h2>Discord Friends Graph</h2>
             <hr class="horizontal-line">
             <p class="lede">
-                A Chrome extension that scans your Discord friends list and
-                renders mutual connections as an interactive graph. Everything
-                runs locally; this embed is a self-contained <code>.html</code>
-                file with the graph + viewer code baked in.
+                A Chrome extension I built that scans your Discord friends list
+                and renders mutual connections as an interactive graph.
+                Everything runs locally in the browser. The embed below is the
+                public version of my own graph: names and profile links are
+                hidden, but the structure is preserved.
             </p>
 
             <div class="frame-wrap">
@@ -25,8 +26,11 @@
             </div>
 
             <p class="caption">
-                drag to pan, scroll to zoom, click a node to see profile,
-                press <kbd>/</kbd> to search.
+                drag to pan, scroll to zoom, click a node, press <kbd>/</kbd> to search.
+            </p>
+
+            <p class="links">
+                <a href="https://github.com/Moonflower2022/discord-lattice" target="_blank" rel="noopener">Source on GitHub</a>
             </p>
         </div>
     </main>
@@ -67,6 +71,23 @@
         color: #888;
         font-size: 0.85rem;
         text-align: center;
+    }
+
+    .links {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    .links a {
+        color: #aaa;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(170, 170, 170, 0.3);
+    }
+
+    .links a:hover {
+        color: #fff;
+        border-bottom-color: #fff;
     }
 
     kbd {
