@@ -166,7 +166,15 @@
                         </div>
 
                         <div class="project-media">
-                            {#if getYouTubeEmbedUrl(project)}
+                            {#if project.iframe_url}
+                                <div class="media-frame media-iframe">
+                                    <iframe
+                                        src={project.iframe_url}
+                                        title={`${project.title} interactive embed`}
+                                        loading="lazy"
+                                    ></iframe>
+                                </div>
+                            {:else if getYouTubeEmbedUrl(project)}
                                 <div class="media-frame">
                                     <iframe
                                         src={getYouTubeEmbedUrl(project)}
@@ -329,6 +337,10 @@
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.08);
             display: block;
+        }
+
+        .media-iframe {
+            min-height: 360px;
         }
 
         .media-frame iframe,
