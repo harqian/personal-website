@@ -85,7 +85,7 @@
             <iframe src="/discord-friends-graph-demo.html" title="my discord friends graph" loading="lazy"></iframe>
         </div>
         <p class="friends-caption">
-            click a node, drag to pan, scroll to zoom · <a href="/discord-friends-graph">make your own</a>
+            click a node, drag to pan, scroll to zoom
         </p>
     </section>
 
