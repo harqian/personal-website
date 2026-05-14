@@ -368,10 +368,10 @@
                 {
                     "title": "Discord Friends Graph",
                     "description": "chrome extension that scans your discord friends list and renders mutual connections as an interactive graph. everything runs locally; you can export a self-contained shareable HTML and merge graphs with friends who also use it",
-                    "github_url": "https://github.com/Moonflower2022/discord-lattice",
-                    "demo_url": "/lattice",
-                    "iframe_url": "/discord-lattice-demo.html",
-                    "preview_image": "/project_media/discord-lattice.png",
+                    "github_url": "https://github.com/harqian/discord-friends-graph",
+                    "demo_url": "/discord-friends-graph",
+                    "iframe_url": "/discord-friends-graph-demo.html",
+                    "preview_image": "/project_media/discord-friends-graph.png",
                     "start_date": "2026-02-01",
                     "end_date": "2026-05-13",
                     "featured": true

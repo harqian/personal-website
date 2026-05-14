@@ -27,7 +27,7 @@ Through this class, I have gained a deep insight into the theories that humans h
 
 [^3]:  While brains are not unique in their intelligence providing services, they are the most prominent in today’s world both in humans and not, which is what I care about.
 
-[^4]:  [https://github.com/Moonflower2022/nk-models](https://github.com/Moonflower2022/nk-models)
+[^4]:  [https://github.com/harqian/nk-models](https://github.com/harqian/nk-models)
 
 [^5]:  Someone wrote a very long and in-depth paper about using this theory to analyze the consciousness of AI that I read. It was very intriguing and inspired me to write about this idea in my essay.
 

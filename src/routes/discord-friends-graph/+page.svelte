@@ -19,7 +19,7 @@
 
             <div class="frame-wrap">
                 <iframe
-                    src="/discord-lattice-demo.html"
+                    src="/discord-friends-graph-demo.html"
                     title="Discord Friends Graph"
                     loading="lazy"
                 ></iframe>
@@ -30,7 +30,7 @@
             </p>
 
             <p class="links">
-                <a href="https://github.com/Moonflower2022/discord-lattice" target="_blank" rel="noopener">Source on GitHub</a>
+                <a href="https://github.com/harqian/discord-friends-graph" target="_blank" rel="noopener">Source on GitHub</a>
             </p>
         </div>
     </main>
