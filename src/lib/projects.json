@@ -374,7 +374,14 @@
                     "preview_image": "/project_media/discord-friends-graph.png",
                     "start_date": "2026-02-01",
                     "end_date": "2026-05-13",
-                    "featured": true
+                    "featured": true,
+                    "links": [
+                        {
+                            "url": "https://chromewebstore.google.com/detail/discord-friends-graph/bibbabmjfhdenaiccjdhecphakgcinag",
+                            "label": "Chrome Web Store",
+                            "icon": "fab fa-chrome"
+                        }
+                    ]
                 }
             ]
         }
