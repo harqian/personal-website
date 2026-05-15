@@ -19,6 +19,7 @@
   let current = 0;
   let timer = null;
   let videoElements = [];
+  let isMuted = true;
   let startTime = 0;
   let currentDuration = intervalMs;
   let prevAutoplay = autoplay;
@@ -179,6 +180,15 @@
     return config?.objectPosition || '';
   }
 
+  function toggleMute() {
+    isMuted = !isMuted;
+    for (const v of videoElements) {
+      if (v) v.muted = isMuted;
+    }
+    const v = videoElements[current];
+    if (v && !isMuted) v.play().catch(() => {});
+  }
+
   function handleVideoEnded(index) {
     if (index !== current || paused) return;
     if (getDurationForItem(index) !== null) return;
@@ -206,7 +216,7 @@
             <video
               bind:this={videoElements[i]}
               src={encoded(item)}
-              muted
+              muted={isMuted}
               playsinline
               style:object-position={getObjectPositionForItem(i) || null}
               on:ended={() => handleVideoEnded(i)}
@@ -220,6 +230,25 @@
           {/if}
         </div>
       {/each}
+
+      <button
+        class="mute-toggle"
+        on:click|stopPropagation={toggleMute}
+        aria-label={isMuted ? 'unmute carousel' : 'mute carousel'}
+        aria-pressed={!isMuted}
+      >
+        {#if isMuted}
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path d="M3 10v4h4l5 4V6L7 10H3z" fill="white"/>
+            <path d="M16 8l5 8M21 8l-5 8" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        {:else}
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path d="M3 10v4h4l5 4V6L7 10H3z" fill="white"/>
+            <path d="M16 8c1.5 1 2 2.5 2 4s-.5 3-2 4M19 5c2.5 1.5 3.5 4 3.5 7s-1 5.5-3.5 7" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
+          </svg>
+        {/if}
+      </button>
 
       {#if paused}
         <div class="pause-overlay" aria-hidden="true">
@@ -315,12 +344,14 @@
   .dots {
     position: absolute;
     top: 12px;
-    left: 12px;
+    left: 0;
+    right: 0;
+    padding: 0 12px;
     display: flex;
+    justify-content: center;
     gap: 6px;
     flex-wrap: wrap;
     z-index: 3;
-    max-width: calc(100% - 64px);
   }
   .dot {
     width: 8px;
@@ -360,6 +391,33 @@
   }
   .nav-prev { left: 8px; }
   .nav-next { right: 8px; }
+
+  .mute-toggle {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 160ms ease, background 160ms ease;
+    z-index: 4;
+    padding: 0;
+  }
+  .mute-toggle:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .mute-toggle:focus-visible {
+    opacity: 1;
+    outline: 2px solid rgba(255, 255, 255, 0.9);
+    outline-offset: 2px;
+  }
 
   .pause-overlay {
     position: absolute;
@@ -409,8 +467,7 @@
     }
     .dots {
       top: 8px;
-      left: 8px;
-      max-width: calc(100% - 48px);
+      padding: 0 8px;
     }
     .caption { font-size: 0.75rem; padding: 4px 8px; }
   }

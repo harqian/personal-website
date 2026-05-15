@@ -12,7 +12,6 @@
                 <hr class="horizontal-line">
             </section>
 
-        <li><a href="/reading">reading</a></li>
         <li><a href="/generalizations">generalizations</a></li>
         <li><a href="/animal_media">animal media</a></li>
         <li><a href="/gallery">gallery</a></li>

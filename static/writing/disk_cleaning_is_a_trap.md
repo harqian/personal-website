@@ -5,7 +5,7 @@ tags:
     - macos
     - tools
     - productivity
-published: true
+published: false
 ---
 
 the first time you clean your Mac, it's exhilarating. you open storage settings, discover 40GB of stuff you forgot existed — old apps, abandoned downloads, an ML project with its entire training dataset still embedded — and start deleting. the storage bar moves. you delete more. it moves again. this is the fastest feedback loop in personal computing: action, result, dopamine, repeat.

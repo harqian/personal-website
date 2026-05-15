@@ -9,6 +9,21 @@
     let showContactInfo = false;
     let contactInfoEl;
 
+    const tracks = [
+        { src: "/audio/piano_recital/02_city of stars.m4a", caption: "city of stars by Justin Hurwitz" },
+        { src: "/audio/peace_and_love.m4a", caption: "peace and love on the planet earth by Steven Universe" },
+        { src: "/audio/piano_recital/05_merry go round of life.m4a", caption: "merry go round of life by Joe Hisaishi" },
+        { src: "/audio/always.m4a", caption: "always by Daniel Caesar" },
+        { src: "/audio/piano_recital/03_fallen down.m4a", caption: "fallen down by Toby Fox" },
+        { src: "/audio/yellow.m4a", caption: "yellow by Coldplay" },
+        { src: "/audio/piano_recital/06_my castle town.m4a", caption: "my castle town by Toby Fox" },
+        { src: "/audio/piano_recital/07_married life.m4a", caption: "married life by Michael Giacchino" },
+    ];
+    let trackIndex = 0;
+    const prevTrack = () => { trackIndex = (trackIndex - 1 + tracks.length) % tracks.length; };
+    const nextTrack = () => { trackIndex = (trackIndex + 1) % tracks.length; };
+    $: currentTrack = tracks[trackIndex];
+
     // auto-import carousel media using Vite's import.meta.glob
     // keep both the original filename and the built asset url
     const modules = import.meta.glob("$lib/assets/carousel_media/*", { eager: true, query: '?url', import: 'default' });
@@ -72,6 +87,21 @@
                     <span><a href="https://calendar.app.google/RJPd9A49VgwTbQWdA">meeting link</a></span>
                 </div>
             </div>
+
+            <section class="music">
+                <h2 class="music-heading">I LOVE MUSIC</h2>
+                <div class="music-row">
+                    <button class="music-arrow" on:click={prevTrack} aria-label="previous track">←</button>
+                    {#key trackIndex}
+                        <figure class="music-card">
+                            <audio controls preload="metadata" src={currentTrack.src}></audio>
+                            <figcaption>{currentTrack.caption}</figcaption>
+                        </figure>
+                    {/key}
+                    <button class="music-arrow" on:click={nextTrack} aria-label="next track">→</button>
+                </div>
+                <p class="music-indicator">{trackIndex + 1} / {tracks.length}</p>
+            </section>
         </div>
         <div class="hero-carousel">
             <Carousel items={carouselItems} intervalMs={3000} autoplay={true} durations={durations} />
@@ -123,6 +153,63 @@
         border-radius: 8px;
         outline: 1px solid rgba(255, 255, 255, 0.08);
         outline-offset: -1px;
+    }
+
+    .music {
+        margin: 1.5rem 0 0 0;
+    }
+
+    .music-heading {
+        font-size: 1.3rem;
+        letter-spacing: 0.05em;
+        margin: 0 0 0.75rem 0;
+    }
+
+    .music-row {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .music-arrow {
+        background: none;
+        border: none;
+        color: var(--link-color);
+        font-size: 1.5rem;
+        line-height: 1;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+        flex-shrink: 0;
+        transition: opacity 0.2s;
+    }
+
+    .music-arrow:hover {
+        opacity: 0.7;
+    }
+
+    .music-card {
+        flex: 1;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .music-card audio {
+        width: 100%;
+        display: block;
+    }
+
+    .music-card figcaption {
+        margin-top: 0.4rem;
+        font-size: 0.8rem;
+        color: #aaa;
+        text-align: center;
+    }
+
+    .music-indicator {
+        margin: 0.4rem 0 0 0;
+        font-size: 0.8rem;
+        color: #888;
+        text-align: center;
     }
 
     .friends-section {
