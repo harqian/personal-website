@@ -13,9 +13,13 @@ a Vercel project also exists but is not the production deploy. moonflowers.xyz o
 
 cloudflare account id: `b5767c459ae1102e08c8dd559b76ee15`. you almost always need this as an env var since wrangler sees multiple accounts.
 
-## "I pushed and the site didn't update"
+## deploys
 
-**cloudflare pages does NOT auto-deploy from GitHub** (`Git Provider: No` in `wrangler pages project list`). pushing to main does nothing on its own. you must manually:
+**auto-deploy on push to main** via GitHub Actions (`.github/workflows/deploy.yml`). every push to main runs `npm ci && npm run build && wrangler pages deploy build` on a github runner. takes ~1min total.
+
+cloudflare pages itself has `Git Provider: No` — the GH Actions workflow is the only thing that talks to cloudflare. wrangler auths via the `CLOUDFLARE_API_TOKEN` GitHub repo secret (scoped to `Account:Cloudflare Pages:Edit` only).
+
+**manual deploy** still works if you ever need to push a build from your laptop (e.g. testing a local change without committing):
 
 ```
 npm run build
@@ -23,7 +27,7 @@ CLOUDFLARE_ACCOUNT_ID=b5767c459ae1102e08c8dd559b76ee15 \
   wrangler pages deploy build --project-name=personal-website --branch=main --commit-dirty=true
 ```
 
-future code-only deploys take ~10s (cloudflare dedupes by file hash). first deploys after a long gap are slow because nothing is cached.
+future code-only deploys take ~10s on cloudflare's side (dedupes by file hash). first deploys after a long gap are slow because nothing is cached.
 
 ## adding new media
 
@@ -34,7 +38,12 @@ new media must go to R2, not `static/`. workflow:
 3. reference it in code as `${ASSETS}/<remote-path>`
 4. don't put it in `static/` — keeping that directory tiny is what makes pages deploys fast
 
-rclone is pre-configured (remote name `r2`). credentials in 1password item `do63matvylpmx2h45g2copha3m` ("Cloudflare API token"). source media backed up at `~/Desktop/personal-website-media-backup/`; R2 is canonical.
+rclone is pre-configured (remote name `r2`). credentials in 1password item `do63matvylpmx2h45g2copha3m` ("Cloudflare API token", Private vault) — that item now holds:
+- `notesPlain`: R2 S3 access key + secret + endpoint (what rclone uses)
+- `credential`: a CF API token scoped to R2 Object R/W on this bucket
+- `pages_token`: a CF API token scoped to `Account:Cloudflare Pages:Edit` (mirrored to the `CLOUDFLARE_API_TOKEN` GitHub secret on `harqian/personal-website` — rotate both together)
+
+source media backed up at `~/Desktop/personal-website-media-backup/`; R2 is canonical.
 
 ## verifying a live deploy
 
