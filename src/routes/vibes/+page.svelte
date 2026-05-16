@@ -3,6 +3,7 @@
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
 
+    const ASSETS = "https://assets.moonflowers.xyz";
     const images = [
         "vibes_memes/VIBESMEME1.webp",
         "vibes_memes/VIBESMEME2.jpg",
@@ -61,7 +62,7 @@
         "vibes_memes/romantic_homicide.webm",
         "vibes_memes/city_of_stars_sad.mp4",
         "vibes_memes/mia_and_sebastians_theme_3am.mp4",
-    ].sort(() => Math.random() - 0.5);
+    ].map(p => `${ASSETS}/${p}`).sort(() => Math.random() - 0.5);
 </script>
 
 <StarBackground>

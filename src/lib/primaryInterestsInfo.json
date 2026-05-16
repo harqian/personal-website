@@ -1,37 +1,37 @@
 {
   "cs": {
     "media": [
-      "/interests_media/cs/Screenshot 1.png",
-      "/interests_media/cs/Screenshot 2.png",
-      "/interests_media/cs/output.gif",
-      "/interests_media/cs/output2.gif",
-      "/interests_media/cs/output3.gif",
-      "/interests_media/cs/programming.jpeg",
-      "/interests_media/cs/programming2.png"
+      "https://assets.moonflowers.xyz/interests_media/cs/Screenshot 1.png",
+      "https://assets.moonflowers.xyz/interests_media/cs/Screenshot 2.png",
+      "https://assets.moonflowers.xyz/interests_media/cs/output.gif",
+      "https://assets.moonflowers.xyz/interests_media/cs/output2.gif",
+      "https://assets.moonflowers.xyz/interests_media/cs/output3.gif",
+      "https://assets.moonflowers.xyz/interests_media/cs/programming.jpeg",
+      "https://assets.moonflowers.xyz/interests_media/cs/programming2.png"
     ],
     "index": 0
   },
   "frisbee": {
     "media": [
-      "/interests_media/frisbee/ultimate_frisbee.jpg",
-      "/interests_media/frisbee/ultimate_frisbee.png"
+      "https://assets.moonflowers.xyz/interests_media/frisbee/ultimate_frisbee.jpg",
+      "https://assets.moonflowers.xyz/interests_media/frisbee/ultimate_frisbee.png"
     ],
     "index": 0
   },
   "math": {
     "media": [
-      "/interests_media/math/Screenshot.png",
-      "/interests_media/math/math.jpeg",
-      "/interests_media/math/math1.png",
-      "/interests_media/math/output2.gif",
-      "/interests_media/math/smile.png"
+      "https://assets.moonflowers.xyz/interests_media/math/Screenshot.png",
+      "https://assets.moonflowers.xyz/interests_media/math/math.jpeg",
+      "https://assets.moonflowers.xyz/interests_media/math/math1.png",
+      "https://assets.moonflowers.xyz/interests_media/math/output2.gif",
+      "https://assets.moonflowers.xyz/interests_media/math/smile.png"
     ],
     "index": 0
   },
   "tennis": {
     "media": [
-      "/interests_media/tennis/tennis.gif",
-      "/interests_media/tennis/tennis2.gif"
+      "https://assets.moonflowers.xyz/interests_media/tennis/tennis.gif",
+      "https://assets.moonflowers.xyz/interests_media/tennis/tennis2.gif"
     ],
     "index": 0
   }

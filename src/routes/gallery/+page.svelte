@@ -3,18 +3,19 @@
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
 
+    const ASSETS = "https://assets.moonflowers.xyz";
     const numImages = 53;
     const imagePaths = [];
 
     for (let i = 1; i <= numImages; i++) {
-        imagePaths.push(`gallery_images/${i}.webp`);
+        imagePaths.push(`${ASSETS}/gallery_images/${i}.webp`);
     }
 
     const numGifs = 3;
     const gifPaths = [];
 
     for (let i = 1; i <= numGifs; i++) {
-        gifPaths.push(`gallery_gifs/${i}.webm`);
+        gifPaths.push(`${ASSETS}/gallery_gifs/${i}.webm`);
     }
 
     const mediaPaths = imagePaths.concat(gifPaths).sort(() => Math.random() - 0.5);
