@@ -91,14 +91,22 @@
             <section class="music">
                 <h2 class="music-heading">I LOVE MUSIC</h2>
                 <div class="music-row">
-                    <button class="music-arrow" on:click={prevTrack} aria-label="previous track">←</button>
+                    <button class="music-arrow" on:click={prevTrack} aria-label="previous track">
+                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                            <path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
                     {#key trackIndex}
                         <figure class="music-card">
                             <audio controls preload="metadata" src={currentTrack.src}></audio>
                             <figcaption>{currentTrack.caption}</figcaption>
                         </figure>
                     {/key}
-                    <button class="music-arrow" on:click={nextTrack} aria-label="next track">→</button>
+                    <button class="music-arrow" on:click={nextTrack} aria-label="next track">
+                        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                            <path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
                 </div>
                 <p class="music-indicator">{trackIndex + 1} / {tracks.length}</p>
             </section>
@@ -172,19 +180,30 @@
     }
 
     .music-arrow {
-        background: none;
+        width: 28px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        background: rgba(0, 0, 0, 0.35);
         border: none;
-        color: var(--link-color);
-        font-size: 1.5rem;
-        line-height: 1;
-        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        color: #fff;
         cursor: pointer;
+        opacity: 0.55;
         flex-shrink: 0;
-        transition: opacity 0.2s;
+        padding: 0;
+        transition: opacity 160ms ease, background 160ms ease;
     }
 
     .music-arrow:hover {
-        opacity: 0.7;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.6);
+    }
+
+    .music-arrow:focus-visible {
+        opacity: 1;
+        outline: 2px solid rgba(255, 255, 255, 0.9);
+        outline-offset: 2px;
     }
 
     .music-card {
