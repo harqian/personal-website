@@ -29,5 +29,11 @@ jobs:
 
       - run: npm run build
 
+      - name: diagnose auth (token length only, value not exposed)
+        run: |
+          echo "CLOUDFLARE_API_TOKEN length: ${#CLOUDFLARE_API_TOKEN}"
+          echo "CLOUDFLARE_ACCOUNT_ID: $CLOUDFLARE_ACCOUNT_ID"
+          npx wrangler@4 whoami || true
+
       - name: deploy to cloudflare pages
         run: npx wrangler@4 pages deploy build --project-name=personal-website --branch=main
