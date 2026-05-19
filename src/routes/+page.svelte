@@ -13,13 +13,9 @@
     const tracks = [
         { src: `${ASSETS}/audio/piano_recital/02_city of stars.m4a`, caption: "city of stars by Justin Hurwitz" },
         { src: `${ASSETS}/audio/peace_and_love.m4a`, caption: "peace and love on the planet earth by Steven Universe" },
+        { src: `${ASSETS}/audio/dumb_derivatives/contemplation.m4a`, caption: "contemplation by me" },
         { src: `${ASSETS}/audio/piano_recital/05_merry go round of life.m4a`, caption: "merry go round of life by Joe Hisaishi" },
         { src: `${ASSETS}/audio/always.m4a`, caption: "always by Daniel Caesar" },
-        { src: `${ASSETS}/audio/piano_recital/03_fallen down.m4a`, caption: "fallen down by Toby Fox" },
-        { src: `${ASSETS}/audio/yellow.m4a`, caption: "yellow by Coldplay" },
-        { src: `${ASSETS}/audio/piano_recital/06_my castle town.m4a`, caption: "my castle town by Toby Fox" },
-        { src: `${ASSETS}/audio/piano_recital/07_married life.m4a`, caption: "married life by Michael Giacchino" },
-        { src: `${ASSETS}/audio/dumb_derivatives/contemplation.m4a`, caption: "contemplation by me" },
         { src: `${ASSETS}/audio/dumb_derivatives/the edge of chaos.m4a`, caption: "the edge of chaos by me" },
     ];
     let trackIndex = 0;
