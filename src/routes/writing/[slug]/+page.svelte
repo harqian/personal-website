@@ -1,58 +1,119 @@
 <script>
     import { page } from '$app/stores';
-    import { onMount } from 'svelte';
     import { marked } from 'marked';
     import Header from "$lib/Header.svelte"
     import StarBackground from "$lib/StarBackground.svelte"
     
     let piece = null;
     let content = '';
+    let toc = [];
     let loading = true;
-    
-    onMount(async () => {
+    let articleEl;
+    let previewHTML = '';
+    let previewVisible = false;
+    let previewX = 0;
+    let previewY = 0;
+
+    function slugify(text) {
+        return text
+            .toLowerCase()
+            .replace(/&#?\w+;/g, '')
+            .replace(/[^\w\s-]/g, '')
+            .trim()
+            .replace(/\s+/g, '-');
+    }
+
+    // configure marked once at module level; calling marked.use repeatedly accumulates extensions
+    marked.setOptions({
+        gfm: true,
+        breaks: false,
+        pedantic: false,
+        sanitize: false,
+        smartLists: true,
+        smartypants: false
+    });
+
+    marked.use({
+        renderer: {
+            heading({ tokens, depth }) {
+                const text = this.parser.parseInline(tokens);
+                const plain = text.replace(/<[^>]+>/g, '').trim();
+                const id = slugify(plain);
+                return `<h${depth} id="${id}">${text}</h${depth}>\n`;
+            }
+        },
+        extensions: [{
+            name: 'footnote',
+            level: 'inline',
+            start(src) { return src.match(/^\[\^/)?.index; },
+            tokenizer(src) {
+                const m = src.match(/^\[\^([^\]]+)\]/);
+                if (m) return { type: 'footnote', raw: m[0], text: m[1] };
+            },
+            renderer(token) {
+                return `<sup><a href="#fn-${token.text}" id="fnref-${token.text}" class="footnote-ref">${token.text}</a></sup>`;
+            }
+        }, {
+            name: 'wikilink',
+            level: 'inline',
+            start(src) { return src.match(/\[\[#/)?.index; },
+            tokenizer(src) {
+                const m = src.match(/^\[\[#([^\]|]+?)(?:\|([^\]]+))?\]\]/);
+                if (m) {
+                    return {
+                        type: 'wikilink',
+                        raw: m[0],
+                        target: m[1].trim(),
+                        label: (m[2] || m[1]).trim()
+                    };
+                }
+            },
+            renderer(token) {
+                const id = slugify(token.target);
+                return `<a class="wikilink" href="#${id}" data-target="${id}">${token.label}</a>`;
+            }
+        }, {
+            // ~[content] from obsidian → visible redaction bar; content never reaches the DOM
+            name: 'redaction',
+            level: 'inline',
+            start(src) { return src.match(/~\[/)?.index; },
+            tokenizer(src) {
+                const m = src.match(/^~\[([^\]]+)\]/);
+                if (m) return { type: 'redaction', raw: m[0], text: m[1] };
+            },
+            renderer(token) {
+                // bucket width so original length doesn't leak; only "short / medium / long" survives
+                const len = token.text.length;
+                const size = len < 12 ? 'short' : len < 50 ? 'med' : 'long';
+                return `<span class="redaction redaction-${size}" aria-label="redacted"></span>`;
+            }
+        }]
+    });
+
+    // re-load when slug changes (SPA nav between posts). guard so hash-only
+    // changes (clicking an in-page anchor) don't trigger a content reload —
+    // that would wipe the anchor target before the browser can scroll to it.
+    let currentSlug = null;
+    $: if ($page.params.slug !== currentSlug) {
+        currentSlug = $page.params.slug;
+        loadPiece(currentSlug);
+    }
+
+    async function loadPiece(slug) {
+        loading = true;
+        piece = null;
+        content = '';
+        toc = [];
         try {
-            const slug = $page.params.slug;
             const response = await fetch(`/writing/${slug}.md`);
-            
+
             if (!response.ok) {
                 throw new Error('Piece not found');
             }
-            
+
             const rawContent = await response.text();
-            
-            // Configure marked with proper options for links and emphasis
-            marked.setOptions({
-                gfm: true,
-                breaks: false,
-                pedantic: false,
-                sanitize: false,
-                smartLists: true,
-                smartypants: false
-            });
-            
-            // Add custom footnote extension
-            marked.use({
-                extensions: [{
-                    name: 'footnote',
-                    level: 'inline',
-                    start(src) { return src.match(/^\[\^/)?.index; },
-                    tokenizer(src, tokens) {
-                        const rule = /^\[\^([^\]]+)\]/;
-                        const match = rule.exec(src);
-                        if (match) {
-                            return {
-                                type: 'footnote',
-                                raw: match[0],
-                                text: match[1]
-                            };
-                        }
-                    },
-                    renderer(token) {
-                        return `<sup><a href="#fn-${token.text}" id="fnref-${token.text}" class="footnote-ref">${token.text}</a></sup>`;
-                    }
-                }]
-            });
-            
+
+
             // Parse frontmatter
             const frontmatterMatch = rawContent.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
             
@@ -81,6 +142,8 @@
                             metadata.title = value;
                         } else if (currentKey === 'published') {
                             metadata.published = value === 'true';
+                        } else if (currentKey === 'toc') {
+                            metadata.toc = value === 'true';
                         } else if (currentKey === 'tags') {
                             metadata.tags = [];
                         } else if (currentKey === 'date' || currentKey === 'edited') {
@@ -109,13 +172,93 @@
                 
                 // Parse the markdown content
                 content = marked.parse(processedContent);
+
+                // Build TOC from h2/h3 in the rendered html
+                const doc = new DOMParser().parseFromString(content, 'text/html');
+                toc = Array.from(doc.querySelectorAll('h2, h3')).map(h => ({
+                    id: h.id,
+                    level: parseInt(h.tagName[1], 10),
+                    text: h.textContent
+                }));
             }
         } catch (error) {
             console.error('Error loading piece:', error);
         } finally {
             loading = false;
         }
-    });
+    }
+
+    // After content renders, attach hover handlers to wikilinks + toc links
+    $: if (articleEl && content) {
+        Promise.resolve().then(attachHoverPreviews);
+    }
+
+    function attachHoverPreviews() {
+        const links = articleEl?.querySelectorAll('a.wikilink, a[data-toc-link]');
+        if (!links) return;
+        for (const a of links) {
+            a.addEventListener('mouseenter', onLinkHover);
+            a.addEventListener('mouseleave', onLinkLeave);
+            a.addEventListener('mousemove', onLinkMove);
+            a.addEventListener('focus', onLinkHover);
+            a.addEventListener('blur', onLinkLeave);
+        }
+    }
+
+    // Collect a heading and the following section content for the popover preview
+    function gatherSectionPreview(id) {
+        const target = articleEl?.querySelector(`#${CSS.escape(id)}`);
+        if (!target) return '';
+        const level = parseInt(target.tagName[1], 10);
+        const parts = [target.outerHTML];
+        let charBudget = 400;
+        let node = target.nextElementSibling;
+        while (node && charBudget > 0) {
+            if (/^H[1-6]$/.test(node.tagName)) {
+                const nl = parseInt(node.tagName[1], 10);
+                if (nl <= level) break;
+            }
+            parts.push(node.outerHTML);
+            charBudget -= node.textContent.length;
+            node = node.nextElementSibling;
+        }
+        return parts.join('\n');
+    }
+
+    function onLinkHover(e) {
+        const a = e.currentTarget;
+        const id = a.dataset.target || a.getAttribute('href')?.replace(/^#/, '');
+        if (!id) return;
+        const html = gatherSectionPreview(id);
+        if (!html) return;
+        previewHTML = html;
+        positionPreview(e);
+        previewVisible = true;
+    }
+    function onLinkLeave() {
+        previewVisible = false;
+    }
+    function onLinkMove(e) {
+        if (previewVisible) positionPreview(e);
+    }
+    function positionPreview(e) {
+        const margin = 14;
+        const popoverW = 420;
+        let x = e.clientX + margin;
+        let y = e.clientY + margin;
+        if (x + popoverW > window.innerWidth) x = window.innerWidth - popoverW - 8;
+        previewX = x;
+        previewY = y;
+    }
+
+    function scrollToHeading(id, ev) {
+        ev?.preventDefault();
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', `#${id}`);
+        }
+    }
 
     function goBack() {
         if (typeof window !== 'undefined') {
@@ -140,7 +283,7 @@
         {#if loading}
             <p>Loading...</p>
         {:else if piece}
-            <article>
+            <article bind:this={articleEl}>
                 <header>
                     <h2 class="title">{piece.title}</h2>
                     <div class="meta-row">
@@ -159,10 +302,38 @@
                         </time>
                     </div>
                 </header>
+                {#if piece.toc && toc.length > 1}
+                    <nav class="toc" aria-label="table of contents">
+                        <div class="toc-label">contents</div>
+                        <ol class="toc-list">
+                            {#each toc as item}
+                                <li class="toc-item toc-l{item.level}">
+                                    <a
+                                        href="#{item.id}"
+                                        class="wikilink"
+                                        data-toc-link="1"
+                                        data-target={item.id}
+                                        on:click={(e) => scrollToHeading(item.id, e)}
+                                    >{item.text}</a>
+                                </li>
+                            {/each}
+                        </ol>
+                    </nav>
+                {/if}
                 <div class="content">
                     {@html content}
                 </div>
             </article>
+
+            {#if previewVisible}
+                <div
+                    class="link-preview"
+                    style="left:{previewX}px; top:{previewY}px;"
+                    role="tooltip"
+                >
+                    {@html previewHTML}
+                </div>
+            {/if}
         {:else}
             <p>Piece not found</p>
         {/if}
@@ -276,5 +447,127 @@
         max-width: 100%;
         height: auto;
         border-radius: 4px;
+    }
+
+    /* Table of contents */
+    .toc {
+        margin: 0 0 2rem 0;
+        padding: 1rem 1.25rem;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        font-size: 0.95rem;
+    }
+
+    .toc-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #999;
+        margin-bottom: 0.5rem;
+    }
+
+    .toc-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        counter-reset: toc-counter;
+    }
+
+    .toc-item {
+        padding: 0.2rem 0;
+        counter-increment: toc-counter;
+    }
+
+    .toc-item a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.15s ease;
+    }
+
+    .toc-item a:hover {
+        color: var(--link-color, #0066cc);
+    }
+
+    .toc-item.toc-l2::before {
+        content: counter(toc-counter) ".";
+        display: inline-block;
+        min-width: 1.6rem;
+        color: #888;
+    }
+
+    .toc-item.toc-l3 {
+        padding-left: 1.75rem;
+        font-size: 0.9rem;
+        color: #bbb;
+    }
+
+    /* redactions — solid bar; content is stripped before rendering */
+    .content :global(.redaction) {
+        display: inline-block;
+        height: 0.95em;
+        vertical-align: -0.1em;
+        background: currentColor;
+        opacity: 0.78;
+        border-radius: 2px;
+        user-select: none;
+        margin: 0 0.15em;
+    }
+    .content :global(.redaction-short) { width: 2.2em; }
+    .content :global(.redaction-med)   { width: 4.5em; }
+    .content :global(.redaction-long) {
+        width: 100%;
+        height: 2.4em;
+        display: block;
+        margin: 0.4em 0;
+    }
+
+    /* wikilinks in body */
+    .content :global(a.wikilink) {
+        color: var(--link-color, #0066cc);
+        text-decoration: none;
+        border-bottom: 1px dashed currentColor;
+    }
+
+    .content :global(a.wikilink:hover) {
+        opacity: 0.85;
+    }
+
+    /* hover-preview popover */
+    .link-preview {
+        position: fixed;
+        z-index: 50;
+        width: 420px;
+        max-height: 60vh;
+        overflow: auto;
+        background: rgba(20, 20, 24, 0.97);
+        color: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        padding: 0.9rem 1rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        pointer-events: none;
+    }
+
+    .link-preview :global(h1),
+    .link-preview :global(h2),
+    .link-preview :global(h3) {
+        margin: 0 0 0.5rem 0;
+        font-size: 1rem;
+    }
+
+    .link-preview :global(p) {
+        margin: 0 0 0.5rem 0;
+    }
+
+    .link-preview :global(a) {
+        color: var(--link-color, #0066cc);
+    }
+
+    /* compensate for the floating star-background offset when jumping to a heading */
+    :global(html) {
+        scroll-padding-top: 80px;
     }
 </style>
