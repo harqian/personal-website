@@ -19,6 +19,8 @@
         { src: `${ASSETS}/audio/yellow.m4a`, caption: "yellow by Coldplay" },
         { src: `${ASSETS}/audio/piano_recital/06_my castle town.m4a`, caption: "my castle town by Toby Fox" },
         { src: `${ASSETS}/audio/piano_recital/07_married life.m4a`, caption: "married life by Michael Giacchino" },
+        { src: `${ASSETS}/audio/dumb_derivatives/contemplation.m4a`, caption: "contemplation by me" },
+        { src: `${ASSETS}/audio/dumb_derivatives/the edge of chaos.m4a`, caption: "the edge of chaos by me" },
     ];
     let trackIndex = 0;
     const prevTrack = () => { trackIndex = (trackIndex - 1 + tracks.length) % tracks.length; };
