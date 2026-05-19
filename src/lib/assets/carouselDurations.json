@@ -4,8 +4,9 @@
   "08_setup.jpeg": { "duration": 3000, "caption": "the perfect work setup" },
   "09_dumb_derivatives.mp4": { "duration": "length", "caption": "filmed a funny video with a friend a while back on doing a stupidly long derivative computation" },
   "11_tennis.webm": { "duration": "length", "caption": "volley form :)" },
-  "12b_beach_frisbee.mp4": { "duration": "length", "caption": null, "objectPosition": "0% 50%" },
+  "12b_beach_frisbee.mp4": { "duration": "length", "caption": "ultimate frisbee!", "objectPosition": "0% 50%" },
   "13_machine_translation.mp4": { "duration": "length", "caption": "machine translation presentation" },
   "14_hiking.jpeg": { "duration": 3000, "caption": "hiking/climbing!" },
-  "15_sf_biking.mp4": { "duration": "length", "caption": "biking up 230 ft in pouring rain in sf" }
+  "15_sf_biking.mp4": { "duration": "length", "caption": "biking up 230 ft in pouring rain in sf" },
+  "16_flash.mp4": { "duration": "length", "caption": "people i love" }
 }
