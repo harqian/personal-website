@@ -3,11 +3,9 @@
     import StarBackground from "$lib/StarBackground.svelte";
     import Carousel from "$lib/Carousel.svelte";
     import durations from "$lib/assets/carouselDurations.json";
-    import { tick } from "svelte";
 
     let hoveredInterest = null;
     let showContactInfo = false;
-    let contactInfoEl;
 
     const ASSETS = "https://assets.moonflowers.xyz";
     const tracks = [
@@ -36,23 +34,8 @@
         }));
 
     
-    async function toggleContactInfo() {
-        const isOpening = !showContactInfo;
+    function toggleContactInfo() {
         showContactInfo = !showContactInfo;
-
-        if (isOpening) {
-            await tick();
-            // wait for the expansion transition before scrolling, so
-            // block:'end' targets the fully-expanded bottom instead of the
-            // collapsed zero-height box (which sits right under "say hi")
-            const el = contactInfoEl;
-            const onEnd = (e) => {
-                if (e.propertyName !== "max-height") return;
-                el.removeEventListener("transitionend", onEnd);
-                el.scrollIntoView({ behavior: "smooth", block: "end" });
-            };
-            el?.addEventListener("transitionend", onEnd);
-        }
     }
 </script>
 
@@ -71,7 +54,6 @@
                 class="contact-info"
                 class:open={showContactInfo}
                 aria-hidden={!showContactInfo}
-                bind:this={contactInfoEl}
             >
                 <div class="contact-item" style="--i: 0">
                     <i class="fa fa-envelope"></i>
