@@ -6,6 +6,7 @@
 
     // Add your piece filenames here (without .md extension)
     const pieceFilenames = [
+        "i_believe_in_speed",
         "on_connection",
         "disk_cleaning_is_a_trap",
         "vibe_coding_manifesto",
