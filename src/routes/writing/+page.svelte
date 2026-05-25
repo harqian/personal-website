@@ -10,6 +10,7 @@
         "i_believe_in_speed",
         "on_connection",
         "disk_cleaning_is_a_trap",
+        "my_learning_stack",
         "vibe_coding_manifesto",
         "i_used_to_be_a_zombie",
         "water_bottles",
