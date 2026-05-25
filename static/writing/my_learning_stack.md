@@ -6,6 +6,7 @@ tags:
     - systems
     - personal
 published: false
+toc: true
 ---
 
 I've seen a lot of tech stack blogs recently (which, to be clear, are really great!). 
