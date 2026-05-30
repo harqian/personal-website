@@ -31,3 +31,5 @@ After that, a filter is more naturally created.
 "If you're in the US and go to a good school, there are a lot of forces that will push you towards following traintracks laid by others rather than charting a course yourself. Make sure that the things you're pursuing are weird things that you want to pursue, not whatever the standard path is. Heuristic: do your friends at school think your path is a bit strange? If not, maybe it's too normal." ↑ same source
 
 ["When you're surrounded by so many different people who don't understand you, you need to maintain your own individualism."](https://notes.ekzhang.com/reflections/school-home)
+
+I took Cate Hall's [cringe minefield quiz](https://www.catehall.com/cringe-minefield-quiz) and the diagnosis was exactly this: "You're exceptionally good at reading rooms and becoming the version of yourself that will land best. This has made you effective, adaptable, and successful by most measures. But there's a cost you can barely see from the inside: You've lost track of which parts are performance and which parts are you. You've optimized your life for being admired, at the expense of being known."

@@ -382,10 +382,44 @@ think about how many times you have done that to other people
 not only that, certain things you do that you think are normal under their perspective is weird asf and is equivalent to flipping them off!
 
 another also was thinking that older mentor people look at me and are very critical and pay a lot of attention to the things i do, now realize as the person in the older mentor position that thats not really how the attention chain works. we all look forwards, its very weird if a whole group of people are looking backwards at one person (and i should be honored if that were the case, this is what i imagine is done to hyper rich kids). this explains a lot of the weirdness coming from them where they will just forget that i did something or hallucinate stuff, they arent paying little attention because they dont like me, they arent paying attention because they literally don't have time
-# to process / write more
-- the two links from daniel kiss
+
+## dont be afraid to end the meeting early!
+if most uncomfortable, can make excuse
+often times the best ppl are really straightforward and lowkey about it—"gotta head out!" "gotta drop off" "well it was great chatting"
+
+can also make the time of the meeting on calendar shorter to make it more understandable that you are dropping off early
+
+## name drop ppl!
+Instead of saying "a friend", say their full name. Like this happens super often and its very chill if they dont know
+
+If uncomfortable can say "{insert name} (not sure if you know them) you can then either pause so they can answer or dont pause but i fke not pausing is better because if they know they would probably say
+
+but having a mutual person you both know well is such good way to create insta connection
+
+## be honest (+++++)
 
 "The freedom to be fully honest with other people is hard to overrate or even describe. It is always available to you." - [50 things I know by Cate Hall](https://usefulfictions.substack.com/p/50-things-i-know)
+
+**core insight**
+
+There's something fundamentally soothing about having a clear identity and being yourself — it creates a sense of security where you feel valid as a person, regardless of external validation. This connects to why constantly morphing into what others want to see, emphasizing similarities and trying to impress, can feel hollow.
+
+-   **Demonstrates genuine honesty** — especially on topics most people aren't honest about, it shows through action rather than just claiming to be honest
+    
+-   **Projects confidence** — shows you're not scared of rejection, not trying to morph into someone else, comfortable with your own thoughts and beliefs
+    
+-   **Creates liberation** — not being afraid of what you project or say is incredibly freeing compared to constantly monitoring yourself
+    
+-   **Expands your options** — when you're not constrained by fear, you can do things like share your calendar openly
+    
+
+**Practical Example**
+
+The calendar sharing example crystallizes this — being open about your schedule immediately gives people a sense of who you are, saves ~15 minutes of explanation, and is more personal than typical interactions. Someone less confident or honest probably wouldn't feel comfortable doing that. Having that option available because you're not scared of judgment creates better connections faster.
+
+
+# to process / write more
+- the two links from daniel kiss
 
 [^1]: my current method for searching stuff like this is [curius.app](https://curius.app) (indexed full search [here](https://curius.hapi.foundation/?view=pages)) and a "quality" search prompt i give to claude: 
 > that are high quality and are 
