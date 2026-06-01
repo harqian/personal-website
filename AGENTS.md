@@ -38,6 +38,8 @@ new media must go to R2, not `static/`. workflow:
 3. reference it in code as `${ASSETS}/<remote-path>`
 4. don't put it in `static/` — keeping that directory tiny is what makes pages deploys fast
 
+**exception — small inline images inside writing posts.** the writing vault is an obsidian vault at `static/writing/` (its `.obsidian/` config is gitignored). pasting an image in obsidian drops it in `static/writing/attachments/` and writes an `![[file.png|500]]` embed. the writing renderer (`src/routes/writing/[slug]/+page.svelte`) converts that obsidian embed syntax to `<img src="/writing/attachments/<file>" width="...">` at load time, so these images are served straight from `static/` — no R2 step, just commit + push. the `|500` (or `|500x300`) part is an optional width/height hint; a non-numeric part becomes alt text. this carve-out is only for small diagram-sized writing images; large media (audio/video/galleries) still goes to R2 per above.
+
 rclone is pre-configured (remote name `r2`). credentials in 1password item `do63matvylpmx2h45g2copha3m` ("Cloudflare API token", Private vault) — that item now holds:
 - `notesPlain`: R2 S3 access key + secret + endpoint (what rclone uses)
 - `credential`: a CF API token scoped to R2 Object R/W on this bucket

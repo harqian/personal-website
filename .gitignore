@@ -10,6 +10,10 @@ node_modules
 .DS_Store
 Thumbs.db
 
+# Obsidian (writing vault config/symlink + skill backups; not part of the site)
+.obsidian
+.obsidian.bak-*
+
 # Env
 .env
 .env.*

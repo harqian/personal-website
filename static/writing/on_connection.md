@@ -8,7 +8,8 @@ tags:
 published: true
 toc: true
 ---
-
+```table-of-contents
+```
 # toc & README
 
 ok so this is a pretty casual brain dump
@@ -240,7 +241,7 @@ w.r.t. confidence, there is definitely a trade-off between confidence and weirdn
 The best kind of people to talk to are those who have good stories to tell - either funny or interesting ones. They share about their life in engaging ways and contribute meaningfully to conversations, rather than those who don't have much to say or share.
 
 **notably a really good way to do this per effort is to prep all meetings for like 3-5m**
-## physical > video > call > text
+## physical > video > call > text > email
 this applies to 1-1s but like its much higher leverage to talk to people at bigger gatherings than to text them after (although that is better than nothing)
 
 a good (non-formal, i tried to formalize this in software but it wasnt that good) system for doing this well is to get a crawler of every person who is going to an event (you wont always know but sometimes there is a list or things like luma will show lists etc) and find the people you want to talk to most
@@ -331,34 +332,7 @@ nowadays claude code is pretty good at finding people's emails (as it is many ot
 
 one away "cold" outreach is sooo much better than actual could outreach. either warm intro or just "do you know \[person]?" or "\[person] said xyz (assuming you know them)" when you have reason to believe that they know \[person]
 - this kind of "cold" outreach has been like near-100%
-## this one is pretty obvious but follow up!
-obv like within 0-48h of a really great chat text them something
-- could just be "really great chatting!"
-- could also reference a thing you talked about / an action item to follow up on
 
-other cool ways to do this on a longer time scale:
-- scroll through imessages fast and whenever your eye catches someone you havent spoke to in a bit but you remember liking, text a "what have you been up to lately?"
-- use claude to do the same thing
-	- much worse in terms of selection but catches more people with less time
-- keep a list of people that you like and send yearly updates (someone else was telling me about this, i dont remember who so i cant credit them 😭)
-- the same thing but less people and more frequent (like every two months or something)
-## find talking points by listening hard
-i find it highly possible to strike up a convo with literally anyone
-might be a bit hard because of having little similarities but there are always some and also nonetheless everyone is unique and interesting
-### try your best to understand their perspective (intelectual empathy)
-its really hard sometimes but doing so may reveal more things to you about them than you would get by staying in your perspective
-
-"If there is any one secret of success, it lies in the ability to get the other person's point of view and see things from that person's angle as well as from your own."
-- Dale Carnegie in "How to Win Friends and Influence People"
-
-allows you to consider what things they most value to give them more value per effort ([[#**give value**]])
-allows you to guess at when things are just hectic in their life ([[#dont let it affect you too much; shit happens]])
-allows you to connect with them better by
-- representing yourself in a way that they like ([[#represent yourself well (verbally, physically, etc); framing & articulation matters so much]])
-- understanding what kinds of connection they like
-- consider how much they care about utility / connection ([[#dont be too utilitarian / functional about it esp early on]])
-
-is built up with experience and practice, can totally be trained
 
 ## for further connection: find things you like to do together
 i always struggled to implement this advice because i like to spend a lot of time working (not that many people my age are similar)
@@ -400,23 +374,72 @@ but having a mutual person you both know well is such good way to create insta c
 
 "The freedom to be fully honest with other people is hard to overrate or even describe. It is always available to you." - [50 things I know by Cate Hall](https://usefulfictions.substack.com/p/50-things-i-know)
 
-**core insight**
-
 There's something fundamentally soothing about having a clear identity and being yourself — it creates a sense of security where you feel valid as a person, regardless of external validation. This connects to why constantly morphing into what others want to see, emphasizing similarities and trying to impress, can feel hollow.
 
--   **Demonstrates genuine honesty** — especially on topics most people aren't honest about, it shows through action rather than just claiming to be honest
-    
--   **Projects confidence** — shows you're not scared of rejection, not trying to morph into someone else, comfortable with your own thoughts and beliefs
-    
--   **Creates liberation** — not being afraid of what you project or say is incredibly freeing compared to constantly monitoring yourself
-    
--   **Expands your options** — when you're not constrained by fear, you can do things like share your calendar openly
+-   Demonstrates genuine honesty — especially on topics most people aren't honest about, it shows through action rather than just claiming to be honest
+-   Projects confidence — shows you're not scared of rejection, not trying to morph into someone else, comfortable with your own thoughts and beliefs
+-   Creates liberation — not being afraid of what you project or say is incredibly freeing compared to constantly monitoring yourself
+-   Expands your options — when you're not constrained by fear, you can do things like share your calendar openly
     
 
-**Practical Example**
+Practical Example: The calendar sharing example crystallizes this — being open about your schedule immediately gives people a sense of who you are, saves ~15 minutes of explanation, and is more personal than typical interactions. Someone less confident or honest probably wouldn't feel comfortable doing that. Having that option available because you're not scared of judgment creates better connections faster.
 
-The calendar sharing example crystallizes this — being open about your schedule immediately gives people a sense of who you are, saves ~15 minutes of explanation, and is more personal than typical interactions. Someone less confident or honest probably wouldn't feel comfortable doing that. Having that option available because you're not scared of judgment creates better connections faster.
+**also this is really obvious in hindsight but like by being yourself you are more likely to find people that are similar to your true self :)**
+- anecdote: i am very math cs nerdy so i am very happy to get a chance to nerd out with people; thus i love technical interviews and/or talking about math with people
+	- a corollary of this is that you can be impressive at the same time (gotta make sure not to come off as pretentious though); [[#if powerful people / transactional interactions matter to you]]
+## show you care about them!
 
+### this one is pretty obvious but follow up!
+obv like within 0-48h* of a really great chat text them something
+- could just be "really great chatting!"
+- could also reference a thing you talked about / an action item to follow up on
+- * for max optimization i have found two strategies work the best
+	- following up around 1d after chatting to enact the first repetition of the forgetting curve 😂
+		- ![[Pasted image 20260531210300.png|500]]
+	- following up immediately to show you care a lot; also when you remember the most about them
+		- the second benefit can also be achieved in the first strategy by just writing and sending later—notably it takes a bit more effort which often matters with small things like this
+
+other cool ways to do this on a longer time scale:
+- scroll through imessages fast and whenever your eye catches someone you havent spoke to in a bit but you remember liking, text a "what have you been up to lately?"
+- use claude to do the same thing
+	- much worse in terms of selection but catches more people with less time
+- keep a list of people that you like and send yearly updates (someone else was telling me about this, i dont remember who so i cant credit them 😭)
+- the same thing but less people and more frequent (like every two months or something)
+### listening hard (pay attention)
+can also find talking points by doing this!
+i find it highly possible to strike up a convo with literally anyone
+might be a bit hard because of having little similarities but there are always some and also nonetheless everyone is unique and interesting
+#### try your best to understand their perspective (intelectual empathy)
+its really hard sometimes but doing so may reveal more things to you about them than you would get by staying in your perspective
+
+"If there is any one secret of success, it lies in the ability to get the other person's point of view and see things from that person's angle as well as from your own."
+- Dale Carnegie in "How to Win Friends and Influence People"
+
+allows you to consider what things they most value to give them more value per effort ([[#**give value**]])
+allows you to guess at when things are just hectic in their life ([[#dont let it affect you too much; shit happens]])
+allows you to connect with them better by
+- representing yourself in a way that they like ([[#represent yourself well (verbally, physically, etc); framing & articulation matters so much]])
+- understanding what kinds of connection they like
+- consider how much they care about utility / connection ([[#dont be too utilitarian / functional about it esp early on]])
+
+is built up with experience and practice, can totally be trained
+
+**you can listen well to someone even if you disagree with them; esp when trying to build connection disagreeing over every little detail is both unproductive in time and relationship**
+- notably you should not try and morph into them and agree with every single thing they say ([[#be honest (+++++)]])
+### reply to people / be responsive!
+people like when you are responsive and show that you care about them!
+
+because of [[#notably very much a people pleaser / connection addict]]; i used to feel like people that didnt reply immediately were really popular and thus successful; i implicitly learned this trait by just reading some messages, and then marking them as unread so that i would remember to respond, but just not immediately (god forbid people who intentionally ghost, i would never do that)
+- this was also reinforced by 
+	- 1) i am usually constantly online so i see many of my messages immediately, thus if i reply immediately i am "desperate"
+	- 2) the principle to turn all notifs off (i hate it every time my dad's phone does a "ping!" every time someone texts him) 
+	- 3) things do get busy; replying to people is very distracting esp if i do it all the time <-> quitting apps like beeper or discord or messages so i dont see them in the command tab list
+	- 4) responding in batches also is pretty fun & rewarding because i feel good about not sucuming to the temptation of doing it immediately
+
+thus i would respond only to time sensitive messages, and wait for everything else (response times were still not horrible, usually at least 1 day ranging pretty poison towards mean 3 days with tail on 7)
+
+while this system isnt wrong per se, i want to add one which is how much you like a person. if you want to connect well with someone, responding quickly is a really good way to show you care!
+### [[#physical > video > call > text]] is another example of this; so is [[#**give value**]] and [[#be honest (+++++)]] and [[#for further connection find things you like to do together]]
 
 # to process / write more
 - the two links from daniel kiss

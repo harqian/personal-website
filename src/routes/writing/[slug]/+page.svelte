@@ -169,7 +169,20 @@
                         <span class="footnote-text">${marked.parseInline(text)}</span>
                     </div>`;
                 });
-                
+
+                // obsidian image embeds: ![[file.png|500]] or ![[file.png|500x300]] -> <img>
+                // served straight from static/writing/attachments so pasting in obsidian just works.
+                // the part after | is a size hint if numeric (WxH), otherwise alt text.
+                processedContent = processedContent.replace(/!\[\[([^\]|]+?)(?:\|([^\]]+))?\]\]/g, (match, file, opt) => {
+                    const src = `/writing/attachments/${encodeURIComponent(file.trim())}`;
+                    const hint = opt?.trim();
+                    if (hint && /^\d+(x\d+)?$/.test(hint)) {
+                        const [w, h] = hint.split('x');
+                        return `<img class="embed-img" src="${src}" alt="" width="${w}"${h ? ` height="${h}"` : ''} loading="lazy" />`;
+                    }
+                    return `<img class="embed-img" src="${src}" alt="${hint || ''}" loading="lazy" />`;
+                });
+
                 // Parse the markdown content
                 content = marked.parse(processedContent);
 

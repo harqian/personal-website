@@ -4,6 +4,7 @@
     import { page } from "$app/stores"
 
     const navLinks = [
+        { href: "/", label: "Home" },
         { href: "/writing", label: "writing" },
         { href: "/poetry", label: "poetry" },
         { href: "/notes", label: "notes" },
@@ -19,7 +20,6 @@
 </script>
 
 <header>
-    <h1><a href="/" class:active={pathname === "/"}>Harrison Qian</a></h1>
     <SocialIcons {iconInfos} size="fa-2x"></SocialIcons>
     <nav>
         <ul class="nav-links">
@@ -38,16 +38,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-top: 1.5rem;
     }
 
     ul {
         padding: 0;
-    }
-
-    h1 {
-        font-size: 1.1rem;
-        font-weight: normal;
-        margin: 1.5rem 0 0.5rem;
     }
 
     .nav-links {
@@ -79,7 +74,6 @@
             gap: 0.5rem;
         }
 
-        h1,
         .nav-links a {
             font-size: 1rem;
         }
