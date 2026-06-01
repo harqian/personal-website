@@ -4,7 +4,7 @@
 </script>
 
 <header>
-    <h1><a href="/">Moonflower</a></h1>
+    <h1><a href="/">Harrison Qian</a></h1>
     <SocialIcons {iconInfos} size="fa-2x"></SocialIcons>
     <nav>
         <ul class="nav-links">
