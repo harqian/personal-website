@@ -41,7 +41,6 @@
         "vibes_memes/build.png",
         "vibes_memes/a company.jpg",
         "vibes_memes/72b_mnist.png",
-        "vibes_memes/do_the_thing.jpg",
         "vibes_memes/companies.png",
         "vibes_memes/it_was_dns.png",
         "vibes_memes/didntgraduate.png",
