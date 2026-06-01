@@ -3,7 +3,7 @@
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
 
-    const ASSETS = "https://assets.moonflowers.xyz";
+    const ASSETS = "https://assets.harrisonqian.com";
     const images = [
         "vibes_memes/VIBESMEME1.webp",
         "vibes_memes/VIBESMEME2.jpg",

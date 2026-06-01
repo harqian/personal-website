@@ -7,7 +7,7 @@
     let hoveredInterest = null;
     let showContactInfo = false;
 
-    const ASSETS = "https://assets.moonflowers.xyz";
+    const ASSETS = "https://assets.harrisonqian.com";
     const tracks = [
         { src: `${ASSETS}/audio/piano_recital/02_city of stars.m4a`, caption: "city of stars by Justin Hurwitz" },
         { src: `${ASSETS}/audio/peace_and_love.m4a`, caption: "peace and love on the planet earth by Steven Universe" },

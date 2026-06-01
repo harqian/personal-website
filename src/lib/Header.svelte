@@ -4,7 +4,7 @@
     import { page } from "$app/stores"
 
     const navLinks = [
-        { href: "/", label: "Home" },
+        { href: "/", label: "home" },
         { href: "/writing", label: "writing" },
         { href: "/poetry", label: "poetry" },
         { href: "/notes", label: "notes" },

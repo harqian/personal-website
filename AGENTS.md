@@ -1,15 +1,17 @@
 # personal-website
 
-harrison's personal site at moonflowers.xyz. SvelteKit + Svelte 5 + Vite. fully static (no SSR), deployed via cloudflare pages.
+harrison's personal site at harrisonqian.com. SvelteKit + Svelte 5 + Vite. fully static (no SSR), deployed via cloudflare pages.
+
+(migrated off moonflowers.xyz 2026-06-01; moonflowers.xyz now 301-redirects to harrisonqian.com.)
 
 ## deploy architecture
 
 two pieces, decoupled:
 
-- **site shell + JS** → cloudflare pages, project `personal-website`, custom domain `moonflowers.xyz` (also `www.moonflowers.xyz`). adapter is `@sveltejs/adapter-static` with `fallback: 'index.html'` (SPA mode — every URL serves the shell, client router takes over).
-- **media** (audio, video, images) → cloudflare R2 bucket `personal-website-media`, public via custom domain `assets.moonflowers.xyz`. all media URLs in code use `https://assets.moonflowers.xyz/<path>` via a per-file `const ASSETS = "https://assets.moonflowers.xyz"`.
+- **site shell + JS** → cloudflare pages, project `personal-website`, custom domain `harrisonqian.com` (also `www.harrisonqian.com`; `moonflowers.xyz`/`www` still resolve and 301-redirect here). adapter is `@sveltejs/adapter-static` with `fallback: 'index.html'` (SPA mode — every URL serves the shell, client router takes over).
+- **media** (audio, video, images) → cloudflare R2 bucket `personal-website-media`, public via custom domain `assets.harrisonqian.com`. all media URLs in code use `https://assets.harrisonqian.com/<path>` via a per-file `const ASSETS = "https://assets.harrisonqian.com"`. (the bucket is unchanged; only the public hostname moved off `assets.moonflowers.xyz`, which now 301-redirects and will NOT serve images — never reintroduce it.)
 
-a Vercel project also exists but is not the production deploy. moonflowers.xyz only points at cloudflare pages.
+a Vercel project also exists but is not the production deploy. harrisonqian.com only points at cloudflare pages.
 
 cloudflare account id: `b5767c459ae1102e08c8dd559b76ee15`. you almost always need this as an env var since wrangler sees multiple accounts.
 
@@ -38,7 +40,7 @@ new media must go to R2, not `static/`. workflow:
 3. reference it in code as `${ASSETS}/<remote-path>`
 4. don't put it in `static/` — keeping that directory tiny is what makes pages deploys fast
 
-**exception — small inline images inside writing posts.** the writing vault is an obsidian vault at `static/writing/` (its `.obsidian/` config is gitignored). pasting an image in obsidian drops it in `static/writing/attachments/` and writes an `![[file.png|500]]` embed. the writing renderer (`src/routes/writing/[slug]/+page.svelte`) converts that obsidian embed syntax to `<img src="/writing/attachments/<file>" width="...">` at load time, so these images are served straight from `static/` — no R2 step, just commit + push. the `|500` (or `|500x300`) part is an optional width/height hint; a non-numeric part becomes alt text. this carve-out is only for small diagram-sized writing images; large media (audio/video/galleries) still goes to R2 per above.
+**obsidian wikilink images inside writing posts.** the writing vault is an obsidian vault at `static/writing/` (its `.obsidian/` config and `static/writing/attachments/` are gitignored). pasting an image in obsidian drops it in `static/writing/attachments/` and writes an `![[file.png|500]]` embed. the writing renderer (`src/routes/writing/[slug]/+page.svelte`) converts that obsidian embed syntax to `<img src="${ASSETS}/writing/attachments/<file>" width="...">` at load time — so the image is served from R2, same as all other media. the `|500` (or `|500x300`) part is an optional width/height hint; a non-numeric part becomes alt text. workflow: paste in obsidian → `npm run sync-media` (rclone-copies `static/writing/attachments/` → `r2:personal-website-media/writing/attachments/`) → commit the `.md` + push. (the attachments dir is NOT committed; the image lives on R2.) also note: same-page anchor links `[[#heading]]` are rendered as in-page nav by an existing marked extension in that file.
 
 rclone is pre-configured (remote name `r2`). credentials in 1password item `do63matvylpmx2h45g2copha3m` ("Cloudflare API token", Private vault) — that item now holds:
 - `notesPlain`: R2 S3 access key + secret + endpoint (what rclone uses)
@@ -49,7 +51,7 @@ source media backed up at `~/Desktop/personal-website-media-backup/`; R2 is cano
 
 ## verifying a live deploy
 
-`curl https://moonflowers.xyz` returns the SPA shell, not page content. headings like "I LOVE MUSIC" exist only after JS runs. **use `agent-browser` for verification**, not curl/grep against the HTML.
+`curl https://harrisonqian.com` returns the SPA shell, not page content. headings like "I LOVE MUSIC" exist only after JS runs. **use `agent-browser` for verification**, not curl/grep against the HTML.
 
 ## non-obvious gotchas
 

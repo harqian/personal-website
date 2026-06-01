@@ -109,7 +109,7 @@ relationship between vibe coding experience, developer experience, time, and out
 
 the core idea is this:
 
-![leverage graphic](https://assets.moonflowers.xyz/writing-assets/vibe_coding_manifesto/leverage-graphic.png)
+![leverage graphic](https://assets.harrisonqian.com/writing-assets/vibe_coding_manifesto/leverage-graphic.png)
 
 - this is a nice abstraction but
     - in reality there is another tradeoff here which is looseness of specification, e.g. 1 plan could have a buncha different codes, 1 research could have a buncha different plans
@@ -128,7 +128,7 @@ example: tell agent to make plan
 
 good way to implement spec driven dev:
 
-![spec driven development graphic](https://assets.moonflowers.xyz/writing-assets/vibe_coding_manifesto/spec-driven-development.png)
+![spec driven development graphic](https://assets.harrisonqian.com/writing-assets/vibe_coding_manifesto/spec-driven-development.png)
 
 ### another less common but equally strong strategy is to chat with it so that you can make sure it knows what you want
 

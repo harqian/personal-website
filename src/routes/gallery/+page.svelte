@@ -3,7 +3,7 @@
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
 
-    const ASSETS = "https://assets.moonflowers.xyz";
+    const ASSETS = "https://assets.harrisonqian.com";
     const numImages = 53;
     const imagePaths = [];
 

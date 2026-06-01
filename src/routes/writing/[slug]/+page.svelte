@@ -3,7 +3,9 @@
     import { marked } from 'marked';
     import Header from "$lib/Header.svelte"
     import StarBackground from "$lib/StarBackground.svelte"
-    
+
+    const ASSETS = "https://assets.harrisonqian.com";
+
     let piece = null;
     let content = '';
     let toc = [];
@@ -171,10 +173,10 @@
                 });
 
                 // obsidian image embeds: ![[file.png|500]] or ![[file.png|500x300]] -> <img>
-                // served straight from static/writing/attachments so pasting in obsidian just works.
+                // resolved to R2 (writing/attachments/) so pasting in obsidian + `npm run sync-media` just works.
                 // the part after | is a size hint if numeric (WxH), otherwise alt text.
                 processedContent = processedContent.replace(/!\[\[([^\]|]+?)(?:\|([^\]]+))?\]\]/g, (match, file, opt) => {
-                    const src = `/writing/attachments/${encodeURIComponent(file.trim())}`;
+                    const src = `${ASSETS}/writing/attachments/${encodeURIComponent(file.trim())}`;
                     const hint = opt?.trim();
                     if (hint && /^\d+(x\d+)?$/.test(hint)) {
                         const [w, h] = hint.split('x');

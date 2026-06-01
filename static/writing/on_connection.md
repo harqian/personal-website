@@ -99,7 +99,7 @@ can come in many forms
 	- this one needs to be careful and held to a high bar
 		- e.g. tech people's associations of anthropic v.s. openai (very big difference)
 	- its easy to kill a relationship by being overly pushy on a product ↓
-	- ![](https://assets.moonflowers.xyz/writing/on_connection/product_pushiness.png)
+	- ![](https://assets.harrisonqian.com/writing/on_connection/product_pushiness.png)
 - intro people / connections to institutes etc!
 	- this has been really good, a good example is was working with a princeton gal and (taking a risk) was like hey i have a friend who is rising freshman, would you be up to be connected with him
 		- risk because i didnt even know if the rising freshman would want this; intuitively yes

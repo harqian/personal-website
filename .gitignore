@@ -14,6 +14,9 @@ Thumbs.db
 .obsidian
 .obsidian.bak-*
 
+# writing images live on R2 (push with `npm run sync-media`), not committed
+static/writing/attachments/
+
 # Env
 .env
 .env.*
