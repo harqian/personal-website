@@ -44,6 +44,7 @@
     <div class="hero">
         <div class="hero-text">
             <p>hey there, im harrison</p>
+            <p>(if you want a fast track to getting to know me more i have put some media that represents me well in <a href="/vibes">here</a>)</p>
             <p>-> bay area</p>
             <p>i love learning so i taught myself four years of math in one, then kept going — piano, programming, ultimate frsibee, neurotech.</p>
             <p>last summer i helped engineer vestibular stimulation at a neurotech startup — we got someone from fully awake to nearly asleep in three minutes. this year ive been shipping apps, winning hackathons, and training CNNs to read consciousness states from brain waves. i once spent 30 hours debugging a heater.</p>
