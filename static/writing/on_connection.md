@@ -84,7 +84,7 @@ networking
 stuff to write was literally flowing out of my hands unconsciously for these things below, it was so instinctual and clear (is this what its like to meet god? lmao)
 ## **give value**
 
-**this is so so good (so experientially good that my brain is now unconsciously wired to just give (or think of ways to give) people i like value always)**
+**this is so so good (so experientially good that i recieve so much pleasure from giving (or think of ways to give) people i like value)**
 can come in many forms
 - [fun to talk to](https://sites.google.com/view/admitsphere/the-prime-directive?authuser=0)
 - appreciations / love / affection
@@ -101,20 +101,29 @@ can come in many forms
 	- its easy to kill a relationship by being overly pushy on a product ↓
 	- ![](https://assets.harrisonqian.com/writing/on_connection/product_pushiness.png)
 - intro people / connections to institutes etc!
-	- this has been really good, a good example is was working with a princeton gal and (taking a risk) was like hey i have a friend who is rising freshman, would you be up to be connected with him
-		- risk because i didnt even know if the rising freshman would want this; intuitively yes
-	- then she said yes
-	- i then asked the friend
-	- he was like yeah would love to ty
-	- -> gc
-	- then later the friend thanked me saying they got coffee and it was great
-	- (as an anecdote of giving value to my friend)
-	- (this also possibly detracted value from the gal as a relationship; so its like this idea of social capital and transactions)
-	- (overall felt like a net positive for me)
-	- its possible for this to go wrong so be careful but there is a certain intuition that works well
-		- it probably has gone wrong for me before but i dont remember that much
+	- so much so that sometimes going out on a limb to make connections even if both sides did not ask for it specifically is so good
+		- a good example is was working with a princeton gal and (taking a risk) was like hey i have a friend who is rising freshman, would you be up to be connected with him
+			- risk because i didnt even know if the rising freshman would want this; intuitively yes
+			- then she said yes
+			- i then asked the friend
+			- he was like yeah would love to ty
+			- -> gc
+			- then later the friend thanked me saying they got coffee and it was great
+			- (as an anecdote of giving value to my friend)
+			- (this also possibly detracted value from the gal as a relationship; so its like this idea of social capital and transactions)
+			- (overall felt like a net positive)
+			- its possible for this to go wrong so be careful but there is a certain intuition that works well
+				- it probably has gone wrong for me before but i dont remember that much
+		- same for a person one year younger than me and one year older than me both working in physiological signal processing for diagnosis / warning space
+		- same for two vc's that had similar ideals in founder selection
+	- **for intros, its important to represent people well, especially if they are exceptional**
+		- in other words, you should answer the question "why are you choosing these two people to connect together" in a way that makes sense to both sides
+		- notably there is also some nuance here since one can also take the stance of "connection is generally good"
+- send cool materials / companies
+	- would sent a buncha cool articles to a good friend unprompted and over time it became a thing
+		- ![[CleanShot 2026-06-01 at 15.44.18@2x.png]]
 
-this generally gets you more social capital which can be used in two ways:
+this generally gets you more social capital which is good in two ways:
 - counteracting mistakes you make (being late to things, saying something careless that hurts them)
 - invites them to give value to you too
 
@@ -409,6 +418,9 @@ other cool ways to do this on a longer time scale:
 can also find talking points by doing this!
 i find it highly possible to strike up a convo with literally anyone
 might be a bit hard because of having little similarities but there are always some and also nonetheless everyone is unique and interesting
+
+don’t be on your phone or some shit, etc.. 
+- I guess I found that I sometimes do this to the extreme to which I don’t look at my phone a single time and that sometimes miss meetings, but a way to mitigate this is to set alarms for meetings like five minutes before it is also valid to like check messages if it’s like time sensitive, but generally, this is a principle that I’ve followed pretty closely and feel is important
 #### try your best to understand their perspective (intelectual empathy)
 its really hard sometimes but doing so may reveal more things to you about them than you would get by staying in your perspective
 
