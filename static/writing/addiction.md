@@ -59,7 +59,7 @@ On top of these consistent time sinks, there would also be video based distracti
 
 I believe that because of these extreme hijackings of my dopamine system, I am more susceptible to other forms of addiction. For example, if you gave me a (very large) bowl of M\&M’s or Hershey’s Kisses one year ago, without thinking about it, I could eat all of them in one hour.[^2] It was just impulsive to keep taking them and eating them, because it felt good to do so, just like video games or video based distractions. This would happen with other snacks around the house—usually leftover from parties—like cookies, cupcakes, other chocolates, candies, and if I was lucky, fruit. Another example is work. I was talking about it with one of my teachers, we both admitted to gravitating toward the simple, satisfying tasks on our to-do lists while avoiding the harder but more meaningful work. This felt very similar to lots of previous examples because it rewarded you for being lazy. A final example is scratching itches. To me, it is the final boss of all addiction. Damage is done so quickly that you literally don’t even have time to think before it's over and you can’t do anything about it. They also heal so quickly that you don’t have time to really reflect on what you have done.
 
-I have made numerous efforts to quell my addictions. Many of my anti-addiction strategies in the past have been destructive acts. These include deleting worlds (on Minecraft and Terraria), deleting all app data and customizations, giving away all my items in certain persistent games, throwing away perfectly good snacks, and completely blocking YouTube.[^3] These follow from the YOLO strategy described [here](https://harrisonqian.com/writing/how_confidence_changed_my_life#:~:text=YOLO). I found that this strategy worked for large scale goals like “don’t mess up your other commitments (for the time being)”, but it didn’t change my fundamental relation with addiction. 
+I have made numerous efforts to quell my addictions. Many of my anti-addiction strategies in the past have been destructive acts. These include deleting worlds (on Minecraft and Terraria), deleting all app data and customizations, giving away all my items in certain persistent games, throwing away perfectly good snacks, and completely blocking YouTube.[^3] These follow from the YOLO strategy described [here](https://harrisonqian.com/writing/how_confidence_changed_my_life#yolo). I found that this strategy worked for large scale goals like “don’t mess up your other commitments (for the time being)”, but it didn’t change my fundamental relation with addiction. 
 
 # Thoughts on addiction
 
@@ -119,7 +119,7 @@ Though probably not unique, my way of dealing with impulsiveness is through deli
 
 Learning immunity may not always be practical or optimal, especially if addiction is disrupting your life so much that just stepping away from it completely in one go would be better. The following are strategies for removing or attempting to remove the addictions directly.
 
-### [YOLO](https://harrisonqian.com/writing/how_confidence_changed_my_life#:~:text=YOLO)
+### [YOLO](https://harrisonqian.com/writing/how_confidence_changed_my_life#yolo)
 
 If that’s hard (which it is), then 
 
