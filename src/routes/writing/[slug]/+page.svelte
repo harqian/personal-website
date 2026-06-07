@@ -5,6 +5,7 @@
     import StarBackground from "$lib/StarBackground.svelte"
 
     const ASSETS = "https://assets.harrisonqian.com";
+    const SITE = "https://harrisonqian.com";
 
     let piece = null;
     let content = '';
@@ -41,7 +42,9 @@
                 const text = this.parser.parseInline(tokens);
                 const plain = text.replace(/<[^>]+>/g, '').trim();
                 const id = slugify(plain);
-                return `<h${depth} id="${id}">${text}</h${depth}>\n`;
+                // trailing "#" lets readers copy a direct link to this section (click handler attached post-render)
+                const anchor = `<a class="heading-anchor" href="#${id}" data-heading-id="${id}" aria-label="copy link to this section" title="copy link to this section">#</a>`;
+                return `<h${depth} id="${id}">${text}${anchor}</h${depth}>\n`;
             }
         },
         extensions: [{
@@ -190,11 +193,16 @@
 
                 // Build TOC from h2/h3 in the rendered html
                 const doc = new DOMParser().parseFromString(content, 'text/html');
-                toc = Array.from(doc.querySelectorAll('h2, h3')).map(h => ({
-                    id: h.id,
-                    level: parseInt(h.tagName[1], 10),
-                    text: h.textContent
-                }));
+                toc = Array.from(doc.querySelectorAll('h2, h3')).map(h => {
+                    // clone-and-strip so the trailing "#" copy-anchor doesn't leak into the TOC label
+                    const clone = h.cloneNode(true);
+                    clone.querySelector('.heading-anchor')?.remove();
+                    return {
+                        id: h.id,
+                        level: parseInt(h.tagName[1], 10),
+                        text: clone.textContent.trim()
+                    };
+                });
             }
         } catch (error) {
             console.error('Error loading piece:', error);
@@ -203,9 +211,15 @@
         }
     }
 
-    // After content renders, attach hover handlers to wikilinks + toc links
+    // After content renders, attach hover handlers, heading copy-anchors, and
+    // honor any #hash in the URL (the browser's native scroll fires before the
+    // markdown is rendered, so deep links would otherwise land at the top).
     $: if (articleEl && content) {
-        Promise.resolve().then(attachHoverPreviews);
+        Promise.resolve().then(() => {
+            attachHoverPreviews();
+            attachHeadingAnchors();
+            scrollToHashIfPresent();
+        });
     }
 
     function attachHoverPreviews() {
@@ -218,6 +232,40 @@
             a.addEventListener('focus', onLinkHover);
             a.addEventListener('blur', onLinkLeave);
         }
+    }
+
+    // copy-a-link-to-this-section: clicking the trailing "#" copies the heading's canonical URL
+    function attachHeadingAnchors() {
+        const anchors = articleEl?.querySelectorAll('a.heading-anchor');
+        if (!anchors) return;
+        for (const a of anchors) a.addEventListener('click', onHeadingAnchorClick);
+    }
+
+    function onHeadingAnchorClick(e) {
+        e.preventDefault();
+        const a = e.currentTarget;
+        const id = a.dataset.headingId;
+        if (!id) return;
+        const url = `${SITE}/writing/${currentSlug}#${id}`;
+        const done = () => {
+            history.replaceState(null, '', `#${id}`);
+            a.classList.add('copied');
+            setTimeout(() => a.classList.remove('copied'), 1200);
+        };
+        if (navigator.clipboard?.writeText) {
+            navigator.clipboard.writeText(url).then(done).catch(done);
+        } else {
+            done();
+        }
+    }
+
+    // jump to the heading named by location.hash once content exists in the DOM
+    function scrollToHashIfPresent() {
+        const raw = window.location.hash.replace(/^#/, '');
+        if (!raw) return;
+        const id = decodeURIComponent(raw);
+        const el = articleEl?.querySelector(`#${CSS.escape(id)}`);
+        if (el) el.scrollIntoView({ behavior: 'auto', block: 'start' });
     }
 
     // Collect a heading and the following section content for the popover preview
@@ -579,6 +627,47 @@
 
     .link-preview :global(a) {
         color: var(--link-color, #0066cc);
+    }
+
+    /* copy-link affordance on headings: hidden until you hover the heading */
+    .content :global(.heading-anchor) {
+        position: relative;
+        margin-left: 0.35em;
+        font-weight: normal;
+        text-decoration: none;
+        color: #888;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+    }
+    .content :global(:is(h1, h2, h3, h4, h5, h6):hover .heading-anchor) {
+        opacity: 1;
+    }
+    .content :global(.heading-anchor:hover),
+    .content :global(.heading-anchor:focus) {
+        opacity: 1;
+        color: var(--link-color, #0066cc);
+    }
+    .content :global(.heading-anchor.copied) {
+        opacity: 1;
+    }
+    .content :global(.heading-anchor.copied::after) {
+        content: "copied!";
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 6px;
+        padding: 2px 6px;
+        font-size: 0.7rem;
+        font-weight: normal;
+        white-space: nowrap;
+        background: rgba(20, 20, 24, 0.95);
+        color: #fff;
+        border-radius: 4px;
+    }
+    /* the copy-anchor is noise inside the hover-preview popover */
+    .link-preview :global(.heading-anchor) {
+        display: none;
     }
 
     /* compensate for the floating star-background offset when jumping to a heading */
