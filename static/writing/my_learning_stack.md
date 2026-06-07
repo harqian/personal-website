@@ -108,7 +108,7 @@ a really good way to hit so many positive things (learn, grow, meet ppl, achieve
 - this could just be like "i made a thing, what do you think" to a friend or mentor, another reason why doing stuff in mentors' spaces is good (←→ research mentorship)
 - "Ideal state: grind → chat w/ ppl (or reflect or something) → grind. Every flow state in the reflections (break-those-blocks, databox, mug warmer, eeg, pause, wikihub sprint) had fast feedback + external checkpoints. Pick projects with short feedback loops or engineer loops in."
 - "Famous open-door point: Shannon's closed-office peers were productive short-term; Shannon worked with the door open and stayed relevant longer because he paid the "price of admission" to hear what problems mattered."
-https://www.moonflowers.xyz/writing/learning_understanding_connections
+https://harrisonqian.com/writing/learning_understanding_connections
 - perspectives & complimentary skills from the people are so good
 Also mentors in the field can guide you to cool problems
 - https://www.benkuhn.net/11/

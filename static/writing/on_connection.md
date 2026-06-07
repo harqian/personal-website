@@ -31,7 +31,7 @@ every time i feel that someone hates me i get very distressed
 losing in stuco
 judgy people at school
 
-after writing https://www.moonflowers.xyz/writing/how_confidence_changed_my_life i was like "yo social anxiety is solved" but really it wasnt
+after writing https://harrisonqian.com/writing/how_confidence_changed_my_life i was like "yo social anxiety is solved" but really it wasnt
 - long story short i had pretty crazy x sin x roller coasters of confidence for the next year
 - im at a point where i am more stable now
 
@@ -157,7 +157,7 @@ i swear there was a piece that said "take the meeting" but i cant find it now
 
 a decent replacement: "Should I go to this social event, even though I'm feeling tired? (1) says yes. I don't trust my tiredness — I'm wary it is a low set point of sadness that my mind is overcorrecting towards — so I overrule it by biasing towards action." (https://jason.ml/heuristics)
 
-[perspectives are so so good and many times the most interesting ones come from people different from you](https://www.moonflowers.xyz/writing/learning_understanding_connections)
+[perspectives are so so good and many times the most interesting ones come from people different from you](https://harrisonqian.com/writing/learning_understanding_connections)
 
 specifically for leadership positions i have found that they get less applications than you think! and no matter what you miss 100% of the shots you dont take ykwim
 
@@ -180,7 +180,7 @@ impressiveness:
 
 also mindset:
 - unless you really know a person, they are probably less cool and less smart than you think
-	- be [confident](https://www.moonflowers.xyz/writing/how_confidence_changed_my_life)
+	- be [confident](https://harrisonqian.com/writing/how_confidence_changed_my_life)
 
 ## find similarity! find similarity! simlarity!
 find it even if it doesnt seem like its there
@@ -303,7 +303,7 @@ something like "since success rate is low, send a lot to get more" has caveats. 
 > 
 > I'd love to hear more about agentic systems design and your ~[current startup].  
 > 
-> Here is my website: [https://www.moonflowers.xyz/](https://www.moonflowers.xyz/) (a bit outdated, will be updating soon). I have always been intrigued by math & cs, and cs has turned into ml which as turned into llms & agents. Recently I was building a couple of prototypes for a SaaS personally storytelling app that I'm not quite sure about and would love to get your thoughts on: [https://drive.google.com/file/d/1-PEgx8VWR5yNNYeCCi64PrYZHq1p6J1F/view?usp=drive_link](https://drive.google.com/file/d/1-PEgx8VWR5yNNYeCCi64PrYZHq1p6J1F/view?usp=drive_link).  
+> Here is my website: [https://harrisonqian.com/](https://harrisonqian.com/) (a bit outdated, will be updating soon). I have always been intrigued by math & cs, and cs has turned into ml which as turned into llms & agents. Recently I was building a couple of prototypes for a SaaS personally storytelling app that I'm not quite sure about and would love to get your thoughts on: [https://drive.google.com/file/d/1-PEgx8VWR5yNNYeCCi64PrYZHq1p6J1F/view?usp=drive_link](https://drive.google.com/file/d/1-PEgx8VWR5yNNYeCCi64PrYZHq1p6J1F/view?usp=drive_link).  
 > 
 > Take care,  
 > Harrison
@@ -328,7 +328,7 @@ ok maybe this one was a bit more than 10m, like 20m (also i have no idea why i p
 > - What do you think is the future of BCI—invasive or non-invasive? What modalities are strong in your view?
 > - I am a junior in HS, so I have a lot ahead of me. I've reflected and found that I care deeply about community (relationships, events, collaboration on projects). I also feel good when learning. Since I do feel like my want for learning is secondary to community, an option for me right now is to drop everything to find the best community for me (luckily, I am socioeconomically privileged enough to do so). However, this feels wrong in many ways, especially since I'm about to apply to college, and I also do have a smaller pressure that, combined with the watch for learning, pushes me to achieve. What do you think about this, and/or would you prefer one path over the other? It also is clear that they are not mutually exclusive.
 > 
-> My website is [here](https://moonflowers.xyz/).
+> My website is [here](https://harrisonqian.com/).
 > 
 > Take care,
 > Harrison
