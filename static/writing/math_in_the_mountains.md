@@ -29,9 +29,9 @@ Also, having very little time to do things is motivating for me
 
 Being a part of this community and interacting with other great people helped me develop a lot of cool ideas, and generally had me very inspired and productive
 
-It was also a great time to try out many new experiences, like intentionally showing gratitude, needing to think very carefully about what I do with the kids, and applying ideas from [confidence](http://moonflowers.xyz/writing/how_confidence_changed_my_life) and [addiction](https://www.moonflowers.xyz/writing/addiction) in a new environment.
+It was also a great time to try out many new experiences, like intentionally showing gratitude, needing to think very carefully about what I do with the kids, and applying ideas from [confidence](https://harrisonqian.com/writing/how_confidence_changed_my_life) and [addiction](https://harrisonqian.com/writing/addiction) in a new environment.
 
-I think what was unique about the experience was that everyone was extremely wholesome and open, which allowed the community to flourish. This happens in other places, but here it was a completely different level; the kids were at an age where they were somewhat naive, but most importantly, filled with energy. [As I wrote in a poem,](https://www.moonflowers.xyz/poetry/new_camp) i saw my younger self in the kids, which was an amazing reflective experience
+I think what was unique about the experience was that everyone was extremely wholesome and open, which allowed the community to flourish. This happens in other places, but here it was a completely different level; the kids were at an age where they were somewhat naive, but most importantly, filled with energy. [As I wrote in a poem,](https://harrisonqian.com/poetry/new_camp) i saw my younger self in the kids, which was an amazing reflective experience
 
 From reflecting and interacting with others, I learned so much, from fun random math puzzles, to deeply beautiful math (and non-math) concepts to generalizations for learning and intellect to ways to best communicate with others to how I should apply some of my strategies best in new environments. The new experiences were really great in broadening my world view and understanding.
 

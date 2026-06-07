@@ -24,8 +24,8 @@ Why its good
 
 Ideas generated through reflection
 
-* [Confidence](https://moonflowers.xyz/writing/how_confidence_changed_my_life) changed my life  
-* [Addiction](https://moonflowers.xyz/writing/addiction) defeated by thinking  
+* [Confidence](https://harrisonqian.com/writing/how_confidence_changed_my_life) changed my life  
+* [Addiction](https://harrisonqian.com/writing/addiction) defeated by thinking  
 * Learning, new experiences, patterns, experience expansion  
 * This essay  
 * SO MUCH MORE (look at the actual section)
@@ -80,14 +80,14 @@ These patterns can range from “community and connection are almost always very
 Here are ideas that I have considered through reflection that are important in my life.
 
 * The value of learning, new experiences, patterns, expanding your perspective (importance of perspective in everything)[^6]  
-* [Confidence](https://moonflowers.xyz/writing/how_confidence_changed_my_life) changed my life  
+* [Confidence](https://harrisonqian.com/writing/how_confidence_changed_my_life) changed my life  
   * Understood why I feared different social interactions and why it was irrational  
   * Made me much more efficient as a human  
 * Value of talking and connecting with people  
   * Happiness  
   * Connections  
   * Learning  
-* [Addiction](https://moonflowers.xyz/writing/addiction) “defeated” by thinking  
+* [Addiction](https://harrisonqian.com/writing/addiction) “defeated” by thinking  
   * No more distraction; probs 1.5x more time  
 * Writing (tool for reflection) to formalize and concretely express ideas   
   * Recently writing a lot  
