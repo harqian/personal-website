@@ -364,6 +364,8 @@ basically, they can drop off / not respond / be rude etc etc but like that could
 think about how many times you have done that to other people
 not only that, certain things you do that you think are normal under their perspective is weird asf and is equivalent to flipping them off!
 
+most people are all juggling a lot of things
+
 another also was thinking that older mentor people look at me and are very critical and pay a lot of attention to the things i do, now realize as the person in the older mentor position that thats not really how the attention chain works. we all look forwards, its very weird if a whole group of people are looking backwards at one person (and i should be honored if that were the case, this is what i imagine is done to hyper rich kids). this explains a lot of the weirdness coming from them where they will just forget that i did something or hallucinate stuff, they arent paying little attention because they dont like me, they arent paying attention because they literally don't have time
 
 ## dont be afraid to end the meeting early!

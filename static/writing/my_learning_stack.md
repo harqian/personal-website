@@ -8,13 +8,13 @@ tags:
 published: false
 toc: true
 ---
-
+```table-of-contents
+```
 I've seen a lot of tech stack blogs recently (which, to be clear, are really great!). 
 - [jason.ml tech stack](https://jason.ml/stack)
 - [harsh dadhich](https://harshdadhich.com/tools/)
 
 I might want to post something like that soon as well (there is a lot to go through). But before that, here is something more important to me: my learning stack.
-
 # first, a bit of theory
 
 For me, the purpose of theory is to ground a learning framework in actual experiences that created positive learning experiences in the past (in a way, "ensuring" the system will work). I'll split it into reading from sources and my own experiences (which are in many cases connected)
