@@ -62,6 +62,7 @@
         "vibes_memes/city_of_stars_sad.mp4",
         "vibes_memes/mia_and_sebastians_theme_3am.mp4",
         "vibes_memes/thunderstruck_2cellos.mp4",
+        "vibes_memes/automatica.mp4",
     ].map(p => `${ASSETS}/${p}`).sort(() => Math.random() - 0.5);
 </script>
 
