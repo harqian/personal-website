@@ -223,7 +223,7 @@
                             </div>
                         </div>
 
-                        <div class="project-media">
+                        <div class="project-media" class:natural={project.media_natural}>
                             {#if project.video_url}
                                 <svelte:element
                                     this={getDefaultUrl(project) ? 'a' : 'div'}
@@ -491,6 +491,22 @@
         .media-link:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        /* freeform media: render the image at its natural aspect instead of
+           cropping/letterboxing it into the fixed tall frame */
+        .project-media.natural {
+            align-self: center;
+        }
+
+        .project-media.natural .media-frame {
+            height: auto;
+            min-height: 0;
+        }
+
+        .project-media.natural .media-frame img {
+            height: auto;
+            object-fit: contain;
         }
 
         .horizontal-line {

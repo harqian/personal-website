@@ -184,7 +184,8 @@
           "start_date": "2022-04-01",
           "end_date": "2023-05-01",
           "featured": true,
-          "preview_image": "https://assets.harrisonqian.com/project_media/learn-chess-lichess.png?v=5"
+          "media_natural": true,
+          "preview_image": "https://assets.harrisonqian.com/project_media/learn-chess-lichess.png?v=6"
         },
         {
           "title": "IPD Nueva",
