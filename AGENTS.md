@@ -55,6 +55,38 @@ source media backed up at `~/Desktop/personal-website-media-backup/`; R2 is cano
 
 `curl https://harrisonqian.com` returns the SPA shell, not page content. headings like "I LOVE MUSIC" exist only after JS runs. **use `agent-browser` for verification**, not curl/grep against the HTML.
 
+## theming (light/dark + font)
+
+dark is the default; light is opt-in. two independent axes, each an attribute on `<html>`:
+
+- **`data-theme`** = `dark` (default, no attribute) | `light`
+- **`data-font`** = `mono` (default, no attribute) | `serif`
+
+how it fits together:
+
+- **all colors are semantic CSS variables** defined once in `src/routes/+layout.svelte`'s `:root` (the dark palette). `:global(html[data-theme="light"])` overrides only the tokens that change; `:global(html[data-font="serif"])` swaps `--font-body`. tokens are grouped by ROLE, not value: a 4-step text scale (`--text` → `--text-secondary` → `--text-muted` → `--text-faint`), surfaces (`--surface-1/2/3`, `--surface-solid`), borders (`--border`, `--border-strong`), shadows (`--shadow`, `--shadow-strong`), accents (`--link-color`, `--accent-blue[-rgb]`, `--accent-yellow[-rgb]`, `--accent-green`), and media scrims. when adding UI, reach for a token, don't hardcode a hex.
+- **media-control scrims stay fixed in BOTH themes** (the dark `rgba(0,0,0,…)` pills/captions in `Carousel.svelte` + `Gallery.svelte`). they ride over photos/video, which are theme-independent, so they're deliberately NOT tokenized. don't "fix" them.
+- **the yellow accent deepens to gold in light** (`--accent-yellow` → `#c8860b`) because bright `#ffd43b` washes out on a light page. it's the one accent with a light override.
+- **code stays monospace even in serif mode** via `:global(code, pre, kbd, samp) { font-family: var(--font-mono) }`. only body prose + headings switch to serif.
+- **no-FOUC:** an inline script in `src/app.html` applies the saved `data-theme`/`data-font` before first paint (reads `localStorage` keys `theme` / `font`). first-time visitors get the CSS default (dark + mono) with no flash.
+- **the toggles live in `src/lib/ThemeControls.svelte`** (fixed top-right, global, rendered once in the root layout). the **Euler eye** is the theme toggle — open eye = light, closed/"lost" eye = dark (nods to the homepage Euler quote). the **`Aa`** button toggles font (its glyph renders in the active font). both persist to `localStorage` and set the `<html>` attributes.
+- **`src/lib/theme.js`** is a tiny writable store (`"dark"|"light"`) that `ThemeControls` writes and `StarBackground` reads, so the sky reacts to the eye without prop-drilling.
+
+### StarBackground day/night (stars ↔ clouds)
+
+`StarBackground.svelte` reads the `theme` store. **night** (dark) = the full starfield. **day** (light) = all stars fade out and a separate `.cloud-layer` of soft white clouds fades in and drifts. notes:
+
+- clouds are independent of the stars (big + few): `generateClouds()` makes a handful (count ∝ page height, capped at 14), each a cluster of overlapping `<ellipse>`s + a flat base, softened with `blur` + `drop-shadow`. they drift horizontally in the rAF loop (only when `isDay`), wrapping at the edges. gated by a `reduceMotion` flag.
+- `.day .star { opacity: 0 !important }` fades every star; the `!important` beats the per-frame inline `opacity` the twinkle loop writes. small/medium carry a per-star `transition-delay` keyed to seed-Y so the fade sweeps top→bottom like dawn; large stars twinkle, so they get a fast transition and NO delay (a delay would lag the twinkle).
+- the day sky gradient (`--bg-gradient` in the light block) is a soft blue so white clouds read against it; `--cloud-color` is the fill.
+- day is LIGHTER than night (stars hidden, no box-shadow glow), which also dodges the headless-screenshot crash below.
+
+(an earlier version morphed ~10% of stars into flapping gull silhouettes; replaced with clouds — tiny SVG birds read as scribbles at that scale.)
+
+### verifying the theme in a browser
+
+the animated starfield **crashes headless screenshots on tall/dark pages** (hundreds of glowing animated divs OOM the GPU process — a pre-existing perf trait, not a regression). to screenshot a page in dark mode, first `agent-browser eval "document.querySelectorAll('.star-layer').forEach(e=>e.remove())"`. day mode (birds only) screenshots fine. toggle via clicking `.eye-toggle` / `.font-toggle` (don't just set the attribute — the eye writes the `theme` store that drives the bird morph).
+
 ## non-obvious gotchas
 
 - **wrangler 4.x defaults to local-mock mode for r2 commands.** `wrangler r2 object put ...` silently uploads to a local mock instead of production. always pass `--remote`.

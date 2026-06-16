@@ -216,6 +216,11 @@
                 </div>
             </div>
 
+        </div>
+        <div class="hero-side">
+            <div class="hero-carousel" bind:this={carouselWrap}>
+                <Carousel bind:this={carouselRef} items={carouselItems} intervalMs={3000} autoplay={true} durations={durations} />
+            </div>
             <section class="music">
                 <h2 class="music-heading">I LOVE MUSIC</h2>
                 <div class="music-row" bind:this={musicWrap}>
@@ -239,9 +244,6 @@
                 <p class="music-indicator">{trackIndex + 1} / {tracks.length}</p>
             </section>
         </div>
-        <div class="hero-carousel" bind:this={carouselWrap}>
-            <Carousel bind:this={carouselRef} items={carouselItems} intervalMs={3000} autoplay={true} durations={durations} />
-        </div>
     </div>
 
     <section class="friends-section">
@@ -262,7 +264,7 @@
        hint it's a vibe trigger with a tiny carousel-y underline color */
     .vibe-link {
         text-decoration: underline;
-        text-decoration-color: rgba(255, 212, 59, 0.7);
+        text-decoration-color: rgba(var(--accent-yellow-rgb), 0.7);
         text-underline-offset: 2px;
         cursor: pointer;
     }
@@ -276,8 +278,8 @@
         width: 46px;
         height: 7px;
         border-radius: 999px;
-        background: linear-gradient(90deg, rgba(255, 212, 59, 0) 0%, rgba(255, 212, 59, 0.95) 70%, #fff 100%);
-        box-shadow: 0 0 14px 4px rgba(255, 212, 59, 0.55);
+        background: linear-gradient(90deg, rgba(var(--accent-yellow-rgb), 0) 0%, rgba(var(--accent-yellow-rgb), 0.95) 70%, #fff 100%);
+        box-shadow: 0 0 14px 4px rgba(var(--accent-yellow-rgb), 0.55);
         pointer-events: none;
         z-index: 9999;
         will-change: transform, opacity;
@@ -301,6 +303,10 @@
         margin-bottom: 0.6rem;
     }
 
+    .hero-side {
+        min-width: 0;
+    }
+
     .hero-carousel {
         width: 100%;
         aspect-ratio: 1 / 1;
@@ -312,7 +318,7 @@
         height: 100%;
         object-fit: cover;
         border-radius: 8px;
-        outline: 1px solid rgba(255, 255, 255, 0.08);
+        outline: 1px solid var(--border);
         outline-offset: -1px;
     }
 
@@ -337,12 +343,12 @@
         height: 40px;
         display: grid;
         place-items: center;
-        background: rgba(0, 0, 0, 0.35);
+        background: var(--surface-2);
         border: none;
         border-radius: 6px;
-        color: #fff;
+        color: var(--text);
         cursor: pointer;
-        opacity: 0.55;
+        opacity: 0.7;
         flex-shrink: 0;
         padding: 0;
         transition: opacity 160ms ease, background 160ms ease;
@@ -350,12 +356,12 @@
 
     .music-arrow:hover {
         opacity: 1;
-        background: rgba(0, 0, 0, 0.6);
+        background: var(--surface-3);
     }
 
     .music-arrow:focus-visible {
         opacity: 1;
-        outline: 2px solid rgba(255, 255, 255, 0.9);
+        outline: 2px solid var(--text);
         outline-offset: 2px;
     }
 
@@ -380,7 +386,7 @@
         position: absolute;
         inset: -6px;
         border-radius: 10px;
-        box-shadow: 0 0 0 2px rgba(255, 212, 59, 0.9);
+        box-shadow: 0 0 0 2px rgba(var(--accent-yellow-rgb), 0.9);
         animation: landed-pulse 1.1s ease-out forwards;
         pointer-events: none;
     }
@@ -398,14 +404,14 @@
     .music-card figcaption {
         margin-top: 0.4rem;
         font-size: 0.8rem;
-        color: #aaa;
+        color: var(--text-muted);
         text-align: center;
     }
 
     .music-indicator {
         margin: 0.4rem 0 0 0;
         font-size: 0.8rem;
-        color: #888;
+        color: var(--text-faint);
         text-align: center;
     }
 
@@ -417,21 +423,21 @@
 
     .friends-heading {
         font-size: 1.3rem;
-        color: #fff;
+        color: var(--text);
         margin: 0 0 0.35rem 0;
         font-weight: 600;
     }
 
     .friends-tag {
-        color: #b9bbbe;
+        color: var(--text-muted);
         margin: 0 0 1rem 0;
     }
 
     .friends-frame {
         border-radius: 10px;
         overflow: hidden;
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        background: #1a1a1a;
+        border: 1px solid var(--border);
+        background: var(--surface-solid);
         height: 500px;
     }
 
@@ -445,12 +451,12 @@
     .friends-caption {
         margin-top: 0.75rem;
         font-size: 0.85rem;
-        color: #888;
+        color: var(--text-faint);
         text-align: center;
     }
 
     .friends-caption a {
-        color: #aaa;
+        color: var(--text-muted);
     }
 
     .say-hi-btn {
@@ -472,11 +478,11 @@
     
     .contact-info {
         padding: 1rem;
-        background: rgba(255, 255, 255, 0.06);
+        background: var(--surface-2);
         border-radius: 8px;
         box-shadow:
-            0 0 0 1px rgba(255, 255, 255, 0.08),
-            0 1px 2px rgba(0, 0, 0, 0.4);
+            0 0 0 1px var(--border),
+            0 1px 2px var(--shadow-strong);
         overflow: hidden;
 
         max-height: 0;
@@ -540,9 +546,11 @@
             grid-template-columns: 1fr;
             gap: 1.5rem;
         }
+        .hero-side {
+            order: -1;
+        }
         .hero-carousel {
             aspect-ratio: 4 / 3;
-            order: -1;
         }
         .friends-frame {
             height: 380px;

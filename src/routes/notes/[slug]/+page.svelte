@@ -85,7 +85,7 @@
         align-items: center;
         gap: 0.75rem;
         margin-bottom: 1.5rem;
-        color: #666;
+        color: var(--text-faint);
         font-size: 0.9rem;
     }
 
@@ -103,21 +103,21 @@
     }
 
     .content :global(blockquote) {
-        border-left: 3px solid #ccc;
+        border-left: 3px solid var(--border-strong);
         padding-left: 1rem;
         margin: 1rem 0;
         font-style: italic;
     }
 
     .content :global(code) {
-        background: rgba(255, 255, 255, 0.1);
+        background: var(--surface-3);
         padding: 0.2em 0.4em;
         border-radius: 3px;
         font-size: 0.9em;
     }
 
     .content :global(pre) {
-        background: rgba(255, 255, 255, 0.05);
+        background: var(--surface-2);
         padding: 1rem;
         border-radius: 5px;
         overflow-x: auto;
@@ -168,7 +168,7 @@
     }
 
     .content :global(.footnote-def:first-of-type) {
-        border-top: 2px solid #ccc;
+        border-top: 2px solid var(--border-strong);
         margin-top: 3rem;
         padding-top: 1rem;
     }

@@ -7,7 +7,7 @@
 
 <style>
     :global(.date) {
-        color: white;
+        color: var(--text);
         font-size: 0.9em;
         white-space: nowrap;
         margin-left: 1rem;
@@ -26,8 +26,8 @@
     }
     
     :global(.tag) {
-        background: white;
-        color: black;
+        background: var(--text);
+        color: var(--bg);
         padding: 0.25rem 0.5rem;
         border-radius: 0.25rem;
         font-size: 0.8em;

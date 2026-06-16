@@ -299,7 +299,7 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--surface-2);
             border-radius: 8px;
             padding: 1.5rem;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -320,7 +320,7 @@
 
         .project-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px var(--shadow);
         }
 
         .project-content {
@@ -335,8 +335,8 @@
             right: 0;
             bottom: 0;
             font-size: 0.75rem;
-            color: #888;
-            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-faint);
+            background: var(--surface-2);
             padding: 0.25rem 0.5rem;
             border-radius: 4px;
         }
@@ -361,7 +361,7 @@
         .copy-link {
             border: none;
             background: transparent;
-            color: #888;
+            color: var(--text-faint);
             cursor: pointer;
             padding: 0.15rem 0.35rem;
             border-radius: 4px;
@@ -376,13 +376,13 @@
         }
 
         .copy-link:hover {
-            color: #4dabf7;
-            background: rgba(77, 171, 247, 0.12);
+            color: var(--accent-blue);
+            background: rgba(var(--accent-blue-rgb), 0.12);
         }
 
         .copy-link.copied {
             opacity: 1;
-            color: #51cf66;
+            color: var(--accent-green);
         }
 
         .project-card h3.highlighted {
@@ -391,18 +391,18 @@
 
         @keyframes flash-highlight {
             0%, 30% {
-                background: rgba(255, 212, 59, 0.25);
-                box-shadow: 0 0 0 6px rgba(255, 212, 59, 0.12);
+                background: rgba(var(--accent-yellow-rgb), 0.25);
+                box-shadow: 0 0 0 6px rgba(var(--accent-yellow-rgb), 0.12);
             }
             100% {
                 background: transparent;
-                box-shadow: 0 0 0 6px rgba(255, 212, 59, 0);
+                box-shadow: 0 0 0 6px rgba(var(--accent-yellow-rgb), 0);
             }
         }
 
         .date {
             font-size: 0.85rem;
-            color: #888;
+            color: var(--text-faint);
             font-weight: normal;
             margin-left: 0.5rem;
             white-space: nowrap;
@@ -410,7 +410,7 @@
 
         .project-card p {
             margin: 0.5rem 0 1rem 0;
-            color: #ccc;
+            color: var(--text-secondary);
             line-height: 1.5;
         }
 
@@ -426,7 +426,7 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.4rem 0.8rem;
-            background: rgba(77, 171, 247, 0.1);
+            background: rgba(var(--accent-blue-rgb), 0.1);
             border-radius: 4px;
             font-size: 0.9rem;
             transition: background-color 0.2s, transform 0.2s;
@@ -435,25 +435,25 @@
         }
 
         .project-link:hover {
-            background: rgba(77, 171, 247, 0.2);
+            background: rgba(var(--accent-blue-rgb), 0.2);
             text-decoration: none;
             transform: translateY(-1px);
         }
 
         .github-link {
-            background: rgba(100, 100, 100, 0.15);
+            background: var(--surface-2);
         }
 
         .github-link:hover {
-            background: rgba(120, 120, 120, 0.25);
+            background: var(--surface-3);
         }
 
         .demo-link {
-            background: rgba(77, 171, 247, 0.15);
+            background: rgba(var(--accent-blue-rgb), 0.15);
         }
 
         .demo-link:hover {
-            background: rgba(77, 171, 247, 0.25);
+            background: rgba(var(--accent-blue-rgb), 0.25);
         }
 
         .project-link i {
@@ -470,8 +470,8 @@
             min-height: 260px;
             border-radius: 10px;
             overflow: hidden;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: var(--surface-1);
+            border: 1px solid var(--border);
             display: block;
         }
 
@@ -499,7 +499,7 @@
 
         .media-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+            box-shadow: 0 8px 20px var(--shadow);
         }
 
         /* freeform media: render the image at its natural aspect instead of
@@ -521,7 +521,7 @@
         .horizontal-line {
             border: none;
             height: 1px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--border);
             margin: 1.5rem 0;
         }
 
@@ -529,18 +529,18 @@
             text-align: center;
             margin: 3rem 0 2rem 0;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--border);
         }
 
         .view-all a {
             font-size: 0.9rem;
-            color: #888;
+            color: var(--text-faint);
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .view-all a:hover {
-            color: #aaa;
+            color: var(--text-muted);
         }
 
         @media (max-width: 900px) {

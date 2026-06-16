@@ -38,13 +38,13 @@
 
 <style>
     .lede {
-        color: #ccc;
+        color: var(--text-secondary);
         line-height: 1.5;
         margin: 1rem 0 1.5rem 0;
     }
 
     code {
-        background: rgba(255, 255, 255, 0.08);
+        background: var(--surface-3);
         padding: 0.1rem 0.35rem;
         border-radius: 3px;
         font-size: 0.85em;
@@ -55,8 +55,8 @@
         height: 560px;
         border-radius: 10px;
         overflow: hidden;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: var(--surface-1);
+        border: 1px solid var(--border);
     }
 
     .frame-wrap iframe {
@@ -68,7 +68,7 @@
 
     .caption {
         margin-top: 0.75rem;
-        color: #888;
+        color: var(--text-faint);
         font-size: 0.85rem;
         text-align: center;
     }
@@ -80,21 +80,21 @@
     }
 
     .links a {
-        color: #aaa;
+        color: var(--text-muted);
         text-decoration: none;
-        border-bottom: 1px solid rgba(170, 170, 170, 0.3);
+        border-bottom: 1px solid var(--border);
     }
 
     .links a:hover {
-        color: #fff;
-        border-bottom-color: #fff;
+        color: var(--text);
+        border-bottom-color: var(--border-strong);
     }
 
     kbd {
         display: inline-block;
         padding: 1px 6px;
-        background: rgba(255, 255, 255, 0.08);
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        background: var(--surface-3);
+        border: 1px solid var(--border-strong);
         border-radius: 4px;
         font-size: 0.8em;
         font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -103,7 +103,7 @@
     .horizontal-line {
         border: none;
         height: 1px;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: var(--border);
         margin: 1.5rem 0;
     }
 </style>

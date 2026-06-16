@@ -464,7 +464,7 @@
     transition: opacity 400ms ease;
     display: grid;
     place-items: center;
-    background: rgba(255,255,255,0.03);
+    background: var(--surface-1);
   }
   .slide.active {
     opacity: 1;
@@ -484,7 +484,7 @@
     position: absolute;
     inset: 0;
     border-radius: 8px;
-    box-shadow: inset 0 0 0 3px rgba(255, 212, 59, 0.9);
+    box-shadow: inset 0 0 0 3px rgba(var(--accent-yellow-rgb), 0.9);
     animation: landed-pulse 1.1s ease-out forwards;
     pointer-events: none;
     z-index: 2;
@@ -607,7 +607,7 @@
   }
   .copy-link:hover { opacity: 1; background: rgba(0, 0, 0, 0.7); }
   .copy-link:focus-visible { outline: 2px solid rgba(255, 255, 255, 0.9); outline-offset: 2px; }
-  .copy-link.copied { opacity: 1; color: #ffd43b; background: rgba(0, 0, 0, 0.65); }
+  .copy-link.copied { opacity: 1; color: var(--accent-yellow); background: rgba(0, 0, 0, 0.65); }
 
   .pause-overlay {
     position: absolute;

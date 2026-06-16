@@ -36,7 +36,7 @@
     .icon-3d {
         padding: 10px;
         animation: icon3d 200ms 10;
-        color: #fff;
+        color: var(--text);
     }
 
     .icon-3d:hover {
@@ -82,7 +82,7 @@
        since text-shadow doesn't apply to vector paths */
     .icon-3d-svg {
         padding: 10px;
-        color: #fff;
+        color: var(--text);
         display: inline-flex;
         animation: icon3d-svg 200ms 10;
     }

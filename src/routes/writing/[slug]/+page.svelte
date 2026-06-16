@@ -418,7 +418,7 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 1.5rem;
-        color: #666;
+        color: var(--text-faint);
         font-size: 0.9rem;
     }
     
@@ -432,7 +432,7 @@
     }
     
     .content :global(blockquote) {
-        border-left: 3px solid #ccc;
+        border-left: 3px solid var(--border-strong);
         padding-left: 1rem;
         margin: 1rem 0;
         font-style: italic;
@@ -481,7 +481,7 @@
     }
     
     .content :global(.footnote-def:first-of-type) {
-        border-top: 2px solid #ccc;
+        border-top: 2px solid var(--border-strong);
         margin-top: 3rem;
         padding-top: 1rem;
     }
@@ -516,8 +516,8 @@
     .toc {
         margin: 0 0 2rem 0;
         padding: 1rem 1.25rem;
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: var(--surface-1);
+        border: 1px solid var(--border);
         border-radius: 6px;
         font-size: 0.95rem;
     }
@@ -526,7 +526,7 @@
         font-size: 0.75rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-        color: #999;
+        color: var(--text-muted);
         margin-bottom: 0.5rem;
     }
 
@@ -556,13 +556,13 @@
         content: counter(toc-counter) ".";
         display: inline-block;
         min-width: 1.6rem;
-        color: #888;
+        color: var(--text-faint);
     }
 
     .toc-item.toc-l3 {
         padding-left: 1.75rem;
         font-size: 0.9rem;
-        color: #bbb;
+        color: var(--text-muted);
     }
 
     /* redactions — solid bar; content is stripped before rendering */
@@ -603,14 +603,14 @@
         width: 420px;
         max-height: 60vh;
         overflow: auto;
-        background: rgba(20, 20, 24, 0.97);
-        color: rgba(255, 255, 255, 0.92);
-        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: var(--surface-solid);
+        color: var(--text);
+        border: 1px solid var(--border);
         border-radius: 8px;
         padding: 0.9rem 1rem;
         font-size: 0.9rem;
         line-height: 1.5;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 8px 24px var(--shadow-strong);
         pointer-events: none;
     }
 
@@ -635,7 +635,7 @@
         margin-left: 0.35em;
         font-weight: normal;
         text-decoration: none;
-        color: #888;
+        color: var(--text-faint);
         opacity: 0;
         transition: opacity 0.15s ease;
     }
@@ -661,8 +661,8 @@
         font-size: 0.7rem;
         font-weight: normal;
         white-space: nowrap;
-        background: rgba(20, 20, 24, 0.95);
-        color: #fff;
+        background: var(--surface-solid);
+        color: var(--text);
         border-radius: 4px;
     }
     /* the copy-anchor is noise inside the hover-preview popover */

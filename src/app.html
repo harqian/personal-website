@@ -5,6 +5,15 @@
 	<meta charset="utf-8" />
 	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- apply saved theme/font before first paint so a returning visitor never flashes the default (dark + mono) -->
+	<script>
+		try {
+			if (localStorage.getItem("theme") === "light")
+				document.documentElement.setAttribute("data-theme", "light");
+			if (localStorage.getItem("font") === "serif")
+				document.documentElement.setAttribute("data-font", "serif");
+		} catch (e) {}
+	</script>
 	%sveltekit.head%
 </head>
 
