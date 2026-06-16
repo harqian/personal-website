@@ -172,7 +172,7 @@
 
             <div class="projects-grid">
                 {#each featuredProjects as project}
-                    <div class="project-card">
+                    <div class="project-card" class:wide={project.media_wide}>
                         <div class="project-content">
                             <div class="category-badge">{project.category}</div>
                             <h3 id={slugify(project.title)} class:highlighted={highlightedSlug === slugify(project.title)}>
@@ -307,6 +307,15 @@
             grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
             gap: 1.5rem;
             align-items: stretch;
+        }
+
+        /* wide media: give the media column more room (pushing into the text)
+           for landscape previews. text keeps a 300px floor so it can't squish
+           too far. desktop-only — the mobile single-column rule still wins. */
+        @media (min-width: 901px) {
+            .project-card.wide {
+                grid-template-columns: minmax(300px, 1fr) minmax(0, 1.35fr);
+            }
         }
 
         .project-card:hover {
