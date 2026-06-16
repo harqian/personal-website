@@ -8,18 +8,5 @@
   "13_machine_translation.mp4": { "duration": "length", "caption": "machine translation presentation" },
   "14_hiking.jpeg": { "duration": 3000, "caption": "hiking/climbing!" },
   "15_sf_biking.mp4": { "duration": "length", "caption": "biking up 230 ft in pouring rain in sf" },
-  "16_flash.mp4": { "duration": "length", "caption": "people i love" },
-  "17_kauai.jpeg": { "duration": 3000, "caption": "Kauaʻi, April 6, 2025" },
-  "18_cambridge.jpeg": { "duration": 3000, "caption": "Cambridge, January 30, 2026" },
-  "19_manhattan.jpeg": { "duration": 3000, "caption": "Manhattan, February 3, 2026" },
-  "20_boston.jpeg": { "duration": 3000, "caption": "Boston, February 4, 2026" },
-  "21_sf_feb19a.jpeg": { "duration": 3000, "caption": "San Francisco, February 19, 2026" },
-  "22_sf_feb19b.jpeg": { "duration": 3000, "caption": "San Francisco, February 19, 2026" },
-  "23_hillsborough.jpeg": { "duration": 3000, "caption": "Hillsborough, March 14, 2026" },
-  "24_apr12.jpeg": { "duration": 3000, "caption": "April 12, 2026" },
-  "25_san_mateo.jpeg": { "duration": 3000, "caption": "San Mateo, April 29, 2026" },
-  "26_sf_may24.jpeg": { "duration": 3000, "caption": "San Francisco, May 24, 2026" },
-  "27_stanford.jpeg": { "duration": 3000, "caption": "Stanford University, June 7, 2026" },
-  "28_sf_jun13a.jpeg": { "duration": 3000, "caption": "San Francisco, June 13, 2026" },
-  "29_sf_jun13b.jpeg": { "duration": 3000, "caption": "San Francisco, June 13, 2026" }
+  "16_flash.mp4": { "duration": "length", "caption": "people i love" }
 }
