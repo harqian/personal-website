@@ -4,6 +4,8 @@ harrison's personal site at harrisonqian.com. SvelteKit + Svelte 5 + Vite. fully
 
 (migrated off moonflowers.xyz 2026-06-01; moonflowers.xyz now 301-redirects to harrisonqian.com.)
 
+harrison's YouTube channel is **Dumb Derivatives** (https://www.youtube.com/@DumbDerivatives). his usual usernames are **Trospector** or **Moonflowers**. project demo/launch videos (e.g. the Pause launch video) live there.
+
 ## deploy architecture
 
 two pieces, decoupled:
