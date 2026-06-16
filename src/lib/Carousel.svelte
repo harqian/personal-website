@@ -1,5 +1,5 @@
 <script>
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount, onDestroy, tick } from 'svelte';
 
   /**
    * @typedef {{name: string, src: string}} CarouselItem
@@ -31,6 +31,113 @@
   // client-only render: avoids hydration mismatches when browser extensions
   // mutate the carousel's video nodes (e.g. youtube playback-rate controllers)
   let mounted = false;
+
+  // spin-to-item: turns the carousel like a wheel toward a target slide,
+  // sliding past the intermediate items and decelerating into the landing
+  let spinning = false;   // strip is laid out horizontally (vs normal crossfade)
+  let spinAnim = false;   // transform transition is armed
+  let settling = false;   // one instant frame to hand back to crossfade (no flash)
+  let spinMs = 0;
+  let spinTimer = null;
+  let landed = false;     // brief ring pulse on the slide we land on
+  let landedTimer = null;
+  let reduceMotion = false;
+  let viewportEl;
+  let copied = false;
+  let copiedTimer = null;
+  // strong ease-out, NO overshoot — settles cleanly into the target
+  const SPIN_EASE = 'cubic-bezier(0.16, 1, 0.3, 1)';
+
+  function indexForSlug(slug) {
+    if (!slug) return -1;
+    return items.findIndex((it) => durations[it.name]?.slug === slug);
+  }
+  function slugForIndex(i) {
+    return durations[items[i]?.name]?.slug || null;
+  }
+
+  function pulseLanding() {
+    landed = true;
+    clearTimeout(landedTimer);
+    landedTimer = setTimeout(() => (landed = false), 1100);
+  }
+
+  function restartCurrent() {
+    const v = videoElements[current];
+    if (v) {
+      v.currentTime = 0;
+      v.play().catch(() => {});
+    }
+  }
+
+  // public: spin the carousel to the item with this slug
+  export async function spinTo(slug, { instant = false } = {}) {
+    const idx = indexForSlug(slug);
+    if (idx < 0) return;
+    stop();
+    paused = false;
+    if (idx === current) {
+      // already on it — replay from the top instead of doing nothing
+      restartCurrent();
+      pulseLanding();
+      startSlide(0);
+      return;
+    }
+    if (instant || reduceMotion || items.length <= 1) {
+      current = idx;
+      pulseLanding();
+      startSlide(0);
+      return;
+    }
+    const dist = Math.abs(idx - current);
+    spinMs = Math.min(1500, 450 + dist * 70);
+    // 1) lay the strip out at the CURRENT position with no transition (instant)
+    spinning = true;
+    spinAnim = false;
+    await tick();
+    // 2) commit that layout, then arm the transition and move to the target
+    if (viewportEl) void viewportEl.offsetWidth; // force reflow
+    spinAnim = true;
+    current = idx;
+    await tick();
+    clearTimeout(spinTimer);
+    spinTimer = setTimeout(async () => {
+      // hand back to crossfade in ONE instant frame: the off-screen neighbors
+      // snap from ±100% to center, but with transitions off so they don't
+      // fade through the target (that was the end-of-spin flash)
+      settling = true;
+      spinning = false;
+      spinAnim = false;
+      await tick();
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => (settling = false));
+      });
+      pulseLanding();
+      startSlide(0);
+    }, spinMs);
+  }
+
+  async function copyLink() {
+    const slug = slugForIndex(current);
+    if (!slug) return;
+    const url = `${location.origin}/#vibe=${slug}`;
+    try {
+      await navigator.clipboard.writeText(url);
+    } catch {
+      // fallback for non-secure contexts / older browsers
+      const ta = document.createElement('textarea');
+      ta.value = url;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+    copied = true;
+    clearTimeout(copiedTimer);
+    copiedTimer = setTimeout(() => (copied = false), 1500);
+  }
 
   function next() {
     if (items.length === 0) return;
@@ -115,9 +222,15 @@
 
   onMount(() => {
     mounted = true;
+    reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     startSlide();
   });
-  onDestroy(stop);
+  onDestroy(() => {
+    stop();
+    clearTimeout(spinTimer);
+    clearTimeout(landedTimer);
+    clearTimeout(copiedTimer);
+  });
 
   $: {
     // only react to autoplay toggling, not to current/items changes
@@ -204,6 +317,8 @@
   {#if mounted && items && items.length > 0}
     <div
       class="viewport"
+      class:spinning
+      bind:this={viewportEl}
       role="button"
       tabindex="0"
       aria-label="Click to pause or resume; arrow keys to navigate"
@@ -211,7 +326,14 @@
       on:keydown={handleCarouselKeydown}
     >
       {#each items as item, i}
-        <div class="slide {i === current ? 'active' : ''}" aria-hidden={i === current ? 'false' : 'true'}>
+        <div
+          class="slide {i === current ? 'active' : ''}"
+          class:spin={spinning}
+          class:landed={landed && i === current}
+          style:transform={spinning ? `translateX(${(i - current) * 100}%)` : null}
+          style:transition={spinning ? (spinAnim ? `transform ${spinMs}ms ${SPIN_EASE}` : 'none') : (settling ? 'none' : null)}
+          aria-hidden={i === current ? 'false' : 'true'}
+        >
           {#if isVideo(item)}
             <video
               bind:this={videoElements[i]}
@@ -247,6 +369,20 @@
             <path d="M3 10v4h4l5 4V6L7 10H3z" fill="white"/>
             <path d="M16 8c1.5 1 2 2.5 2 4s-.5 3-2 4M19 5c2.5 1.5 3.5 4 3.5 7s-1 5.5-3.5 7" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
           </svg>
+        {/if}
+      </button>
+
+      <button
+        class="copy-link {copied ? 'copied' : ''}"
+        on:click|stopPropagation={copyLink}
+        aria-label="copy a link to this carousel item"
+      >
+        {#if copied}
+          <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M5 12l5 5 9-11" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          copied
+        {:else}
+          <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M9 15l6-6M11 6l1-1a4 4 0 015.5 5.5l-1 1M13 18l-1 1A4 4 0 016.5 13.5l1-1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          copy link
         {/if}
       </button>
 
@@ -333,6 +469,31 @@
   .slide.active {
     opacity: 1;
   }
+  /* during a spin the slides sit in a horizontal strip and are all visible
+     so you see the intermediate items turn past */
+  .slide.spin {
+    opacity: 1;
+    will-change: transform;
+  }
+  /* the viewport keeps the strip clipped to one item while it turns */
+  .viewport.spinning .slide {
+    backface-visibility: hidden;
+  }
+  .slide.landed::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 3px rgba(255, 212, 59, 0.9);
+    animation: landed-pulse 1.1s ease-out forwards;
+    pointer-events: none;
+    z-index: 2;
+  }
+  @keyframes landed-pulse {
+    0% { opacity: 0; }
+    18% { opacity: 1; }
+    100% { opacity: 0; }
+  }
 
   img, video {
     width: 100%;
@@ -418,6 +579,35 @@
     outline: 2px solid rgba(255, 255, 255, 0.9);
     outline-offset: 2px;
   }
+
+  .copy-link {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    height: 26px;
+    padding: 0 10px;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.95);
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 160ms ease, transform 160ms ease, background 160ms ease;
+    z-index: 5;
+  }
+  .viewport:hover .copy-link,
+  .copy-link:focus-visible {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+  .copy-link:hover { opacity: 1; background: rgba(0, 0, 0, 0.7); }
+  .copy-link:focus-visible { outline: 2px solid rgba(255, 255, 255, 0.9); outline-offset: 2px; }
+  .copy-link.copied { opacity: 1; color: #ffd43b; background: rgba(0, 0, 0, 0.65); }
 
   .pause-overlay {
     position: absolute;

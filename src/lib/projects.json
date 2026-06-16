@@ -1,389 +1,430 @@
 {
-    "sections": [
+  "sections": [
+    {
+      "id": "ml",
+      "title": "Machine Learning",
+      "description": "Machine learning projects and experiments.",
+      "projects": [
         {
-            "id": "ml",
-            "title": "Machine Learning",
-            "description": "Machine learning projects and experiments.",
-            "projects": [
-                {
-                    "title": "OnCue",
-                    "description": "upload documents (resume, project docs, essays) -> in a call transcripts; questions are detected and used to query the database with rag and top 3 hits are shown",
-                    "github_url": "https://github.com/harqian/OnCue",
-                    "demo_url": "https://youtu.be/4UaQEB1b84E",
-                    "start_date": "2025-10-01",
-                    "end_date": "2025-10-15",
-                    "featured": true
-                },
-                {
-                    "title": "RL Snake",
-                    "description": "snake game AI trained with Q-Learning, Hamiltonian Paths, Deep Q Network, PPO, and A2C; attained near optimal performance on 4x4 and 6x6",
-                    "github_url": "https://github.com/harqian/snake-ai",
-                    "featured_media_url": "https://youtu.be/2sJ0Uhk1fis",
-                    "start_date": "2023-9-01",
-                    "end_date": "2024-4-01",
-                    "featured": true,
-                    "links": [
-                        {
-                            "url": "https://github.com/harqian/snakeAI-py",
-                            "label": "Other GitHub",
-                            "icon": "fab fa-github"
-                        },
-                        {
-                            "url": "https://docs.google.com/document/d/1Nt2EpKpg9MtxD8eWTwKgDtKhm6kF_hJUKyHeRVNKv58/edit?tab=t.0#heading=h.v14wslm6aizk",
-                            "label": "Write-up",
-                            "icon": "fa fa-file"
-                        },
-                        {
-                            "url": "https://youtu.be/R3K8H0cgHxM",
-                            "label": "Demo 1",
-                            "icon": "fab fa-youtube"
-                        }
-                    ]
-                },
-                {
-                    "title": "Sketch Classifier & Generator",
-                    "description": "image classification for Quick, Draw! dataset using big CNNs (92% accuracy on 95-class dataset), and generating drawings using an RNN VAE with gaussian mixture models.",
-                    "demo_url": "https://drive.google.com/file/d/1rUJ5fLaq5rrtZlW4eC8Wk2SypeCr1am5/view?usp=drive_link",
-                    "github_url": "https://github.com/harqian/the-doodler-classification",
-                    "start_date": "2024-9-10",
-                    "end_date": "2025-04-01",
-                    "featured": true,
-                    "links": [
-                        {
-                            "url": "https://github.com/harqian/the-doodler-generation",
-                            "label": "Generator GitHub",
-                            "icon": "fab fa-github"
-                        }
-                    ]
-                },
-                {
-                    "title": "Text Generation",
-                    "description": "text generation models and experiments using RNNs (GRU and LSTM) and markov chains on shakespeare and code",
-                    "github_url": "https://github.com/harqian/text-generation",
-                    "demo_url": "https://drive.google.com/file/d/1Oa5uDw0E7kkFCJUqt4SwoG4xK6bu8j7I/view?usp=sharing",
-                    "featured_media_url": "https://youtu.be/q0g0F2MFTKY",
-                    "start_date": "2024-08-01",
-                    "end_date": "2024-09-01",
-                    "featured": true
-                },
-                {
-                    "title": "ML from Scratch",
-                    "description": "Built a neural network and backpropagation from scratch using matrix calculus and numpy.",
-                    "github_url": "https://github.com/harqian/ml-from-scratch",
-                    "start_date": "2025-02-18",
-                    "end_date": "2025-03-18"
-                }
-            ]
+          "title": "OnCue",
+          "description": "upload documents (resume, project docs, essays) -> in a call transcripts; questions are detected and used to query the database with rag and top 3 hits are shown",
+          "github_url": "https://github.com/harqian/OnCue",
+          "demo_url": "https://youtu.be/4UaQEB1b84E",
+          "start_date": "2025-10-01",
+          "end_date": "2025-10-15",
+          "featured": false
         },
         {
-            "id": "bots",
-            "title": "Bots",
-            "description": "A collection of game-playing AI bots I've developed.",
-            "projects": [
-                {
-                    "title": "Connect 4 Bot",
-                    "description": "A bot that plays Connect 4 using the minimax algorithm.",
-                    "github_url": "https://github.com/harqian/connect4-general",
-                    "demo_url": "https://harqian.github.io/connect4-general/",
-                    "start_date": "2024-12-01",
-                    "end_date": "2025-01-01"
-                },
-                {
-                    "title": "Chess Bot",
-                    "description": "A bot that plays chess using the minimax algorithm with alpha-beta pruning.",
-                    "github_url": "https://github.com/harqian/chessAI-js",
-                    "demo_url": "https://harqian.github.io/chessAI-js/",
-                    "start_date": "2022-11-1",
-                    "end_date": "2023-5-1"
-                },
-                {
-                    "title": "Hex Bot",
-                    "description": "A bot that plays the game of Hex using Monte Carlo Tree Search.",
-                    "github_url": "https://github.com/harqian/hex-bot",
-                    "demo_url": "https://harqian.github.io/hex-bot/",
-                    "start_date": "2023-03-01",
-                    "end_date": "2023-03-22"
-                },
-                {
-                    "title": "Wordle Bot",
-                    "description": "A bot that plays Wordle using a combination of letter frequency analysis and word list filtering.",
-                    "github_url": "https://github.com/harqian/wordle-bot",
-                    "start_date": "2024-03-13",
-                    "end_date": "2024-06-24"
-                },
-                {
-                    "title": "Set Bot",
-                    "description": "Scripts that run in the JavaScript web browser that automate playing the game of Set.",
-                    "github_url": "https://github.com/harqian/set-scripts",
-                    "start_date": "2024-03-01",
-                    "end_date": "2024-04-01"
-                }
-            ]
+          "title": "RL Snake",
+          "description": "snake game AI trained with Q-Learning, Hamiltonian Paths, Deep Q Network, PPO, and A2C; attained near optimal performance on 4x4 and 6x6",
+          "github_url": "https://github.com/harqian/snake-ai",
+          "featured_media_url": "https://youtu.be/2sJ0Uhk1fis",
+          "start_date": "2023-9-01",
+          "end_date": "2024-4-01",
+          "featured": true,
+          "links": [
+            {
+              "url": "https://github.com/harqian/snakeAI-py",
+              "label": "Other GitHub",
+              "icon": "fab fa-github"
+            },
+            {
+              "url": "https://docs.google.com/document/d/1Nt2EpKpg9MtxD8eWTwKgDtKhm6kF_hJUKyHeRVNKv58/edit?tab=t.0#heading=h.v14wslm6aizk",
+              "label": "Write-up",
+              "icon": "fa fa-file"
+            },
+            {
+              "url": "https://youtu.be/R3K8H0cgHxM",
+              "label": "Demo 1",
+              "icon": "fab fa-youtube"
+            }
+          ]
         },
         {
-            "id": "websites",
-            "title": "Websites",
-            "description": "Web development projects and personal websites.",
-            "projects": [
-                {
-                    "title": "Personal Website",
-                    "description": "My personal website and portfolio.",
-                    "github_url": "https://github.com/harqian/personal-website",
-                    "demo_url": "/",
-                    "start_date": "2025-04-01",
-                    "end_date": "today"
-                },
-                {
-                    "title": "Color Canvas",
-                    "description": "Interactive color canvas web application.",
-                    "github_url": "https://github.com/harqian/color-canvas",
-                    "demo_url": "https://harqian.github.io/color-canvas/",
-                    "start_date": "2024-03-01",
-                    "end_date": "2024-03-01"
-                },
-                {
-                    "title": "Punctured Go",
-                    "description": "A variation of the game of Go with punctured boards.",
-                    "github_url": "https://github.com/harqian/punctured-go",
-                    "demo_url": "https://punctured-go125.web.app/",
-                    "start_date": "2024-02-06",
-                    "end_date": "2024-02-06"
-                },
-                {
-                    "title": "Assert",
-                    "description": "A website to poll opinions and show results in real-time.",
-                    "github_url": "https://github.com/harqian/assert",
-                    "demo_url": "https://curious-pondering.web.app/",
-                    "start_date": "2024-02-06",
-                    "end_date": "2024-02-06"
-                },
-                {
-                    "title": "debuff.dev",
-                    "description": "Pair-programming coding challenges; blind coding, no for loops, relay race, etc.",
-                    "github_url": "https://github.com/harqian/pair-programming-challenges",
-                    "demo_url": "https://debuff.dev",
-                    "start_date": "2026-01-20",
-                    "end_date": "2026-02-20"
-                }
-            ]
+          "title": "Sketch Classifier & Generator",
+          "description": "image classification for Quick, Draw! dataset using big CNNs (92% accuracy on 95-class dataset), and generating drawings using an RNN VAE with gaussian mixture models.",
+          "demo_url": "https://drive.google.com/file/d/1rUJ5fLaq5rrtZlW4eC8Wk2SypeCr1am5/view?usp=drive_link",
+          "github_url": "https://github.com/harqian/the-doodler-classification",
+          "start_date": "2024-9-10",
+          "end_date": "2025-04-01",
+          "featured": true,
+          "links": [
+            {
+              "url": "https://github.com/harqian/the-doodler-generation",
+              "label": "Generator GitHub",
+              "icon": "fab fa-github"
+            }
+          ]
         },
         {
-            "id": "games",
-            "title": "Games",
-            "description": "Interactive games and simulations.",
-            "projects": [
-                {
-                    "title": "IPD Nueva",
-                    "github_url": "https://github.com/harqian/Updated_IPD_Nueva",
-                    "description": "A forked and higly optimized and improved version of the Iterated Prisoner's Dilemma simulation created to run a tournament for a Microeconomics class.",
-                    "start_date": "2024-11-01",
-                    "end_date": "today"
-                },
-                {
-                    "title": "Break Those Blocks",
-                    "github_url": "https://github.com/harqian/break-those-blocks",
-                    "demo_url": "https://harqian.github.io/break-those-blocks/",
-                    "description": "A game where players break blocks in a grid-based environment by shooting balls (currently doesnt work that well).",
-                    "start_date": "2023-07-29",
-                    "end_date": "2023-08-15"
-                },
-                {
-                    "title": "Number Connections",
-                    "github_url": "https://github.com/harqian/number-connections",
-                    "demo_url": "https://number-connections.vercel.app/",
-                    "description": " Instead of connections, connect the numbers! Like the NYT game.",
-                    "start_date": "2024-04-15",
-                    "end_date": "2024-07-25"
-                }
-            ]
+          "title": "Text Generation",
+          "description": "text generation models and experiments using RNNs (GRU and LSTM) and markov chains on shakespeare and code",
+          "github_url": "https://github.com/harqian/text-generation",
+          "demo_url": "https://drive.google.com/file/d/1Oa5uDw0E7kkFCJUqt4SwoG4xK6bu8j7I/view?usp=sharing",
+          "featured_media_url": "https://youtu.be/q0g0F2MFTKY",
+          "start_date": "2024-08-01",
+          "end_date": "2024-09-01",
+          "featured": true
         },
         {
-            "id": "algorithms",
-            "title": "Algorithms",
-            "description": "Algorithm visualizations and computational experiments.",
-            "projects": [
-                {
-                    "title": "Boids",
-                    "github_url": "https://github.com/harqian/boids",
-                    "description": "A simulation of flocking behavior in birds.",
-                    "start_date": "2024-01-01",
-                    "end_date": "2024-01-01"
-                },
-                {
-                    "title": "Fibonacci",
-                    "github_url": "https://github.com/harqian/fibonacci",
-                    "description": " Various algorithms to compute Fibonacci numbers, including recursive, iterative, and matrix exponentiation methods.",
-                    "start_date": "2024-11-15",
-                    "end_date": "2025-02-12"
-                },
-                {
-                    "title": "Rectangle Packing",
-                    "github_url": "https://github.com/harqian/perfect-rectangle-packing",
-                    "description": "An algorithm to pack rectangles into a larger rectangle with zero wasted space.",
-                    "start_date": "2024-12-01",
-                    "end_date": "2024-12-15"
-                },
-                {
-                    "title": "Misc Computational Problems",
-                    "description": "Various smaller computational problems.",
-                    "start_date": "?",
-                    "end_date": "?"
-                },
-                {
-                    "title": "Misc Algorithms",
-                    "description": "Various algorithms I have made that are not part of a larger project.",
-                    "start_date": "?",
-                    "end_date": "?"
-                }
-            ]
-        },
-        {
-            "id": "videos",
-            "title": "Video Production",
-            "description": "Creative video projects and productions.",
-            "projects": [
-                {
-                    "title": "Induction with Manim",
-                    "description": "a mathematical explanation of mathematical induction, animated using the manim library to visualize complex concepts.",
-                    "github_url": "https://github.com/harqian/manim-projects/tree/main/induction_is_easy_actually",
-                    "demo_url": "https://youtu.be/yOLwNqhFLRs",
-                    "start_date": "2025-02-01",
-                    "end_date": "2025-04-01",
-                    "featured": true
-                },
-                {
-                    "title": "Reinforcement Learning Intuition",
-                    "description": "Video explaining the concepts in reinforcement learning with intuitive visualizations",
-                    "demo_url": "https://youtu.be/epVaD4IdphU",
-                    "start_date": "2024-04-01",
-                    "end_date": "2024-06-01",
-                    "featured": true
-                },
-                {
-                    "title": "Making Bots Play Games for Me",
-                    "description": "NEEDS DESCRIPTION",
-                    "demo_url": "https://youtu.be/CFWLo1L4-O0",
-                    "start_date": "?",
-                    "end_date": "?"
-                },
-                {
-                    "title": "5 (+1) ways to calculate Pi",
-                    "description": "Exploring different mathematical methods to approximate the value of Pi, from ancient algorithms to modern computational techniques.",
-                    "demo_url": "https://youtu.be/b1OLOIsNNgc",
-                    "start_date": "2024-02-01",
-                    "end_date": "2024-05-01"
-                }
-            ]
-        },
-        {
-            "id": "ee",
-            "title": "Electrical Engineering",
-            "description": "Embedded systems, circuits, and hardware builds.",
-            "projects": [
-                {
-                    "title": "Databox",
-                    "description": "with no ee experience made a pcb that uses esp32 to send numbers (knob potentiometers), audio (INMP441), and image (esp32 cam) data over wifi to a spreadsheet through google apps script",
-                    "github_url": "https://github.com/harqian/arduino-projects",
-                    "demo_url": "https://youtu.be/MPY_f5vGokE",
-                    "featured_media_url": "https://www.youtube.com/watch?v=yzcjMu7PD5s",
-                    "start_date": "2025-12-22",
-                    "end_date": "2026-03-05",
-                    "featured": true,
-                    "links": [
-                        {
-                            "url": "https://www.youtube.com/watch?v=yzcjMu7PD5s",
-                            "label": "Timelapse of Explorations",
-                            "icon": "fab fa-youtube"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "music",
-            "title": "Music",
-            "description": "Music performances and creations.",
-            "projects": [
-                {
-                    "title": "Piano Culmination",
-                    "description": "a culmination of 1.3 years of piano practice, featuring fallen down (toby fox), howl's moving castle + one summer day (joe hisaishi) and more!.",
-                    "demo_url": "https://youtu.be/wDX-dO3Enwk",
-                    "start_date": "2024-01-01",
-                    "end_date": "2025-04-20",
-                    "featured": true
-                },
-                {
-                    "title": "Changing All My Colors",
-                    "description": "My first AI Generated song.",
-                    "demo_url": "https://youtu.be/e0zsOTzF1cs",
-                    "start_date": "2025-06-03",
-                    "end_date": "2025-06-04"
-                },
-                {
-                    "title": "Best Part",
-                    "description": "Best Part by Daniel Caesar and H.E.R. performed on ukulele",
-                    "demo_url": "https://youtu.be/rFVmHW8N4G0",
-                    "start_date": "2025-05-15",
-                    "end_date": "2025-06-01"
-                },
-                {
-                    "title": "The Edge of Chaos",
-                    "description": "ableton generated song 2",
-                    "demo_url": "https://youtu.be/l9WB_DnRYkU",
-                    "start_date": "2024-05-01",
-                    "end_date": "2025-05-21"
-                },
-                {
-                    "title": "contemplation",
-                    "description": "ableton generated song 1",
-                    "demo_url": "https://youtu.be/OxF-wFsmaBY",
-                    "start_date": "2025-05-01",
-                    "end_date": "2025-05-20"
-                }
-            ]
-        },
-        {
-            "id": "apps",
-            "title": "Apps",
-            "description": "Mobile and desktop applications.",
-            "projects": [
-                {
-                    "title": "Pause",
-                    "description": "a macOS break enforcer that actually locks you out; activate on app open, timers in menu bar, customize time and text, etc",
-                    "github_url": "https://github.com/harqian/Pause",
-                    "demo_url": "https://youtu.be/Pvcd4aqd_L8",
-                    "start_date": "2025-10-01",
-                    "end_date": "2025-11-01",
-                    "featured": true
-                },
-                {
-                    "title": "WorkableCafes",
-                    "description": "find cafes with good WiFi, comfort, and power outlets to work from! worked on polishing the app and scraping data from reviews to generate actually accurate synthetic data",
-                    "demo_url": "https://workablecafes.com/",
-                    "preview_image": "/project_media/workablecafes.png",
-                    "start_date": "2025-10-01",
-                    "end_date": "2025-11-01",
-                    "featured": true
-                },
-                {
-                    "title": "Discord Friends Graph",
-                    "description": "chrome extension that scans your discord friends list and renders mutual connections as an interactive graph. everything runs locally; you can export a self-contained shareable HTML and merge graphs with friends who also use it",
-                    "github_url": "https://github.com/harqian/discord-friends-graph",
-                    "demo_url": "/discord-friends-graph",
-                    "iframe_url": "/discord-friends-graph-demo.html",
-                    "preview_image": "/project_media/discord-friends-graph.png",
-                    "start_date": "2026-02-01",
-                    "end_date": "2026-05-13",
-                    "featured": true,
-                    "links": [
-                        {
-                            "url": "https://chromewebstore.google.com/detail/discord-friends-graph/bibbabmjfhdenaiccjdhecphakgcinag",
-                            "label": "Chrome Web Store",
-                            "icon": "fab fa-chrome"
-                        }
-                    ]
-                }
-            ]
+          "title": "ML from Scratch",
+          "description": "after calling model.fit() too many times, got curious and built a neural network and backpropagation from scratch using fun matrix calculus and numpy.",
+          "github_url": "https://github.com/harqian/ml-from-scratch",
+          "start_date": "2025-02-18",
+          "end_date": "2025-03-18",
+          "featured": true,
+          "preview_image": "https://assets.harrisonqian.com/project_media/ml-from-scratch-demo.gif"
         }
-    ]
+      ]
+    },
+    {
+      "id": "bots",
+      "title": "Bots",
+      "description": "A collection of game-playing AI bots I've developed.",
+      "projects": [
+        {
+          "title": "Connect 4 Bot",
+          "description": "A bot that plays Connect 4 using the minimax algorithm.",
+          "github_url": "https://github.com/harqian/connect4-general",
+          "demo_url": "https://harqian.github.io/connect4-general/",
+          "start_date": "2024-12-01",
+          "end_date": "2025-01-01"
+        },
+        {
+          "title": "Chess Bot",
+          "description": "first cs project: making a javascript chess bot from scratch that plays chess using the minimax algorithm with alpha-beta pruning; did some fun profiling using chrome dev tools",
+          "github_url": "https://github.com/harqian/chessAI-js",
+          "demo_url": "https://harqian.github.io/chessAI-js/",
+          "start_date": "2022-11-1",
+          "end_date": "2023-5-1",
+          "featured": true,
+          "preview_image": "https://assets.harrisonqian.com/project_media/chess-bot.png?v=1",
+          "video_url": "https://assets.harrisonqian.com/project_media/chess-bot.mp4"
+        },
+        {
+          "title": "Hex Bot",
+          "description": "A bot that plays the game of Hex using Monte Carlo Tree Search.",
+          "github_url": "https://github.com/harqian/hex-bot",
+          "demo_url": "https://harqian.github.io/hex-bot/",
+          "start_date": "2023-03-01",
+          "end_date": "2023-03-22"
+        },
+        {
+          "title": "Wordle Bot",
+          "description": "A bot that plays Wordle using a combination of letter frequency analysis and word list filtering.",
+          "github_url": "https://github.com/harqian/wordle-bot",
+          "start_date": "2024-03-13",
+          "end_date": "2024-06-24"
+        },
+        {
+          "title": "Set Bot",
+          "description": "Scripts that run in the JavaScript web browser that automate playing the game of Set.",
+          "github_url": "https://github.com/harqian/set-scripts",
+          "start_date": "2024-03-01",
+          "end_date": "2024-04-01"
+        }
+      ]
+    },
+    {
+      "id": "websites",
+      "title": "Websites",
+      "description": "Web development projects and personal websites.",
+      "projects": [
+        {
+          "title": "Personal Website",
+          "description": "My personal website and portfolio.",
+          "github_url": "https://github.com/harqian/personal-website",
+          "demo_url": "/",
+          "start_date": "2025-04-01",
+          "end_date": "today"
+        },
+        {
+          "title": "Color Canvas",
+          "description": "Interactive color canvas web application.",
+          "github_url": "https://github.com/harqian/color-canvas",
+          "demo_url": "https://harqian.github.io/color-canvas/",
+          "start_date": "2024-03-01",
+          "end_date": "2024-03-01"
+        },
+        {
+          "title": "Punctured Go",
+          "description": "A variation of the game of Go with punctured boards.",
+          "github_url": "https://github.com/harqian/punctured-go",
+          "demo_url": "https://punctured-go125.web.app/",
+          "start_date": "2024-02-06",
+          "end_date": "2024-02-06"
+        },
+        {
+          "title": "Assert",
+          "description": "A website to poll opinions and show results in real-time.",
+          "github_url": "https://github.com/harqian/assert",
+          "demo_url": "https://curious-pondering.web.app/",
+          "start_date": "2024-02-06",
+          "end_date": "2024-02-06"
+        },
+        {
+          "title": "debuff.dev",
+          "description": "Pair-programming coding challenges; blind coding, no for loops, relay race, etc.",
+          "github_url": "https://github.com/harqian/pair-programming-challenges",
+          "demo_url": "https://debuff.dev",
+          "start_date": "2026-01-20",
+          "end_date": "2026-02-20"
+        }
+      ]
+    },
+    {
+      "id": "games",
+      "title": "Games",
+      "description": "Interactive games and simulations.",
+      "projects": [
+        {
+          "title": "learn chess",
+          "description": "got to 2150 rapid rating in one year; just played a lot during lunch with friends and online; some tourney highlights: 1st/135 (u1600, perfect score) at us amateur team west, 3rd/75 at the 2023 sf scholastic championship, and a perfect-score win at a local bughouse tournament; learn (fast) by doing 🔥",
+          "demo_url": "https://lichess.org/@/Sunflower2022",
+          "start_date": "2022-04-01",
+          "end_date": "2023-05-01",
+          "featured": true,
+          "preview_image": "https://assets.harrisonqian.com/project_media/learn-chess-lichess.png?v=2"
+        },
+        {
+          "title": "IPD Nueva",
+          "github_url": "https://github.com/harqian/Updated_IPD_Nueva",
+          "description": "A forked and higly optimized and improved version of the Iterated Prisoner's Dilemma simulation created to run a tournament for a Microeconomics class.",
+          "start_date": "2024-11-01",
+          "end_date": "today"
+        },
+        {
+          "title": "Break Those Blocks",
+          "github_url": "https://github.com/harqian/break-those-blocks",
+          "demo_url": "https://harqian.github.io/break-those-blocks/",
+          "description": "A game where players break blocks in a grid-based environment by shooting balls (currently doesnt work that well).",
+          "start_date": "2023-07-29",
+          "end_date": "2023-08-15"
+        },
+        {
+          "title": "Number Connections",
+          "github_url": "https://github.com/harqian/number-connections",
+          "demo_url": "https://number-connections.vercel.app/",
+          "description": " Instead of connections, connect the numbers! Like the NYT game.",
+          "start_date": "2024-04-15",
+          "end_date": "2024-07-25"
+        }
+      ]
+    },
+    {
+      "id": "algorithms",
+      "title": "Algorithms",
+      "description": "Algorithm visualizations and computational experiments.",
+      "projects": [
+        {
+          "title": "Boids",
+          "github_url": "https://github.com/harqian/boids",
+          "description": "A simulation of flocking behavior in birds.",
+          "start_date": "2024-01-01",
+          "end_date": "2024-01-01"
+        },
+        {
+          "title": "Fibonacci",
+          "github_url": "https://github.com/harqian/fibonacci",
+          "description": " Various algorithms to compute Fibonacci numbers, including recursive, iterative, and matrix exponentiation methods.",
+          "start_date": "2024-11-15",
+          "end_date": "2025-02-12"
+        },
+        {
+          "title": "Rectangle Packing",
+          "github_url": "https://github.com/harqian/perfect-rectangle-packing",
+          "description": "An algorithm to pack rectangles into a larger rectangle with zero wasted space.",
+          "start_date": "2024-12-01",
+          "end_date": "2024-12-15"
+        },
+        {
+          "title": "Misc Computational Problems",
+          "description": "Various smaller computational problems.",
+          "start_date": "?",
+          "end_date": "?"
+        },
+        {
+          "title": "Misc Algorithms",
+          "description": "Various algorithms I have made that are not part of a larger project.",
+          "start_date": "?",
+          "end_date": "?"
+        }
+      ]
+    },
+    {
+      "id": "videos",
+      "title": "Video Production",
+      "description": "Creative video projects and productions.",
+      "projects": [
+        {
+          "title": "Induction with Manim",
+          "description": "a mathematical explanation of mathematical induction, animated using the manim library to visualize complex concepts.",
+          "github_url": "https://github.com/harqian/manim-projects/tree/main/induction_is_easy_actually",
+          "demo_url": "https://youtu.be/yOLwNqhFLRs",
+          "start_date": "2025-02-01",
+          "end_date": "2025-04-01",
+          "featured": false
+        },
+        {
+          "title": "Reinforcement Learning Intuition",
+          "description": "Video explaining the concepts in reinforcement learning with intuitive visualizations",
+          "demo_url": "https://youtu.be/epVaD4IdphU",
+          "start_date": "2024-04-01",
+          "end_date": "2024-06-01",
+          "featured": false
+        },
+        {
+          "title": "Making Bots Play Games for Me",
+          "description": "NEEDS DESCRIPTION",
+          "demo_url": "https://youtu.be/CFWLo1L4-O0",
+          "start_date": "?",
+          "end_date": "?"
+        },
+        {
+          "title": "5 (+1) ways to calculate Pi",
+          "description": "Exploring different mathematical methods to approximate the value of Pi, from ancient algorithms to modern computational techniques.",
+          "demo_url": "https://youtu.be/b1OLOIsNNgc",
+          "start_date": "2024-02-01",
+          "end_date": "2024-05-01"
+        }
+      ]
+    },
+    {
+      "id": "ee",
+      "title": "Electrical Engineering",
+      "description": "Embedded systems, circuits, and hardware builds.",
+      "projects": [
+        {
+          "title": "Databox",
+          "description": "with no ee experience made a pcb that uses esp32 to send numbers (knob potentiometers), audio (INMP441), and image (esp32 cam) data over wifi to a spreadsheet through google apps script",
+          "github_url": "https://github.com/harqian/arduino-projects",
+          "demo_url": "https://youtu.be/MPY_f5vGokE",
+          "featured_media_url": "https://www.youtube.com/watch?v=yzcjMu7PD5s",
+          "start_date": "2025-12-22",
+          "end_date": "2026-03-05",
+          "featured": true,
+          "links": [
+            {
+              "url": "https://www.youtube.com/watch?v=yzcjMu7PD5s",
+              "label": "Timelapse of Explorations",
+              "icon": "fab fa-youtube"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "music",
+      "title": "Music",
+      "description": "Music performances and creations.",
+      "projects": [
+        {
+          "title": "Piano Culmination",
+          "description": "a culmination of 1.3 years of piano practice, featuring fallen down (toby fox), howl's moving castle + one summer day (joe hisaishi) and more!.",
+          "demo_url": "https://youtu.be/wDX-dO3Enwk",
+          "start_date": "2024-01-01",
+          "end_date": "2025-04-20",
+          "featured": true
+        },
+        {
+          "title": "Changing All My Colors",
+          "description": "My first AI Generated song.",
+          "demo_url": "https://youtu.be/e0zsOTzF1cs",
+          "start_date": "2025-06-03",
+          "end_date": "2025-06-04"
+        },
+        {
+          "title": "Best Part",
+          "description": "Best Part by Daniel Caesar and H.E.R. performed on ukulele",
+          "demo_url": "https://youtu.be/rFVmHW8N4G0",
+          "start_date": "2025-05-15",
+          "end_date": "2025-06-01"
+        },
+        {
+          "title": "The Edge of Chaos",
+          "description": "ableton generated song 2",
+          "demo_url": "https://youtu.be/l9WB_DnRYkU",
+          "start_date": "2024-05-01",
+          "end_date": "2025-05-21"
+        },
+        {
+          "title": "contemplation",
+          "description": "ableton generated song 1",
+          "demo_url": "https://youtu.be/OxF-wFsmaBY",
+          "start_date": "2025-05-01",
+          "end_date": "2025-05-20"
+        }
+      ]
+    },
+    {
+      "id": "apps",
+      "title": "Apps",
+      "description": "Mobile and desktop applications.",
+      "projects": [
+        {
+          "title": "Pause",
+          "description": "a native macOS break enforcer that actually locks you out; activate on app open, timers in menu bar, customize time and text, etc",
+          "github_url": "https://github.com/harqian/Pause",
+          "demo_url": "https://youtu.be/Pvcd4aqd_L8",
+          "start_date": "2025-10-01",
+          "end_date": "2025-11-01",
+          "featured": true
+        },
+        {
+          "title": "WorkableCafes",
+          "description": "find cafes with good WiFi, comfort, and power outlets to work from! worked on polishing the app and scraping data from reviews to generate actually accurate synthetic data",
+          "demo_url": "https://workablecafes.com/",
+          "preview_image": "/project_media/workablecafes.png",
+          "start_date": "2025-10-01",
+          "end_date": "2025-11-01",
+          "featured": true
+        },
+        {
+          "title": "Discord Friends Graph",
+          "description": "chrome extension that scans your discord friends list and renders mutual connections as an interactive graph. everything runs locally; you can export a self-contained shareable HTML and merge graphs with friends who also use it",
+          "github_url": "https://github.com/harqian/discord-friends-graph",
+          "demo_url": "/discord-friends-graph",
+          "iframe_url": "/discord-friends-graph-demo.html",
+          "preview_image": "/project_media/discord-friends-graph.png",
+          "start_date": "2026-02-01",
+          "end_date": "2026-05-13",
+          "featured": true,
+          "links": [
+            {
+              "url": "https://chromewebstore.google.com/detail/discord-friends-graph/bibbabmjfhdenaiccjdhecphakgcinag",
+              "label": "Chrome Web Store",
+              "icon": "fab fa-chrome"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "learning",
+      "title": "Self-Learning",
+      "description": "Things I taught myself outside of class.",
+      "projects": [
+        {
+          "title": "math speed learning",
+          "description": "spent 1 year learning all four years of high school math (self-taught 3): algebra 1, geometry, algebra 2, and precalc. to check & bolster understanding: AoPS precalc over the summer -> the next year taught the whole thing to a friend over 15 morning sessions.",
+          "start_date": "2022-08-01",
+          "end_date": "2023-08-01",
+          "featured": true,
+          "preview_image": "https://assets.harrisonqian.com/project_media/math-speed-learning.jpg",
+          "links": [
+            {
+              "url": "https://docs.google.com/document/d/1raNsfeqqs-hq4qaMkuznB989ZXZD3aQ5fLVAil3imI8/edit",
+              "label": "Assessment I made for my friend",
+              "icon": "fa fa-file"
+            },
+            {
+              "url": "https://drive.google.com/drive/folders/1-D4KhQiU-rsT_rhMCj2b2OLIuFWZv27c?usp=drive_link",
+              "label": "AoPS Precalc",
+              "icon": "fab fa-google-drive"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -1,7 +1,50 @@
 <script>
+    import { onMount } from "svelte";
     import Header from "$lib/Header.svelte";
     import StarBackground from "$lib/StarBackground.svelte";
     import allProjects from "$lib/projects.json";
+
+    let copiedSlug = null;
+    let highlightedSlug = null;
+
+    async function copyLink(slug) {
+        const url = `${location.origin}/projects#${slug}`;
+        try {
+            await navigator.clipboard.writeText(url);
+        } catch {
+            // fallback for browsers without clipboard API / non-secure contexts
+            const ta = document.createElement("textarea");
+            ta.value = url;
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+        }
+        copiedSlug = slug;
+        setTimeout(() => {
+            if (copiedSlug === slug) copiedSlug = null;
+        }, 1500);
+    }
+
+    function highlightFromHash() {
+        const slug = decodeURIComponent(location.hash.replace(/^#/, ""));
+        if (!slug) return;
+        const el = document.getElementById(slug);
+        if (!el) return;
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        highlightedSlug = slug;
+        setTimeout(() => {
+            if (highlightedSlug === slug) highlightedSlug = null;
+        }, 2200);
+    }
+
+    onMount(() => {
+        highlightFromHash();
+        window.addEventListener("hashchange", highlightFromHash);
+        return () => window.removeEventListener("hashchange", highlightFromHash);
+    });
 
     // Collect all featured projects from all sections
     const featuredProjects = allProjects.sections
@@ -34,11 +77,14 @@
     }
 
     function shouldShowDemoLink(project) {
-        return Boolean(project.demo_url && project.demo_url !== getFeaturedMediaUrl(project));
+        // always mirror the demo/featured link as a labeled button, even when the
+        // title and media already point to it. otherwise people click it not knowing what it is.
+        return Boolean(project.demo_url);
     }
 
     function getVisibleLinks(project) {
-        return (project.links || []).filter(link => link.url !== getFeaturedMediaUrl(project));
+        // demo_url is already rendered as its own labeled button; don't duplicate it here.
+        return (project.links || []).filter(link => link.url !== project.demo_url);
     }
 
     function getDemoLabel(project) {
@@ -129,14 +175,26 @@
                     <div class="project-card">
                         <div class="project-content">
                             <div class="category-badge">{project.category}</div>
-                            <h3 id={slugify(project.title)}>
-                                {#if getDefaultUrl(project)}
-                                    <a href="{getDefaultUrl(project)}" target="_blank" rel="noopener">
+                            <h3 id={slugify(project.title)} class:highlighted={highlightedSlug === slugify(project.title)}>
+                                <span class="title-row">
+                                    {#if getDefaultUrl(project)}
+                                        <a href="{getDefaultUrl(project)}" target="_blank" rel="noopener">
+                                            {project.title}
+                                        </a>
+                                    {:else}
                                         {project.title}
-                                    </a>
-                                {:else}
-                                    {project.title}
-                                {/if}
+                                    {/if}
+                                    <button
+                                        type="button"
+                                        class="copy-link"
+                                        class:copied={copiedSlug === slugify(project.title)}
+                                        title="Copy link to this project"
+                                        aria-label="Copy link to this project"
+                                        on:click={() => copyLink(slugify(project.title))}
+                                    >
+                                        <i class="fas {copiedSlug === slugify(project.title) ? 'fa-check' : 'fa-link'}"></i>
+                                    </button>
+                                </span>
                                 <span class="date">{formatDateRange(project.start_date, project.end_date)}</span>
                             </h3>
                             <p>{project.description}</p>
@@ -166,7 +224,25 @@
                         </div>
 
                         <div class="project-media">
-                            {#if project.iframe_url}
+                            {#if project.video_url}
+                                <svelte:element
+                                    this={getDefaultUrl(project) ? 'a' : 'div'}
+                                    class="media-frame {getDefaultUrl(project) ? 'media-link' : ''}"
+                                    href={getDefaultUrl(project) || undefined}
+                                    target={getDefaultUrl(project) ? '_blank' : undefined}
+                                    rel={getDefaultUrl(project) ? 'noopener' : undefined}
+                                >
+                                    <video
+                                        src={project.video_url}
+                                        poster={project.preview_image}
+                                        autoplay
+                                        muted
+                                        loop
+                                        playsinline
+                                        style="pointer-events: none;"
+                                    ></video>
+                                </svelte:element>
+                            {:else if project.iframe_url}
                                 <div class="media-frame media-iframe">
                                     <iframe
                                         src={project.iframe_url}
@@ -262,6 +338,57 @@
             justify-content: space-between;
             align-items: flex-start;
             gap: 1rem;
+            scroll-margin-top: 90px;
+            border-radius: 6px;
+        }
+
+        .title-row {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 0;
+        }
+
+        .copy-link {
+            border: none;
+            background: transparent;
+            color: #888;
+            cursor: pointer;
+            padding: 0.15rem 0.35rem;
+            border-radius: 4px;
+            font-size: 0.8em;
+            line-height: 1;
+            opacity: 0;
+            transition: opacity 0.2s, color 0.2s, background-color 0.2s;
+        }
+
+        .project-card:hover .copy-link {
+            opacity: 1;
+        }
+
+        .copy-link:hover {
+            color: #4dabf7;
+            background: rgba(77, 171, 247, 0.12);
+        }
+
+        .copy-link.copied {
+            opacity: 1;
+            color: #51cf66;
+        }
+
+        .project-card h3.highlighted {
+            animation: flash-highlight 2.2s ease-out;
+        }
+
+        @keyframes flash-highlight {
+            0%, 30% {
+                background: rgba(255, 212, 59, 0.25);
+                box-shadow: 0 0 0 6px rgba(255, 212, 59, 0.12);
+            }
+            100% {
+                background: transparent;
+                box-shadow: 0 0 0 6px rgba(255, 212, 59, 0);
+            }
         }
 
         .date {
@@ -344,6 +471,7 @@
         }
 
         .media-frame iframe,
+        .media-frame video,
         .media-frame img {
             width: 100%;
             height: 100%;
@@ -351,7 +479,8 @@
             border: 0;
         }
 
-        .media-frame img {
+        .media-frame img,
+        .media-frame video {
             object-fit: cover;
         }
 

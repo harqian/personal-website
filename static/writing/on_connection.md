@@ -200,6 +200,15 @@ vulnerability -> trust; share share share
 	- "this is really embarrassing but..."
 	- "i usually dont share this with everyone but..."
 
+ALSO: if they are are also bought into the [[#**give value**]] mindset, then sharing is the best way to have that amazing win win sharing relationship!
+- sharing what ur working on 1. is an act of helping them get to know you, now they learn about you -> more personal and 2. they can give you thoughts and ideas and help brainstorm
+- sharing what you need / are struggling with 1. they can just provide that to you; 2. they can give you thoughts / suggestions
+	- e.g. "im really struggling to meet a technical cofounder" or "i am raising, but all the vc's i know arent into hard tech for consumer"
+	- notably this is more personal & needy, so be careful
+		- specifically, two situations where its good to say:
+			- 1. when you are super close with this person or are hitting it off very nicely
+			- 2. when it just comes up in convo; move on if they dont have anything to give
+
 also: instead of lowering yourself from a hypothetical-metaphorical pedestal, you can put them onto a hypothetical-metaphorical pedestal
 - the praising / resume strat from [albert](https://exr0n.com/)
 	- point to their linkedin/resume and say "this is all *really* impressive... tell me about something that isnt on here"
@@ -398,7 +407,26 @@ Practical Example: The calendar sharing example crystallizes this — being open
 **also this is really obvious in hindsight but like by being yourself you are more likely to find people that are similar to your true self :)**
 - anecdote: i am very math cs nerdy so i am very happy to get a chance to nerd out with people; thus i love technical interviews and/or talking about math with people
 	- a corollary of this is that you can be impressive at the same time (gotta make sure not to come off as pretentious though); [[#if powerful people / transactional interactions matter to you]]
+
+notably a good way to get physical inbound (lol) is to be yourself in weird ways in public (kinda like building in public)
+- e.g. i was chilling in a cafe at stanford with my super tall laptop stand + keyboard
+- lots of people giving me looks / talking about me
+- a senior asked me where i got it from / if i could share the link
+- the same thing happened in a coffee shop somewhere as well
 ## show you care about them!
+**a really good way to do this:**
+- whenever talking to anyone if time allows, think of questions that would uniquely draw out some expertise of the person. It doesn't have to be the traditional, like "Oh this person is an expert in neuroscience so you ask them some neuroscience questions." It could even be like:
+	- Okay given that you are a sixth grader, 
+		- what are you struggling with most right now?
+		- What are your views on the world?
+		- How do you go about living your life on a day-to-day basis?
+	- you work in aerospace engineering—
+		- what is totally misunderstood about aerospace?
+		- why do you do it?
+		- are there things that people should know if they are aspiring to become an aerospace engineer?
+		- do people get hurt a lot? how is safety dealt with?
+- dont go out of your way to do this but if you are already talking with someone, its just right there! even better if you were struggling to find things to talk about
+- insight is great and very serendipitous. even if it isnt useful, ask them about it; also considering that way makes them feel good because no matter who they are, for that amount of time they become the expert ([[#**give value**]])
 
 ### this one is pretty obvious but follow up!
 obv like within 0-48h* of a really great chat text them something

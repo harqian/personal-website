@@ -1,12 +1,13 @@
 {
-  "01_juggling.webm": { "duration": 3000, "caption": "picked up juggling during an internship because there were hacky sacks around" },
-  "07_boston.mp4": { "duration": "length", "caption": "sitting in a dark room with a spikey helmet on staring at a flashing screen for five minutes repeatedly for science" },
-  "08_setup.jpeg": { "duration": 3000, "caption": "the perfect work setup" },
-  "09_dumb_derivatives.mp4": { "duration": "length", "caption": "filmed a funny video with a friend a while back on doing a stupidly long derivative computation" },
-  "11_tennis.webm": { "duration": "length", "caption": "volley form :)" },
-  "12b_beach_frisbee.mp4": { "duration": "length", "caption": "ultimate frisbee!", "objectPosition": "0% 50%" },
-  "13_machine_translation.mp4": { "duration": "length", "caption": "machine translation presentation" },
-  "14_hiking.jpeg": { "duration": 3000, "caption": "hiking/climbing!" },
-  "15_sf_biking.mp4": { "duration": "length", "caption": "biking up 230 ft in pouring rain in sf" },
-  "16_flash.mp4": { "duration": "length", "caption": "people i love" }
+  "01_juggling.webm": { "duration": 3000, "caption": "picked up juggling during an internship because there were hacky sacks around", "slug": "juggling" },
+  "07_boston.mp4": { "duration": "length", "caption": "sitting in a dark room with a spikey helmet on staring at a flashing screen for five minutes repeatedly for science (orbit)", "slug": "neurotech" },
+  "07b_boston_lab.mp4": { "duration": "length", "caption": "lying down on container lids and towels in a kiddy pool filled with water for 7m at a time in pitch black with pupil glasses on while streams of cold/hot water are fed into my ears (orbit)", "slug": "vestibular" },
+  "08_san_mateo.mp4": { "duration": "length", "caption": "the perfect work setup", "slug": "setup" },
+  "09_dumb_derivatives.mp4": { "duration": "length", "caption": "filmed a funny video with a friend a while back on doing a stupidly long derivative computation", "slug": "dumb-derivatives" },
+  "11_tennis.webm": { "duration": "length", "caption": "volley form :)", "slug": "tennis" },
+  "12b_beach_frisbee.mp4": { "duration": "length", "caption": "ultimate frisbee!", "objectPosition": "0% 50%", "slug": "frisbee" },
+  "13_machine_translation.mp4": { "duration": "length", "caption": "machine translation presentation", "slug": "machine-translation" },
+  "14_little_rock.mp4": { "duration": "length", "caption": "hiking/climbing!", "slug": "hiking" },
+  "15_sf_biking.mp4": { "duration": "length", "caption": "biking up 230 ft in pouring rain in sf", "slug": "biking" },
+  "16_flash.mp4": { "duration": "length", "caption": "people i love", "slug": "people" }
 }

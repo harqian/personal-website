@@ -41,6 +41,7 @@ my review is that the principles are decent (less comprehensive than the math ac
 not that mechanistic
 ### tools for thought: https://guzey.com/education/is-anything-inherently-difficult/
 this is really good! has many good examples
+### [Secret to Learning Electronics - Fail and Fail Often](https://www.youtube.com/watch?v=xhQ7d3BK3KQ&t=1s)!!
 ## my experiences
 ### contextualized learning!! (more [here](https://docs.google.com/document/d/1J_MndZR4Ex09TIy5FD_LZoaaWsMs-cbV2OuZTwBF_pY/edit?tab=t.0))
 - I have found that math formulas by themselves are highly isolated and unuseful; only after the context is deeply embedded within brain does the formula itself become highly useful by itself
@@ -134,6 +135,33 @@ however purely doing things for the actual product itself or the joy of working 
 		- tks microsoft datacenter cooling project—doing some research initially + reading (which is really good) but then doing hella manus, claude deep research, not engaging with it -> spent like 30+h on something at the end of the summer that was utterly meaningless but got a decent result??
 		- did a bit of this ↑ for interiority becuase deadline but understood soooo much more than doing stuff before
 however, there is much to learn from projects than just academic learning (namely, self understanding, soft skills, etc)
+### engineering motivation
+"why does this matter?" - someone whose goals are ultralearning
+
+for a couple of reasons:
+- one:
+	- if you arent motivated to do it
+- two:
+	- even if you theoretically are motivated, you are probably less disciplined than you think
+		- this is because humans are many times limited by their brain functions
+		- with full motivation you will also spend much more time on it / think aobut it much more -> good
+- three:
+	- research suggests that while having fun or experiencing pain / pleasure, you learn better (not completely validated)
+
+**curiosity is a good one!**
+- I think it is a very good way to motivate learning; I like the paradigm of showing young people a lot of different options and cool fields such that they will like at least one of them and feel excited about it. 
+- For certain things such as high skill training, I do feel that it is mostly only useful for the beginning parts though—motivation in later stages can come from other sources (especially since curiosity is a bit spurious sometimes :P). [Advice on upskilling by Justin Skycak](https://www.justinmath.com/files/advice-on-upskilling.pdf) employs a similar idea:
+
+> Stage I: Fun and exciting playtime. Students are just starting to develop awareness and interest in the talent domain. The teacher provides copious positive feedback and approval and encourages students to explore whatever aspects of the talent domain they find most exciting. Students are rewarded for effort rather than for achievement and criticism is rare.
+> 
+> Stage II: Intense and strenuous skill development. Students are fully committed to increasing their performance. The teacher becomes or is replaced by a coach, who focuses on training exercises where the sole purpose is to improve performance. These exercises are demanding, and the coach provides constructive criticism to help the student perform the exercises properly. Positive feedback is provided in response to achievement; effort is assumed.
+> 
+> Stage III: Developing one's individual style while pushing the boundaries of the field. Students are proficient in all the foundational skills in the talent domain. They are so committed that they center their entire lives around the talent domain, no matter the sacrifice, and typically work with a world-class expert in the talent domain. The expert helps the student identify and lean into their individual strengths so that they can excel beyond perceived human capabilities.
+
+    
+**also, talking people who also like the thing is really good for this; community great motivator**
+    
+**one of the things we can do is the savor in understanding and insight into the thing; dont just rush past it and be like "ok next thing"**
 ### optimizing learning is really really hard
 The fundamental issues making personalized education difficult include teacher-to-student ratios that are too high for meaningful individualization. Even schools like Nueva achieve only 'somewhat meaningful' personalization, far from the mathematically tailored approach that would produce exceptional results. Beyond ratios, there's the challenge of understanding how individual students think and learn
 
