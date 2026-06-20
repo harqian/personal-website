@@ -5,7 +5,7 @@ tags:
     - learning
     - systems
     - personal
-published: false
+published: true
 toc: true
 ---
 ```table-of-contents
