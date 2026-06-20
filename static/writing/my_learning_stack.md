@@ -87,7 +87,7 @@ there are a couple of sources of info that are great
 	- highly difficult, takes time, not guarenteed to have materials be correct, can have pitfalls of unorganized information, etc
 
 its highly important that content is correct.
-### getting a mentor is highly important and will crazily elevate learning (more here)
+### getting a mentor is highly important and will crazily elevate learning (more [here](https://docs.google.com/document/d/1QzrXc1V1ARR66i5IponSoHnmiLITJHjOTkdYC_Rb4p0/edit?tab=t.0#heading=h.z3ivie3zci8b))
     
 - cold email ppl, ask around circiles
 - without mentors, you need to just do random stuff instead of having guidance
@@ -196,7 +196,7 @@ my school is a bit different and quirky. ill describe two kinds of classes
 the first one is a more traditional math class:
 - two days a week i will be in the class for 75 min and then usually do some problems on our own but sometimes get direct instruction for a topic
 - outside of school we are expected to spend 30m between classes to work on stuff / think about the content
-- sometimes do tests to show understanding, sometimes 
+- sometimes do tests to show understanding
 ## comparisons
 school is pretty effective in many ways
 - the social aspect is pretty important as per previous theory about social
@@ -209,6 +209,6 @@ i also would say that school is very gameable so if you arent really trying to l
 personal stuff is also great in its own way (complimentary)
 # third, a couple of next steps (for myself)
 
-## create list of comprehensive independent highest magnitude principles (prune some of the not important ones)
-## create system that implements all of them with high fidelity
-## iterate
+1. create list of comprehensive independent highest magnitude principles (prune some of the not important ones)
+2. create system that implements all of them with high fidelity
+3. iterate
