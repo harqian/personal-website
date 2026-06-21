@@ -6,6 +6,14 @@
       "description": "Machine learning projects and experiments.",
       "projects": [
         {
+          "title": "Neon Blox agents",
+          "description": "trained agents to play Neon Blox (a Flood-It puzzle): random/greedy baselines, a genetic algorithm, PPO, beam-search planning, and a small net distilled from the planner. an interactive demo plays any seed live in-browser (distilled net forward pass and all). greedy wins 72%, beam search ~100%, and the distilled net 87% with no search at all.",
+          "demo_url": "/neon-blox",
+          "start_date": "2026-06-21",
+          "end_date": "2026-06-21",
+          "featured": true
+        },
+        {
           "title": "OnCue",
           "description": "upload documents (resume, project docs, essays) -> in a call transcripts; questions are detected and used to query the database with rag and top 3 hits are shown",
           "github_url": "https://github.com/harqian/OnCue",
