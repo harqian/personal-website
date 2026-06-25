@@ -1,5 +1,6 @@
 ---
 title: "streams and salmon"
+subtitle: "tbh salmon are a bit crazy"
 date: 2025-6-27
 tags:
   - camp

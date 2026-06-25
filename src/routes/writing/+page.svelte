@@ -105,8 +105,7 @@
         <div class="column">
             <section class="section">
                 <h2>writing</h2>
-                <p>mainly essays but some other stuff also (look out for essay on reflection in the next month!)</p>
-                <p>if you want to get notified when i post something, you can go to <a href="https://github.com/harqian/personal-website">the github for this website</a> and use the watch button (or something, i dont know if it actually works)</p>
+                <p>lmk if any of this resonates with you! i am always looking for people that have similar thinking to me (contact info on <a href="/">home page</a>)</p>
                 <hr class="horizontal-line">
             </section>
         {#each writing as piece}

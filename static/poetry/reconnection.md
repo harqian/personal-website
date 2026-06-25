@@ -4,7 +4,7 @@ date: 2025-7-4
 tags:
   - reflection
   - change
-published: true
+published: false
 ---
 
 A sea of people in high dimensional space

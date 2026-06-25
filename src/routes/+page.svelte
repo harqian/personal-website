@@ -189,12 +189,15 @@
     <div class="hero">
         <div class="hero-text">
             <p>hey there, im harrison (bay area)</p>
+            
+            <ul class="bio-list">
+                <li>i <a href="/projects#math-speed-learning">learned four years of hs math</a> in 8th grade, then made <a href="/projects#ml-from-scratch">neural networks</a>, <a href="/projects#rl-snake">reinforcement learning</a> algs, <a href="/projects#databox">data logger gadget</a> from scratch & more stuff like <a href="/projects#piano-culmination">piano</a>, <a href="#song=peace-and-love" class="vibe-link" on:click={(e) => musicJump(e, 'peace-and-love')}>ukulele</a>, <a href="/projects#learn-chess">chess</a>, <a href="#vibe=neurotech" class="vibe-link" on:click={(e) => vibeJump(e, 'neurotech')}>neuro</a>, <a href="#vibe=frisbee" class="vibe-link" on:click={(e) => vibeJump(e, 'frisbee')}>frisbee</a>, <a href="#song=contemplation" class="vibe-link" on:click={(e) => musicJump(e, 'contemplation')}>music production</a>, <a href="/projects#pause">film making</a>, etc; generally very self taught</li>
+                <li>last summer i helped engineer vestibular stimulation at <a href="https://orbit.engineering/" target="_blank" rel="noopener">orbit engineering</a>, a neurotech startup. i got someone from fully awake to nearly asleep in three minutes while talking to them in broad daylight! also was <a href="#vibe=vestibular" class="vibe-link" on:click={(e) => vibeJump(e, 'vestibular')}>measuring</a> <a href="https://en.wikipedia.org/wiki/Visual_evoked_potential" target="_blank" rel="noopener">VEP</a> with <a href="https://en.wikipedia.org/wiki/Electroencephalography" target="_blank" rel="noopener">EEG</a> and pupil dialition under <a href="https://en.wikipedia.org/wiki/Caloric_reflex_test" target="_blank" rel="noopener">CVS</a></li>
+                <li>this year ive been <a href="/projects#discord-friends-graph">shipping apps</a> and training CNNs to read consciousness states from brain waves. i once spent 30 hours debugging a mug warmer in my ee phase :)</li>
+                <li>i hate to talk about competitions because lowkey they are super fake but for the sake of sharing more about myself: this year my school placed 2nd in <a href="https://www.usaypt.org/" target="_blank" rel="noopener">USAYPT</a> (a national physics comp) and my team of 4 placed top 5 in the country out of 1091 teams in <a href="https://www.comap.com/contests/himcm-midmcm" target="_blank" rel="noopener">HiMCM</a> and then <a href="https://www.immchallenge.org/" target="_blank" rel="noopener">immc</a> nationals</li>
+            </ul>
+            <p>some of what ive built is in <a href="/projects">my projects page</a>. i like writing down my thoughts a lot, so i have posted some in a <a href="/writing">writing page</a> and a <a href="/poetry">poetry page</a></p>
             <p>(if you want a fast track to getting to know me more i have put some media that represents me well in a <a href="/vibes">vibes page</a>)</p>
-            <p>i <a href="/projects#math-speed-learning">learned four years of hs math</a> in 8th grade, then made <a href="/projects#ml-from-scratch">neural networks</a>, <a href="/projects#rl-snake">reinforcement learning</a> algs, <a href="/projects#databox">data logger gadget</a> from scratch & more stuff like <a href="/projects#piano-culmination">piano</a>, <a href="#song=peace-and-love" class="vibe-link" on:click={(e) => musicJump(e, 'peace-and-love')}>ukulele</a>, <a href="/projects#learn-chess">chess</a>, <a href="#vibe=neurotech" class="vibe-link" on:click={(e) => vibeJump(e, 'neurotech')}>neuro</a>, <a href="#vibe=frisbee" class="vibe-link" on:click={(e) => vibeJump(e, 'frisbee')}>frisbee</a>, <a href="#song=contemplation" class="vibe-link" on:click={(e) => musicJump(e, 'contemplation')}>music production</a>, <a href="/projects#pause">film making</a>, etc; generally very self taught</p>
-            <p>last summer i helped engineer vestibular stimulation at <a href="https://orbit.engineering/" target="_blank" rel="noopener">orbit engineering</a>, a neurotech startup. i got someone from fully awake to nearly asleep in three minutes while talking to them in broad daylight! also was <a href="#vibe=vestibular" class="vibe-link" on:click={(e) => vibeJump(e, 'vestibular')}>measuring</a> <a href="https://en.wikipedia.org/wiki/Visual_evoked_potential" target="_blank" rel="noopener">VEP</a> with <a href="https://en.wikipedia.org/wiki/Electroencephalography" target="_blank" rel="noopener">EEG</a> and pupil dialition under <a href="https://en.wikipedia.org/wiki/Caloric_reflex_test" target="_blank" rel="noopener">CVS</a></p>
-            <p>this year ive been <a href="/projects#discord-friends-graph">shipping apps</a> and training CNNs to read consciousness states from brain waves. i once spent 30 hours debugging a mug warmer in my ee phase :)</p>
-            <p>i hate to talk about competitions because lowkey they are super fake but for the sake of sharing more about myself: this year my school placed 2nd in <a href="https://www.usaypt.org/" target="_blank" rel="noopener">USAYPT</a> (a national physics comp) and my team of 4 placed top 5 in the country out of 1091 teams in <a href="https://www.comap.com/contests/himcm-midmcm" target="_blank" rel="noopener">HiMCM</a> and then <a href="https://www.immchallenge.org/" target="_blank" rel="noopener">immc</a> nationals</p>
-            <p>some of what ive built is in <a href="/projects">my projects page</a>.</p>
             <p>feel free to look around or <button class="say-hi-btn" on:click={toggleContactInfo}>say hi</button>! i respond to everyone :)</p>
 
             <div
@@ -301,6 +304,17 @@
 
     .hero-text p {
         margin-bottom: 0.6rem;
+    }
+
+    .bio-list {
+        margin: 0 0 0.6rem 0;
+        padding-left: 0rem;
+        list-style: disc;
+    }
+
+    .bio-list li {
+        margin-bottom: 0.5rem;
+        padding-left: 0.3rem;
     }
 
     .hero-side {

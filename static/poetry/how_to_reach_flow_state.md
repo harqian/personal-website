@@ -1,11 +1,12 @@
 ---
-title: "how to reach flow state"
+title: "on reaching flow state"
+subtitle: "a guide"
 date: 2025-7-2
 tags:
   - productivity
   - work
   - experience
-published: true
+published: false
 ---
 
 step one, orientation.

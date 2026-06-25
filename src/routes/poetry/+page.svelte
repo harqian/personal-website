@@ -50,6 +50,8 @@
                                 metadata.title = value;
                             } else if (currentKey === 'published') {
                                 metadata.published = value === 'true';
+                            } else if (currentKey === 'subtitle') {
+                                metadata.subtitle = value;
                             } else if (currentKey === 'tags') {
                                 metadata.tags = [];
                             } else if (currentKey === 'date' || currentKey === 'edited') {
@@ -92,8 +94,8 @@
         <div class="column">
             <section class="section">
                 <h2>poetry</h2>
-                <p>i dont promise any schedule; started because REALLY REALLY whacky (in a good way) friend encouraged me; having lots of fun!</p>
-                <p>if you want to get notified when i post something, you can go to <a href="https://github.com/harqian/personal-website">the github for this website</a> and use the watch button (or something, i dont know if it actually works)</p>
+                <p>started because REALLY REALLY whacky (in a good way) friend encouraged me; having lots of fun!</p>
+                <p>just like for <a href="/writing">writing</a>, if any of this resonates with you, id love to hear about it! (contact info on <a href="/">home page</a>)</p>
                 <hr class="horizontal-line">
             </section>
         {#each poetry as piece}
@@ -102,12 +104,8 @@
                     <h3><a href="/poetry/{piece.filename}">{piece.title}</a></h3>
                 </div>
                 <div class="meta-row">
-                    {#if piece.tags && piece.tags.length > 0 && piece.tags[0] !== ""}
-                        <div class="tags">
-                            {#each piece.tags as tag}
-                                <span class="tag">{tag}</span>
-                            {/each}
-                        </div>
+                    {#if piece.subtitle}
+                        <span class="subtitle">{piece.subtitle}</span>
                     {/if}
                     <time class="date">
                         {new Date(piece.date).toLocaleDateString()}

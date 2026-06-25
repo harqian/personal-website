@@ -1,5 +1,6 @@
 ---
 title: "ambition is the thing with wings"
+subtitle: "like an evil witch it flies from the skies"
 date: 2025-6-23
 tags:
   - initiative

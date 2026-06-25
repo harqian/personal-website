@@ -7,7 +7,6 @@
         { href: "/", label: "home" },
         { href: "/writing", label: "writing" },
         { href: "/poetry", label: "poetry" },
-        { href: "/notes", label: "notes" },
         { href: "/vibes", label: "vibes" },
         { href: "/projects", label: "projects" },
         { href: "/other", label: "other" },
