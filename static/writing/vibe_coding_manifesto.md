@@ -1,5 +1,6 @@
 ---
 title: "vibe coding manifesto"
+subtitle: "some practical tips for agentic engineering / vibe coding"
 date: "2026-03-21"
 tags:
     - ai

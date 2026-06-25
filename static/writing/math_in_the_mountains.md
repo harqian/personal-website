@@ -5,7 +5,7 @@ tags:
     - math camp
     - counselor
     - personal
-published: true
+published: false
 ---
 
 # preface

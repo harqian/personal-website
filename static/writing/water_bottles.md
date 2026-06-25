@@ -2,7 +2,7 @@
 date: "2025-05-17"
 tags: 
     - personal
-published: true
+published: false
 ---
 
 Even though I frequently lose them, my water bottles are dearly important to me. Because I lose them a lot, I have many, but my favorite one is aqua, semi-see-through, medium sized, with a handle for easy carrying and a lid on top that makes a satisfying pop each time I close it.

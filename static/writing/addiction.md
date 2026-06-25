@@ -1,5 +1,6 @@
 ---
 title: "Me and Addiction: Experiences, Thoughts, and Strategies"
+subtitle: "content warning: brain dump"
 date: "2025-06-26"
 tags: 
     - personal

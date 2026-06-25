@@ -18,20 +18,11 @@
         font-size: 0.9em;
     }   
     
-    :global(.tags) {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-top: 0.5rem;
-    }
-    
-    :global(.tag) {
-        background: var(--text);
-        color: var(--bg);
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
-        font-size: 0.8em;
-        white-space: nowrap;
+    :global(.subtitle) {
+        color: var(--text-secondary);
+        font-style: italic;
+        font-size: 0.95em;
+        margin-right: 1rem;
     }
 
 </style>

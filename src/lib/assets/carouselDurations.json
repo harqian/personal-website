@@ -1,7 +1,7 @@
 {
   "01_juggling.webm": { "duration": 3000, "caption": "picked up juggling during an internship because there were hacky sacks around", "slug": "juggling" },
-  "07_boston.mp4": { "duration": "length", "caption": "sitting in a dark room with a spikey helmet on staring at a flashing screen for five minutes repeatedly for science (orbit)", "slug": "neurotech" },
-  "07b_boston_lab.mp4": { "duration": "length", "caption": "lying down on container lids and towels in a kiddy pool filled with water for 7m at a time in pitch black with pupil glasses on while streams of cold/hot water are fed into my ears (orbit)", "slug": "vestibular" },
+  "07_boston.mp4": { "duration": "length", "caption": "sitting in a dark room with a spikey helmet on staring at a flashing screen for five minutes repeatedly for SSVEP (orbit)", "slug": "neurotech" },
+  "07b_boston_lab.mp4": { "duration": "length", "caption": "lying on container lids and pee pads in a kiddy pool for 7m at a time in a pitch black room with pupil glasses on while streams of cold/hot water are fed into my ears (orbit)", "slug": "vestibular" },
   "08_san_mateo.mp4": { "duration": "length", "caption": "the perfect work setup", "slug": "setup" },
   "09_dumb_derivatives.mp4": { "duration": "length", "caption": "filmed a funny video with a friend a while back on doing a stupidly long derivative computation", "slug": "dumb-derivatives" },
   "11_tennis.webm": { "duration": "length", "caption": "volley form :)", "slug": "tennis" },

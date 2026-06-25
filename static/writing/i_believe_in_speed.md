@@ -3,7 +3,7 @@ title: "i believe in speed"
 date: "2026-05-22"
 tags:
     - personal
-published: true
+published: false
 ---
 
 My name is Harrison and I believe in speed.

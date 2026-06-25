@@ -61,6 +61,8 @@
                                 metadata.url = value;
                             } else if (currentKey === 'published') {
                                 metadata.published = value === 'true';
+                            } else if (currentKey === 'subtitle') {
+                                metadata.subtitle = value;
                             } else if (currentKey === 'tags') {
                                 metadata.tags = [];
                             } else if (currentKey === 'date' || currentKey === 'edited') {
@@ -121,12 +123,8 @@
                     </h3>
                 </div>
                 <div class="meta-row">
-                    {#if piece.tags && piece.tags.length > 0 && piece.tags[0] !== ""}
-                        <div class="tags">
-                            {#each piece.tags as tag}
-                                <span class="tag">{tag}</span>
-                            {/each}
-                        </div>
+                    {#if piece.subtitle}
+                        <span class="subtitle">{piece.subtitle}</span>
                     {/if}
                     <time class="date">
                         {(() => {

@@ -1,5 +1,6 @@
 ---
 title: "learning <- understanding <- perspective, connections <- experiences, people"
+subtitle: "brain dump of some reflections :)"
 date: "2025-09-07"
 tags: 
     - personal

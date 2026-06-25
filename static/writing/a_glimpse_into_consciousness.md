@@ -1,4 +1,5 @@
 ---
+subtitle: "content warning: brain dump"
 date: "2025-06-01"
 tags: 
     - philosophy

@@ -1,5 +1,6 @@
 ---
 title: "Putting the Right Thing in Someone Else's Head"
+subtitle: "f(best branding) - f(worst branding) = big number"
 date: "2025-10-26"
 tags: 
     - marketing
@@ -7,9 +8,11 @@ tags:
 published: true
 ---
 
-Branding is crucial for everything, whether it is a program, project, product, individual, event, opportunity, service, or idea. It completely shapes how people perceive, remember, and connect with what you're offering. You may be saying, “*Sure, it is important, but why is it crucial?*” It is crucial because it is basically the thing. Let me explain.
+Branding (otherwise known as marketing, articulation, communication, etc) is crucial for everything. It completely shapes how people interact with with what you're offering. You may be saying, “*Sure, it is important, but why is it crucial?*” It is crucial because it is basically the thing. Let me explain.
 
 You have an idea of the thing in your brain. Let’s say you now tell me about it. The idea in my brain that corresponds to your thing is not inherently accurate to your thing and is usually far off from it. By altering your branding, you are controlling my perception of the thing. Let me say that again. **You are building a version of the thing in my head**. While we try not to judge books by covers, everyone needs to judge a million books everyday, thus needing to use covers as a heuristic. The first impression you make is a long lasting one.
+
+![[alice_bob_models.jpeg|520]]
 
 This ability to frame things in people’s heads is powerful. If you tell me about an event by first telling me about how long the keynote presentations will be, I will not be interested. On the other hand, if you introduce it to me with 
 

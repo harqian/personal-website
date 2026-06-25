@@ -1,5 +1,6 @@
 ---
 title: "everything popular is wrong"
+subtitle: "building identity in a world of fake"
 date: "2026-05-23"
 tags:
     - personal

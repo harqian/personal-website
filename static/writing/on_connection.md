@@ -1,5 +1,6 @@
 ---
 title: "on connection"
+subtitle: "all of my learnings on interacting with people since becoming conscious one year ago! (brain dump)"
 date: "2026-05-18"
 tags:
     - personal
