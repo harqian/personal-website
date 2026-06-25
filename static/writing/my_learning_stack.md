@@ -1,5 +1,6 @@
 ---
 title: "my learning stack"
+subtitle: "I LOVE LEARNING"
 date: "2026-05-16"
 tags:
     - learning
