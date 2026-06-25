@@ -340,6 +340,7 @@
               src={encoded(item)}
               muted={isMuted}
               playsinline
+              preload={i === current ? 'auto' : 'metadata'}
               style:object-position={getObjectPositionForItem(i) || null}
               on:ended={() => handleVideoEnded(i)}
             ></video>

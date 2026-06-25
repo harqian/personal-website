@@ -58,6 +58,7 @@
     let width = 0;
     let height = 0;
     let scrollY = 0;
+    let vh = 0;
     let animationFrameId;
     let time = 0;
     let centerX = 0;
@@ -316,9 +317,24 @@
     $: smallStarsY = -scrollY * parallaxSpeed.small;
     $: mediumStarsY = -scrollY * parallaxSpeed.medium;
     $: largeStarsY = -scrollY * parallaxSpeed.large;
+
+    // viewport culling: stars span the full page height, but only a viewport band
+    // is ever visible. a star at top:y inside a layer translated by -scrollY*p, on a
+    // page scrolled by scrollY, sits at viewport-y = y - scrollY*(1+p). render only
+    // those within [0, vh] (+ margin so they don't pop in at the edges).
+    const CULL_MARGIN = 200;
+    function cullStars(arr, p, sy, vhh) {
+      if (!vhh) return arr;
+      const lo = sy * (1 + p) - CULL_MARGIN;
+      const hi = sy * (1 + p) + vhh + CULL_MARGIN;
+      return arr.filter(s => s.y >= lo && s.y <= hi);
+    }
+    $: visSmall = cullStars(stars.small, parallaxSpeed.small, scrollY, vh);
+    $: visMedium = cullStars(stars.medium, parallaxSpeed.medium, scrollY, vh);
+    $: visLarge = cullStars(stars.large, parallaxSpeed.large, scrollY, vh);
   </script>
-  
-  <svelte:window bind:scrollY />
+
+  <svelte:window bind:scrollY bind:innerHeight={vh} />
   
   <div
     class="parallax-starry-sky"
@@ -330,7 +346,7 @@
   >
     <!-- Small stars layer (fades out in day) -->
     <div class="star-layer layer-small" style="transform: translateY({smallStarsY}px);">
-      {#each stars.small as star}
+      {#each visSmall as star}
         <div
           class="star"
           style="
@@ -347,7 +363,7 @@
 
     <!-- Medium stars layer (fades out in day) -->
     <div class="star-layer layer-medium" style="transform: translateY({mediumStarsY}px);">
-      {#each stars.medium as star}
+      {#each visMedium as star}
         <div
           class="star"
           style="
@@ -364,7 +380,7 @@
 
     <!-- Large stars layer (fades out in day) -->
     <div class="star-layer layer-large" style="transform: translateY({largeStarsY}px);">
-      {#each stars.large as star}
+      {#each visLarge as star}
         <div
           class="star star-twinkle"
           style="
