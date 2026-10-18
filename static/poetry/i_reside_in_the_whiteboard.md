@@ -1,6 +1,5 @@
 ---
 title: "i reside in the whiteboard"
-subtitle: "whiteboards are my refuge"
 date: 2026-9-11
 tags:
   - communication
