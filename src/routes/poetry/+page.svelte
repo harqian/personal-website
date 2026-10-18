@@ -6,6 +6,7 @@
 
     // Add your piece filenames here (without .md extension)
     const pieceFilenames = [
+        "i_reside_in_the_whiteboard",
         "new_camp",
         "ambition",
         "streams_and_salmon",
@@ -51,6 +52,8 @@
                                 metadata.title = value;
                             } else if (currentKey === 'published') {
                                 metadata.published = value === 'true';
+                            } else if (currentKey === 'star') {
+                                metadata.star = value === 'true';
                             } else if (currentKey === 'subtitle') {
                                 metadata.subtitle = value;
                             } else if (currentKey === 'tags') {
@@ -104,7 +107,7 @@
         {#each poetry as piece}
             <article>
                 <div class="title-row">
-                    <h3><a href="/poetry/{piece.filename}">{piece.title}</a></h3>
+                    <h3><a href="/poetry/{piece.filename}">{piece.title}</a>{#if piece.star}<span class="effort-star" title="favorite">★</span>{/if}</h3>
                 </div>
                 <div class="meta-row">
                     {#if piece.subtitle}
@@ -159,5 +162,12 @@
     .title-row h3 a:hover {
         color: var(--link-color, #0066cc);
         text-decoration: underline;
+    }
+
+    .effort-star {
+        color: var(--accent-yellow, #f5a623);
+        font-size: 0.85em;
+        margin-left: 0.4rem;
+        vertical-align: 0.05em;
     }
 </style>

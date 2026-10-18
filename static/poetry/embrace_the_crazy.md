@@ -6,6 +6,7 @@ tags:
   - confidence
   - personal
 published: true
+star: true
 ---
 
 crazy. Adjective. *mentally deranged, especially as manifested in a wild or aggressive way.*
