@@ -56,6 +56,7 @@
         "vibes_memes/pcb_design.png",
         "vibes_memes/company.jpg",
         "vibes_memes/goose.png",
+        "vibes_memes/heal_this_pattern.webp",
         "vibes_memes/to_be_cringe_is_to_be_free.mp4",
         "vibes_memes/download.mp4",
         "vibes_memes/romantic_homicide.webm",
