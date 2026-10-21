@@ -127,3 +127,8 @@ the animated starfield **crashes headless screenshots on tall/dark pages** (hund
 - a regenerated share page from the extension would drop this patch unless the feature is upstreamed. re-apply by hand (or port `blurAvatars` into the extension's share template).
 - **the file mixes LF and CRLF** (the inlined vis-network bundle is CRLF). python `read_text()` normalizes them and produces a ~4000-line diff; edit with `open(path, newline='')` or sed.
 - port 5173 is often another project's vite; run this repo's dev server with `npx vite dev --port 5180 --strictPort` when verifying.
+
+## subdomains
+
+- `speaking.harrisonqian.com`: plain one-page list of talks (ILC x2 + Stanford Dorm Lectures) for his college apps. the page is `static/speaking/index.html` (also live at harrisonqian.com/speaking/). edit it + push to main = both update. the subdomain is a tiny worker in `subdomains/speaking/` that fetches harrisonqian.com/speaking/ and serves it under its own url; it never needs redeploying for content edits. only redeploy it if `worker.js` changes: `cd subdomains/speaking && CLOUDFLARE_API_TOKEN=$(op item get s5ty2d52vyc33b46kwfpi3kzfq --fields label=full_token --reveal) wrangler deploy` (the pages-only GitHub token cant deploy workers). keep the page plain on purpose: browser-default fonts, no site theme, no em dashes (his ask: "very very plain and dont let them figure out that it was ai").
+- other harrisonqian.com subdomains live elsewhere: `assets` = the R2 media bucket (above), `mutuals` = its own worker app in ~/code/mutuals, `h-bot-tools` / `pencilla-mcp` = cloudflare tunnel to his bot's server on blueberry.

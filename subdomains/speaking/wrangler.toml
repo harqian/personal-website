@@ -1,0 +1,6 @@
+name = "speaking"
+main = "worker.js"
+compatibility_date = "2025-09-01"
+account_id = "b5767c459ae1102e08c8dd559b76ee15"
+workers_dev = false
+routes = [{ pattern = "speaking.harrisonqian.com", custom_domain = true }]
