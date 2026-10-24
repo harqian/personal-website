@@ -208,20 +208,13 @@
           "title": "Break Those Blocks",
           "github_url": "https://github.com/harqian/break-those-blocks",
           "demo_url": "https://harqian.github.io/break-those-blocks/",
-          "description": "first game i made, the summer before 9th grade: shoot balls at waves of blocks. spent basically all my waking hours on it (pre ai); ~2000 lines of js, drew every sprite and button in piskel, all the sounds + music, 3 modes, 5 powerups, a stats page, and a lot of debugging",
+          "description": "first game i made, the summer before 9th grade: shoot balls at waves of blocks. spent all my waking hours on it for a couple of weeks (pre ai). the code is a mess: one 1900 line game.js, a 400 line draw(), every position hand placed for my laptop's 1440x739 screen (the game tells you to zoom out if it doesnt fit), and error popups that say \"use find command to see where this came from\". drew every sprite in piskel, really loved making the block breaking animation, and had a lot of fun finding all the sounds + music",
           "start_date": "2023-07-03",
           "end_date": "2023-08-26",
           "featured": true,
           "media_natural": true,
           "media_wide": true,
-          "preview_image": "https://assets.harrisonqian.com/project_media/break-those-blocks.gif",
-          "links": [
-            {
-              "url": "https://assets.harrisonqian.com/project_media/break-those-blocks-gameplay.mp4",
-              "label": "Gameplay (with sound)",
-              "icon": "fas fa-video"
-            }
-          ]
+          "preview_image": "https://assets.harrisonqian.com/project_media/break-those-blocks.gif"
         },
         {
           "title": "Number Connections",
