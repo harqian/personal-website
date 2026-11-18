@@ -1,5 +1,6 @@
 ---
 title: "what is life without its miseries?"
+subtitle: "written on a rainy day that made my socks wet due to a hole in my right shoe :P"
 date: 2026/11/18
 tags:
   - emotion
