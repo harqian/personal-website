@@ -181,6 +181,11 @@
         font-size: 0.9rem;
     }
 
+    /* keeps the date right-aligned when there is no subtitle */
+    .meta-row .date {
+        margin-left: auto;
+    }
+
     .content {
         line-height: 1.8;
         margin-bottom: 3rem;

@@ -138,6 +138,11 @@
         justify-content: space-between;
         align-items: center;
     }
+
+    /* keeps the date right-aligned when there is no subtitle */
+    .meta-row .date {
+        margin-left: auto;
+    }
     
     .title-row {
         display: flex;
