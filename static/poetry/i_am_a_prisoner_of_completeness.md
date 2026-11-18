@@ -21,7 +21,7 @@ prime numbers are satanic.
 essays become caveat lists
 —to be clear, i don't mean this to be an insult
 —please don't pin a single misrepresented argument on the entire existence of my being i didn't mean it!!
-i love "although...", "notably...", "keep in mind...", "it is the case that..."
+i'm a fan of "although...", "notably...", "keep in mind...", "it is the case that..."
 tmi is chronic
 
 remembrall blaring red brings a tightness in my chest that makes it hard to focus
