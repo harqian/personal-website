@@ -5,7 +5,7 @@ tags:
   - communication
   - personal
 published: true
-star: true
+star: false
 ---
 
 alas, if it could react even just a bit
