@@ -24,7 +24,7 @@ essays become caveat lists
 i'm a fan of "although...", "notably...", "keep in mind...", "it is the case that..."
 tmi is chronic
 
-remembrall blaring red brings a tightness in my chest that makes it hard to focus
+my remembrall blaring red brings a tightness in the chest that derails focus
 forgetting ideas is losing pieces of myself
 even tiny pieces
 pieces i'll never be able to share with another
