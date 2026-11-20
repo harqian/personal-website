@@ -8,7 +8,7 @@
 <div class="contact-info" class:open aria-hidden={!open}>
     <div class="contact-item" style="--i: 0">
         <i class="fa fa-envelope"></i>
-        <span><a href="mailto:harrisonq125@gmail.com">harrisonq125@gmail.com</a></span>
+        <span><a href="mailto:harrisonqian0@gmail.com">harrisonqian0@gmail.com</a></span>
     </div>
     <div class="contact-item" style="--i: 1">
         <i class="fa-brands fa-discord"></i>
